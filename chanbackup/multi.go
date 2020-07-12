@@ -6,6 +6,7 @@ import (
 	"io"
 
 	"github.com/lightningnetwork/lnd/keychain"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnwire"
 )
 
@@ -39,6 +40,9 @@ type Multi struct {
 	// StaticBackups is the set of single channel backups that this multi
 	// backup is comprised of.
 	StaticBackups []Single
+
+	// Encrypter encrypts backup data.
+	Encrypter lnencrypt.EncrypterDecrypter
 }
 
 // PackToWriter packs (encrypts+serializes) the target set of static channel
@@ -87,9 +91,14 @@ func (m Multi) PackToWriter(w io.Writer, keyRing keychain.KeyRing) error {
 		}
 	}
 
+	encryptKey, err := lnencrypt.GenEncryptionKey(keyRing)
+	if err != nil {
+		return fmt.Errorf("unable to generate encrypt key %v", err)
+	}
+
 	// With the plaintext multi backup assembled, we'll now encrypt it
 	// directly to the passed writer.
-	return encryptPayloadToWriter(multiBackupBuffer, w, keyRing)
+	return m.Encrypter.EncryptPayloadToWriter(multiBackupBuffer, w, encryptKey)
 }
 
 // UnpackFromReader attempts to unpack (decrypt+deserialize) a packed
@@ -99,7 +108,12 @@ func (m *Multi) UnpackFromReader(r io.Reader, keyRing keychain.KeyRing) error {
 	// We'll attempt to read the entire packed backup, and also decrypt it
 	// using the passed key ring which is expected to be able to derive the
 	// encryption keys.
-	plaintextBackup, err := decryptPayloadFromReader(r, keyRing)
+	encryptKey, err := lnencrypt.GenEncryptionKey(keyRing)
+	if err != nil {
+		return fmt.Errorf("unable to generate encrypt key %v", err)
+	}
+
+	plaintextBackup, err := m.Encrypter.DecryptPayloadFromReader(r, encryptKey)
 	if err != nil {
 		return err
 	}
@@ -169,6 +183,7 @@ type PackedMulti []byte
 // error will be returned.
 func (p *PackedMulti) Unpack(keyRing keychain.KeyRing) (*Multi, error) {
 	var m Multi
+	m.Encrypter = lnencrypt.Encrypter{}
 
 	packedReader := bytes.NewReader(*p)
 	if err := m.UnpackFromReader(packedReader, keyRing); err != nil {
