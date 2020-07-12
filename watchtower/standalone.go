@@ -6,6 +6,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcec"
 	"github.com/lightningnetwork/lnd/brontide"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/tor"
 	"github.com/lightningnetwork/lnd/watchtower/lookout"
 	"github.com/lightningnetwork/lnd/watchtower/wtserver"
@@ -173,9 +174,25 @@ func (w *Standalone) createNewHiddenService() error {
 		Type:        w.cfg.Type,
 	}
 
-	addr, err := w.cfg.TorController.AddOnion(onionCfg)
+	returnKey := w.cfg.EncryptKey
+
+	privateKey, err := lnencrypt.ReadTorPrivateKey(
+		w.cfg.WatchtowerKeyPath, w.cfg.EncryptKey, w.cfg.KeyRing,
+	)
 	if err != nil {
 		return err
+	}
+	addr, err := w.cfg.TorController.AddOnion(onionCfg, privateKey, returnKey)
+	if err != nil {
+		return err
+	}
+	if w.cfg.EncryptKey {
+		err = lnencrypt.WriteTorPrivateKey(
+			w.cfg.WatchtowerKeyPath, addr.PrivateKey, w.cfg.KeyRing,
+		)
+		if err != nil {
+			return err
+		}
 	}
 
 	// Append this address to ExternalIPs so that it will be exposed in
