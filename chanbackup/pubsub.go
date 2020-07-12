@@ -10,6 +10,7 @@ import (
 	"github.com/btcsuite/btcd/wire"
 	"github.com/lightningnetwork/lnd/channeldb"
 	"github.com/lightningnetwork/lnd/keychain"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 )
 
 // Swapper is an interface that allows the chanbackup.SubSwapper to update the
@@ -214,6 +215,7 @@ func (s *SubSwapper) updateBackupFile(closedChans ...wire.OutPoint) error {
 	// With our updated channel state obtained, we'll create a new multi
 	// from our series of singles.
 	var newMulti Multi
+	newMulti.Encrypter = lnencrypt.Encrypter{}
 	for _, backup := range combinedBackup {
 		newMulti.StaticBackups = append(
 			newMulti.StaticBackups, backup,
