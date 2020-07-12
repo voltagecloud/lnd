@@ -111,8 +111,12 @@ type AddOnionConfig struct {
 
 // AddOnion creates an onion service and returns its onion address. Once
 // created, the new onion service will remain active until the connection
-// between the controller and the Tor server is closed.
-func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
+// between the controller and the Tor server is closed. This can optionally
+// take an existing private key as input and return the generated onion
+// private key.
+func (c *Controller) AddOnion(cfg AddOnionConfig, privateKeyInput string,
+	returnKey bool) (*OnionAddr, error) {
+
 	// Before sending the request to create an onion service to the Tor
 	// server, we'll make sure that it supports V3 onion services if that
 	// was the type requested.
@@ -134,21 +138,24 @@ func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
 		keyParam = "NEW:" + V3KeyParam
 	}
 
-	if cfg.Store != nil {
-		privateKey, err := cfg.Store.PrivateKey(cfg.Type)
-		switch err {
-		// Proceed to request a new onion service.
-		case ErrNoPrivateKey:
+	if privateKeyInput == "" {
+		if cfg.Store != nil {
+			privateKey, err := cfg.Store.PrivateKey(cfg.Type)
+			switch err {
+			// Proceed to request a new onion service.
+			case ErrNoPrivateKey:
 
-		// Recover the onion service with the private key found.
-		case nil:
-			keyParam = string(privateKey)
+			// Recover the onion service with the private key found.
+			case nil:
+				keyParam = string(privateKey)
 
-		default:
-			return nil, err
+			default:
+				return nil, err
+			}
 		}
+	} else {
+		keyParam = privateKeyInput
 	}
-
 	// Now, we'll create a mapping from the virtual port to each target
 	// port. If no target ports were specified, we'll use the virtual port
 	// to provide a one-to-one mapping.
@@ -202,22 +209,34 @@ func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
 		return nil, errors.New("service id not found in reply")
 	}
 
-	// If a new onion service was created and an onion store was provided,
-	// we'll store its private key to disk in the event that it needs to be
-	// recreated later on.
-	if privateKey, ok := replyParams["PrivateKey"]; cfg.Store != nil && ok {
-		err := cfg.Store.StorePrivateKey(cfg.Type, []byte(privateKey))
+	// If a new onion service was created, use the new private key for storage
+	newPrivateKey, ok := replyParams["PrivateKey"]
+	if ok {
+		keyParam = newPrivateKey
+	}
+	// If an onion store was provided and a key return wasn't requested,
+	// we'll store its private key to disk in the event that it needs to
+	// be recreated later on.We write the private key to disk every time
+	// in case the user toggles the --tor.encryptkey flag.
+	if cfg.Store != nil && !returnKey {
+		err := cfg.Store.StorePrivateKey(cfg.Type, []byte(keyParam))
 		if err != nil {
 			return nil, fmt.Errorf("unable to write private key "+
 				"to file: %v", err)
 		}
 	}
 
+	// We return the onion address private key if requested
+	var torPrivateKey string
+	if returnKey {
+		torPrivateKey = keyParam
+	}
 	// Finally, we'll return the onion address composed of the service ID,
 	// along with the onion suffix, and the port this onion service can be
 	// reached at externally.
 	return &OnionAddr{
 		OnionService: serviceID + ".onion",
 		Port:         cfg.VirtualPort,
+		PrivateKey:   torPrivateKey,
 	}, nil
 }
