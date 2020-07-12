@@ -14,6 +14,7 @@ import (
 	"github.com/davecgh/go-spew/spew"
 	"github.com/lightningnetwork/lnd/channeldb"
 	"github.com/lightningnetwork/lnd/keychain"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/lightningnetwork/lnd/shachain"
 )
@@ -208,7 +209,7 @@ func TestSinglePackUnpack(t *testing.T) {
 
 	singleChanBackup := NewSingle(channel, []net.Addr{addr1, addr2})
 
-	keyRing := &mockKeyRing{}
+	keyRing := &lnencrypt.MockKeyRing{}
 
 	versionTestCases := []struct {
 		// version is the pack/unpack version that we should use to
@@ -277,6 +278,7 @@ func TestSinglePackUnpack(t *testing.T) {
 		// version, then we trigger an error.
 		if versionCase.valid {
 			var unpackedSingle Single
+			unpackedSingle.Encrypter = lnencrypt.Encrypter{}
 			err = unpackedSingle.UnpackFromReader(&b, keyRing)
 			if err != nil {
 				t.Fatalf("#%v unable to unpack single: %v",
@@ -313,7 +315,7 @@ func TestSinglePackUnpack(t *testing.T) {
 func TestPackedSinglesUnpack(t *testing.T) {
 	t.Parallel()
 
-	keyRing := &mockKeyRing{}
+	keyRing := &lnencrypt.MockKeyRing{}
 
 	// To start, we'll create 10 new singles, and them assemble their
 	// packed forms into a slice.
@@ -364,7 +366,7 @@ func TestPackedSinglesUnpack(t *testing.T) {
 func TestSinglePackStaticChanBackups(t *testing.T) {
 	t.Parallel()
 
-	keyRing := &mockKeyRing{}
+	keyRing := &lnencrypt.MockKeyRing{}
 
 	// First, we'll create a set of random single, and along the way,
 	// create a map that will let us look up each single by its chan point.
@@ -400,6 +402,7 @@ func TestSinglePackStaticChanBackups(t *testing.T) {
 		}
 
 		var freshSingle Single
+		freshSingle.Encrypter = lnencrypt.Encrypter{}
 		err := freshSingle.UnpackFromReader(
 			bytes.NewReader(packedSingles), keyRing,
 		)
@@ -412,8 +415,9 @@ func TestSinglePackStaticChanBackups(t *testing.T) {
 
 	// If we attempt to pack again, but force the key ring to fail, then
 	// the entire method should fail.
+	keyRing.Fail = true
 	_, err = PackStaticChanBackups(
-		unpackedSingles, &mockKeyRing{true},
+		unpackedSingles, &lnencrypt.MockKeyRing{Fail: true},
 	)
 	if err == nil {
 		t.Fatalf("pack attempt should fail")
@@ -439,8 +443,7 @@ func TestSingleUnconfirmedChannel(t *testing.T) {
 	channel.FundingBroadcastHeight = fundingBroadcastHeight
 
 	singleChanBackup := NewSingle(channel, []net.Addr{addr1, addr2})
-	keyRing := &mockKeyRing{}
-
+	keyRing := &lnencrypt.MockKeyRing{}
 	// Pack it and then unpack it again to make sure everything is written
 	// correctly, then check that the block height of the unpacked
 	// is the funding broadcast height we set before.
@@ -449,6 +452,7 @@ func TestSingleUnconfirmedChannel(t *testing.T) {
 		t.Fatalf("unable to pack single: %v", err)
 	}
 	var unpackedSingle Single
+	unpackedSingle.Encrypter = lnencrypt.Encrypter{}
 	err = unpackedSingle.UnpackFromReader(&b, keyRing)
 	if err != nil {
 		t.Fatalf("unable to unpack single: %v", err)
