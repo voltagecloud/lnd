@@ -653,6 +653,8 @@ func Main(cfg *Config, lisCfg ListenerCfg, shutdownChan <-chan struct{}) error {
 		if torController != nil {
 			wtCfg.TorController = torController
 			wtCfg.WatchtowerKeyPath = cfg.Tor.WatchtowerKeyPath
+			wtCfg.EncryptKey = cfg.Tor.EncryptKey
+			wtCfg.KeyRing = activeChainControl.keyRing
 
 			switch {
 			case cfg.Tor.V2:
