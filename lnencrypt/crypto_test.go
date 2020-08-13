@@ -125,7 +125,9 @@ func TestInvalidKeyEncryption(t *testing.T) {
 	t.Parallel()
 
 	var b bytes.Buffer
-	keyRing := &mock.SecretKeyRing{}
+	keyRing := &mock.SecretKeyRing{
+		RootKey: privKey,
+	}
 	keyRing.Fail = true
 	err := EncryptPayloadToWriter(b, &b, keyRing)
 	if err == nil {
@@ -139,7 +141,9 @@ func TestInvalidKeyDecrytion(t *testing.T) {
 	t.Parallel()
 
 	var b bytes.Buffer
-	keyRing := &mock.SecretKeyRing{}
+	keyRing := &mock.SecretKeyRing{
+		RootKey: privKey,
+	}
 	keyRing.Fail = true
 	_, err := DecryptPayloadFromReader(&b, keyRing)
 	if err == nil {
