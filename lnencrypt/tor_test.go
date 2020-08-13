@@ -12,7 +12,9 @@ func TestTorPrivateKey(t *testing.T) {
 
 	tmpPrivateKey := "thisisasecretkey"
 	tmpPrivateKeyPath := "/tmp/torprivatekey"
-	keyRing := &mock.SecretKeyRing{}
+	keyRing := &mock.SecretKeyRing{
+		RootKey: privKey,
+	}
 
 	err := WriteTorPrivateKey(
 		"/tmp/torprivatekey",
