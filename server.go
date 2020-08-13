@@ -7,6 +7,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"image/color"
+	"io/ioutil"
 	"math/big"
 	prand "math/rand"
 	"net"
@@ -1370,8 +1371,16 @@ func newServer(cfg *Config, listenAddrs []net.Addr,
 	tlsHealthCheck := healthcheck.NewObservation(
 		"tls",
 		func() error {
+			certBytes, err := ioutil.ReadFile(cfg.TLSCertPath)
+			if err != nil {
+				return err
+			}
+			keyBytes, err := ioutil.ReadFile(cfg.TLSKeyPath)
+			if err != nil {
+				return err
+			}
 			_, parsedCert, err := cert.LoadCert(
-				cfg.TLSCertPath, cfg.TLSKeyPath,
+				certBytes, keyBytes,
 			)
 			if err != nil {
 				return err
@@ -2292,7 +2301,7 @@ func (s *server) createNewHiddenService() error {
 
 	returnKey := s.cfg.Tor.EncryptKey
 	privateKey, err := lnencrypt.ReadTorPrivateKey(
-		s.cfg.Tor.PrivateKeyPath, s.cfg.Tor.EncryptKey, s.cc.keyRing,
+		s.cfg.Tor.PrivateKeyPath, s.cfg.Tor.EncryptKey, s.cc.KeyRing,
 	)
 	if err != nil {
 		return err
@@ -2303,7 +2312,7 @@ func (s *server) createNewHiddenService() error {
 	}
 	if s.cfg.Tor.EncryptKey {
 		err = lnencrypt.WriteTorPrivateKey(
-			s.cfg.Tor.PrivateKeyPath, addr.PrivateKey, s.cc.keyRing,
+			s.cfg.Tor.PrivateKeyPath, addr.PrivateKey, s.cc.KeyRing,
 		)
 		if err != nil {
 			return err
