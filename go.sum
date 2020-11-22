@@ -184,6 +184,7 @@ github.com/lightninglabs/protobuf-hex-display v1.3.3-0.20191212020323-b444784ce7
 github.com/lightninglabs/protobuf-hex-display v1.3.3-0.20191212020323-b444784ce75d/go.mod h1:KDb67YMzoh4eudnzClmvs2FbiLG9vxISmLApUkCa4uI=
 github.com/lightningnetwork/lightning-onion v1.0.2-0.20200501022730-3c8c8d0b89ea h1:oCj48NQ8u7Vz+MmzHqt0db6mxcFZo3Ho7M5gCJauY/k=
 github.com/lightningnetwork/lightning-onion v1.0.2-0.20200501022730-3c8c8d0b89ea/go.mod h1:rigfi6Af/KqsF7Za0hOgcyq2PNH4AN70AaMRxcJkff4=
+github.com/lightningnetwork/lnd v0.11.0-beta.rc4.0.20201120035502-0e14e0d904ce/go.mod h1:GLOw6DTehckKaf1Wdd0qOG53caOytqZ7ounlQVQtyVg=
 github.com/ltcsuite/ltcd v0.0.0-20190101042124-f37f8bf35796 h1:sjOGyegMIhvgfq5oaue6Td+hxZuf3tDC8lAPrFldqFw=
 github.com/ltcsuite/ltcd v0.0.0-20190101042124-f37f8bf35796/go.mod h1:3p7ZTf9V1sNPI5H8P3NkTFF4LuwMdPl2DodF60qAKqY=
 github.com/ltcsuite/ltcutil v0.0.0-20181217130922-17f3b04680b6/go.mod h1:8Vg/LTOO0KYa/vlHWJ6XZAevPQThGH5sufO0Hrou/lA=
