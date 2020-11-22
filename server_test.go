@@ -17,6 +17,8 @@ import (
 	"os"
 	"testing"
 	"time"
+
+	"github.com/lightningnetwork/lnd/lntest/mock"
 )
 
 func TestParseHexColor(t *testing.T) {
@@ -119,7 +121,8 @@ func TestTLSAutoRegeneration(t *testing.T) {
 		TLSKeyPath:   keyPath,
 		RPCListeners: rpcListeners,
 	}
-	_, _, _, cleanUp, err := getTLSConfig(cfg)
+	keyRing := &mock.SecretKeyRing{}
+	_, _, _, cleanUp, err := getTLSConfig(cfg, keyRing)
 	if err != nil {
 		t.Fatalf("couldn't retrieve TLS config")
 	}
