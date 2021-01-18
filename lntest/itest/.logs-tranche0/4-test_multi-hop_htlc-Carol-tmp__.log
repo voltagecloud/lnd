@@ -1,0 +1,1854 @@
+2021-01-08 22:40:56.729 [WRN] LTND: open /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data: no such file or directory
+2021-01-08 22:40:56.729 [INF] LTND: Version: 0.12.0-beta.rc4 commit=cert/v1.0.3-744-g1da3994a-dirty, build=development, logging=default, debuglevel=debug
+2021-01-08 22:40:56.729 [INF] LTND: Active chain: Bitcoin (network=regtest)
+2021-01-08 22:40:56.729 [INF] LTND: Opening the main database, this might take a few minutes...
+2021-01-08 22:40:56.729 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2021-01-08 22:40:56.771 [INF] CHDB: Checking for schema update: latest_version=20, db_version=20
+2021-01-08 22:40:56.771 [INF] LTND: Database now open (time_to_open=41.930824ms)!
+2021-01-08 22:40:56.771 [INF] RPCS: Generating TLS certificates...
+2021-01-08 22:40:56.784 [INF] RPCS: Done generating TLS certificates
+2021-01-08 22:40:56.917 [INF] CHRE: Primary chain is set to: bitcoin
+2021-01-08 22:40:56.950 [INF] CHRE: Using external fee estimator http://localhost:5560/fee-estimates.json: cached=false
+2021-01-08 22:40:57.025 [INF] LNWL: Opened wallet
+2021-01-08 22:40:57.026 [INF] LNWL: The wallet has been unlocked without a time limit
+2021-01-08 22:40:57.090 [INF] CHRE: LightningWallet opened
+2021-01-08 22:40:57.090 [DBG] LNWL: Locating suitable block for birthday 2021-01-06 22:40:56 -0600 CST between blocks 0-478
+2021-01-08 22:40:57.091 [DBG] LNWL: Checking candidate block: height=239, hash=3ce592b15e1bb61e907e6b57d3d6c5a45d5d90331a8237ff5156cf2baf0e48c3, timestamp=2021-01-08 22:41:15 -0600 CST
+2021-01-08 22:40:57.091 [DBG] LNWL: Checking candidate block: height=119, hash=00f4d3ef88d51a832d2ca64d173c32fe11c4df756e4c0836ca545b4f494e7632, timestamp=2021-01-08 22:40:55 -0600 CST
+2021-01-08 22:40:57.092 [DBG] LNWL: Checking candidate block: height=59, hash=5bf2d244c4c491d4f4b964249799401859d2e67fec4899e59eade1ca7357926c, timestamp=2021-01-08 22:40:45 -0600 CST
+2021-01-08 22:40:57.092 [DBG] LNWL: Checking candidate block: height=29, hash=513b9765e136385277af42f4a5e92af3075891c2a08c894248f76f973ed1996e, timestamp=2021-01-08 22:40:40 -0600 CST
+2021-01-08 22:40:57.093 [DBG] LNWL: Checking candidate block: height=14, hash=279133534a67af6075b3a097666c0e435db9bf3d50a7f99ebd116b5ecdf13b92, timestamp=2021-01-08 22:40:38 -0600 CST
+2021-01-08 22:40:57.093 [DBG] LNWL: Checking candidate block: height=7, hash=57f552f113a498724b21c2fa2a503c569b91e390c9c7e15dc2fbc9002a34117f, timestamp=2021-01-08 22:40:36 -0600 CST
+2021-01-08 22:40:57.094 [DBG] LNWL: Checking candidate block: height=3, hash=109d2873e02b77a34eaf14d1d647770721b7bf96ce6d9d4f68be51720fd44058, timestamp=2021-01-08 22:40:35 -0600 CST
+2021-01-08 22:40:57.094 [DBG] LNWL: Checking candidate block: height=1, hash=7976a25a158f0510c124a8b07f9f6ab928282748b3c8ddba083051a554dd4e67, timestamp=2021-01-08 22:40:34 -0600 CST
+2021-01-08 22:40:57.095 [DBG] LNWL: Checking candidate block: height=0, hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, timestamp=2011-02-02 17:16:42 -0600 CST
+2021-01-08 22:40:57.095 [DBG] LNWL: Found birthday block: height=0, hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, timestamp=2011-02-02 17:16:42 -0600 CST
+2021-01-08 22:40:57.171 [INF] HSWC: Restoring in-memory circuit state from disk
+2021-01-08 22:40:57.217 [INF] HSWC: Payment circuits loaded: num_pending=0, num_open=0
+2021-01-08 22:40:57.237 [INF] LNWL: Started rescan from block 0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 (height 0) for 0 addresses
+2021-01-08 22:40:57.238 [INF] LNWL: Catching up block hashes to height 478, this might take a while
+2021-01-08 22:40:57.312 [DBG] CRTR: Instantiating mission control with config: PenaltyHalfLife=1h0m0s, AprioriHopProbability=0.6, AprioriWeight=0.5
+2021-01-08 22:40:57.332 [DBG] CRTR: Mission control state reconstruction started
+2021-01-08 22:40:57.332 [DBG] CRTR: Mission control state reconstruction finished: n=0, time=32.03µs
+2021-01-08 22:40:57.332 [DBG] SRVR: Instantiating payment session source with config: AttemptCost=100 + 0.1%, MinRouteProbability=0.01
+2021-01-08 22:40:57.369 [INF] SWPR: Migrating UTXO nursery finalized TXIDs
+2021-01-08 22:40:57.394 [INF] LTND: Channel backup proxy channel notifier starting
+2021-01-08 22:40:57.394 [INF] ATPL: Instantiating autopilot with active=false, max_channels=5, allocation=0.600000, min_chan_size=20000, max_chan_size=16777215, private=false, min_confs=1, conf_target=3
+2021-01-08 22:40:57.394 [DBG] LTND: Populating dependencies for sub RPC server: SignRPC
+2021-01-08 22:40:57.395 [DBG] LTND: Populating dependencies for sub RPC server: WalletKitRPC
+2021-01-08 22:40:57.395 [DBG] LTND: Populating dependencies for sub RPC server: AutopilotRPC
+2021-01-08 22:40:57.395 [DBG] LTND: Populating dependencies for sub RPC server: ChainRPC
+2021-01-08 22:40:57.395 [DBG] LTND: Populating dependencies for sub RPC server: InvoicesRPC
+2021-01-08 22:40:57.395 [DBG] LTND: Populating dependencies for sub RPC server: RouterRPC
+2021-01-08 22:40:57.395 [DBG] LTND: Populating dependencies for sub RPC server: WatchtowerRPC
+2021-01-08 22:40:57.395 [DBG] LTND: Populating dependencies for sub RPC server: WatchtowerClientRPC
+2021-01-08 22:40:57.395 [INF] NTFR: Baking macaroons for ChainNotifier RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/chainnotifier.macaroon
+2021-01-08 22:40:57.415 [INF] WLKT: Baking macaroons for WalletKit RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/walletkit.macaroon
+2021-01-08 22:40:57.439 [INF] RRPC: Making macaroons for Router RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/router.macaroon
+2021-01-08 22:40:57.467 [INF] SGNR: Making macaroons for Signer RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/signer.macaroon
+2021-01-08 22:40:57.480 [INF] LNWL: Done catching up block hashes
+2021-01-08 22:40:57.481 [INF] LNWL: Finished rescan for 0 addresses (synced to block 29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb, height 478)
+2021-01-08 22:40:57.503 [INF] IRPC: Baking macaroons for invoices RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/invoices.macaroon
+2021-01-08 22:40:57.523 [DBG] ARPC: Autopilot RPC server successfully register with root gRPC server
+2021-01-08 22:40:57.523 [DBG] NTFR: ChainNotifier RPC server successfully register with root gRPC server
+2021-01-08 22:40:57.523 [DBG] WLKT: WalletKit RPC server successfully registered with root gRPC server
+2021-01-08 22:40:57.523 [DBG] VRPC: Versioner RPC server successfully registered with root gRPC server
+2021-01-08 22:40:57.523 [DBG] RPCS: WatchtowerClient RPC server successfully registered with  root gRPC server
+2021-01-08 22:40:57.523 [DBG] RRPC: Router RPC server successfully register with root gRPC server
+2021-01-08 22:40:57.523 [DBG] SGNR: Signer RPC server successfully register with root gRPC server
+2021-01-08 22:40:57.523 [DBG] IRPC: Invoices RPC server successfully registered with root gRPC server
+2021-01-08 22:40:57.523 [DBG] RPCS: Starting sub RPC server: AutopilotRPC
+2021-01-08 22:40:57.523 [DBG] RPCS: Starting sub RPC server: ChainRPC
+2021-01-08 22:40:57.524 [DBG] RPCS: Starting sub RPC server: WalletKitRPC
+2021-01-08 22:40:57.524 [DBG] RPCS: Starting sub RPC server: VersionRPC
+2021-01-08 22:40:57.524 [DBG] RPCS: Starting sub RPC server: WatchtowerRPC
+2021-01-08 22:40:57.524 [DBG] RPCS: Starting sub RPC server: WatchtowerClientRPC
+2021-01-08 22:40:57.524 [DBG] RPCS: Starting sub RPC server: RouterRPC
+2021-01-08 22:40:57.524 [DBG] RPCS: Starting sub RPC server: SignRPC
+2021-01-08 22:40:57.524 [DBG] RPCS: Starting sub RPC server: InvoicesRPC
+2021-01-08 22:40:57.524 [INF] RPCS: RPC server listening on 127.0.0.1:5578
+2021-01-08 22:40:57.524 [DBG] ARPC: Autopilot REST server successfully registered with root REST server
+2021-01-08 22:40:57.524 [DBG] NTFR: ChainNotifier REST server successfully registered with root REST server
+2021-01-08 22:40:57.524 [DBG] WLKT: WalletKit REST server successfully registered with root REST server
+2021-01-08 22:40:57.524 [DBG] VRPC: Versioner REST server successfully registered with root REST server
+2021-01-08 22:40:57.524 [DBG] RRPC: Router REST server successfully registered with root REST server
+2021-01-08 22:40:57.524 [DBG] SGNR: Signer REST server successfully registered with root REST server
+2021-01-08 22:40:57.524 [DBG] IRPC: Invoices REST server successfully registered with root REST server
+2021-01-08 22:40:57.525 [WRN] HLCK: check: disk space configured with 0 attempts, skipping it
+2021-01-08 22:40:57.525 [WRN] HLCK: check: tls configured with 0 attempts, skipping it
+2021-01-08 22:40:57.525 [DBG] HLCK: Monitoring: chain backend
+2021-01-08 22:40:57.525 [INF] RPCS: gRPC proxy started at 127.0.0.1:5579
+2021-01-08 22:40:57.563 [INF] PRNF: PeerNotifier starting
+2021-01-08 22:40:57.593 [INF] HSWC: Starting HTLC Switch
+2021-01-08 22:40:57.593 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:57.593 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:57.593 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:57.594 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:57.594 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:57.594 [INF] DISC: Authenticated Gossiper is starting
+2021-01-08 22:40:57.594 [INF] BRAR: Starting contract observer, watching for breaches.
+2021-01-08 22:40:57.594 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:57.595 [DBG] DISC: New block: height=478, hash=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:57.616 [INF] CRTR: FilteredChainView starting
+2021-01-08 22:40:57.651 [INF] CRTR: Filtering chain using 0 channels active
+2021-01-08 22:40:57.652 [INF] CRTR: Prune tip for Channel Graph: height=478, hash=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:57.670 [DBG] CRTR: Cleaning network result store.
+2021-01-08 22:40:57.689 [DBG] INVC: Adding 0 pending invoices to the expiry watcher
+2021-01-08 22:40:57.689 [WRN] INVC: Deleting old invoices failed: there are no existing invoices
+2021-01-08 22:40:57.689 [INF] CHFT: Adding 0 channels to event store
+2021-01-08 22:40:57.689 [INF] CHBU: Starting chanbackup.SubSwapper
+2021-01-08 22:40:57.715 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:57.727 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:57.728 [DBG] CHBU: SubSwapper's backupUpdater is active!
+2021-01-08 22:40:57.728 [INF] BTCN: Server listening on 127.0.0.1:5577
+2021-01-08 22:40:57.753 [INF] SRVR: Auto peer bootstrapping is disabled
+2021-01-08 22:40:58.500 [DBG] CRTR: New graph topology client subscription, client 1
+2021-01-08 22:40:59.501 [DBG] CRTR: New graph topology client subscription, client 2
+2021-01-08 22:40:59.542 [INF] SRVR: New inbound connection from 127.0.0.1:50045
+2021-01-08 22:40:59.542 [INF] SRVR: Finalizing connection to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045, inbound=true
+2021-01-08 22:40:59.542 [DBG] PRNF: PeerNotifier notifying peer: 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 online
+2021-01-08 22:40:59.542 [DBG] PEER: Sending Init to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.542 [DBG] PEER: Received Init from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.542 [DBG] PEER: Loaded 0 active channels from database with NodeKey(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:40:59.542 [DBG] SRVR: Notifying that peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045 is online
+2021-01-08 22:40:59.542 [INF] PEER: Negotiated chan series queries with 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:59.542 [INF] DISC: Creating new GossipSyncer for peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:59.542 [DBG] DISC: Starting GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:40:59.543 [DBG] DISC: Attempting initial historical sync with GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:40:59.543 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=chansSynced, type=PassiveSync
+2021-01-08 22:40:59.543 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=syncingChans, type=PassiveSync
+2021-01-08 22:40:59.543 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): requesting new chans from height=0 and 478 blocks after
+2021-01-08 22:40:59.543 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=waitingQueryRangeReply, type=PassiveSync
+2021-01-08 22:40:59.543 [DBG] PEER: Received GossipTimestampRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, first_stamp=2021-01-08 22:40:59 -0600 CST, stamp_range=4294967295) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.543 [DBG] PEER: Sending QueryChannelRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, start_height=0, end_height=477) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.543 [DBG] CHDB: ChanUpdatesInHorizon hit percentage: NaN (0/0)
+2021-01-08 22:40:59.543 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): applying new update horizon: start=2021-01-08 22:40:59 -0600 CST, end=2157-02-15 05:09:14 -0600 CST, backlog_size=0
+2021-01-08 22:40:59.543 [DBG] PEER: Received ReplyChannelRange(start_height=0, end_height=477, num_chans=1, encoding=0) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.543 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): buffering chan range reply of size=1
+2021-01-08 22:40:59.543 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): filtering through 1 chans
+2021-01-08 22:40:59.543 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): starting query for 1 new chans
+2021-01-08 22:40:59.543 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=queryNewChannels, type=PassiveSync
+2021-01-08 22:40:59.543 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): querying for 1 new channels
+2021-01-08 22:40:59.543 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=waitingQueryChanReply, type=PassiveSync
+2021-01-08 22:40:59.543 [DBG] PEER: Sending QueryShortChanIDs(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, encoding=0, num_chans=1) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.544 [DBG] PEER: Received ChannelAnnouncement(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.544 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584, mflags=00000001, cflags=00000000, update_time=2021-01-08 22:40:55 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.544 [DBG] PEER: Received NodeAnnouncement(node=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, update_time=2021-01-08 22:40:56 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.544 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584, mflags=00000001, cflags=00000001, update_time=2021-01-08 22:40:55 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.544 [DBG] PEER: Received NodeAnnouncement(node=024934751e8bdf7d3282f835d7a2adc81d29bcfeec5b50b3a2f75ced0ab4174953, update_time=2021-01-08 22:40:56 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.545 [DBG] PEER: Received ReplyShortChanIDsEnd(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, complete=1) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.545 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=queryNewChannels, type=PassiveSync
+2021-01-08 22:40:59.545 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): no more chans to query
+2021-01-08 22:40:59.545 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=chansSynced, type=PassiveSync
+2021-01-08 22:40:59.545 [DBG] DISC: Initial historical sync completed
+2021-01-08 22:40:59.545 [DBG] DISC: Attempting to transition 3 passive GossipSyncers to active
+2021-01-08 22:40:59.545 [DBG] DISC: Transitioning passive GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782) to active
+2021-01-08 22:40:59.545 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): transitioning from PassiveSync to ActiveSync
+2021-01-08 22:40:59.545 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): applying gossipFilter(start=2021-01-08 22:40:59.5453 -0600 CST m=+2.864091339, end=2157-02-15 05:09:14.5453 -0600 CST m=+4294967297.864091339)
+2021-01-08 22:40:59.545 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=chansSynced, type=ActiveSync
+2021-01-08 22:40:59.545 [DBG] PEER: Sending GossipTimestampRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, first_stamp=2021-01-08 22:40:59 -0600 CST, stamp_range=4294967295) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:40:59.612 [ERR] RPCS: [/lnrpc.Lightning/SubscribeChannelGraph]: rpc error: code = Internal desc = transport: transport: the stream is done or WriteHeader was already called
+2021-01-08 22:40:59.747 [DBG] RPCS: [walletbalance] Total balance=0 BTC (confirmed=0 BTC, unconfirmed=0 BTC)
+2021-01-08 22:40:59.771 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qs02250yw5j3ptst0cwpzllpptsnywruc3unh5x
+2021-01-08 22:40:59.835 [INF] LNWL: Inserting unconfirmed transaction 76334ce9df46db168a2e880082f379b96e194541f2b96b1d7ce2f2c5f67a13db
+2021-01-08 22:40:59.835 [DBG] LNWL: Marked address bcrt1qs02250yw5j3ptst0cwpzllpptsnywruc3unh5x used
+2021-01-08 22:40:59.976 [DBG] RPCS: [listunspent] min=0 max=0, generated utxos: [76334ce9df46db168a2e880082f379b96e194541f2b96b1d7ce2f2c5f67a13db:0]
+2021-01-08 22:40:59.980 [INF] LNWL: Marking unconfirmed transaction 76334ce9df46db168a2e880082f379b96e194541f2b96b1d7ce2f2c5f67a13db mined in block 479
+2021-01-08 22:40:59.980 [DBG] LNWL: Marked address bcrt1qs02250yw5j3ptst0cwpzllpptsnywruc3unh5x used
+2021-01-08 22:40:59.980 [INF] CRTR: Pruning channel graph using block 048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66 (height=479)
+2021-01-08 22:41:00.076 [INF] CRTR: Block 048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66 (height=479) closed 0 channels
+2021-01-08 22:41:00.084 [INF] CRTR: Pruning channel graph using block 4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8 (height=480)
+2021-01-08 22:41:00.150 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 479
+2021-01-08 22:41:00.170 [INF] NTFN: New block: height=479, sha=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.191 [DBG] SWPR: New block: height=479, sha=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.191 [DBG] DISC: New block: height=479, hash=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.191 [INF] UTXN: Attempting to graduate height=479: num_kids=0, num_babies=0
+2021-01-08 22:41:00.198 [INF] CRTR: Block 4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8 (height=480) closed 0 channels
+2021-01-08 22:41:00.247 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 480
+2021-01-08 22:41:00.247 [INF] NTFN: New block: height=480, sha=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.247 [DBG] DISC: New block: height=480, hash=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.247 [DBG] SWPR: New block: height=480, sha=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.247 [INF] UTXN: Attempting to graduate height=480: num_kids=0, num_babies=0
+2021-01-08 22:41:00.248 [INF] CRTR: Pruning channel graph using block 7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6 (height=481)
+2021-01-08 22:41:00.250 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 481
+2021-01-08 22:41:00.250 [INF] NTFN: New block: height=481, sha=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.250 [DBG] DISC: New block: height=481, hash=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.250 [DBG] SWPR: New block: height=481, sha=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.250 [INF] UTXN: Attempting to graduate height=481: num_kids=0, num_babies=0
+2021-01-08 22:41:00.251 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 482
+2021-01-08 22:41:00.258 [INF] NTFN: New block: height=482, sha=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.341 [INF] CRTR: Block 7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6 (height=481) closed 0 channels
+2021-01-08 22:41:00.431 [INF] CRTR: Pruning channel graph using block 4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9 (height=482)
+2021-01-08 22:41:00.367 [INF] UTXN: Attempting to graduate height=482: num_kids=0, num_babies=0
+2021-01-08 22:41:00.367 [DBG] SWPR: New block: height=482, sha=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.367 [DBG] DISC: New block: height=482, hash=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.449 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 483
+2021-01-08 22:41:00.450 [DBG] RPCS: [walletbalance] Total balance=1 BTC (confirmed=1 BTC, unconfirmed=0 BTC)
+2021-01-08 22:41:00.564 [INF] CRTR: Block 4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9 (height=482) closed 0 channels
+2021-01-08 22:41:00.565 [INF] CRTR: Pruning channel graph using block 68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089 (height=483)
+2021-01-08 22:41:00.565 [INF] NTFN: New block: height=483, sha=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.565 [INF] UTXN: Attempting to graduate height=483: num_kids=0, num_babies=0
+2021-01-08 22:41:00.566 [DBG] SWPR: New block: height=483, sha=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.566 [DBG] DISC: New block: height=483, hash=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.567 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 484
+2021-01-08 22:41:00.567 [INF] NTFN: New block: height=484, sha=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.567 [DBG] RPCS: [walletbalance] Total balance=1 BTC (confirmed=1 BTC, unconfirmed=0 BTC)
+2021-01-08 22:41:00.567 [DBG] DISC: New block: height=484, hash=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.567 [INF] UTXN: Attempting to graduate height=484: num_kids=0, num_babies=0
+2021-01-08 22:41:00.567 [DBG] SWPR: New block: height=484, sha=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.625 [INF] CRTR: Block 68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089 (height=483) closed 0 channels
+2021-01-08 22:41:00.626 [INF] CRTR: Pruning channel graph using block 64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424 (height=484)
+2021-01-08 22:41:00.626 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qyzf9j9qyda79kmzlu76a9cu0dc3tncs875njwx
+2021-01-08 22:41:00.713 [INF] CRTR: Block 64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424 (height=484) closed 0 channels
+2021-01-08 22:41:00.755 [INF] LNWL: Inserting unconfirmed transaction 2d2dc454ef5deb736933ad92ba7c714fe1220d25a6b78192a31f87b57a0a00ec
+2021-01-08 22:41:00.755 [DBG] LNWL: Marked address bcrt1qyzf9j9qyda79kmzlu76a9cu0dc3tncs875njwx used
+2021-01-08 22:41:00.920 [DBG] RPCS: [listunspent] min=0 max=0, generated utxos: [2d2dc454ef5deb736933ad92ba7c714fe1220d25a6b78192a31f87b57a0a00ec:0]
+2021-01-08 22:41:00.926 [INF] CRTR: Pruning channel graph using block 6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b (height=485)
+2021-01-08 22:41:00.926 [INF] LNWL: Marking unconfirmed transaction 2d2dc454ef5deb736933ad92ba7c714fe1220d25a6b78192a31f87b57a0a00ec mined in block 485
+2021-01-08 22:41:00.927 [DBG] LNWL: Marked address bcrt1qyzf9j9qyda79kmzlu76a9cu0dc3tncs875njwx used
+2021-01-08 22:41:00.928 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 485
+2021-01-08 22:41:00.928 [INF] NTFN: New block: height=485, sha=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:00.928 [DBG] SWPR: New block: height=485, sha=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:00.928 [INF] UTXN: Attempting to graduate height=485: num_kids=0, num_babies=0
+2021-01-08 22:41:00.928 [DBG] DISC: New block: height=485, hash=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:00.978 [INF] CRTR: Block 6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b (height=485) closed 0 channels
+2021-01-08 22:41:01.005 [INF] CRTR: Pruning channel graph using block 09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0 (height=486)
+2021-01-08 22:41:01.133 [DBG] RPCS: [walletbalance] Total balance=2 BTC (confirmed=2 BTC, unconfirmed=0 BTC)
+2021-01-08 22:41:01.169 [INF] CRTR: Block 09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0 (height=486) closed 0 channels
+2021-01-08 22:41:01.196 [INF] CRTR: Pruning channel graph using block 6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0 (height=487)
+2021-01-08 22:41:01.196 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 486
+2021-01-08 22:41:01.289 [INF] NTFN: New block: height=486, sha=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.288 [INF] CRTR: Block 6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0 (height=487) closed 0 channels
+2021-01-08 22:41:01.338 [INF] CRTR: Pruning channel graph using block 1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200 (height=488)
+2021-01-08 22:41:01.338 [DBG] SWPR: New block: height=486, sha=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.339 [INF] UTXN: Attempting to graduate height=486: num_kids=0, num_babies=0
+2021-01-08 22:41:01.339 [DBG] DISC: New block: height=486, hash=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.412 [INF] CRTR: Block 1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200 (height=488) closed 0 channels
+2021-01-08 22:41:01.414 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 487
+2021-01-08 22:41:01.414 [INF] NTFN: New block: height=487, sha=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.415 [DBG] SWPR: New block: height=487, sha=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.415 [INF] UTXN: Attempting to graduate height=487: num_kids=0, num_babies=0
+2021-01-08 22:41:01.415 [DBG] DISC: New block: height=487, hash=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.415 [INF] CRTR: Pruning channel graph using block 6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b (height=489)
+2021-01-08 22:41:01.416 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 488
+2021-01-08 22:41:01.416 [INF] NTFN: New block: height=488, sha=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.416 [DBG] SWPR: New block: height=488, sha=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.416 [INF] UTXN: Attempting to graduate height=488: num_kids=0, num_babies=0
+2021-01-08 22:41:01.416 [DBG] DISC: New block: height=488, hash=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.418 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 489
+2021-01-08 22:41:01.418 [INF] NTFN: New block: height=489, sha=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:01.434 [DBG] SWPR: New block: height=489, sha=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:01.434 [INF] UTXN: Attempting to graduate height=489: num_kids=0, num_babies=0
+2021-01-08 22:41:01.434 [DBG] DISC: New block: height=489, hash=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:01.495 [INF] CRTR: Block 6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b (height=489) closed 0 channels
+2021-01-08 22:41:01.631 [INF] CRTR: Pruning channel graph using block 720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d (height=490)
+2021-01-08 22:41:01.570 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 490
+2021-01-08 22:41:01.632 [INF] NTFN: New block: height=490, sha=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:01.632 [DBG] SWPR: New block: height=490, sha=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:01.632 [INF] UTXN: Attempting to graduate height=490: num_kids=0, num_babies=0
+2021-01-08 22:41:01.632 [DBG] DISC: New block: height=490, hash=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:01.694 [INF] CRTR: Block 720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d (height=490) closed 0 channels
+2021-01-08 22:41:02.118 [DBG] PEER: Received MsgOpenChannel(temp_chan_id=665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449, chain=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, csv=4, amt=0.01 BTC, push_amt=0 mSAT, reserve=0.0001 BTC, flags=1) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:02.119 [INF] FNDG: Recv'd fundingRequest(amt=0.01 BTC, push=0 mSAT, delay=4, pendingId=665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449) from peer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:41:02.119 [INF] CHFD: Performing funding tx coin selection using 0 sat/kw as fee rate
+2021-01-08 22:41:02.292 [INF] FNDG: Requiring 1 confirmations for pendingChan(665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449): amt=0.01 BTC, push_amt=0 mSAT, committype=legacy, upfrontShutdown=
+2021-01-08 22:41:02.292 [INF] FNDG: Sending fundingResp for pending_id(665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449)
+2021-01-08 22:41:02.293 [DBG] FNDG: Remote party accepted commitment constraints: (channeldb.ChannelConstraints) {
+ DustLimit: (btcutil.Amount) 0.00000573 BTC,
+ ChanReserve: (btcutil.Amount) 0.0001 BTC,
+ MaxPendingAmount: (lnwire.MilliSatoshi) 990000000 mSAT,
+ MinHTLC: (lnwire.MilliSatoshi) 1 mSAT,
+ MaxAcceptedHtlcs: (uint16) 483,
+ CsvDelay: (uint16) 4
+}
+
+2021-01-08 22:41:02.293 [DBG] PEER: Sending MsgAcceptChannel(temp_chan_id=665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449, reserve=0.0001 BTC, csv=4, num_confs=1) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:02.315 [DBG] PEER: Received MsgFundingCreated(temp_chan_id=665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449, chan_point=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:02.315 [INF] FNDG: completing pending_id(665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449) with ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:02.317 [DBG] LNWL: Local commit tx for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): (*wire.MsgTx)(0xc001083dc0)({
+ Version: (int32) 2,
+ TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+  (*wire.TxIn)(0xc000b1ed20)({
+   PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+   SignatureScript: ([]uint8) <nil>,
+   Witness: (wire.TxWitness) <nil>,
+   Sequence: (uint32) 2151901754
+  })
+ },
+ TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+  (*wire.TxOut)(0xc000c35c00)({
+   Value: (int64) 990950,
+   PkScript: ([]uint8) (len=22 cap=500) {
+    00000000  00 14 a6 41 27 37 ca 55  e2 e9 78 6b 5d 3a 6f d1  |...A'7.U..xk]:o.|
+    00000010  26 0c ae 0e 7c ef                                 |&...|.|
+   }
+  })
+ },
+ LockTime: (uint32) 546735475
+})
+
+2021-01-08 22:41:02.317 [DBG] LNWL: Remote commit tx for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): (*wire.MsgTx)(0xc001083e00)({
+ Version: (int32) 2,
+ TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+  (*wire.TxIn)(0xc000b1ed80)({
+   PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+   SignatureScript: ([]uint8) <nil>,
+   Witness: (wire.TxWitness) <nil>,
+   Sequence: (uint32) 2151901754
+  })
+ },
+ TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+  (*wire.TxOut)(0xc000c35c20)({
+   Value: (int64) 990950,
+   PkScript: ([]uint8) (len=34 cap=500) {
+    00000000  00 20 80 a1 60 f6 a3 61  e5 97 bc bc b0 63 3d 47  |. ..`..a.....c=G|
+    00000010  da a7 3c 6e 5c 8a eb ff  1f b4 2c ab 29 02 7c 8b  |..<n\.....,.).|.|
+    00000020  d6 5e                                             |.^|
+   }
+  })
+ },
+ LockTime: (uint32) 546735475
+})
+
+2021-01-08 22:41:02.341 [DBG] FNDG: Creating chan barrier for ChanID(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d)
+2021-01-08 22:41:02.341 [INF] FNDG: sending FundingSigned for pending_id(665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449) over ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:02.341 [DBG] PEER: Sending MsgFundingSigned(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:02.341 [INF] CNCT: Creating new ChannelArbitrator for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:02.341 [DBG] CNCT: New ChainEventSubscription(id=0) for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:02.341 [DBG] CNCT: Starting ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0), htlc_set=(map[contractcourt.HtlcSetKey]contractcourt.htlcSet) (len=2) {
+ (contractcourt.HtlcSetKey) LocalHtlcSet: (contractcourt.htlcSet) {
+  incomingHTLCs: (map[uint64]channeldb.HTLC) {
+  },
+  outgoingHTLCs: (map[uint64]channeldb.HTLC) {
+  }
+ },
+ (contractcourt.HtlcSetKey) RemoteHtlcSet: (contractcourt.htlcSet) {
+  incomingHTLCs: (map[uint64]channeldb.HTLC) {
+  },
+  outgoingHTLCs: (map[uint64]channeldb.HTLC) {
+  }
+ }
+}
+
+2021-01-08 22:41:02.342 [INF] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): starting state=StateDefault, trigger=chainTrigger, triggerHeight=490
+2021-01-08 22:41:02.342 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=490) examining active HTLC's
+2021-01-08 22:41:02.342 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=490, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:02.342 [DBG] CNCT: Starting chain watcher for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:02.342 [INF] NTFN: New spend subscription: spend_id=1, outpoint=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0, script=0 74cf57fcc7fdf825ad0f00b4f80e714af2c60705ccabc7746a6f45946635502b, height_hint=490
+2021-01-08 22:41:02.342 [INF] NTFN: Dispatching historical spend rescan for outpoint=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0, script=0 74cf57fcc7fdf825ad0f00b4f80e714af2c60705ccabc7746a6f45946635502b, start=490, end=490
+2021-01-08 22:41:02.344 [INF] CNCT: Close observer for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) active
+2021-01-08 22:41:02.344 [INF] NTFN: New block epoch subscription
+2021-01-08 22:41:02.344 [INF] NTFN: New confirmation subscription: conf_id=1, txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6, num_confs=1 height_hint=490
+2021-01-08 22:41:02.344 [DBG] CHBU: Adding channel 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0 to backup state
+2021-01-08 22:41:02.344 [DBG] NTFN: Dispatching historical confirmation rescan for txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6
+2021-01-08 22:41:02.344 [INF] FNDG: Waiting for funding tx (6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6) to reach 1 confirmations
+2021-01-08 22:41:02.344 [INF] CHBU: Updating on-disk multi SCB backup: num_old_chans=0, num_new_chans=1
+2021-01-08 22:41:02.344 [DBG] NTFN: Confirmation details for txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6 not found during historical dispatch, waiting to dispatch at tip
+2021-01-08 22:41:02.433 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:41:02.456 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:41:02.549 [INF] CRTR: Pruning channel graph using block 73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0 (height=491)
+2021-01-08 22:41:02.621 [INF] CRTR: Block 73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0 (height=491) closed 0 channels
+2021-01-08 22:41:02.641 [INF] CRTR: Pruning channel graph using block 5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1 (height=492)
+2021-01-08 22:41:02.642 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 491
+2021-01-08 22:41:02.686 [DBG] NTFN: Found initial confirmation of txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6: height=491, hash=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.730 [INF] CRTR: Block 5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1 (height=492) closed 0 channels
+2021-01-08 22:41:02.766 [INF] CRTR: Pruning channel graph using block 546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f (height=493)
+2021-01-08 22:41:02.794 [INF] NTFN: New block: height=491, sha=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.817 [INF] NTFN: Dispatching 1 confirmation notification for txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6
+2021-01-08 22:41:02.817 [INF] UTXN: Attempting to graduate height=491: num_kids=0, num_babies=0
+2021-01-08 22:41:02.817 [DBG] DISC: New block: height=491, hash=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.817 [DBG] SWPR: New block: height=491, sha=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.817 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=491) examining active HTLC's
+2021-01-08 22:41:02.851 [INF] CRTR: Block 546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f (height=493) closed 0 channels
+2021-01-08 22:41:03.163 [INF] CRTR: Pruning channel graph using block 41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b (height=494)
+2021-01-08 22:41:02.863 [INF] FNDG: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) is now active: ChannelID(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d)
+2021-01-08 22:41:02.996 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 492
+2021-01-08 22:41:03.142 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=491, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.163 [DBG] FNDG: ChannelID(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) is now fully confirmed! (shortChanID=491:1:0)
+2021-01-08 22:41:03.163 [INF] NTFN: New block: height=492, sha=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:03.163 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=492) examining active HTLC's
+2021-01-08 22:41:03.163 [DBG] DISC: New block: height=492, hash=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:03.163 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=492, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.163 [INF] UTXN: Attempting to graduate height=492: num_kids=0, num_babies=0
+2021-01-08 22:41:03.163 [DBG] SWPR: New block: height=492, sha=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:03.164 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 493
+2021-01-08 22:41:03.164 [INF] NTFN: New block: height=493, sha=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:03.164 [INF] NTFN: Cancelling epoch notification, epoch_id=7
+2021-01-08 22:41:03.164 [INF] UTXN: Attempting to graduate height=493: num_kids=0, num_babies=0
+2021-01-08 22:41:03.164 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=493) examining active HTLC's
+2021-01-08 22:41:03.164 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=493, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.164 [DBG] DISC: New block: height=493, hash=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:03.164 [DBG] SWPR: New block: height=493, sha=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:03.165 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 494
+2021-01-08 22:41:03.165 [INF] NTFN: New block: height=494, sha=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:03.165 [DBG] DISC: New block: height=494, hash=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:03.165 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=494) examining active HTLC's
+2021-01-08 22:41:03.165 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=494, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.165 [INF] UTXN: Attempting to graduate height=494: num_kids=0, num_babies=0
+2021-01-08 22:41:03.165 [DBG] SWPR: New block: height=494, sha=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:03.165 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): starting local commitment: (*lnwallet.commitment)(0xc000342000)({
+ height: (uint64) 0,
+ isOurs: (bool) true,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001083dc0)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000b1ed20)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc000c35c00)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=22 cap=500) {
+     00000000  00 14 a6 41 27 37 ca 55  e2 e9 78 6b 5d 3a 6f d1  |...A'7.U..xk]:o.|
+     00000010  26 0c ae 0e 7c ef                                 |&...|.|
+    }
+   })
+  },
+  LockTime: (uint32) 546735475
+ }),
+ sig: ([]uint8) (len=71 cap=71) {
+  00000000  30 45 02 21 00 e9 74 75  56 bb 6c bf a3 48 89 db  |0E.!..tuV.l..H..|
+  00000010  7c ba e1 30 b6 44 f0 b4  79 c3 bf c5 d6 52 6e dd  ||..0.D..y....Rn.|
+  00000020  f8 1f c8 97 c5 02 20 3f  e9 a9 cb db 41 fb b6 cf  |...... ?....A...|
+  00000030  79 0a 3c 10 3d 26 79 c6  68 d9 a2 ec 07 52 a6 d6  |y.<.=&y.h....R..|
+  00000040  e4 5f 2b a6 58 d4 01                              |._+.X..|
+ },
+ ourBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:41:03.166 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 495
+2021-01-08 22:41:03.166 [INF] NTFN: New block: height=495, sha=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:03.166 [INF] UTXN: Attempting to graduate height=495: num_kids=0, num_babies=0
+2021-01-08 22:41:03.166 [DBG] SWPR: New block: height=495, sha=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:03.166 [DBG] DISC: New block: height=495, hash=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:03.166 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=495) examining active HTLC's
+2021-01-08 22:41:03.166 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=495, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.167 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 496
+2021-01-08 22:41:03.167 [INF] NTFN: New block: height=496, sha=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.167 [INF] UTXN: Attempting to graduate height=496: num_kids=0, num_babies=0
+2021-01-08 22:41:03.167 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=496) examining active HTLC's
+2021-01-08 22:41:03.167 [DBG] DISC: New block: height=496, hash=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.167 [DBG] SWPR: New block: height=496, sha=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.168 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): starting remote commitment: (*lnwallet.commitment)(0xc000fb2000)({
+ height: (uint64) 0,
+ isOurs: (bool) false,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001083e00)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000b1ed80)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc000c35c20)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=34 cap=500) {
+     00000000  00 20 80 a1 60 f6 a3 61  e5 97 bc bc b0 63 3d 47  |. ..`..a.....c=G|
+     00000010  da a7 3c 6e 5c 8a eb ff  1f b4 2c ab 29 02 7c 8b  |..<n\.....,.).|.|
+     00000020  d6 5e                                             |.^|
+    }
+   })
+  },
+  LockTime: (uint32) 546735475
+ }),
+ sig: ([]uint8) <nil>,
+ ourBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:41:03.202 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=496, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.211 [INF] CRTR: Block 41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b (height=494) closed 0 channels
+2021-01-08 22:41:03.407 [INF] CRTR: Pruning channel graph using block 3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c (height=495)
+2021-01-08 22:41:03.212 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): Restoring 0 dangling remote updates
+2021-01-08 22:41:03.407 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): Restoring 0 local updates that the peer should sign
+2021-01-08 22:41:03.469 [INF] CRTR: Block 3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c (height=495) closed 0 channels
+2021-01-08 22:41:03.470 [INF] CRTR: Pruning channel graph using block 31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876 (height=496)
+2021-01-08 22:41:03.680 [ERR] FNDG: unable to report short chan id: link c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d not found
+2021-01-08 22:41:03.680 [DBG] CHBU: Adding channel 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0 to backup state
+2021-01-08 22:41:03.682 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): starting local commitment: (*lnwallet.commitment)(0xc0002d4000)({
+ height: (uint64) 0,
+ isOurs: (bool) true,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001083dc0)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000b1ed20)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc000c35c00)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=22 cap=500) {
+     00000000  00 14 a6 41 27 37 ca 55  e2 e9 78 6b 5d 3a 6f d1  |...A'7.U..xk]:o.|
+     00000010  26 0c ae 0e 7c ef                                 |&...|.|
+    }
+   })
+  },
+  LockTime: (uint32) 546735475
+ }),
+ sig: ([]uint8) (len=71 cap=71) {
+  00000000  30 45 02 21 00 e9 74 75  56 bb 6c bf a3 48 89 db  |0E.!..tuV.l..H..|
+  00000010  7c ba e1 30 b6 44 f0 b4  79 c3 bf c5 d6 52 6e dd  ||..0.D..y....Rn.|
+  00000020  f8 1f c8 97 c5 02 20 3f  e9 a9 cb db 41 fb b6 cf  |...... ?....A...|
+  00000030  79 0a 3c 10 3d 26 79 c6  68 d9 a2 ec 07 52 a6 d6  |y.<.=&y.h....R..|
+  00000040  e4 5f 2b a6 58 d4 01                              |._+.X..|
+ },
+ ourBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:41:03.716 [INF] CHBU: Updating on-disk multi SCB backup: num_old_chans=1, num_new_chans=1
+2021-01-08 22:41:03.725 [INF] CRTR: Block 31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876 (height=496) closed 0 channels
+2021-01-08 22:41:03.728 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): starting remote commitment: (*lnwallet.commitment)(0xc000382300)({
+ height: (uint64) 0,
+ isOurs: (bool) false,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001083e00)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000b1ed80)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc000c35c20)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=34 cap=500) {
+     00000000  00 20 80 a1 60 f6 a3 61  e5 97 bc bc b0 63 3d 47  |. ..`..a.....c=G|
+     00000010  da a7 3c 6e 5c 8a eb ff  1f b4 2c ab 29 02 7c 8b  |..<n\.....,.).|.|
+     00000020  d6 5e                                             |.^|
+    }
+   })
+  },
+  LockTime: (uint32) 546735475
+ }),
+ sig: ([]uint8) <nil>,
+ ourBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:41:03.754 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): Restoring 0 dangling remote updates
+2021-01-08 22:41:03.755 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): Restoring 0 local updates that the peer should sign
+2021-01-08 22:41:03.755 [DBG] FNDG: Channel(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) with ShortChanID 491:1:0 has opening state 0
+2021-01-08 22:41:03.755 [DBG] SRVR: Notifying that peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 is online
+2021-01-08 22:41:03.755 [INF] FNDG: Peer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782) is online, sending FundingLocked for ChannelID(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d)
+2021-01-08 22:41:03.755 [DBG] PEER: Sending FundingLocked(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, next_point=02c723321b73f5dae32ed95816ad63e39871b26aa28c1b34803d7a25ded86592ea) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:03.792 [DBG] FNDG: Channel(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) with ShortChanID 491:1:0: successfully sent FundingLocked
+2021-01-08 22:41:03.793 [DBG] FNDG: Channel(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) with ShortChanID 491:1:0 has opening state 1
+2021-01-08 22:41:03.793 [WRN] CHBU: Replacing disk backup for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) w/ newer version
+2021-01-08 22:41:03.890 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:41:03.903 [DBG] PEER: Received FundingLocked(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, next_point=0200ec539d72b216980736c37dcf93bf3e18f0a160015bfec46454dd587963b7ea) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:03.903 [DBG] FNDG: Received FundingLocked for ChannelID(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) from peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:41:03.961 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:41:03.963 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): starting local commitment: (*lnwallet.commitment)(0xc0000b0540)({
+ height: (uint64) 0,
+ isOurs: (bool) true,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc000cfc700)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=1) {
+   (*wire.TxIn)(0xc0009ba8a0)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) {
+    },
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=1) {
+   (*wire.TxOut)(0xc00043fae0)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=22 cap=22) {
+     00000000  00 14 a6 41 27 37 ca 55  e2 e9 78 6b 5d 3a 6f d1  |...A'7.U..xk]:o.|
+     00000010  26 0c ae 0e 7c ef                                 |&...|.|
+    }
+   })
+  },
+  LockTime: (uint32) 546735475
+ }),
+ sig: ([]uint8) (len=71 cap=71) {
+  00000000  30 45 02 21 00 e9 74 75  56 bb 6c bf a3 48 89 db  |0E.!..tuV.l..H..|
+  00000010  7c ba e1 30 b6 44 f0 b4  79 c3 bf c5 d6 52 6e dd  ||..0.D..y....Rn.|
+  00000020  f8 1f c8 97 c5 02 20 3f  e9 a9 cb db 41 fb b6 cf  |...... ?....A...|
+  00000030  79 0a 3c 10 3d 26 79 c6  68 d9 a2 ec 07 52 a6 d6  |y.<.=&y.h....R..|
+  00000040  e4 5f 2b a6 58 d4 01                              |._+.X..|
+ },
+ ourBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:41:03.988 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): starting remote commitment: (*lnwallet.commitment)(0xc0002d4240)({
+ height: (uint64) 0,
+ isOurs: (bool) false,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc000cfc740)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=1) {
+   (*wire.TxIn)(0xc0009ba900)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) {
+    },
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=1) {
+   (*wire.TxOut)(0xc00043fb20)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=34 cap=34) {
+     00000000  00 20 80 a1 60 f6 a3 61  e5 97 bc bc b0 63 3d 47  |. ..`..a.....c=G|
+     00000010  da a7 3c 6e 5c 8a eb ff  1f b4 2c ab 29 02 7c 8b  |..<n\.....,.).|.|
+     00000020  d6 5e                                             |.^|
+    }
+   })
+  },
+  LockTime: (uint32) 546735475
+ }),
+ sig: ([]uint8) {
+ },
+ ourBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:41:04.024 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): Restoring 0 dangling remote updates
+2021-01-08 22:41:04.024 [DBG] LNWL: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): Restoring 0 local updates that the peer should sign
+2021-01-08 22:41:04.024 [INF] PEER: New channel active ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) with NodeKey(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:41:04.024 [DBG] CNCT: New ChainEventSubscription(id=1) for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:04.024 [INF] HSWC: Removing channel link with ChannelID(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d)
+2021-01-08 22:41:04.024 [INF] HSWC: ChannelLink(491:1:0): starting
+2021-01-08 22:41:04.024 [INF] HSWC: Trimming open circuits for chan_id=491:1:0, start_htlc_id=0
+2021-01-08 22:41:04.024 [INF] HSWC: Adding live link chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, short_chan_id=491:1:0
+2021-01-08 22:41:04.024 [INF] CNCT: Attempting to update ContractSignals for ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:04.024 [INF] HSWC: ChannelLink(491:1:0): HTLC manager started, bandwidth=0 mSAT
+2021-01-08 22:41:04.024 [DBG] HSWC: ChannelLink(491:1:0): loaded 0 fwd pks
+2021-01-08 22:41:04.118 [DBG] DISC: Requesting online notification for peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:41:04.129 [DBG] SRVR: Notifying that peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 is online
+2021-01-08 22:41:04.130 [DBG] DISC: Peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 is now online, proceeding to send pending messages
+2021-01-08 22:41:04.130 [DBG] DISC: Requesting offline notification for peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:41:04.130 [DBG] DISC: Successfully sent ChannelUpdate message for channel=491:1:0 with peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 upon reconnection
+2021-01-08 22:41:04.130 [DBG] PEER: Sending ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552, mflags=00000001, cflags=00000001, update_time=2021-01-08 22:41:03 -0600 CST) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.160 [DBG] FNDG: Channel(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) with ShortChanID 491:1:0: successfully added to router graph
+2021-01-08 22:41:04.160 [DBG] FNDG: Channel(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) with ShortChanID 491:1:0 has opening state 2
+2021-01-08 22:41:04.160 [DBG] FNDG: Will announce channel 539860209303552 after ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) has gotten 6 confirmations
+2021-01-08 22:41:04.161 [DBG] NTFN: Using height hint 491 retrieved from cache for txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6 instead of 490
+2021-01-08 22:41:04.161 [INF] NTFN: New confirmation subscription: conf_id=2, txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6, num_confs=6 height_hint=491
+2021-01-08 22:41:04.161 [DBG] NTFN: Attempting to dispatch confirmation for txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6 on registration since rescan has finished
+2021-01-08 22:41:04.161 [INF] NTFN: Dispatching 6 confirmation notification for txid=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6
+2021-01-08 22:41:04.161 [INF] FNDG: Announcing ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0), short_chan_id=491:1:0
+2021-01-08 22:41:04.246 [INF] DISC: Received new local channel announcement for 491:1:0
+2021-01-08 22:41:04.247 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552, mflags=00000001, cflags=00000000, update_time=2021-01-08 22:41:03 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.282 [DBG] DISC: Successfully sent AnnounceSignatures message for channel=491:1:0 with peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:41:04.282 [DBG] PEER: Sending AnnounceSignatures(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, short_chan_id=539860209303552) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.319 [INF] DISC: 1/2 of channel ann proof received for short_chan_id=539860209303552, waiting for other half
+2021-01-08 22:41:04.404 [DBG] FNDG: Channel with ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0), short_chan_id=491:1:0 announced
+2021-01-08 22:41:04.416 [DBG] PEER: Received AnnounceSignatures(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, short_chan_id=539860209303552) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.416 [INF] DISC: Received new remote channel announcement for 491:1:0
+2021-01-08 22:41:04.445 [DBG] FNDG: Channel(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d) with ShortChanID 491:1:0: successfully announced
+2021-01-08 22:41:04.446 [DBG] FNDG: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) with chan_id=665f48500067a0309ccc284b342d97a1298fdb6be6edfaeddfda4dea2ecf1449 not found in opening database, assuming already announced to the network
+2021-01-08 22:41:04.502 [DBG] PEER: Received ChannelAnnouncement(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.502 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552, mflags=00000001, cflags=00000000, update_time=2021-01-08 22:41:03 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.532 [INF] DISC: Fully valid channel proof for short_chan_id=539860209303552 constructed, adding to next ann batch
+2021-01-08 22:41:04.533 [INF] DISC: Broadcasting 5 new announcements in 1 sub batches
+2021-01-08 22:41:04.533 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.533 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.533 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.533 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.533 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.533 [DBG] PEER: Sending ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552, mflags=00000001, cflags=00000001, update_time=2021-01-08 22:41:03 -0600 CST) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.533 [DBG] PEER: Sending NodeAnnouncement(node=03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569, update_time=2021-01-08 22:41:04 -0600 CST) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.665 [DBG] PEER: Received NodeAnnouncement(node=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, update_time=2021-01-08 22:41:04 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:04.693 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:04.749 [INF] DISC: Broadcasting 1 new announcements in 1 sub batches
+2021-01-08 22:41:04.750 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:06.432 [DBG] PEER: Received UpdateAddHTLC(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, id=0, amt=300000000 mSAT, expiry=539, hash=9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:06.432 [DBG] PEER: Received UpdateAddHTLC(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, id=1, amt=100000 mSAT, expiry=539, hash=d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:06.589 [DBG] PEER: Received CommitSig(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, num_htlcs=1) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:06.616 [DBG] PEER: Sending RevokeAndAck(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, rev=c196874b33d76b1b68b554606e5f3f367aa2873b7b0be62117fe3769d533045d, next_point=02df04b40efdcac79b050be22e308b8daa28743d3bce01a37e6a939f287196059d) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:06.719 [DBG] PEER: Sending CommitSig(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, num_htlcs=1) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:06.766 [DBG] PEER: Received RevokeAndAck(chan_id=c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d, rev=aa3f32e95820b0e9c4e9a58d064021a0bfe7929e452d5eba7ff11aa41af13be5, next_point=03edbbd445721331736c72da718e510f94ccbf3eb71c454a6b9248ffd75cb5a2f0) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:06.768 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:06.798 [INF] CRTR: Pruning channel graph using block 61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c (height=497)
+2021-01-08 22:41:06.800 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 497
+2021-01-08 22:41:06.800 [INF] NTFN: New block: height=497, sha=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:06.800 [DBG] SWPR: New block: height=497, sha=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:06.800 [DBG] DISC: New block: height=497, hash=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:06.800 [INF] UTXN: Attempting to graduate height=497: num_kids=0, num_babies=0
+2021-01-08 22:41:06.800 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=497) examining active HTLC's
+2021-01-08 22:41:06.800 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=497, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:06.800 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:06.800 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:06.803 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 498
+2021-01-08 22:41:06.803 [INF] NTFN: New block: height=498, sha=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:06.824 [DBG] DISC: New block: height=498, hash=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:06.824 [DBG] SWPR: New block: height=498, sha=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:06.824 [INF] UTXN: Attempting to graduate height=498: num_kids=0, num_babies=0
+2021-01-08 22:41:06.824 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=498) examining active HTLC's
+2021-01-08 22:41:07.062 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=498, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:06.852 [INF] CRTR: Block 61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c (height=497) closed 0 channels
+2021-01-08 22:41:06.919 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 499
+2021-01-08 22:41:07.093 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.155 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.155 [INF] NTFN: New block: height=499, sha=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.155 [DBG] SWPR: New block: height=499, sha=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.155 [INF] CRTR: Pruning channel graph using block 2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482 (height=498)
+2021-01-08 22:41:07.155 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=499) examining active HTLC's
+2021-01-08 22:41:07.156 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=499, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:07.156 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.155 [INF] UTXN: Attempting to graduate height=499: num_kids=0, num_babies=0
+2021-01-08 22:41:07.155 [DBG] DISC: New block: height=499, hash=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.156 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.157 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 500
+2021-01-08 22:41:07.158 [INF] NTFN: New block: height=500, sha=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:07.158 [DBG] DISC: New block: height=500, hash=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:07.158 [DBG] SWPR: New block: height=500, sha=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:07.158 [INF] UTXN: Attempting to graduate height=500: num_kids=0, num_babies=0
+2021-01-08 22:41:07.158 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=500) examining active HTLC's
+2021-01-08 22:41:07.158 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=500, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:07.158 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.158 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.159 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 501
+2021-01-08 22:41:07.159 [INF] NTFN: New block: height=501, sha=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:07.159 [DBG] SWPR: New block: height=501, sha=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:07.159 [INF] UTXN: Attempting to graduate height=501: num_kids=0, num_babies=0
+2021-01-08 22:41:07.159 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=501) examining active HTLC's
+2021-01-08 22:41:07.258 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=501, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:07.159 [DBG] DISC: New block: height=501, hash=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:07.246 [INF] CRTR: Block 2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482 (height=498) closed 0 channels
+2021-01-08 22:41:07.271 [WRN] HSWC: ChannelLink(491:1:0): ExitSettle mode enabled -- will not attempt to settle ADD with sender
+2021-01-08 22:41:07.322 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.322 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 502
+2021-01-08 22:41:07.403 [INF] CRTR: Pruning channel graph using block 2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8 (height=499)
+2021-01-08 22:41:07.487 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.597 [DBG] HSWC: Sent 0 satoshis and received 0 satoshis in the last 10 seconds (0.100000 tx/sec)
+2021-01-08 22:41:07.660 [WRN] HSWC: ChannelLink(491:1:0): ExitSettle mode enabled -- will not attempt to settle ADD with sender
+2021-01-08 22:41:07.668 [INF] NTFN: New block: height=502, sha=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:07.669 [INF] UTXN: Attempting to graduate height=502: num_kids=0, num_babies=0
+2021-01-08 22:41:07.669 [DBG] SWPR: New block: height=502, sha=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:07.669 [DBG] DISC: New block: height=502, hash=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:07.669 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=502) examining active HTLC's
+2021-01-08 22:41:07.669 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=502, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:07.669 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.669 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.671 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 503
+2021-01-08 22:41:07.671 [INF] NTFN: New block: height=503, sha=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:07.671 [DBG] SWPR: New block: height=503, sha=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:07.671 [INF] UTXN: Attempting to graduate height=503: num_kids=0, num_babies=0
+2021-01-08 22:41:07.671 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=503) examining active HTLC's
+2021-01-08 22:41:07.672 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=503, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:07.671 [DBG] DISC: New block: height=503, hash=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:07.690 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.812 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.732 [INF] CRTR: Block 2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8 (height=499) closed 0 channels
+2021-01-08 22:41:07.756 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 504
+2021-01-08 22:41:07.947 [INF] NTFN: New block: height=504, sha=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:07.935 [INF] CRTR: Pruning channel graph using block 224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d (height=500)
+2021-01-08 22:41:07.948 [DBG] SWPR: New block: height=504, sha=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:07.948 [INF] UTXN: Attempting to graduate height=504: num_kids=0, num_babies=0
+2021-01-08 22:41:07.948 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=504) examining active HTLC's
+2021-01-08 22:41:07.948 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=504, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:07.948 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.948 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:07.948 [DBG] DISC: New block: height=504, hash=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:08.024 [INF] CRTR: Block 224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d (height=500) closed 0 channels
+2021-01-08 22:41:08.037 [INF] CRTR: Pruning channel graph using block 4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf (height=501)
+2021-01-08 22:41:08.075 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 505
+2021-01-08 22:41:08.075 [INF] NTFN: New block: height=505, sha=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:08.075 [DBG] DISC: New block: height=505, hash=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:08.075 [DBG] SWPR: New block: height=505, sha=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:08.075 [INF] UTXN: Attempting to graduate height=505: num_kids=0, num_babies=0
+2021-01-08 22:41:08.075 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=505) examining active HTLC's
+2021-01-08 22:41:08.076 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=505, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.076 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.076 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.077 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 506
+2021-01-08 22:41:08.077 [INF] NTFN: New block: height=506, sha=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:08.078 [INF] UTXN: Attempting to graduate height=506: num_kids=0, num_babies=0
+2021-01-08 22:41:08.078 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=506) examining active HTLC's
+2021-01-08 22:41:08.078 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=506, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.078 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.078 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.078 [DBG] DISC: New block: height=506, hash=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:08.078 [DBG] SWPR: New block: height=506, sha=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:08.079 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 507
+2021-01-08 22:41:08.079 [INF] NTFN: New block: height=507, sha=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:08.079 [DBG] DISC: New block: height=507, hash=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:08.079 [DBG] SWPR: New block: height=507, sha=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:08.079 [INF] UTXN: Attempting to graduate height=507: num_kids=0, num_babies=0
+2021-01-08 22:41:08.079 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=507) examining active HTLC's
+2021-01-08 22:41:08.079 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=507, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.079 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.079 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.081 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 508
+2021-01-08 22:41:08.081 [INF] NTFN: New block: height=508, sha=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:08.082 [INF] UTXN: Attempting to graduate height=508: num_kids=0, num_babies=0
+2021-01-08 22:41:08.082 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=508) examining active HTLC's
+2021-01-08 22:41:08.082 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=508, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.082 [DBG] DISC: New block: height=508, hash=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:08.082 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.082 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.082 [DBG] SWPR: New block: height=508, sha=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:08.150 [INF] CRTR: Block 4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf (height=501) closed 0 channels
+2021-01-08 22:41:08.152 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 509
+2021-01-08 22:41:08.239 [INF] NTFN: New block: height=509, sha=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:08.189 [INF] CRTR: Pruning channel graph using block 2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff (height=502)
+2021-01-08 22:41:08.341 [DBG] DISC: New block: height=509, hash=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:08.341 [DBG] SWPR: New block: height=509, sha=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:08.341 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=509) examining active HTLC's
+2021-01-08 22:41:08.551 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=509, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.341 [INF] UTXN: Attempting to graduate height=509: num_kids=0, num_babies=0
+2021-01-08 22:41:08.462 [INF] CRTR: Block 2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff (height=502) closed 0 channels
+2021-01-08 22:41:08.644 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.653 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.653 [INF] CRTR: Pruning channel graph using block 70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e (height=503)
+2021-01-08 22:41:08.654 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 510
+2021-01-08 22:41:08.782 [INF] NTFN: New block: height=510, sha=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:08.816 [INF] CRTR: Block 70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e (height=503) closed 0 channels
+2021-01-08 22:41:08.817 [INF] UTXN: Attempting to graduate height=510: num_kids=0, num_babies=0
+2021-01-08 22:41:08.817 [DBG] SWPR: New block: height=510, sha=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:08.817 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=510) examining active HTLC's
+2021-01-08 22:41:08.871 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=510, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.817 [DBG] DISC: New block: height=510, hash=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:08.871 [INF] CRTR: Pruning channel graph using block 142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb (height=504)
+2021-01-08 22:41:08.871 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.872 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.872 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 511
+2021-01-08 22:41:08.872 [INF] NTFN: New block: height=511, sha=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:08.873 [INF] UTXN: Attempting to graduate height=511: num_kids=0, num_babies=0
+2021-01-08 22:41:08.873 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=511) examining active HTLC's
+2021-01-08 22:41:08.873 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=511, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.873 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.873 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.873 [DBG] DISC: New block: height=511, hash=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:08.873 [DBG] SWPR: New block: height=511, sha=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:08.874 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 512
+2021-01-08 22:41:08.874 [INF] NTFN: New block: height=512, sha=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:08.875 [INF] UTXN: Attempting to graduate height=512: num_kids=0, num_babies=0
+2021-01-08 22:41:08.875 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=512) examining active HTLC's
+2021-01-08 22:41:08.875 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=512, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.875 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.875 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.875 [DBG] DISC: New block: height=512, hash=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:08.875 [DBG] SWPR: New block: height=512, sha=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:08.876 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 513
+2021-01-08 22:41:08.876 [INF] NTFN: New block: height=513, sha=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:08.876 [DBG] DISC: New block: height=513, hash=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:08.877 [DBG] SWPR: New block: height=513, sha=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:08.877 [INF] UTXN: Attempting to graduate height=513: num_kids=0, num_babies=0
+2021-01-08 22:41:08.877 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=513) examining active HTLC's
+2021-01-08 22:41:08.877 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=513, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.877 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.877 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.877 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 514
+2021-01-08 22:41:08.877 [INF] NTFN: New block: height=514, sha=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:08.877 [DBG] SWPR: New block: height=514, sha=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:08.877 [INF] UTXN: Attempting to graduate height=514: num_kids=0, num_babies=0
+2021-01-08 22:41:08.877 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=514) examining active HTLC's
+2021-01-08 22:41:08.878 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=514, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:08.878 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.878 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:08.878 [DBG] DISC: New block: height=514, hash=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:08.932 [INF] CRTR: Block 142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb (height=504) closed 0 channels
+2021-01-08 22:41:08.950 [INF] CRTR: Pruning channel graph using block 6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112 (height=505)
+2021-01-08 22:41:08.988 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 515
+2021-01-08 22:41:09.149 [INF] NTFN: New block: height=515, sha=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:09.105 [INF] CRTR: Block 6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112 (height=505) closed 0 channels
+2021-01-08 22:41:09.331 [INF] CRTR: Pruning channel graph using block 3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c (height=506)
+2021-01-08 22:41:09.214 [INF] UTXN: Attempting to graduate height=515: num_kids=0, num_babies=0
+2021-01-08 22:41:09.214 [DBG] SWPR: New block: height=515, sha=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:09.214 [DBG] DISC: New block: height=515, hash=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:09.214 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=515) examining active HTLC's
+2021-01-08 22:41:09.496 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=515, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:09.496 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.497 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.500 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 516
+2021-01-08 22:41:09.500 [INF] NTFN: New block: height=516, sha=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:09.500 [DBG] SWPR: New block: height=516, sha=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:09.500 [INF] UTXN: Attempting to graduate height=516: num_kids=0, num_babies=0
+2021-01-08 22:41:09.501 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=516) examining active HTLC's
+2021-01-08 22:41:09.501 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=516, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:09.501 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.501 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.501 [DBG] DISC: New block: height=516, hash=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:09.534 [INF] CRTR: Block 3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c (height=506) closed 0 channels
+2021-01-08 22:41:09.613 [INF] CRTR: Pruning channel graph using block 530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb (height=507)
+2021-01-08 22:41:09.614 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 517
+2021-01-08 22:41:09.690 [INF] NTFN: New block: height=517, sha=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:09.743 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=517) examining active HTLC's
+2021-01-08 22:41:09.804 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=517, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:09.743 [DBG] DISC: New block: height=517, hash=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:09.743 [DBG] SWPR: New block: height=517, sha=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:09.743 [INF] UTXN: Attempting to graduate height=517: num_kids=0, num_babies=0
+2021-01-08 22:41:09.766 [INF] CRTR: Block 530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb (height=507) closed 0 channels
+2021-01-08 22:41:09.804 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.804 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.804 [INF] CRTR: Pruning channel graph using block 412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50 (height=508)
+2021-01-08 22:41:09.805 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 518
+2021-01-08 22:41:09.805 [INF] NTFN: New block: height=518, sha=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:09.806 [DBG] SWPR: New block: height=518, sha=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:09.806 [INF] UTXN: Attempting to graduate height=518: num_kids=0, num_babies=0
+2021-01-08 22:41:09.806 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=518) examining active HTLC's
+2021-01-08 22:41:09.806 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=518, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:09.806 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.806 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.806 [DBG] DISC: New block: height=518, hash=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:09.807 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 519
+2021-01-08 22:41:09.808 [INF] NTFN: New block: height=519, sha=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:09.808 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=519) examining active HTLC's
+2021-01-08 22:41:09.808 [DBG] DISC: New block: height=519, hash=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:09.808 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=519, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:09.808 [INF] UTXN: Attempting to graduate height=519: num_kids=0, num_babies=0
+2021-01-08 22:41:09.808 [DBG] SWPR: New block: height=519, sha=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:09.814 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:09.837 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 520
+2021-01-08 22:41:09.897 [INF] CRTR: Block 412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50 (height=508) closed 0 channels
+2021-01-08 22:41:10.109 [INF] CRTR: Pruning channel graph using block 3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233 (height=509)
+2021-01-08 22:41:09.993 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.047 [INF] NTFN: New block: height=520, sha=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:10.283 [DBG] SWPR: New block: height=520, sha=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:10.259 [INF] CRTR: Block 3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233 (height=509) closed 0 channels
+2021-01-08 22:41:10.283 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=520) examining active HTLC's
+2021-01-08 22:41:10.283 [INF] UTXN: Attempting to graduate height=520: num_kids=0, num_babies=0
+2021-01-08 22:41:10.283 [DBG] DISC: New block: height=520, hash=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:10.361 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 521
+2021-01-08 22:41:10.364 [INF] CRTR: Pruning channel graph using block 47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087 (height=510)
+2021-01-08 22:41:10.404 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=520, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:10.505 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.505 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.505 [INF] NTFN: New block: height=521, sha=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:10.507 [INF] UTXN: Attempting to graduate height=521: num_kids=0, num_babies=0
+2021-01-08 22:41:10.507 [DBG] SWPR: New block: height=521, sha=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:10.507 [DBG] DISC: New block: height=521, hash=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:10.507 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=521) examining active HTLC's
+2021-01-08 22:41:10.507 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=521, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:10.507 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.507 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.508 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 522
+2021-01-08 22:41:10.508 [INF] NTFN: New block: height=522, sha=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:10.509 [DBG] SWPR: New block: height=522, sha=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:10.509 [INF] UTXN: Attempting to graduate height=522: num_kids=0, num_babies=0
+2021-01-08 22:41:10.509 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=522) examining active HTLC's
+2021-01-08 22:41:10.509 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=522, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:10.509 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.509 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.509 [DBG] DISC: New block: height=522, hash=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:10.510 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 523
+2021-01-08 22:41:10.510 [INF] NTFN: New block: height=523, sha=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:10.510 [DBG] SWPR: New block: height=523, sha=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:10.511 [DBG] DISC: New block: height=523, hash=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:10.511 [INF] UTXN: Attempting to graduate height=523: num_kids=0, num_babies=0
+2021-01-08 22:41:10.511 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=523) examining active HTLC's
+2021-01-08 22:41:10.586 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=523, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:10.585 [INF] CRTR: Block 47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087 (height=510) closed 0 channels
+2021-01-08 22:41:10.695 [INF] CRTR: Pruning channel graph using block 27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb (height=511)
+2021-01-08 22:41:10.641 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.642 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 524
+2021-01-08 22:41:10.763 [INF] NTFN: New block: height=524, sha=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:10.725 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.778 [DBG] SWPR: New block: height=524, sha=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:10.778 [INF] UTXN: Attempting to graduate height=524: num_kids=0, num_babies=0
+2021-01-08 22:41:10.778 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=524) examining active HTLC's
+2021-01-08 22:41:10.778 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=524, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:10.778 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.778 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.778 [DBG] DISC: New block: height=524, hash=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:10.779 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 525
+2021-01-08 22:41:10.780 [INF] NTFN: New block: height=525, sha=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:10.780 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=525) examining active HTLC's
+2021-01-08 22:41:10.780 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=525, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:10.780 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.780 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:10.780 [DBG] DISC: New block: height=525, hash=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:10.780 [DBG] SWPR: New block: height=525, sha=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:10.780 [INF] UTXN: Attempting to graduate height=525: num_kids=0, num_babies=0
+2021-01-08 22:41:10.796 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 526
+2021-01-08 22:41:10.811 [INF] NTFN: New block: height=526, sha=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:10.821 [INF] CRTR: Block 27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb (height=511) closed 0 channels
+2021-01-08 22:41:10.984 [INF] CRTR: Pruning channel graph using block 4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8 (height=512)
+2021-01-08 22:41:10.952 [INF] UTXN: Attempting to graduate height=526: num_kids=0, num_babies=0
+2021-01-08 22:41:10.952 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=526) examining active HTLC's
+2021-01-08 22:41:10.952 [DBG] DISC: New block: height=526, hash=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:10.952 [DBG] SWPR: New block: height=526, sha=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:11.012 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 527
+2021-01-08 22:41:11.061 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=526, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.061 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.061 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.061 [INF] NTFN: New block: height=527, sha=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:11.061 [DBG] SWPR: New block: height=527, sha=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:11.061 [DBG] DISC: New block: height=527, hash=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:11.061 [INF] UTXN: Attempting to graduate height=527: num_kids=0, num_babies=0
+2021-01-08 22:41:11.061 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=527) examining active HTLC's
+2021-01-08 22:41:11.164 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=527, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.106 [INF] CRTR: Block 4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8 (height=512) closed 0 channels
+2021-01-08 22:41:11.164 [INF] CRTR: Pruning channel graph using block 61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed (height=513)
+2021-01-08 22:41:11.165 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 528
+2021-01-08 22:41:11.164 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.192 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.182 [INF] NTFN: New block: height=528, sha=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:11.193 [DBG] SWPR: New block: height=528, sha=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:11.193 [INF] UTXN: Attempting to graduate height=528: num_kids=0, num_babies=0
+2021-01-08 22:41:11.193 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=528) examining active HTLC's
+2021-01-08 22:41:11.193 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=528, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.193 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.193 [DBG] DISC: New block: height=528, hash=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:11.193 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.194 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 529
+2021-01-08 22:41:11.194 [INF] NTFN: New block: height=529, sha=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:11.194 [DBG] SWPR: New block: height=529, sha=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:11.195 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=529) examining active HTLC's
+2021-01-08 22:41:11.195 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=529, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.195 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.195 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.195 [DBG] DISC: New block: height=529, hash=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:11.195 [INF] UTXN: Attempting to graduate height=529: num_kids=0, num_babies=0
+2021-01-08 22:41:11.196 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 530
+2021-01-08 22:41:11.196 [INF] NTFN: New block: height=530, sha=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:11.196 [DBG] DISC: New block: height=530, hash=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:11.196 [DBG] SWPR: New block: height=530, sha=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:11.196 [INF] UTXN: Attempting to graduate height=530: num_kids=0, num_babies=0
+2021-01-08 22:41:11.196 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=530) examining active HTLC's
+2021-01-08 22:41:11.196 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=530, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.196 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.196 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.197 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 531
+2021-01-08 22:41:11.197 [INF] NTFN: New block: height=531, sha=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:11.197 [DBG] SWPR: New block: height=531, sha=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:11.197 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=531) examining active HTLC's
+2021-01-08 22:41:11.197 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=531, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.197 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.197 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.197 [INF] UTXN: Attempting to graduate height=531: num_kids=0, num_babies=0
+2021-01-08 22:41:11.197 [DBG] DISC: New block: height=531, hash=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:11.198 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 532
+2021-01-08 22:41:11.198 [INF] NTFN: New block: height=532, sha=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:11.198 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=532) examining active HTLC's
+2021-01-08 22:41:11.198 [INF] UTXN: Attempting to graduate height=532: num_kids=0, num_babies=0
+2021-01-08 22:41:11.198 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=532, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.198 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.199 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.198 [DBG] SWPR: New block: height=532, sha=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:11.198 [DBG] DISC: New block: height=532, hash=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:11.218 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 533
+2021-01-08 22:41:11.321 [INF] NTFN: New block: height=533, sha=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:11.227 [INF] CRTR: Block 61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed (height=513) closed 0 channels
+2021-01-08 22:41:11.396 [INF] CRTR: Pruning channel graph using block 45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f (height=514)
+2021-01-08 22:41:11.379 [DBG] DISC: New block: height=533, hash=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:11.379 [DBG] SWPR: New block: height=533, sha=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:11.379 [INF] UTXN: Attempting to graduate height=533: num_kids=0, num_babies=0
+2021-01-08 22:41:11.379 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=533) examining active HTLC's
+2021-01-08 22:41:11.409 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 534
+2021-01-08 22:41:11.423 [INF] NTFN: New block: height=534, sha=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:11.423 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=533, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.423 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.424 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.424 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=534) examining active HTLC's
+2021-01-08 22:41:11.424 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=534, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.424 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.424 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.423 [DBG] SWPR: New block: height=534, sha=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:11.423 [DBG] DISC: New block: height=534, hash=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:11.423 [INF] UTXN: Attempting to graduate height=534: num_kids=0, num_babies=0
+2021-01-08 22:41:11.424 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 535
+2021-01-08 22:41:11.425 [INF] NTFN: New block: height=535, sha=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:11.425 [DBG] SWPR: New block: height=535, sha=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:11.425 [DBG] DISC: New block: height=535, hash=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:11.425 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=535) examining active HTLC's
+2021-01-08 22:41:11.425 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=535, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.425 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.425 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.425 [INF] UTXN: Attempting to graduate height=535: num_kids=0, num_babies=0
+2021-01-08 22:41:11.425 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 536
+2021-01-08 22:41:11.425 [INF] NTFN: New block: height=536, sha=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:11.426 [INF] UTXN: Attempting to graduate height=536: num_kids=0, num_babies=0
+2021-01-08 22:41:11.426 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=536) examining active HTLC's
+2021-01-08 22:41:11.426 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=536, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.426 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.426 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.426 [DBG] DISC: New block: height=536, hash=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:11.426 [DBG] SWPR: New block: height=536, sha=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:11.426 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 537
+2021-01-08 22:41:11.427 [INF] NTFN: New block: height=537, sha=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:11.427 [INF] UTXN: Attempting to graduate height=537: num_kids=0, num_babies=0
+2021-01-08 22:41:11.427 [DBG] SWPR: New block: height=537, sha=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:11.427 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=537) examining active HTLC's
+2021-01-08 22:41:11.427 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=537, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.427 [DBG] DISC: New block: height=537, hash=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:11.427 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.427 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.427 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 538
+2021-01-08 22:41:11.427 [INF] NTFN: New block: height=538, sha=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:11.428 [DBG] SWPR: New block: height=538, sha=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:11.428 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=538) examining active HTLC's
+2021-01-08 22:41:11.428 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=538, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.428 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.428 [INF] UTXN: Attempting to graduate height=538: num_kids=0, num_babies=0
+2021-01-08 22:41:11.428 [DBG] DISC: New block: height=538, hash=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:11.428 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.428 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 539
+2021-01-08 22:41:11.429 [INF] NTFN: New block: height=539, sha=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:11.429 [DBG] DISC: New block: height=539, hash=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:11.429 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=539) examining active HTLC's
+2021-01-08 22:41:11.429 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=539, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:11.449 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.429 [DBG] SWPR: New block: height=539, sha=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:11.429 [INF] UTXN: Attempting to graduate height=539: num_kids=0, num_babies=0
+2021-01-08 22:41:11.472 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:11.524 [INF] CRTR: Block 45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f (height=514) closed 0 channels
+2021-01-08 22:41:11.625 [INF] CRTR: Pruning channel graph using block 1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000 (height=515)
+2021-01-08 22:41:11.724 [INF] CRTR: Block 1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000 (height=515) closed 0 channels
+2021-01-08 22:41:11.725 [INF] CRTR: Pruning channel graph using block 0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa (height=516)
+2021-01-08 22:41:11.777 [INF] CRTR: Block 0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa (height=516) closed 0 channels
+2021-01-08 22:41:11.780 [INF] CRTR: Pruning channel graph using block 5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013 (height=517)
+2021-01-08 22:41:11.890 [INF] CRTR: Block 5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013 (height=517) closed 0 channels
+2021-01-08 22:41:11.917 [INF] CRTR: Pruning channel graph using block 1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d (height=518)
+2021-01-08 22:41:12.035 [INF] CRTR: Block 1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d (height=518) closed 0 channels
+2021-01-08 22:41:12.036 [INF] CRTR: Pruning channel graph using block 5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363 (height=519)
+2021-01-08 22:41:12.139 [INF] CRTR: Block 5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363 (height=519) closed 0 channels
+2021-01-08 22:41:12.141 [INF] CRTR: Pruning channel graph using block 7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35 (height=520)
+2021-01-08 22:41:12.297 [INF] CRTR: Block 7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35 (height=520) closed 0 channels
+2021-01-08 22:41:12.300 [INF] CRTR: Pruning channel graph using block 6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526 (height=521)
+2021-01-08 22:41:12.362 [INF] CRTR: Block 6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526 (height=521) closed 0 channels
+2021-01-08 22:41:12.365 [INF] CRTR: Pruning channel graph using block 29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3 (height=522)
+2021-01-08 22:41:12.443 [INF] CRTR: Block 29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3 (height=522) closed 0 channels
+2021-01-08 22:41:12.455 [INF] CRTR: Pruning channel graph using block 2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24 (height=523)
+2021-01-08 22:41:12.504 [INF] CRTR: Block 2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24 (height=523) closed 0 channels
+2021-01-08 22:41:12.522 [INF] CRTR: Pruning channel graph using block 3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc (height=524)
+2021-01-08 22:41:12.621 [INF] CRTR: Block 3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc (height=524) closed 0 channels
+2021-01-08 22:41:12.637 [INF] CRTR: Pruning channel graph using block 2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd (height=525)
+2021-01-08 22:41:12.698 [INF] CRTR: Block 2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd (height=525) closed 0 channels
+2021-01-08 22:41:12.699 [INF] CRTR: Pruning channel graph using block 30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e (height=526)
+2021-01-08 22:41:12.784 [INF] CRTR: Block 30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e (height=526) closed 0 channels
+2021-01-08 22:41:12.785 [INF] CRTR: Pruning channel graph using block 5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e (height=527)
+2021-01-08 22:41:12.837 [INF] CRTR: Block 5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e (height=527) closed 0 channels
+2021-01-08 22:41:12.838 [INF] CRTR: Pruning channel graph using block 3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e (height=528)
+2021-01-08 22:41:12.942 [INF] CRTR: Block 3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e (height=528) closed 0 channels
+2021-01-08 22:41:12.955 [INF] CRTR: Pruning channel graph using block 10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740 (height=529)
+2021-01-08 22:41:13.061 [INF] CRTR: Block 10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740 (height=529) closed 0 channels
+2021-01-08 22:41:13.064 [INF] CRTR: Pruning channel graph using block 2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e (height=530)
+2021-01-08 22:41:13.142 [INF] CRTR: Block 2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e (height=530) closed 0 channels
+2021-01-08 22:41:13.143 [INF] CRTR: Pruning channel graph using block 36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd (height=531)
+2021-01-08 22:41:13.209 [INF] CRTR: Block 36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd (height=531) closed 0 channels
+2021-01-08 22:41:13.210 [INF] CRTR: Pruning channel graph using block 5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc (height=532)
+2021-01-08 22:41:13.256 [INF] CRTR: Block 5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc (height=532) closed 0 channels
+2021-01-08 22:41:13.259 [INF] CRTR: Pruning channel graph using block 2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd (height=533)
+2021-01-08 22:41:13.343 [INF] CRTR: Block 2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd (height=533) closed 0 channels
+2021-01-08 22:41:13.344 [INF] CRTR: Pruning channel graph using block 645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec (height=534)
+2021-01-08 22:41:13.438 [INF] CRTR: Block 645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec (height=534) closed 0 channels
+2021-01-08 22:41:13.439 [INF] CRTR: Pruning channel graph using block 31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb (height=535)
+2021-01-08 22:41:13.546 [INF] CRTR: Block 31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb (height=535) closed 0 channels
+2021-01-08 22:41:13.586 [INF] CRTR: Pruning channel graph using block 00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae (height=536)
+2021-01-08 22:41:13.677 [INF] CRTR: Block 00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae (height=536) closed 0 channels
+2021-01-08 22:41:13.678 [INF] CRTR: Pruning channel graph using block 5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae (height=537)
+2021-01-08 22:41:13.721 [INF] CRTR: Block 5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae (height=537) closed 0 channels
+2021-01-08 22:41:13.722 [INF] CRTR: Pruning channel graph using block 3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af (height=538)
+2021-01-08 22:41:13.830 [INF] CRTR: Block 3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af (height=538) closed 0 channels
+2021-01-08 22:41:13.831 [INF] CRTR: Pruning channel graph using block 7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891 (height=539)
+2021-01-08 22:41:13.918 [INF] CRTR: Block 7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891 (height=539) closed 0 channels
+2021-01-08 22:41:15.575 [INF] CRTR: Pruning channel graph using block 1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90 (height=540)
+2021-01-08 22:41:15.618 [INF] CRTR: Block 1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90 (height=540) closed 1 channels
+2021-01-08 22:41:15.682 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 540
+2021-01-08 22:41:15.682 [DBG] NTFN: Found spend of outpoint=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0, script=0 74cf57fcc7fdf825ad0f00b4f80e714af2c60705ccabc7746a6f45946635502b: spend_tx=283fee0635b87f0ace26d28e061559b58dddc567c0c4dfd2a169080f6e19e49c, block_height=540
+2021-01-08 22:41:15.682 [DBG] NTFN: Spend request outpoint=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0, script=0 74cf57fcc7fdf825ad0f00b4f80e714af2c60705ccabc7746a6f45946635502b spent at tip=540
+2021-01-08 22:41:15.753 [INF] NTFN: New block: height=540, sha=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.754 [INF] NTFN: Dispatching confirmed spend notification for outpoint=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0, script=0 74cf57fcc7fdf825ad0f00b4f80e714af2c60705ccabc7746a6f45946635502b at current height=540: 283fee0635b87f0ace26d28e061559b58dddc567c0c4dfd2a169080f6e19e49c[0] spending 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0 at height=540
+2021-01-08 22:41:15.754 [DBG] SWPR: New block: height=540, sha=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.755 [INF] UTXN: Attempting to graduate height=540: num_kids=0, num_babies=0
+2021-01-08 22:41:15.754 [DBG] NTFN: Found spend of outpoint=6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0, script=0 74cf57fcc7fdf825ad0f00b4f80e714af2c60705ccabc7746a6f45946635502b: spend_tx=283fee0635b87f0ace26d28e061559b58dddc567c0c4dfd2a169080f6e19e49c, block_height=540
+2021-01-08 22:41:15.755 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=540) examining active HTLC's
+2021-01-08 22:41:15.755 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=540, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:15.755 [DBG] DISC: New block: height=540, hash=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.755 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:15.755 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:15.755 [DBG] CNCT: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): local_commit_type=0, local_commit=(*channeldb.ChannelCommitment)(0xc0001959f0)({
+ CommitHeight: (uint64) 1,
+ LocalLogIndex: (uint64) 0,
+ LocalHtlcIndex: (uint64) 0,
+ RemoteLogIndex: (uint64) 2,
+ RemoteHtlcIndex: (uint64) 2,
+ LocalBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ RemoteBalance: (lnwire.MilliSatoshi) 688700000 mSAT,
+ CommitFee: (btcutil.Amount) 0.000112 BTC,
+ FeePerKw: (btcutil.Amount) 0.000125 BTC,
+ CommitTx: (*wire.MsgTx)(0xc000e36d80)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=1) {
+   (*wire.TxIn)(0xc0009baba0)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) {
+    },
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=2 cap=2) {
+   (*wire.TxOut)(0xc000e36dc0)({
+    Value: (int64) 300000,
+    PkScript: ([]uint8) (len=34 cap=34) {
+     00000000  00 20 1c 38 8a 02 ab 4d  75 c9 3b 8b aa ea d8 eb  |. .8...Mu.;.....|
+     00000010  8f 15 eb c3 63 f0 6e 5e  74 62 e7 b1 e8 8e f1 0e  |....c.n^tb......|
+     00000020  10 79                                             |.y|
+    }
+   }),
+   (*wire.TxOut)(0xc000e36de0)({
+    Value: (int64) 688700,
+    PkScript: ([]uint8) (len=22 cap=22) {
+     00000000  00 14 aa 8b 98 51 95 5c  23 88 95 12 2b 99 a7 86  |.....Q.\#...+...|
+     00000010  62 61 ff ce a4 4c                                 |ba...L|
+    }
+   })
+  },
+  LockTime: (uint32) 546735474
+ }),
+ CommitSig: ([]uint8) (len=71 cap=71) {
+  00000000  30 45 02 21 00 af 20 6b  0b 50 2b 01 2b d7 fc 50  |0E.!.. k.P+.+..P|
+  00000010  1b 9e 28 61 5a 00 a1 f2  a2 f7 6f 0c ea 9d 34 bb  |..(aZ.....o...4.|
+  00000020  4a d3 92 4f 07 02 20 70  7d 76 58 a4 5a 11 f7 74  |J..O.. p}vX.Z..t|
+  00000030  72 99 2c d6 75 4a 28 61  b5 93 18 5f 41 a4 5c a5  |r.,.uJ(a..._A.\.|
+  00000040  a2 21 a6 55 a7 68 3d                              |.!.U.h=|
+ },
+ Htlcs: ([]channeldb.HTLC) (len=2 cap=2) {
+  (channeldb.HTLC) {
+   Signature: ([]uint8) (len=71 cap=71) {
+    00000000  30 45 02 21 00 ee e2 86  ab 9d a7 49 9f af 37 ad  |0E.!.......I..7.|
+    00000010  0c 0a 10 40 1e dc 5b ef  3f 31 f8 6e 09 be db 1a  |...@..[.?1.n....|
+    00000020  d8 57 eb 4c 05 02 20 20  8f 39 e9 f1 8a 29 d8 c1  |.W.L..  .9...)..|
+    00000030  4c 06 76 93 d1 a9 df 1f  5d 64 6a b2 f1 27 22 7b  |L.v.....]dj..'"{|
+    00000040  8a 52 1b 68 e3 94 59                              |.R.h..Y|
+   },
+   RHash: ([32]uint8) (len=32 cap=32) {
+    00000000  9a b2 c2 44 30 10 bc e6  e8 ba 3a cf c8 99 d8 82  |...D0.....:.....|
+    00000010  da a7 2e 97 43 56 d3 99  38 f0 bf 21 ff de 63 a5  |....CV..8..!..c.|
+   },
+   Amt: (lnwire.MilliSatoshi) 300000000 mSAT,
+   RefundTimeout: (uint32) 539,
+   OutputIndex: (int32) 0,
+   Incoming: (bool) true,
+   OnionBlob: ([]uint8) (len=1366 cap=1366) {
+    00000000  00 03 44 3b 2f 22 c0 6b  74 9c 97 c6 39 36 42 34  |..D;/".kt...96B4|
+    00000010  ff 54 ab 6c d6 62 8f 8e  00 6c 14 5a ec 1b 0b e0  |.T.l.b...l.Z....|
+    00000020  a1 2f b7 78 55 69 23 82  aa 76 0e f1 c1 a2 af 74  |./.xUi#..v.....t|
+    00000030  54 ef 42 a5 d4 07 87 d3  87 01 c9 df fe da 2e 58  |T.B............X|
+    00000040  43 5a 00 85 f8 c8 72 66  d4 3b a9 b5 f3 ae 97 c9  |CZ....rf.;......|
+    00000050  63 96 58 c6 df be a6 b3  0d e3 d7 06 69 5d 48 bb  |c.X.........i]H.|
+    00000060  ec 67 1d da a0 4e 5f 11  29 94 1a 48 56 e2 3e 85  |.g...N_.)..HV.>.|
+    00000070  b5 e5 7a 6e 71 f3 f5 2b  2c 00 46 58 11 77 65 95  |..znq..+,.FX.we.|
+    00000080  68 e6 a3 35 b8 d1 f3 f3  58 e1 c7 99 15 da 65 51  |h..5....X.....eQ|
+    00000090  47 2b 45 68 27 b4 8e 80  dd 1c 26 85 43 37 70 41  |G+Eh'.....&.C7pA|
+    000000a0  8d d9 7e 90 78 1f 81 20  7a 90 27 ca 4c b9 d8 2e  |..~.x.. z.'.L...|
+    000000b0  23 46 ea 22 72 a8 a0 65  77 3c 5e f5 de be d4 e1  |#F."r..ew<^.....|
+    000000c0  74 e2 ad 98 50 a1 e1 d5  1b 28 5a b7 37 2a dc b1  |t...P....(Z.7*..|
+    000000d0  69 e4 d5 ef d6 e9 54 a6  6d 2f 5e e2 55 f5 84 5a  |i.....T.m/^.U..Z|
+    000000e0  de a7 08 19 2c 5d d8 95  bb 40 f5 0e c4 6f 7c dc  |....,]...@...o|.|
+    000000f0  90 7d a3 9a d5 c6 77 39  e3 e7 1c be 3a e1 69 29  |.}....w9....:.i)|
+    00000100  70 f7 0d 2f ef 2c ef 45  f3 48 48 f8 63 70 70 cc  |p../.,.E.HH.cpp.|
+    00000110  12 67 88 44 ba 4f a0 85  ee 9e 09 19 28 ad 26 6a  |.g.D.O......(.&j|
+    00000120  36 f6 cb 5b d5 45 ca 0d  5d 02 73 a3 d4 d9 36 ad  |6..[.E..].s...6.|
+    00000130  4b f8 20 59 37 f7 2e 39  be 92 06 a7 72 a6 4f 0d  |K. Y7..9....r.O.|
+    00000140  3e 38 89 db ea 09 aa ce  ac b8 5d 6b 61 b6 ac 98  |>8........]ka...|
+    00000150  e4 0a ae 3a ea 81 30 59  ba d9 d3 39 ac f8 10 11  |...:..0Y...9....|
+    00000160  f7 d4 20 f9 ac bf 19 34  a8 9b 1d 17 98 1d 4e 4b  |.. ....4......NK|
+    00000170  54 b9 21 9e 06 3c 6a 90  88 db 0b c9 0b 6b 60 05  |T.!..<j......k`.|
+    00000180  c5 c7 fa 47 81 4f 72 45  b3 e0 d3 cc 26 a0 2e c9  |...G.OrE....&...|
+    00000190  9f 47 0f d2 ea c4 53 85  c6 54 48 aa 6b 32 64 e9  |.G....S..TH.k2d.|
+    000001a0  a4 f6 b8 91 0c 0c ba 8f  c8 bc 3e f6 1d e2 dc 39  |..........>....9|
+    000001b0  a7 35 de 56 d7 24 c7 39  8b 88 ab a5 44 ad 89 41  |.5.V.$.9....D..A|
+    000001c0  ca 1c f5 fa e2 3c a5 89  84 30 be 5e d6 34 1a 15  |.....<...0.^.4..|
+    000001d0  e9 47 c5 37 99 de 74 fa  fd af 6d 2c 5b e4 8c 1b  |.G.7..t...m,[...|
+    000001e0  a5 00 b9 2b 9f 4b 0d d1  48 bb 52 7f ab 0c 01 ae  |...+.K..H.R.....|
+    000001f0  59 33 e7 93 e8 11 f0 2d  65 cb 41 1f 8a 12 24 ab  |Y3.....-e.A...$.|
+    00000200  0a 29 33 e8 da 4d 78 ee  e3 97 56 b1 7e 1f bd 26  |.)3..Mx...V.~..&|
+    00000210  56 09 b3 de e1 58 2f 89  f0 c4 97 aa 4f 9c 7d de  |V....X/.....O.}.|
+    00000220  78 2b 69 d6 5d 4f df 0c  b6 a1 71 8f 82 f1 83 db  |x+i.]O....q.....|
+    00000230  0c 6f 16 74 7c 96 ff 58  9f 4e 59 b4 13 26 66 4d  |.o.t|..X.NY..&fM|
+    00000240  53 93 13 e3 54 e2 14 92  d4 24 f9 c5 21 ec f3 51  |S...T....$..!..Q|
+    00000250  f0 41 53 8b f2 b5 fd 07  5c bd 56 e0 f9 51 40 fc  |.AS.....\.V..Q@.|
+    00000260  34 6c 09 2b ff 22 71 e8  9b 1a 68 5b 3b 7a 26 b6  |4l.+."q...h[;z&.|
+    00000270  88 a6 aa 51 5c 10 8a 06  10 14 d2 6b 9e 27 68 f2  |...Q\......k.'h.|
+    00000280  52 91 7c 2a 3f 08 07 54  d8 65 cb 9d a2 4f 32 45  |R.|*?..T.e...O2E|
+    00000290  62 6f 97 eb ea a6 f7 e7  44 d3 8c 97 1f a3 e1 0a  |bo......D.......|
+    000002a0  5a b9 a3 11 67 0b f5 76  a6 62 cb a1 30 ec f6 79  |Z...g..v.b..0..y|
+    000002b0  19 d7 a9 54 60 06 42 1c  bb e5 cc 0e b3 49 01 c1  |...T`.B......I..|
+    000002c0  ec c4 05 ad 29 5c 76 18  5d 5c c4 41 af 01 0f 19  |....)\v.]\.A....|
+    000002d0  6a 94 d9 e9 8f 76 90 88  5d 07 a5 bd 59 40 f5 7f  |j....v..]...Y@..|
+    000002e0  f8 a2 34 2e dd 26 79 fd  44 2a 6e 10 1b 18 9d 2b  |..4..&y.D*n....+|
+    000002f0  89 f2 80 39 28 9f fd fc  0b 83 5a 8f 36 c4 88 bf  |...9(.....Z.6...|
+    00000300  d7 93 e5 34 b0 b3 93 2d  23 55 5e 96 aa 42 62 15  |...4...-#U^..Bb.|
+    00000310  0d c8 18 87 33 4f e6 8e  3c b6 a8 aa 20 af 75 02  |....3O..<... .u.|
+    00000320  ec 16 da 03 d8 28 1b 08  45 27 9c 2a 5b ef c7 5d  |.....(..E'.*[..]|
+    00000330  6f e2 d1 9d 94 a9 22 76  86 8b 7d d4 54 27 58 c2  |o....."v..}.T'X.|
+    00000340  7f 9b 3f 6b e1 fe e6 9e  fa 2c c0 ab 4d 33 f3 9e  |..?k.....,..M3..|
+    00000350  e2 56 db 4f c0 51 41 33  dc 45 70 96 85 59 c3 2d  |.V.O.QA3.Ep..Y.-|
+    00000360  bc 5b bb 1a 71 90 c3 fd  56 5a df 16 07 a6 50 4c  |.[..q...VZ....PL|
+    00000370  f3 87 b1 63 42 42 5f 51  2e 1b 11 4e 30 12 e7 b5  |...cBB_Q...N0...|
+    00000380  9e 0d 5e 12 4d 1c 50 22  0c a7 5c c5 d8 50 d5 bb  |..^.M.P"..\..P..|
+    00000390  e0 06 07 99 a0 20 c8 1d  c9 05 2c 9c 5a d2 86 4c  |..... ....,.Z..L|
+    000003a0  06 52 f6 d8 cc 67 00 0a  bb cd 46 fe b0 8e 92 7f  |.R...g....F.....|
+    000003b0  54 50 56 b4 61 9a 37 05  dc 85 5d 46 06 a0 a6 e5  |TPV.a.7...]F....|
+    000003c0  21 fd 95 49 51 1d 37 38  27 1d 0f bd d4 9d 48 a6  |!..IQ.78'.....H.|
+    000003d0  a4 d0 32 e6 77 d9 5b c3  85 fe 31 51 4c 6e 80 d6  |..2.w.[...1QLn..|
+    000003e0  35 23 5c e5 b9 aa 06 4d  e5 ad e6 3b ae 70 1a c9  |5#\....M...;.p..|
+    000003f0  a2 e3 1e d5 b2 03 0c ae  d3 cb e8 3f 4b e2 fd 66  |...........?K..f|
+    00000400  eb c5 c3 4d 67 a8 2f 5b  7c 9b fc ea a6 00 70 33  |...Mg./[|.....p3|
+    00000410  a6 4f 05 40 7e 95 da 91  87 d2 60 94 ac 5b 21 74  |.O.@~.....`..[!t|
+    00000420  2d 96 0f 57 f3 dc 4d ef  cd 9c eb d7 64 06 88 46  |-..W..M.....d..F|
+    00000430  a9 78 95 db f1 0c be 0c  a8 27 e8 a9 d5 88 ec bd  |.x.......'......|
+    00000440  af 3e 31 7f 2a a6 10 de  d4 41 40 39 a5 e4 27 32  |.>1.*....A@9..'2|
+    00000450  71 0c b0 40 9a 14 75 df  c1 75 75 27 df 42 d7 2e  |q..@..u..uu'.B..|
+    00000460  92 17 07 fd e3 03 f8 d8  f2 20 51 ab 09 6d 6a 83  |......... Q..mj.|
+    00000470  04 a5 47 ea c3 e8 85 52  e0 a3 0d 48 ed 88 cd c9  |..G....R...H....|
+    00000480  5e 19 c3 82 a1 d7 e7 92  8f da 82 b2 4b 6b d4 3c  |^...........Kk.<|
+    00000490  30 04 0c 01 0a 45 51 95  ee a0 28 a4 fa ca f6 ae  |0....EQ...(.....|
+    000004a0  19 b5 a2 b0 07 e7 2e 1f  d1 d0 9a 20 70 cd 16 5c  |........... p..\|
+    000004b0  ff 47 52 28 13 be 46 d8  45 68 09 01 3c 1c 53 f6  |.GR(..F.Eh..<.S.|
+    000004c0  df f6 f9 20 6a ac df 3f  6d 4d d1 9a 82 8f 5d 53  |... j..?mM....]S|
+    000004d0  7f 8e 02 ba 40 85 2c bd  f6 b6 e8 9c 59 05 e3 c7  |....@.,.....Y...|
+    000004e0  8a 91 4a 59 d2 c7 be 05  05 d3 90 7d 3b 68 4a b2  |..JY.......};hJ.|
+    000004f0  b1 a9 9f 90 e5 09 0d d7  80 d5 4e 29 fa 35 29 a1  |..........N).5).|
+    00000500  db 94 19 66 7a a3 85 f4  d6 21 e3 ad c8 f8 5f 17  |...fz....!...._.|
+    00000510  a9 7e 1d d5 0d db 03 1c  37 34 29 10 4c fb 3d b7  |.~......74).L.=.|
+    00000520  71 99 a9 1d c8 4b 1d 1d  a5 eb b2 f4 8e 70 ec 08  |q....K.......p..|
+    00000530  ef 5a 1d e3 c7 fd 84 bb  ea 78 b9 42 7a 60 ed d5  |.Z.......x.Bz`..|
+    00000540  4a a2 76 d6 13 2e 29 af  55 82 d1 a4 c7 b7 47 1c  |J.v...).U.....G.|
+    00000550  6d 25 69 9a 7b fb                                 |m%i.{.|
+   },
+   HtlcIndex: (uint64) 0,
+   LogIndex: (uint64) 0
+  },
+  (channeldb.HTLC) {
+   Signature: ([]uint8) {
+   },
+   RHash: ([32]uint8) (len=32 cap=32) {
+    00000000  d1 15 c3 5c 96 33 e0 76  38 ed d4 f2 d9 d0 29 ec  |...\.3.v8.....).|
+    00000010  e5 67 c8 a0 9b 80 af bc  37 a1 f6 f9 cf 72 de eb  |.g......7....r..|
+   },
+   Amt: (lnwire.MilliSatoshi) 100000 mSAT,
+   RefundTimeout: (uint32) 539,
+   OutputIndex: (int32) -1,
+   Incoming: (bool) true,
+   OnionBlob: ([]uint8) (len=1366 cap=1366) {
+    00000000  00 03 a0 ab b1 17 dd 32  48 15 4a 1e 63 38 37 08  |.......2H.J.c87.|
+    00000010  fa fa db cb 0a a2 69 2b  83 f0 f9 1e 1d 92 cc 2a  |......i+.......*|
+    00000020  66 2a e0 66 ce ff 3c 09  2d 99 bb 34 2d 81 ec ee  |f*.f..<.-..4-...|
+    00000030  ba 26 49 10 b7 80 4c fd  80 ed 4d 93 4e 2a 83 59  |.&I...L...M.N*.Y|
+    00000040  b5 0d 95 c1 5e 78 43 f1  ec d6 91 e6 61 4b eb 2f  |....^xC.....aK./|
+    00000050  ec 55 5c d6 38 b7 6a 65  c9 88 4e 75 68 fc f9 7b  |.U\.8.je..Nuh..{|
+    00000060  5d bd 91 e4 34 fe 80 15  b3 b1 3f 6f 5a 07 42 b6  |]...4.....?oZ.B.|
+    00000070  f4 2c 4e 02 e8 6f 6b 4c  70 43 a3 e3 fe df 25 02  |.,N..okLpC....%.|
+    00000080  ef 36 8b 9a 74 37 fa dd  83 4e e2 91 f0 73 6d f8  |.6..t7...N...sm.|
+    00000090  17 a1 ba 70 6d 72 27 5a  ba 44 28 16 b1 f1 f8 58  |...pmr'Z.D(....X|
+    000000a0  dd be 3e 43 ef 16 5e 29  b0 bc a3 e9 75 69 22 63  |..>C..^)....ui"c|
+    000000b0  57 4b 67 6a f8 af 3e c8  28 35 fc c5 0e 90 9a 03  |WKgj..>.(5......|
+    000000c0  37 56 21 1e 57 46 d1 02  29 22 d0 01 42 c8 65 03  |7V!.WF..)"..B.e.|
+    000000d0  28 5a fc 38 4b fb d1 64  f1 7a 1e 77 c7 7c 29 6d  |(Z.8K..d.z.w.|)m|
+    000000e0  a5 5e cd 3f 0d c1 6b 5c  18 35 a6 89 25 02 a1 af  |.^.?..k\.5..%...|
+    000000f0  10 00 88 a9 b6 14 7b af  aa 07 e2 8c 4a 3e 97 f7  |......{.....J>..|
+    00000100  cc 64 a8 d3 34 af fb 05  e1 3d f0 db c4 7e db 96  |.d..4....=...~..|
+    00000110  84 9b db 7f a3 6e 6c 5a  53 09 e2 4d 33 41 af 58  |.....nlZS..M3A.X|
+    00000120  cf e6 9d 5f 1a 04 e6 9e  a3 40 71 2e 51 0a 49 09  |..._.....@q.Q.I.|
+    00000130  bd 72 ff 80 de 09 23 1f  91 2e 0f ea 07 6b 13 f2  |.r....#......k..|
+    00000140  d5 0e 63 5e b1 49 3e 80  82 0a 9c 08 58 c8 00 e0  |..c^.I>.....X...|
+    00000150  6f 31 61 5c 90 d9 a2 42  0d 7d 97 b4 e9 d3 8c eb  |o1a\...B.}......|
+    00000160  b9 af 99 85 09 d9 22 3d  42 9a 6b 58 9f a6 3c c6  |......"=B.kX..<.|
+    00000170  1c 4c 41 33 3e 72 23 41  7b f9 3d 18 d0 0c fe 0f  |.LA3>r#A{.=.....|
+    00000180  f9 76 9e ac cc 43 b8 44  0e 08 27 7f 64 58 f6 d4  |.v...C.D..'.dX..|
+    00000190  c8 98 c1 d6 5e 59 6c cc  8f 85 2c 0d b7 0a df 82  |....^Yl...,.....|
+    000001a0  40 ef 7e 3d d1 90 30 33  3f 52 a1 b6 ad a0 79 f6  |@.~=..03?R....y.|
+    000001b0  f8 de 72 50 91 e4 b1 4d  95 ff 72 f6 1b 50 21 57  |..rP...M..r..P!W|
+    000001c0  01 5b 4b de e5 13 e4 3c  3e 57 f4 bb cd a7 bd ef  |.[K....<>W......|
+    000001d0  e0 e7 fd e7 58 fb ae 6b  13 71 65 53 24 be e5 ec  |....X..k.qeS$...|
+    000001e0  5d fc 3b d5 69 45 90 79  35 77 eb 66 87 f5 0a 6f  |].;.iE.y5w.f...o|
+    000001f0  81 ee 54 65 df 20 9c 46  09 5d 30 6a 28 10 09 bc  |..Te. .F.]0j(...|
+    00000200  7e 30 d0 25 5c f5 cb d2  45 3b 6a d1 ea c4 9e 08  |~0.%\...E;j.....|
+    00000210  37 da d0 70 ea a7 2f 77  85 f6 44 f3 da df e9 96  |7..p../w..D.....|
+    00000220  dd 98 8b db 37 1c fa e6  59 b3 18 9c 35 f4 f9 63  |....7...Y...5..c|
+    00000230  42 15 66 7a e3 4a 35 9d  f7 8d 01 75 6b 4d 8f 65  |B.fz.J5....ukM.e|
+    00000240  5a 23 e3 e1 5c 2a 1c f6  0c a1 63 70 59 05 84 20  |Z#..\*....cpY.. |
+    00000250  e3 1c c5 d9 fe 88 b6 c5  dc 3c e1 af 73 ed 79 02  |.........<..s.y.|
+    00000260  14 9d dc 8a 35 b4 3b 71  df cb f4 b6 6b f7 f2 14  |....5.;q....k...|
+    00000270  8f a8 3b 4d 6c 69 8d 45  26 1c aa 04 f9 0d f0 55  |..;Mli.E&......U|
+    00000280  95 f3 dc 32 a0 ad aa fa  1d fe 45 89 86 e6 e2 4c  |...2......E....L|
+    00000290  37 25 3f bc 51 dc 09 cb  fc f8 bc 40 cf 84 ea 82  |7%?.Q......@....|
+    000002a0  14 ec 29 58 fb 5b ad a6  32 50 e4 54 44 dc 7d 61  |..)X.[..2P.TD.}a|
+    000002b0  25 fc 59 af d7 96 8d 1d  11 cd 3e fe f2 1d ab 18  |%.Y.......>.....|
+    000002c0  e8 60 74 ec c7 59 fe 67  18 7a 4b cc fb 44 49 71  |.`t..Y.g.zK..DIq|
+    000002d0  c1 ef 5c 0d 87 b4 78 8e  f8 61 87 b3 8d 78 db 22  |..\...x..a...x."|
+    000002e0  f3 4b 7b ed 79 d7 28 3a  c4 b3 2d 6b 8a 70 2f 44  |.K{.y.(:..-k.p/D|
+    000002f0  fe 7e 3a 8c 4c 07 ad a9  62 0d ae 20 71 3f 90 ab  |.~:.L...b.. q?..|
+    00000300  8f 65 6d 6d 9d ac ec 32  5e dc 10 71 c8 c6 52 e7  |.emm...2^..q..R.|
+    00000310  89 36 4d 47 72 2c 69 24  34 50 05 41 50 5c 11 2f  |.6MGr,i$4P.AP\./|
+    00000320  60 49 9d d9 a9 8a 1c 19  e3 7b 29 4f 00 30 66 77  |`I.......{)O.0fw|
+    00000330  ba 03 c0 e2 44 34 c9 3b  8e dd 06 77 9d f9 39 d6  |....D4.;...w..9.|
+    00000340  1f 27 71 96 de b1 d0 02  84 d6 f3 61 7b c7 32 7a  |.'q........a{.2z|
+    00000350  d0 39 a8 bf ce 34 8e ef  3d 32 bb b1 63 04 50 81  |.9...4..=2..c.P.|
+    00000360  71 dd d2 02 36 94 d0 5a  e2 96 7a 3d db 17 da 94  |q...6..Z..z=....|
+    00000370  03 e9 cf 41 81 9f 70 08  0f 0c 07 35 66 97 ae 3c  |...A..p....5f..<|
+    00000380  d4 47 b2 77 be 2f 1b 91  6c af 3e 12 ae 83 0b 21  |.G.w./..l.>....!|
+    00000390  6d 55 ce ce 54 9d 6e 66  f4 8d 0d 51 97 88 05 81  |mU..T.nf...Q....|
+    000003a0  c6 fd 93 d6 64 a5 53 3b  b3 d1 c2 ca 3a 8d 58 a6  |....d.S;....:.X.|
+    000003b0  98 d0 17 16 75 9d 91 8e  fd 91 b9 59 fe c6 c5 b1  |....u......Y....|
+    000003c0  c7 3d 11 09 27 ba 03 58  84 78 68 e8 8f 4a df 16  |.=..'..X.xh..J..|
+    000003d0  0c a0 33 d4 2d a6 fb 4f  f2 f0 41 e9 90 d7 4a 9f  |..3.-..O..A...J.|
+    000003e0  34 7a a7 af d5 f2 f7 d6  d1 ad fc cf 14 f0 44 91  |4z............D.|
+    000003f0  8d 8c 5d 6b fe 1c f7 1c  43 fb 4f 73 31 21 a3 2d  |..]k....C.Os1!.-|
+    00000400  ff 8a d6 c3 19 05 26 b7  fa 2e b0 f9 5f 47 a7 98  |......&....._G..|
+    00000410  37 7f dd d5 5e da 5b e0  dd c6 3b b6 f0 73 ec ee  |7...^.[...;..s..|
+    00000420  da a9 08 52 16 f7 8c 8c  8c af e6 18 03 c8 ae d8  |...R............|
+    00000430  72 d5 4a ce 8b e3 cc c1  78 aa 30 c3 94 7a 60 ba  |r.J.....x.0..z`.|
+    00000440  6c 09 01 23 e2 4e da b9  62 5a 2d ff e1 e3 1a a1  |l..#.N..bZ-.....|
+    00000450  99 ac 24 2a 16 81 f3 d5  80 c1 8e f2 a4 ac 01 75  |..$*...........u|
+    00000460  88 fe 87 a7 b1 98 ee cc  a5 b4 e5 0d 05 79 cb ee  |.............y..|
+    00000470  de d7 fe e6 5a bd 31 b3  b1 c9 f2 42 0d 58 c1 e4  |....Z.1....B.X..|
+    00000480  a4 ac bd 23 63 e7 0f a9  15 d7 d1 b7 91 f2 0e 8a  |...#c...........|
+    00000490  56 5b 6a d1 dd 4f d3 25  6d 90 12 8b 39 e1 a1 23  |V[j..O.%m...9..#|
+    000004a0  18 f5 0b 36 25 30 b8 5e  a0 29 e2 11 84 12 3b f2  |...6%0.^.)....;.|
+    000004b0  0c 6d 8e 3e e7 37 e5 5d  ab 02 77 69 d1 71 e9 47  |.m.>.7.]..wi.q.G|
+    000004c0  e9 a6 8a 08 64 6a 92 b9  1d 34 a3 bc bd d2 49 c9  |....dj...4....I.|
+    000004d0  4c 2e cb 31 c8 51 44 45  a4 db 72 d5 04 d3 aa 4a  |L..1.QDE..r....J|
+    000004e0  d1 26 aa ba 88 dd a1 cf  9f dd 5e aa 80 48 66 53  |.&........^..HfS|
+    000004f0  0c b1 41 65 76 14 ad 2e  8c 29 83 4a 96 29 84 37  |..Aev....).J.).7|
+    00000500  16 e4 6b 90 aa 22 15 e6  61 41 b7 77 64 0f 6c 4f  |..k.."..aA.wd.lO|
+    00000510  12 19 29 9e 9f 7d de 96  24 ae ac cf 2c 9e a8 7d  |..)..}..$...,..}|
+    00000520  13 f1 6d 76 01 1a 46 63  d2 ca 8a 90 2d 05 fa fe  |..mv..Fc....-...|
+    00000530  fe 81 5d a7 6c bf 79 bf  86 ee 2f ef 0b f7 f2 85  |..].l.y.../.....|
+    00000540  d0 12 93 5f f2 8c 59 b6  0e 05 3a 3c 1e 53 94 c6  |..._..Y...:<.S..|
+    00000550  9f cc 46 8b 48 a0                                 |..F.H.|
+   },
+   HtlcIndex: (uint64) 1,
+   LogIndex: (uint64) 1
+  }
+ }
+})
+
+2021-01-08 22:41:15.760 [DBG] CNCT: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): remote_commit_type=0, remote_commit=(*channeldb.ChannelCommitment)(0xc000195a70)({
+ CommitHeight: (uint64) 1,
+ LocalLogIndex: (uint64) 0,
+ LocalHtlcIndex: (uint64) 0,
+ RemoteLogIndex: (uint64) 2,
+ RemoteHtlcIndex: (uint64) 2,
+ LocalBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ RemoteBalance: (lnwire.MilliSatoshi) 688700000 mSAT,
+ CommitFee: (btcutil.Amount) 0.000112 BTC,
+ FeePerKw: (btcutil.Amount) 0.000125 BTC,
+ CommitTx: (*wire.MsgTx)(0xc000e36e00)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=1) {
+   (*wire.TxIn)(0xc0009bac00)({
+    PreviousOutPoint: (wire.OutPoint) 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0,
+    SignatureScript: ([]uint8) {
+    },
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2151901754
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=2 cap=2) {
+   (*wire.TxOut)(0xc000e36e40)({
+    Value: (int64) 300000,
+    PkScript: ([]uint8) (len=34 cap=34) {
+     00000000  00 20 fa 2c fe 8d a4 4b  cb 2a 82 b9 2c 97 75 53  |. .,...K.*..,.uS|
+     00000010  10 b3 a4 25 c2 12 73 58  db 93 97 42 3a c5 10 0d  |...%..sX...B:...|
+     00000020  30 cc                                             |0.|
+    }
+   }),
+   (*wire.TxOut)(0xc000e36e60)({
+    Value: (int64) 688700,
+    PkScript: ([]uint8) (len=34 cap=34) {
+     00000000  00 20 32 7c 6b 09 db 10  6b 07 cc ea d1 9b d1 40  |. 2|k...k......@|
+     00000010  ee 67 c4 2b e0 61 f0 7a  b3 4c ba ad 59 2d 13 59  |.g.+.a.z.L..Y-.Y|
+     00000020  fb e7                                             |..|
+    }
+   })
+  },
+  LockTime: (uint32) 546735474
+ }),
+ CommitSig: ([]uint8) {
+ },
+ Htlcs: ([]channeldb.HTLC) (len=2 cap=2) {
+  (channeldb.HTLC) {
+   Signature: ([]uint8) {
+   },
+   RHash: ([32]uint8) (len=32 cap=32) {
+    00000000  9a b2 c2 44 30 10 bc e6  e8 ba 3a cf c8 99 d8 82  |...D0.....:.....|
+    00000010  da a7 2e 97 43 56 d3 99  38 f0 bf 21 ff de 63 a5  |....CV..8..!..c.|
+   },
+   Amt: (lnwire.MilliSatoshi) 300000000 mSAT,
+   RefundTimeout: (uint32) 539,
+   OutputIndex: (int32) 0,
+   Incoming: (bool) true,
+   OnionBlob: ([]uint8) (len=1366 cap=1366) {
+    00000000  00 03 44 3b 2f 22 c0 6b  74 9c 97 c6 39 36 42 34  |..D;/".kt...96B4|
+    00000010  ff 54 ab 6c d6 62 8f 8e  00 6c 14 5a ec 1b 0b e0  |.T.l.b...l.Z....|
+    00000020  a1 2f b7 78 55 69 23 82  aa 76 0e f1 c1 a2 af 74  |./.xUi#..v.....t|
+    00000030  54 ef 42 a5 d4 07 87 d3  87 01 c9 df fe da 2e 58  |T.B............X|
+    00000040  43 5a 00 85 f8 c8 72 66  d4 3b a9 b5 f3 ae 97 c9  |CZ....rf.;......|
+    00000050  63 96 58 c6 df be a6 b3  0d e3 d7 06 69 5d 48 bb  |c.X.........i]H.|
+    00000060  ec 67 1d da a0 4e 5f 11  29 94 1a 48 56 e2 3e 85  |.g...N_.)..HV.>.|
+    00000070  b5 e5 7a 6e 71 f3 f5 2b  2c 00 46 58 11 77 65 95  |..znq..+,.FX.we.|
+    00000080  68 e6 a3 35 b8 d1 f3 f3  58 e1 c7 99 15 da 65 51  |h..5....X.....eQ|
+    00000090  47 2b 45 68 27 b4 8e 80  dd 1c 26 85 43 37 70 41  |G+Eh'.....&.C7pA|
+    000000a0  8d d9 7e 90 78 1f 81 20  7a 90 27 ca 4c b9 d8 2e  |..~.x.. z.'.L...|
+    000000b0  23 46 ea 22 72 a8 a0 65  77 3c 5e f5 de be d4 e1  |#F."r..ew<^.....|
+    000000c0  74 e2 ad 98 50 a1 e1 d5  1b 28 5a b7 37 2a dc b1  |t...P....(Z.7*..|
+    000000d0  69 e4 d5 ef d6 e9 54 a6  6d 2f 5e e2 55 f5 84 5a  |i.....T.m/^.U..Z|
+    000000e0  de a7 08 19 2c 5d d8 95  bb 40 f5 0e c4 6f 7c dc  |....,]...@...o|.|
+    000000f0  90 7d a3 9a d5 c6 77 39  e3 e7 1c be 3a e1 69 29  |.}....w9....:.i)|
+    00000100  70 f7 0d 2f ef 2c ef 45  f3 48 48 f8 63 70 70 cc  |p../.,.E.HH.cpp.|
+    00000110  12 67 88 44 ba 4f a0 85  ee 9e 09 19 28 ad 26 6a  |.g.D.O......(.&j|
+    00000120  36 f6 cb 5b d5 45 ca 0d  5d 02 73 a3 d4 d9 36 ad  |6..[.E..].s...6.|
+    00000130  4b f8 20 59 37 f7 2e 39  be 92 06 a7 72 a6 4f 0d  |K. Y7..9....r.O.|
+    00000140  3e 38 89 db ea 09 aa ce  ac b8 5d 6b 61 b6 ac 98  |>8........]ka...|
+    00000150  e4 0a ae 3a ea 81 30 59  ba d9 d3 39 ac f8 10 11  |...:..0Y...9....|
+    00000160  f7 d4 20 f9 ac bf 19 34  a8 9b 1d 17 98 1d 4e 4b  |.. ....4......NK|
+    00000170  54 b9 21 9e 06 3c 6a 90  88 db 0b c9 0b 6b 60 05  |T.!..<j......k`.|
+    00000180  c5 c7 fa 47 81 4f 72 45  b3 e0 d3 cc 26 a0 2e c9  |...G.OrE....&...|
+    00000190  9f 47 0f d2 ea c4 53 85  c6 54 48 aa 6b 32 64 e9  |.G....S..TH.k2d.|
+    000001a0  a4 f6 b8 91 0c 0c ba 8f  c8 bc 3e f6 1d e2 dc 39  |..........>....9|
+    000001b0  a7 35 de 56 d7 24 c7 39  8b 88 ab a5 44 ad 89 41  |.5.V.$.9....D..A|
+    000001c0  ca 1c f5 fa e2 3c a5 89  84 30 be 5e d6 34 1a 15  |.....<...0.^.4..|
+    000001d0  e9 47 c5 37 99 de 74 fa  fd af 6d 2c 5b e4 8c 1b  |.G.7..t...m,[...|
+    000001e0  a5 00 b9 2b 9f 4b 0d d1  48 bb 52 7f ab 0c 01 ae  |...+.K..H.R.....|
+    000001f0  59 33 e7 93 e8 11 f0 2d  65 cb 41 1f 8a 12 24 ab  |Y3.....-e.A...$.|
+    00000200  0a 29 33 e8 da 4d 78 ee  e3 97 56 b1 7e 1f bd 26  |.)3..Mx...V.~..&|
+    00000210  56 09 b3 de e1 58 2f 89  f0 c4 97 aa 4f 9c 7d de  |V....X/.....O.}.|
+    00000220  78 2b 69 d6 5d 4f df 0c  b6 a1 71 8f 82 f1 83 db  |x+i.]O....q.....|
+    00000230  0c 6f 16 74 7c 96 ff 58  9f 4e 59 b4 13 26 66 4d  |.o.t|..X.NY..&fM|
+    00000240  53 93 13 e3 54 e2 14 92  d4 24 f9 c5 21 ec f3 51  |S...T....$..!..Q|
+    00000250  f0 41 53 8b f2 b5 fd 07  5c bd 56 e0 f9 51 40 fc  |.AS.....\.V..Q@.|
+    00000260  34 6c 09 2b ff 22 71 e8  9b 1a 68 5b 3b 7a 26 b6  |4l.+."q...h[;z&.|
+    00000270  88 a6 aa 51 5c 10 8a 06  10 14 d2 6b 9e 27 68 f2  |...Q\......k.'h.|
+    00000280  52 91 7c 2a 3f 08 07 54  d8 65 cb 9d a2 4f 32 45  |R.|*?..T.e...O2E|
+    00000290  62 6f 97 eb ea a6 f7 e7  44 d3 8c 97 1f a3 e1 0a  |bo......D.......|
+    000002a0  5a b9 a3 11 67 0b f5 76  a6 62 cb a1 30 ec f6 79  |Z...g..v.b..0..y|
+    000002b0  19 d7 a9 54 60 06 42 1c  bb e5 cc 0e b3 49 01 c1  |...T`.B......I..|
+    000002c0  ec c4 05 ad 29 5c 76 18  5d 5c c4 41 af 01 0f 19  |....)\v.]\.A....|
+    000002d0  6a 94 d9 e9 8f 76 90 88  5d 07 a5 bd 59 40 f5 7f  |j....v..]...Y@..|
+    000002e0  f8 a2 34 2e dd 26 79 fd  44 2a 6e 10 1b 18 9d 2b  |..4..&y.D*n....+|
+    000002f0  89 f2 80 39 28 9f fd fc  0b 83 5a 8f 36 c4 88 bf  |...9(.....Z.6...|
+    00000300  d7 93 e5 34 b0 b3 93 2d  23 55 5e 96 aa 42 62 15  |...4...-#U^..Bb.|
+    00000310  0d c8 18 87 33 4f e6 8e  3c b6 a8 aa 20 af 75 02  |....3O..<... .u.|
+    00000320  ec 16 da 03 d8 28 1b 08  45 27 9c 2a 5b ef c7 5d  |.....(..E'.*[..]|
+    00000330  6f e2 d1 9d 94 a9 22 76  86 8b 7d d4 54 27 58 c2  |o....."v..}.T'X.|
+    00000340  7f 9b 3f 6b e1 fe e6 9e  fa 2c c0 ab 4d 33 f3 9e  |..?k.....,..M3..|
+    00000350  e2 56 db 4f c0 51 41 33  dc 45 70 96 85 59 c3 2d  |.V.O.QA3.Ep..Y.-|
+    00000360  bc 5b bb 1a 71 90 c3 fd  56 5a df 16 07 a6 50 4c  |.[..q...VZ....PL|
+    00000370  f3 87 b1 63 42 42 5f 51  2e 1b 11 4e 30 12 e7 b5  |...cBB_Q...N0...|
+    00000380  9e 0d 5e 12 4d 1c 50 22  0c a7 5c c5 d8 50 d5 bb  |..^.M.P"..\..P..|
+    00000390  e0 06 07 99 a0 20 c8 1d  c9 05 2c 9c 5a d2 86 4c  |..... ....,.Z..L|
+    000003a0  06 52 f6 d8 cc 67 00 0a  bb cd 46 fe b0 8e 92 7f  |.R...g....F.....|
+    000003b0  54 50 56 b4 61 9a 37 05  dc 85 5d 46 06 a0 a6 e5  |TPV.a.7...]F....|
+    000003c0  21 fd 95 49 51 1d 37 38  27 1d 0f bd d4 9d 48 a6  |!..IQ.78'.....H.|
+    000003d0  a4 d0 32 e6 77 d9 5b c3  85 fe 31 51 4c 6e 80 d6  |..2.w.[...1QLn..|
+    000003e0  35 23 5c e5 b9 aa 06 4d  e5 ad e6 3b ae 70 1a c9  |5#\....M...;.p..|
+    000003f0  a2 e3 1e d5 b2 03 0c ae  d3 cb e8 3f 4b e2 fd 66  |...........?K..f|
+    00000400  eb c5 c3 4d 67 a8 2f 5b  7c 9b fc ea a6 00 70 33  |...Mg./[|.....p3|
+    00000410  a6 4f 05 40 7e 95 da 91  87 d2 60 94 ac 5b 21 74  |.O.@~.....`..[!t|
+    00000420  2d 96 0f 57 f3 dc 4d ef  cd 9c eb d7 64 06 88 46  |-..W..M.....d..F|
+    00000430  a9 78 95 db f1 0c be 0c  a8 27 e8 a9 d5 88 ec bd  |.x.......'......|
+    00000440  af 3e 31 7f 2a a6 10 de  d4 41 40 39 a5 e4 27 32  |.>1.*....A@9..'2|
+    00000450  71 0c b0 40 9a 14 75 df  c1 75 75 27 df 42 d7 2e  |q..@..u..uu'.B..|
+    00000460  92 17 07 fd e3 03 f8 d8  f2 20 51 ab 09 6d 6a 83  |......... Q..mj.|
+    00000470  04 a5 47 ea c3 e8 85 52  e0 a3 0d 48 ed 88 cd c9  |..G....R...H....|
+    00000480  5e 19 c3 82 a1 d7 e7 92  8f da 82 b2 4b 6b d4 3c  |^...........Kk.<|
+    00000490  30 04 0c 01 0a 45 51 95  ee a0 28 a4 fa ca f6 ae  |0....EQ...(.....|
+    000004a0  19 b5 a2 b0 07 e7 2e 1f  d1 d0 9a 20 70 cd 16 5c  |........... p..\|
+    000004b0  ff 47 52 28 13 be 46 d8  45 68 09 01 3c 1c 53 f6  |.GR(..F.Eh..<.S.|
+    000004c0  df f6 f9 20 6a ac df 3f  6d 4d d1 9a 82 8f 5d 53  |... j..?mM....]S|
+    000004d0  7f 8e 02 ba 40 85 2c bd  f6 b6 e8 9c 59 05 e3 c7  |....@.,.....Y...|
+    000004e0  8a 91 4a 59 d2 c7 be 05  05 d3 90 7d 3b 68 4a b2  |..JY.......};hJ.|
+    000004f0  b1 a9 9f 90 e5 09 0d d7  80 d5 4e 29 fa 35 29 a1  |..........N).5).|
+    00000500  db 94 19 66 7a a3 85 f4  d6 21 e3 ad c8 f8 5f 17  |...fz....!...._.|
+    00000510  a9 7e 1d d5 0d db 03 1c  37 34 29 10 4c fb 3d b7  |.~......74).L.=.|
+    00000520  71 99 a9 1d c8 4b 1d 1d  a5 eb b2 f4 8e 70 ec 08  |q....K.......p..|
+    00000530  ef 5a 1d e3 c7 fd 84 bb  ea 78 b9 42 7a 60 ed d5  |.Z.......x.Bz`..|
+    00000540  4a a2 76 d6 13 2e 29 af  55 82 d1 a4 c7 b7 47 1c  |J.v...).U.....G.|
+    00000550  6d 25 69 9a 7b fb                                 |m%i.{.|
+   },
+   HtlcIndex: (uint64) 0,
+   LogIndex: (uint64) 0
+  },
+  (channeldb.HTLC) {
+   Signature: ([]uint8) {
+   },
+   RHash: ([32]uint8) (len=32 cap=32) {
+    00000000  d1 15 c3 5c 96 33 e0 76  38 ed d4 f2 d9 d0 29 ec  |...\.3.v8.....).|
+    00000010  e5 67 c8 a0 9b 80 af bc  37 a1 f6 f9 cf 72 de eb  |.g......7....r..|
+   },
+   Amt: (lnwire.MilliSatoshi) 100000 mSAT,
+   RefundTimeout: (uint32) 539,
+   OutputIndex: (int32) -1,
+   Incoming: (bool) true,
+   OnionBlob: ([]uint8) (len=1366 cap=1366) {
+    00000000  00 03 a0 ab b1 17 dd 32  48 15 4a 1e 63 38 37 08  |.......2H.J.c87.|
+    00000010  fa fa db cb 0a a2 69 2b  83 f0 f9 1e 1d 92 cc 2a  |......i+.......*|
+    00000020  66 2a e0 66 ce ff 3c 09  2d 99 bb 34 2d 81 ec ee  |f*.f..<.-..4-...|
+    00000030  ba 26 49 10 b7 80 4c fd  80 ed 4d 93 4e 2a 83 59  |.&I...L...M.N*.Y|
+    00000040  b5 0d 95 c1 5e 78 43 f1  ec d6 91 e6 61 4b eb 2f  |....^xC.....aK./|
+    00000050  ec 55 5c d6 38 b7 6a 65  c9 88 4e 75 68 fc f9 7b  |.U\.8.je..Nuh..{|
+    00000060  5d bd 91 e4 34 fe 80 15  b3 b1 3f 6f 5a 07 42 b6  |]...4.....?oZ.B.|
+    00000070  f4 2c 4e 02 e8 6f 6b 4c  70 43 a3 e3 fe df 25 02  |.,N..okLpC....%.|
+    00000080  ef 36 8b 9a 74 37 fa dd  83 4e e2 91 f0 73 6d f8  |.6..t7...N...sm.|
+    00000090  17 a1 ba 70 6d 72 27 5a  ba 44 28 16 b1 f1 f8 58  |...pmr'Z.D(....X|
+    000000a0  dd be 3e 43 ef 16 5e 29  b0 bc a3 e9 75 69 22 63  |..>C..^)....ui"c|
+    000000b0  57 4b 67 6a f8 af 3e c8  28 35 fc c5 0e 90 9a 03  |WKgj..>.(5......|
+    000000c0  37 56 21 1e 57 46 d1 02  29 22 d0 01 42 c8 65 03  |7V!.WF..)"..B.e.|
+    000000d0  28 5a fc 38 4b fb d1 64  f1 7a 1e 77 c7 7c 29 6d  |(Z.8K..d.z.w.|)m|
+    000000e0  a5 5e cd 3f 0d c1 6b 5c  18 35 a6 89 25 02 a1 af  |.^.?..k\.5..%...|
+    000000f0  10 00 88 a9 b6 14 7b af  aa 07 e2 8c 4a 3e 97 f7  |......{.....J>..|
+    00000100  cc 64 a8 d3 34 af fb 05  e1 3d f0 db c4 7e db 96  |.d..4....=...~..|
+    00000110  84 9b db 7f a3 6e 6c 5a  53 09 e2 4d 33 41 af 58  |.....nlZS..M3A.X|
+    00000120  cf e6 9d 5f 1a 04 e6 9e  a3 40 71 2e 51 0a 49 09  |..._.....@q.Q.I.|
+    00000130  bd 72 ff 80 de 09 23 1f  91 2e 0f ea 07 6b 13 f2  |.r....#......k..|
+    00000140  d5 0e 63 5e b1 49 3e 80  82 0a 9c 08 58 c8 00 e0  |..c^.I>.....X...|
+    00000150  6f 31 61 5c 90 d9 a2 42  0d 7d 97 b4 e9 d3 8c eb  |o1a\...B.}......|
+    00000160  b9 af 99 85 09 d9 22 3d  42 9a 6b 58 9f a6 3c c6  |......"=B.kX..<.|
+    00000170  1c 4c 41 33 3e 72 23 41  7b f9 3d 18 d0 0c fe 0f  |.LA3>r#A{.=.....|
+    00000180  f9 76 9e ac cc 43 b8 44  0e 08 27 7f 64 58 f6 d4  |.v...C.D..'.dX..|
+    00000190  c8 98 c1 d6 5e 59 6c cc  8f 85 2c 0d b7 0a df 82  |....^Yl...,.....|
+    000001a0  40 ef 7e 3d d1 90 30 33  3f 52 a1 b6 ad a0 79 f6  |@.~=..03?R....y.|
+    000001b0  f8 de 72 50 91 e4 b1 4d  95 ff 72 f6 1b 50 21 57  |..rP...M..r..P!W|
+    000001c0  01 5b 4b de e5 13 e4 3c  3e 57 f4 bb cd a7 bd ef  |.[K....<>W......|
+    000001d0  e0 e7 fd e7 58 fb ae 6b  13 71 65 53 24 be e5 ec  |....X..k.qeS$...|
+    000001e0  5d fc 3b d5 69 45 90 79  35 77 eb 66 87 f5 0a 6f  |].;.iE.y5w.f...o|
+    000001f0  81 ee 54 65 df 20 9c 46  09 5d 30 6a 28 10 09 bc  |..Te. .F.]0j(...|
+    00000200  7e 30 d0 25 5c f5 cb d2  45 3b 6a d1 ea c4 9e 08  |~0.%\...E;j.....|
+    00000210  37 da d0 70 ea a7 2f 77  85 f6 44 f3 da df e9 96  |7..p../w..D.....|
+    00000220  dd 98 8b db 37 1c fa e6  59 b3 18 9c 35 f4 f9 63  |....7...Y...5..c|
+    00000230  42 15 66 7a e3 4a 35 9d  f7 8d 01 75 6b 4d 8f 65  |B.fz.J5....ukM.e|
+    00000240  5a 23 e3 e1 5c 2a 1c f6  0c a1 63 70 59 05 84 20  |Z#..\*....cpY.. |
+    00000250  e3 1c c5 d9 fe 88 b6 c5  dc 3c e1 af 73 ed 79 02  |.........<..s.y.|
+    00000260  14 9d dc 8a 35 b4 3b 71  df cb f4 b6 6b f7 f2 14  |....5.;q....k...|
+    00000270  8f a8 3b 4d 6c 69 8d 45  26 1c aa 04 f9 0d f0 55  |..;Mli.E&......U|
+    00000280  95 f3 dc 32 a0 ad aa fa  1d fe 45 89 86 e6 e2 4c  |...2......E....L|
+    00000290  37 25 3f bc 51 dc 09 cb  fc f8 bc 40 cf 84 ea 82  |7%?.Q......@....|
+    000002a0  14 ec 29 58 fb 5b ad a6  32 50 e4 54 44 dc 7d 61  |..)X.[..2P.TD.}a|
+    000002b0  25 fc 59 af d7 96 8d 1d  11 cd 3e fe f2 1d ab 18  |%.Y.......>.....|
+    000002c0  e8 60 74 ec c7 59 fe 67  18 7a 4b cc fb 44 49 71  |.`t..Y.g.zK..DIq|
+    000002d0  c1 ef 5c 0d 87 b4 78 8e  f8 61 87 b3 8d 78 db 22  |..\...x..a...x."|
+    000002e0  f3 4b 7b ed 79 d7 28 3a  c4 b3 2d 6b 8a 70 2f 44  |.K{.y.(:..-k.p/D|
+    000002f0  fe 7e 3a 8c 4c 07 ad a9  62 0d ae 20 71 3f 90 ab  |.~:.L...b.. q?..|
+    00000300  8f 65 6d 6d 9d ac ec 32  5e dc 10 71 c8 c6 52 e7  |.emm...2^..q..R.|
+    00000310  89 36 4d 47 72 2c 69 24  34 50 05 41 50 5c 11 2f  |.6MGr,i$4P.AP\./|
+    00000320  60 49 9d d9 a9 8a 1c 19  e3 7b 29 4f 00 30 66 77  |`I.......{)O.0fw|
+    00000330  ba 03 c0 e2 44 34 c9 3b  8e dd 06 77 9d f9 39 d6  |....D4.;...w..9.|
+    00000340  1f 27 71 96 de b1 d0 02  84 d6 f3 61 7b c7 32 7a  |.'q........a{.2z|
+    00000350  d0 39 a8 bf ce 34 8e ef  3d 32 bb b1 63 04 50 81  |.9...4..=2..c.P.|
+    00000360  71 dd d2 02 36 94 d0 5a  e2 96 7a 3d db 17 da 94  |q...6..Z..z=....|
+    00000370  03 e9 cf 41 81 9f 70 08  0f 0c 07 35 66 97 ae 3c  |...A..p....5f..<|
+    00000380  d4 47 b2 77 be 2f 1b 91  6c af 3e 12 ae 83 0b 21  |.G.w./..l.>....!|
+    00000390  6d 55 ce ce 54 9d 6e 66  f4 8d 0d 51 97 88 05 81  |mU..T.nf...Q....|
+    000003a0  c6 fd 93 d6 64 a5 53 3b  b3 d1 c2 ca 3a 8d 58 a6  |....d.S;....:.X.|
+    000003b0  98 d0 17 16 75 9d 91 8e  fd 91 b9 59 fe c6 c5 b1  |....u......Y....|
+    000003c0  c7 3d 11 09 27 ba 03 58  84 78 68 e8 8f 4a df 16  |.=..'..X.xh..J..|
+    000003d0  0c a0 33 d4 2d a6 fb 4f  f2 f0 41 e9 90 d7 4a 9f  |..3.-..O..A...J.|
+    000003e0  34 7a a7 af d5 f2 f7 d6  d1 ad fc cf 14 f0 44 91  |4z............D.|
+    000003f0  8d 8c 5d 6b fe 1c f7 1c  43 fb 4f 73 31 21 a3 2d  |..]k....C.Os1!.-|
+    00000400  ff 8a d6 c3 19 05 26 b7  fa 2e b0 f9 5f 47 a7 98  |......&....._G..|
+    00000410  37 7f dd d5 5e da 5b e0  dd c6 3b b6 f0 73 ec ee  |7...^.[...;..s..|
+    00000420  da a9 08 52 16 f7 8c 8c  8c af e6 18 03 c8 ae d8  |...R............|
+    00000430  72 d5 4a ce 8b e3 cc c1  78 aa 30 c3 94 7a 60 ba  |r.J.....x.0..z`.|
+    00000440  6c 09 01 23 e2 4e da b9  62 5a 2d ff e1 e3 1a a1  |l..#.N..bZ-.....|
+    00000450  99 ac 24 2a 16 81 f3 d5  80 c1 8e f2 a4 ac 01 75  |..$*...........u|
+    00000460  88 fe 87 a7 b1 98 ee cc  a5 b4 e5 0d 05 79 cb ee  |.............y..|
+    00000470  de d7 fe e6 5a bd 31 b3  b1 c9 f2 42 0d 58 c1 e4  |....Z.1....B.X..|
+    00000480  a4 ac bd 23 63 e7 0f a9  15 d7 d1 b7 91 f2 0e 8a  |...#c...........|
+    00000490  56 5b 6a d1 dd 4f d3 25  6d 90 12 8b 39 e1 a1 23  |V[j..O.%m...9..#|
+    000004a0  18 f5 0b 36 25 30 b8 5e  a0 29 e2 11 84 12 3b f2  |...6%0.^.)....;.|
+    000004b0  0c 6d 8e 3e e7 37 e5 5d  ab 02 77 69 d1 71 e9 47  |.m.>.7.]..wi.q.G|
+    000004c0  e9 a6 8a 08 64 6a 92 b9  1d 34 a3 bc bd d2 49 c9  |....dj...4....I.|
+    000004d0  4c 2e cb 31 c8 51 44 45  a4 db 72 d5 04 d3 aa 4a  |L..1.QDE..r....J|
+    000004e0  d1 26 aa ba 88 dd a1 cf  9f dd 5e aa 80 48 66 53  |.&........^..HfS|
+    000004f0  0c b1 41 65 76 14 ad 2e  8c 29 83 4a 96 29 84 37  |..Aev....).J.).7|
+    00000500  16 e4 6b 90 aa 22 15 e6  61 41 b7 77 64 0f 6c 4f  |..k.."..aA.wd.lO|
+    00000510  12 19 29 9e 9f 7d de 96  24 ae ac cf 2c 9e a8 7d  |..)..}..$...,..}|
+    00000520  13 f1 6d 76 01 1a 46 63  d2 ca 8a 90 2d 05 fa fe  |..mv..Fc....-...|
+    00000530  fe 81 5d a7 6c bf 79 bf  86 ee 2f ef 0b f7 f2 85  |..].l.y.../.....|
+    00000540  d0 12 93 5f f2 8c 59 b6  0e 05 3a 3c 1e 53 94 c6  |..._..Y...:<.S..|
+    00000550  9f cc 46 8b 48 a0                                 |..F.H.|
+   },
+   HtlcIndex: (uint64) 1,
+   LogIndex: (uint64) 1
+  }
+ }
+})
+
+2021-01-08 22:41:15.763 [INF] CNCT: Remote party broadcast base set, commit_num=1
+2021-01-08 22:41:15.763 [INF] CNCT: Unilateral close of ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) detected
+2021-01-08 22:41:15.764 [WRN] HSWC: ChannelLink(491:1:0): remote peer has closed on-chain
+2021-01-08 22:41:15.764 [INF] HSWC: ChannelLink(491:1:0): exited
+2021-01-08 22:41:15.764 [INF] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): remote party has closed channel out on-chain
+2021-01-08 22:41:15.764 [INF] HSWC: Removing channel link with ChannelID(c6f5df8c076dcc761166faf0a2d421d8b7ec057ea2142adc12abe3b7999a426d)
+2021-01-08 22:41:15.764 [INF] HSWC: ChannelLink(491:1:0): stopping
+2021-01-08 22:41:15.825 [INF] HSWC: Garbage collected 2 shared secret hashes at height=540
+2021-01-08 22:41:15.938 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): new block (height=540) examining active HTLC's
+2021-01-08 22:41:15.938 [DBG] CHBU: Removing channel 6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0 from backup state
+2021-01-08 22:41:15.939 [INF] CHBU: Updating on-disk multi SCB backup: num_old_chans=1, num_new_chans=0
+2021-01-08 22:41:15.939 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=540, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:15.939 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:15.939 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:15.939 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): no resolution needed for incoming dust htlc=d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb
+2021-01-08 22:41:16.001 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): checking commit chain actions at height=540, in_htlc_count=2, out_htlc_count=0
+2021-01-08 22:41:16.012 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:16.034 [ERR] LTND: Unable to lookup witness: no witnesses
+2021-01-08 22:41:16.034 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): no resolution needed for incoming dust htlc=d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb
+2021-01-08 22:41:16.033 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:41:16.034 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): sending resolution message=([]contractcourt.ResolutionMsg) <nil>
+
+2021-01-08 22:41:16.034 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): inserting 1 contract resolvers
+2021-01-08 22:41:16.059 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node862809493/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:41:16.108 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): attempting to resolve *contractcourt.htlcIncomingContestResolver
+2021-01-08 22:41:16.109 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): contract *contractcourt.htlcIncomingContestResolver not yet resolved
+2021-01-08 22:41:16.160 [INF] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): still awaiting contract resolution
+2021-01-08 22:41:16.170 [INF] NTFN: New block epoch subscription
+2021-01-08 22:41:16.170 [INF] CNCT: *contractcourt.htlcIncomingContestResolver(283fee0635b87f0ace26d28e061559b58dddc567c0c4dfd2a169080f6e19e49c:0): HTLC has timed out (expiry=539, height=540), abandoning
+2021-01-08 22:41:16.249 [INF] NTFN: Cancelling epoch notification, epoch_id=8
+2021-01-08 22:41:16.250 [DBG] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): marking contract *contractcourt.htlcIncomingContestResolver fully resolved
+2021-01-08 22:41:16.342 [INF] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): a contract has been fully resolved!
+2021-01-08 22:41:16.343 [INF] CNCT: ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0): still awaiting contract resolution
+2021-01-08 22:41:16.392 [INF] CNCT: ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) has been fully resolved on-chain at height=540
+2021-01-08 22:41:16.394 [INF] CNCT: Marking ChannelPoint(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0) fully resolved
+2021-01-08 22:41:16.394 [INF] CHDB: Pruning link node 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 with zero open channels from database
+2021-01-08 22:41:16.437 [DBG] CNCT: Stopping ChannelArbitrator(6d429a99b7e3ab12dc2a14a27e05ecb7d821d4a2f0fa661176cc6d078cdff5c6:0)
+2021-01-08 22:41:16.649 [INF] CRTR: Pruning channel graph using block 32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b (height=541)
+2021-01-08 22:41:16.812 [INF] CRTR: Block 32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b (height=541) closed 0 channels
+2021-01-08 22:41:16.814 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 541
+2021-01-08 22:41:16.814 [INF] NTFN: New block: height=541, sha=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:16.814 [DBG] SWPR: New block: height=541, sha=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:16.814 [INF] UTXN: Attempting to graduate height=541: num_kids=0, num_babies=0
+2021-01-08 22:41:16.814 [DBG] DISC: New block: height=541, hash=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:16.815 [INF] CRTR: Pruning channel graph using block 2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de (height=542)
+2021-01-08 22:41:16.818 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 542
+2021-01-08 22:41:16.818 [INF] NTFN: New block: height=542, sha=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:16.818 [DBG] SWPR: New block: height=542, sha=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:16.818 [INF] UTXN: Attempting to graduate height=542: num_kids=0, num_babies=0
+2021-01-08 22:41:16.818 [DBG] DISC: New block: height=542, hash=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:16.818 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 543
+2021-01-08 22:41:16.819 [INF] NTFN: New block: height=543, sha=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:16.819 [DBG] DISC: New block: height=543, hash=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:16.819 [DBG] SWPR: New block: height=543, sha=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:16.819 [INF] UTXN: Attempting to graduate height=543: num_kids=0, num_babies=0
+2021-01-08 22:41:16.865 [INF] CRTR: Block 2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de (height=542) closed 0 channels
+2021-01-08 22:41:16.869 [INF] CRTR: Pruning channel graph using block 5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca (height=543)
+2021-01-08 22:41:16.992 [INF] CRTR: Block 5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca (height=543) closed 0 channels
+2021-01-08 22:41:25.624 [INF] CRTR: Pruning channel graph using block 44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2 (height=544)
+2021-01-08 22:41:25.625 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 544
+2021-01-08 22:41:25.625 [INF] NTFN: New block: height=544, sha=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.625 [DBG] SWPR: New block: height=544, sha=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.625 [DBG] DISC: New block: height=544, hash=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.625 [INF] UTXN: Attempting to graduate height=544: num_kids=0, num_babies=0
+2021-01-08 22:41:25.704 [INF] CRTR: Block 44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2 (height=544) closed 0 channels
+2021-01-08 22:41:25.727 [INF] CRTR: Pruning channel graph using block 37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280 (height=545)
+2021-01-08 22:41:25.798 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 545
+2021-01-08 22:41:25.855 [INF] NTFN: New block: height=545, sha=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.855 [DBG] SWPR: New block: height=545, sha=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.856 [INF] UTXN: Attempting to graduate height=545: num_kids=0, num_babies=0
+2021-01-08 22:41:25.856 [DBG] DISC: New block: height=545, hash=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.865 [INF] CRTR: Block 37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280 (height=545) closed 0 channels
+2021-01-08 22:41:34.081 [INF] LTND: Received interrupt
+2021-01-08 22:41:34.084 [INF] LTND: Shutting down...
+2021-01-08 22:41:34.084 [INF] LTND: Gracefully shutting down.
+2021-01-08 22:41:34.085 [INF] CRTR: FilteredChainView stopping
+2021-01-08 22:41:34.085 [INF] HSWC: HTLC Switch shutting down
+2021-01-08 22:41:34.085 [INF] HSWC: Block epoch canceled, decaying hash log shutting down
+2021-01-08 22:41:34.089 [INF] UTXN: UTXO nursery shutting down
+2021-01-08 22:41:34.089 [INF] BRAR: Breach arbiter shutting down
+2021-01-08 22:41:34.089 [INF] DISC: Authenticated Gossiper is stopping
+2021-01-08 22:41:34.089 [INF] CNCT: Stopping ChainArbitrator
+2021-01-08 22:41:34.089 [DBG] SWPR: Sweeper shutting down
+2021-01-08 22:41:34.089 [DBG] SWPR: Sweeper shut down
+2021-01-08 22:41:34.089 [INF] PRNF: Stopping PeerNotifier
+2021-01-08 22:41:34.089 [INF] FNDG: Funding manager shutting down
+2021-01-08 22:41:34.089 [INF] CHBU: Stopping chanbackup.SubSwapper
+2021-01-08 22:41:34.090 [INF] CHFT: Stopping event store
+2021-01-08 22:41:34.090 [DBG] CHFT: recording flap count for: 1 peers
+2021-01-08 22:41:34.154 [INF] SRVR: Disconnecting from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:34.155 [DBG] SRVR: removing peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:34.155 [INF] PEER: disconnecting 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045, reason: server: disconnecting peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045
+2021-01-08 22:41:34.155 [INF] PEER: unable to read message from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045: read tcp 127.0.0.1:5577->127.0.0.1:50045: use of closed network connection
+2021-01-08 22:41:34.360 [DBG] SRVR: Peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:50045 has been disconnected
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping AutopilotRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping ChainRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping WalletKitRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping VersionRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping WatchtowerRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping WatchtowerClientRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping RouterRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping SignRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping InvoicesRPC Sub-RPC Server
+2021-01-08 22:41:34.362 [INF] LTND: Shutdown complete
+

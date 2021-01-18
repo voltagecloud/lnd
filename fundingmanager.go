@@ -369,6 +369,10 @@ type fundingConfig struct {
 	// allow for each peer.
 	MaxPendingChannels int
 
+	// MaxOpenChannels is the maximum number of open channels we
+	// allow on the node.
+	MaxOpenChannels int
+
 	// RejectPush is set true if the fundingmanager should reject any
 	// incoming channels having a non-zero push amount.
 	RejectPush bool
@@ -1248,6 +1252,16 @@ func (f *fundingManager) handleFundingOpen(fmsg *fundingOpenMsg) {
 		f.failFundingFlow(
 			fmsg.peer, fmsg.msg.PendingChannelID,
 			lnwire.ErrMaxPendingChannels,
+		)
+		return
+	}
+
+	// If there's a maxopenchannels value set, then we compare the number of
+	// currently open channels against the max.
+	if f.cfg.MaxOpenChannels > 0 && len(channels) >= f.cfg.MaxOpenChannels {
+		f.failFundingFlow(
+			fmsg.peer, fmsg.msg.PendingChannelID,
+			lnwire.ErrMaxOpenChannels,
 		)
 		return
 	}

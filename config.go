@@ -215,6 +215,7 @@ type Config struct {
 	UnsafeDisconnect   bool   `long:"unsafe-disconnect" description:"DEPRECATED: Allows the rpcserver to intentionally disconnect from peers with open channels. THIS FLAG WILL BE REMOVED IN 0.10.0"`
 	UnsafeReplay       bool   `long:"unsafe-replay" description:"Causes a link to replay the adds on its commitment txn after starting up, this enables testing of the sphinx replay logic."`
 	MaxPendingChannels int    `long:"maxpendingchannels" description:"The maximum number of incoming pending channels permitted per peer."`
+	MaxOpenChannels    int    `long:"maxopenchannels" description:"The maximum number of open channels that are allowed on the node. Default is no limit"`
 	BackupFilePath     string `long:"backupfilepath" description:"The target location of the channel backup file"`
 
 	Bitcoin      *lncfg.Chain    `group:"Bitcoin" namespace:"bitcoin"`
@@ -362,6 +363,7 @@ func DefaultConfig() Config {
 		},
 		UnsafeDisconnect:   true,
 		MaxPendingChannels: lncfg.DefaultMaxPendingChannels,
+		MaxOpenChannels:    lncfg.DefaultMaxOpenChannels,
 		NoSeedBackup:       defaultNoSeedBackup,
 		MinBackoff:         defaultMinBackoff,
 		MaxBackoff:         defaultMaxBackoff,

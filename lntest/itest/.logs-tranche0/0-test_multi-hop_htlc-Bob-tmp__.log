@@ -1,0 +1,975 @@
+2021-01-08 22:40:37.166 [WRN] LTND: open /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data: no such file or directory
+2021-01-08 22:40:37.166 [INF] LTND: Version: 0.12.0-beta.rc4 commit=cert/v1.0.3-744-g1da3994a-dirty, build=development, logging=default, debuglevel=debug
+2021-01-08 22:40:37.166 [INF] LTND: Active chain: Bitcoin (network=regtest)
+2021-01-08 22:40:37.167 [INF] LTND: Opening the main database, this might take a few minutes...
+2021-01-08 22:40:37.167 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2021-01-08 22:40:37.264 [INF] CHDB: Checking for schema update: latest_version=20, db_version=20
+2021-01-08 22:40:37.265 [INF] LTND: Database now open (time_to_open=98.43811ms)!
+2021-01-08 22:40:37.265 [INF] RPCS: Generating TLS certificates...
+2021-01-08 22:40:37.300 [INF] RPCS: Done generating TLS certificates
+2021-01-08 22:40:37.592 [INF] CHRE: Primary chain is set to: bitcoin
+2021-01-08 22:40:37.653 [INF] CHRE: Using external fee estimator http://localhost:5560/fee-estimates.json: cached=false
+2021-01-08 22:40:38.065 [INF] LNWL: Opened wallet
+2021-01-08 22:40:38.068 [INF] LNWL: The wallet has been unlocked without a time limit
+2021-01-08 22:40:38.176 [INF] CHRE: LightningWallet opened
+2021-01-08 22:40:38.176 [DBG] LNWL: Locating suitable block for birthday 2021-01-06 22:40:37 -0600 CST between blocks 0-438
+2021-01-08 22:40:38.177 [DBG] LNWL: Checking candidate block: height=219, hash=0d64bae816b2b81b66c818514eee0bd7bd32b4a276841d64f0cbb923e09bbb4b, timestamp=2021-01-08 22:41:12 -0600 CST
+2021-01-08 22:40:38.178 [DBG] LNWL: Checking candidate block: height=109, hash=649c9b1ed43315c0cc495a671c706aac8cd66a408f8f4a139667c7bb0cbe9d88, timestamp=2021-01-08 22:40:53 -0600 CST
+2021-01-08 22:40:38.179 [DBG] LNWL: Checking candidate block: height=54, hash=703e2f81db59ae4cd31568cf9f0ec4847973dea1824ac10adbc795cad4f78ca6, timestamp=2021-01-08 22:40:44 -0600 CST
+2021-01-08 22:40:38.179 [DBG] LNWL: Checking candidate block: height=27, hash=2a1212438651b38d3d3af76bb5096e8dc388589359cba2eb28161672f0d82cc9, timestamp=2021-01-08 22:40:40 -0600 CST
+2021-01-08 22:40:38.180 [DBG] LNWL: Checking candidate block: height=13, hash=659ae3e72fdac4fc292e75e2a41e9eecbf637bb650d213f367dd86ceb7d73747, timestamp=2021-01-08 22:40:37 -0600 CST
+2021-01-08 22:40:38.181 [DBG] LNWL: Checking candidate block: height=6, hash=6dc35380924c9d891363d852886ff39aac79e54b7eff2bd45caed601c84ca612, timestamp=2021-01-08 22:40:36 -0600 CST
+2021-01-08 22:40:38.181 [DBG] LNWL: Checking candidate block: height=3, hash=109d2873e02b77a34eaf14d1d647770721b7bf96ce6d9d4f68be51720fd44058, timestamp=2021-01-08 22:40:35 -0600 CST
+2021-01-08 22:40:38.182 [DBG] LNWL: Checking candidate block: height=1, hash=7976a25a158f0510c124a8b07f9f6ab928282748b3c8ddba083051a554dd4e67, timestamp=2021-01-08 22:40:34 -0600 CST
+2021-01-08 22:40:38.182 [DBG] LNWL: Checking candidate block: height=0, hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, timestamp=2011-02-02 17:16:42 -0600 CST
+2021-01-08 22:40:38.182 [DBG] LNWL: Found birthday block: height=0, hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, timestamp=2011-02-02 17:16:42 -0600 CST
+2021-01-08 22:40:38.311 [INF] HSWC: Restoring in-memory circuit state from disk
+2021-01-08 22:40:38.547 [INF] HSWC: Payment circuits loaded: num_pending=0, num_open=0
+2021-01-08 22:40:38.669 [INF] LNWL: Started rescan from block 0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 (height 0) for 0 addresses
+2021-01-08 22:40:38.716 [DBG] CRTR: Instantiating mission control with config: PenaltyHalfLife=1h0m0s, AprioriHopProbability=0.6, AprioriWeight=0.5
+2021-01-08 22:40:38.717 [INF] LNWL: Catching up block hashes to height 438, this might take a while
+2021-01-08 22:40:38.761 [DBG] CRTR: Mission control state reconstruction started
+2021-01-08 22:40:38.762 [DBG] CRTR: Mission control state reconstruction finished: n=0, time=27.451µs
+2021-01-08 22:40:38.762 [DBG] SRVR: Instantiating payment session source with config: AttemptCost=100 + 0.1%, MinRouteProbability=0.01
+2021-01-08 22:40:38.804 [INF] SWPR: Migrating UTXO nursery finalized TXIDs
+2021-01-08 22:40:38.852 [INF] LTND: Channel backup proxy channel notifier starting
+2021-01-08 22:40:38.853 [INF] ATPL: Instantiating autopilot with active=false, max_channels=5, allocation=0.600000, min_chan_size=20000, max_chan_size=16777215, private=false, min_confs=1, conf_target=3
+2021-01-08 22:40:38.853 [DBG] LTND: Populating dependencies for sub RPC server: SignRPC
+2021-01-08 22:40:38.853 [DBG] LTND: Populating dependencies for sub RPC server: WalletKitRPC
+2021-01-08 22:40:38.853 [DBG] LTND: Populating dependencies for sub RPC server: AutopilotRPC
+2021-01-08 22:40:38.853 [DBG] LTND: Populating dependencies for sub RPC server: ChainRPC
+2021-01-08 22:40:38.853 [DBG] LTND: Populating dependencies for sub RPC server: InvoicesRPC
+2021-01-08 22:40:38.853 [DBG] LTND: Populating dependencies for sub RPC server: RouterRPC
+2021-01-08 22:40:38.853 [DBG] LTND: Populating dependencies for sub RPC server: WatchtowerRPC
+2021-01-08 22:40:38.854 [DBG] LTND: Populating dependencies for sub RPC server: WatchtowerClientRPC
+2021-01-08 22:40:38.854 [INF] RRPC: Making macaroons for Router RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/router.macaroon
+2021-01-08 22:40:38.903 [INF] NTFR: Baking macaroons for ChainNotifier RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/chainnotifier.macaroon
+2021-01-08 22:40:38.955 [INF] SGNR: Making macaroons for Signer RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/signer.macaroon
+2021-01-08 22:40:39.009 [INF] IRPC: Baking macaroons for invoices RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/invoices.macaroon
+2021-01-08 22:40:39.060 [INF] WLKT: Baking macaroons for WalletKit RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/walletkit.macaroon
+2021-01-08 22:40:39.118 [DBG] RRPC: Router RPC server successfully register with root gRPC server
+2021-01-08 22:40:39.118 [DBG] NTFR: ChainNotifier RPC server successfully register with root gRPC server
+2021-01-08 22:40:39.118 [DBG] VRPC: Versioner RPC server successfully registered with root gRPC server
+2021-01-08 22:40:39.118 [DBG] RPCS: WatchtowerClient RPC server successfully registered with  root gRPC server
+2021-01-08 22:40:39.118 [DBG] SGNR: Signer RPC server successfully register with root gRPC server
+2021-01-08 22:40:39.118 [DBG] ARPC: Autopilot RPC server successfully register with root gRPC server
+2021-01-08 22:40:39.118 [DBG] IRPC: Invoices RPC server successfully registered with root gRPC server
+2021-01-08 22:40:39.118 [DBG] WLKT: WalletKit RPC server successfully registered with root gRPC server
+2021-01-08 22:40:39.118 [DBG] RPCS: Starting sub RPC server: RouterRPC
+2021-01-08 22:40:39.118 [DBG] RPCS: Starting sub RPC server: ChainRPC
+2021-01-08 22:40:39.118 [DBG] RPCS: Starting sub RPC server: VersionRPC
+2021-01-08 22:40:39.118 [DBG] RPCS: Starting sub RPC server: WatchtowerClientRPC
+2021-01-08 22:40:39.119 [DBG] RPCS: Starting sub RPC server: SignRPC
+2021-01-08 22:40:39.119 [DBG] RPCS: Starting sub RPC server: AutopilotRPC
+2021-01-08 22:40:39.119 [DBG] RPCS: Starting sub RPC server: InvoicesRPC
+2021-01-08 22:40:39.119 [DBG] RPCS: Starting sub RPC server: WalletKitRPC
+2021-01-08 22:40:39.119 [DBG] RPCS: Starting sub RPC server: WatchtowerRPC
+2021-01-08 22:40:39.119 [INF] RPCS: RPC server listening on 127.0.0.1:5564
+2021-01-08 22:40:39.119 [DBG] RRPC: Router REST server successfully registered with root REST server
+2021-01-08 22:40:39.119 [DBG] NTFR: ChainNotifier REST server successfully registered with root REST server
+2021-01-08 22:40:39.119 [DBG] VRPC: Versioner REST server successfully registered with root REST server
+2021-01-08 22:40:39.120 [DBG] SGNR: Signer REST server successfully registered with root REST server
+2021-01-08 22:40:39.120 [DBG] ARPC: Autopilot REST server successfully registered with root REST server
+2021-01-08 22:40:39.120 [DBG] IRPC: Invoices REST server successfully registered with root REST server
+2021-01-08 22:40:39.120 [DBG] WLKT: WalletKit REST server successfully registered with root REST server
+2021-01-08 22:40:39.121 [WRN] HLCK: check: disk space configured with 0 attempts, skipping it
+2021-01-08 22:40:39.121 [WRN] HLCK: check: tls configured with 0 attempts, skipping it
+2021-01-08 22:40:39.124 [INF] RPCS: gRPC proxy started at 127.0.0.1:5566
+2021-01-08 22:40:39.124 [DBG] HLCK: Monitoring: chain backend
+2021-01-08 22:40:39.181 [INF] PRNF: PeerNotifier starting
+2021-01-08 22:40:39.227 [INF] HSWC: Starting HTLC Switch
+2021-01-08 22:40:39.228 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:39.229 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:39.229 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:39.230 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:39.231 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:39.231 [INF] DISC: Authenticated Gossiper is starting
+2021-01-08 22:40:39.231 [INF] BRAR: Starting contract observer, watching for breaches.
+2021-01-08 22:40:39.231 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:39.231 [DBG] DISC: New block: height=438, hash=43e36e888987deecee463f54943170f546554878a173a7bd580f73687dbe6db1
+2021-01-08 22:40:39.278 [INF] CRTR: FilteredChainView starting
+2021-01-08 22:40:39.327 [INF] CRTR: Filtering chain using 0 channels active
+2021-01-08 22:40:39.327 [INF] CRTR: Prune tip for Channel Graph: height=438, hash=43e36e888987deecee463f54943170f546554878a173a7bd580f73687dbe6db1
+2021-01-08 22:40:39.350 [DBG] CRTR: Cleaning network result store.
+2021-01-08 22:40:39.386 [DBG] INVC: Adding 0 pending invoices to the expiry watcher
+2021-01-08 22:40:39.386 [WRN] INVC: Deleting old invoices failed: there are no existing invoices
+2021-01-08 22:40:39.387 [INF] CHFT: Adding 0 channels to event store
+2021-01-08 22:40:39.387 [INF] CHBU: Starting chanbackup.SubSwapper
+2021-01-08 22:40:39.516 [INF] LNWL: Done catching up block hashes
+2021-01-08 22:40:39.517 [INF] LNWL: Finished rescan for 0 addresses (synced to block 43e36e888987deecee463f54943170f546554878a173a7bd580f73687dbe6db1, height 438)
+2021-01-08 22:40:39.563 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:39.586 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node096856017/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:39.587 [DBG] CHBU: SubSwapper's backupUpdater is active!
+2021-01-08 22:40:39.587 [INF] BTCN: Server listening on 127.0.0.1:5562
+2021-01-08 22:40:39.627 [INF] SRVR: Auto peer bootstrapping is disabled
+2021-01-08 22:40:40.739 [DBG] CRTR: New graph topology client subscription, client 1
+2021-01-08 22:40:41.742 [DBG] CRTR: New graph topology client subscription, client 2
+2021-01-08 22:40:42.197 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qaq4v236a9lqu5esq37mkgtmnfh0u6qnj6hjdr3
+2021-01-08 22:40:42.252 [INF] LNWL: Inserting unconfirmed transaction c652eae64da68cbe6a8e3575440d2f6eda944a07ec3f47ccf24ac879f39a4718
+2021-01-08 22:40:42.252 [DBG] LNWL: Marked address bcrt1qaq4v236a9lqu5esq37mkgtmnfh0u6qnj6hjdr3 used
+2021-01-08 22:40:42.252 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qdpmuyeaym4yttrxh7yfx44pt3dcjeec95cs8qv
+2021-01-08 22:40:42.332 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qxaayf0c7lfqf9zqhkrm6qfhlrxgevaqetj4zum
+2021-01-08 22:40:42.334 [INF] LNWL: Inserting unconfirmed transaction 0fcbdd03cc2f5cdd687dcbd171269fdd3745898fda5e3236a2b49f5976cf21b0
+2021-01-08 22:40:42.335 [DBG] LNWL: Marked address bcrt1qdpmuyeaym4yttrxh7yfx44pt3dcjeec95cs8qv used
+2021-01-08 22:40:42.389 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1quuwl949nset0tq643sv6vly4ppnztvzcmfwa0n
+2021-01-08 22:40:42.549 [INF] LNWL: Inserting unconfirmed transaction d5bbd428740fe43c9b941cbcd55e505224875cb5742bc3db3dcdc488952ec27e
+2021-01-08 22:40:42.549 [DBG] LNWL: Marked address bcrt1qxaayf0c7lfqf9zqhkrm6qfhlrxgevaqetj4zum used
+2021-01-08 22:40:42.551 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qfsmaqhgwaxezn6ydrnudy4rrz9d6gfmagjejx0
+2021-01-08 22:40:42.575 [INF] LNWL: Inserting unconfirmed transaction 41d09e1f37e40ffa9edfa8b9745a522b730d6b065bf4d51766b2a885ccef0b80
+2021-01-08 22:40:42.575 [DBG] LNWL: Marked address bcrt1quuwl949nset0tq643sv6vly4ppnztvzcmfwa0n used
+2021-01-08 22:40:42.621 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qpg7t55h324mn9fchrjtululdhvvugj59ma8hap
+2021-01-08 22:40:42.651 [INF] LNWL: Inserting unconfirmed transaction 6d763e9302f9c93f80c01e768109652c01b9b90e295074a2b60823783fbb3e3d
+2021-01-08 22:40:42.652 [DBG] LNWL: Marked address bcrt1qfsmaqhgwaxezn6ydrnudy4rrz9d6gfmagjejx0 used
+2021-01-08 22:40:42.652 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qut6qe2zrus5wwagpdyquxxhp2lmqg8ktkl8ppv
+2021-01-08 22:40:42.681 [INF] LNWL: Inserting unconfirmed transaction 4145a099c0a300ad63f6bae76661f34802bb7b165721a052034234fa8588d479
+2021-01-08 22:40:42.681 [DBG] LNWL: Marked address bcrt1qpg7t55h324mn9fchrjtululdhvvugj59ma8hap used
+2021-01-08 22:40:42.724 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qr276yq9svsxtdu6ttnpfrzs4jjnkrdk7zrhgnu
+2021-01-08 22:40:42.747 [INF] LNWL: Inserting unconfirmed transaction 58ce9324928ef3c337147d33c95de5719f15f24d2f7b700f42cd69f0aa84a26f
+2021-01-08 22:40:42.747 [DBG] LNWL: Marked address bcrt1qut6qe2zrus5wwagpdyquxxhp2lmqg8ktkl8ppv used
+2021-01-08 22:40:42.747 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qtmhlu2a7shmfgtkuyyq30rjmkg3tx6lpa5sqnq
+2021-01-08 22:40:42.786 [INF] LNWL: Inserting unconfirmed transaction 7973ccf30b4e1a6471ef643818706e6ceb8a3c8be9a8c1cd856e5d7734539d4a
+2021-01-08 22:40:42.786 [DBG] LNWL: Marked address bcrt1qr276yq9svsxtdu6ttnpfrzs4jjnkrdk7zrhgnu used
+2021-01-08 22:40:42.787 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1q8sygfqtuuswhkewy96ch0vwdssppvyju5kvsvx
+2021-01-08 22:40:42.804 [INF] CRTR: Pruning channel graph using block 521e5249cbe0ea656439824b158530eb7f4954d5f576c86d7f5f96549e17a93a (height=439)
+2021-01-08 22:40:42.806 [DBG] LNWL: Marking transaction 451c7e9b6cc6f86118f6354054d79d893d4ce8468bad36e9b9857f33832eb94a output 0 (1 BTC) spendable
+2021-01-08 22:40:42.829 [DBG] LNWL: Marked address bcrt1qtmhlu2a7shmfgtkuyyq30rjmkg3tx6lpa5sqnq used
+2021-01-08 22:40:42.851 [DBG] NTFN: Filtering 21 txns for 0 spend requests at height 439
+2021-01-08 22:40:42.852 [INF] NTFN: New block: height=439, sha=521e5249cbe0ea656439824b158530eb7f4954d5f576c86d7f5f96549e17a93a
+2021-01-08 22:40:42.852 [DBG] SWPR: New block: height=439, sha=521e5249cbe0ea656439824b158530eb7f4954d5f576c86d7f5f96549e17a93a
+2021-01-08 22:40:42.852 [DBG] DISC: New block: height=439, hash=521e5249cbe0ea656439824b158530eb7f4954d5f576c86d7f5f96549e17a93a
+2021-01-08 22:40:42.853 [INF] UTXN: Attempting to graduate height=439: num_kids=0, num_babies=0
+2021-01-08 22:40:42.854 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 440
+2021-01-08 22:40:42.858 [INF] NTFN: New block: height=440, sha=6f5c1e12651580a65619fcb5004f4fcb7437f622dce4f3a89343e06589fbbd8d
+2021-01-08 22:40:42.888 [DBG] DISC: New block: height=440, hash=6f5c1e12651580a65619fcb5004f4fcb7437f622dce4f3a89343e06589fbbd8d
+2021-01-08 22:40:42.857 [INF] CRTR: Block 521e5249cbe0ea656439824b158530eb7f4954d5f576c86d7f5f96549e17a93a (height=439) closed 0 channels
+2021-01-08 22:40:42.900 [INF] CRTR: Pruning channel graph using block 6f5c1e12651580a65619fcb5004f4fcb7437f622dce4f3a89343e06589fbbd8d (height=440)
+2021-01-08 22:40:42.888 [DBG] SWPR: New block: height=440, sha=6f5c1e12651580a65619fcb5004f4fcb7437f622dce4f3a89343e06589fbbd8d
+2021-01-08 22:40:42.887 [INF] LNWL: Marking unconfirmed transaction 6d763e9302f9c93f80c01e768109652c01b9b90e295074a2b60823783fbb3e3d mined in block 439
+2021-01-08 22:40:42.888 [INF] UTXN: Attempting to graduate height=440: num_kids=0, num_babies=0
+2021-01-08 22:40:42.901 [DBG] LNWL: Marked address bcrt1qfsmaqhgwaxezn6ydrnudy4rrz9d6gfmagjejx0 used
+2021-01-08 22:40:42.901 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 441
+2021-01-08 22:40:42.901 [INF] NTFN: New block: height=441, sha=40d90b173514a345fa350df99e915081a9d4c4e6843edd11cf978eba6b9fe0e7
+2021-01-08 22:40:42.901 [DBG] DISC: New block: height=441, hash=40d90b173514a345fa350df99e915081a9d4c4e6843edd11cf978eba6b9fe0e7
+2021-01-08 22:40:42.901 [DBG] SWPR: New block: height=441, sha=40d90b173514a345fa350df99e915081a9d4c4e6843edd11cf978eba6b9fe0e7
+2021-01-08 22:40:42.901 [INF] UTXN: Attempting to graduate height=441: num_kids=0, num_babies=0
+2021-01-08 22:40:42.902 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 442
+2021-01-08 22:40:42.902 [INF] NTFN: New block: height=442, sha=2460f1f31e9e0cf390efc704c6fa27a4ad94644564772705bbae8d51b5d9c0c8
+2021-01-08 22:40:42.902 [INF] UTXN: Attempting to graduate height=442: num_kids=0, num_babies=0
+2021-01-08 22:40:42.902 [DBG] DISC: New block: height=442, hash=2460f1f31e9e0cf390efc704c6fa27a4ad94644564772705bbae8d51b5d9c0c8
+2021-01-08 22:40:42.902 [DBG] SWPR: New block: height=442, sha=2460f1f31e9e0cf390efc704c6fa27a4ad94644564772705bbae8d51b5d9c0c8
+2021-01-08 22:40:42.902 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 443
+2021-01-08 22:40:42.903 [INF] NTFN: New block: height=443, sha=449dffc0b64f5b3b1e387631939b320acf2a855221bd2fe0d2fe8f10a20ca6af
+2021-01-08 22:40:42.903 [DBG] SWPR: New block: height=443, sha=449dffc0b64f5b3b1e387631939b320acf2a855221bd2fe0d2fe8f10a20ca6af
+2021-01-08 22:40:42.903 [DBG] DISC: New block: height=443, hash=449dffc0b64f5b3b1e387631939b320acf2a855221bd2fe0d2fe8f10a20ca6af
+2021-01-08 22:40:42.903 [INF] UTXN: Attempting to graduate height=443: num_kids=0, num_babies=0
+2021-01-08 22:40:42.903 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 444
+2021-01-08 22:40:42.903 [INF] NTFN: New block: height=444, sha=4ef6b12452ddbd6abab864d4f8dd8a40125352c649874df867f6c5a419593bcc
+2021-01-08 22:40:42.904 [DBG] SWPR: New block: height=444, sha=4ef6b12452ddbd6abab864d4f8dd8a40125352c649874df867f6c5a419593bcc
+2021-01-08 22:40:42.904 [INF] UTXN: Attempting to graduate height=444: num_kids=0, num_babies=0
+2021-01-08 22:40:42.904 [DBG] DISC: New block: height=444, hash=4ef6b12452ddbd6abab864d4f8dd8a40125352c649874df867f6c5a419593bcc
+2021-01-08 22:40:42.940 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 445
+2021-01-08 22:40:42.950 [INF] NTFN: New block: height=445, sha=2137aeac97e5ef9af13242ed483df0d49e4c2c8f1019078ee9db55aef97fc130
+2021-01-08 22:40:42.950 [INF] CRTR: Block 6f5c1e12651580a65619fcb5004f4fcb7437f622dce4f3a89343e06589fbbd8d (height=440) closed 0 channels
+2021-01-08 22:40:42.951 [INF] CRTR: Pruning channel graph using block 40d90b173514a345fa350df99e915081a9d4c4e6843edd11cf978eba6b9fe0e7 (height=441)
+2021-01-08 22:40:42.951 [INF] UTXN: Attempting to graduate height=445: num_kids=0, num_babies=0
+2021-01-08 22:40:42.951 [DBG] SWPR: New block: height=445, sha=2137aeac97e5ef9af13242ed483df0d49e4c2c8f1019078ee9db55aef97fc130
+2021-01-08 22:40:42.951 [DBG] DISC: New block: height=445, hash=2137aeac97e5ef9af13242ed483df0d49e4c2c8f1019078ee9db55aef97fc130
+2021-01-08 22:40:42.952 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 446
+2021-01-08 22:40:42.952 [INF] NTFN: New block: height=446, sha=073492f399c3265f88084e243c88a5af1d600fead98996abb8588735ce8e606b
+2021-01-08 22:40:42.952 [DBG] DISC: New block: height=446, hash=073492f399c3265f88084e243c88a5af1d600fead98996abb8588735ce8e606b
+2021-01-08 22:40:42.952 [INF] UTXN: Attempting to graduate height=446: num_kids=0, num_babies=0
+2021-01-08 22:40:42.952 [DBG] SWPR: New block: height=446, sha=073492f399c3265f88084e243c88a5af1d600fead98996abb8588735ce8e606b
+2021-01-08 22:40:42.953 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 447
+2021-01-08 22:40:42.953 [INF] NTFN: New block: height=447, sha=5dbb7c464003db519878bc7f7357d85bd034770e47e744ccc859fc23b01b4752
+2021-01-08 22:40:42.953 [DBG] SWPR: New block: height=447, sha=5dbb7c464003db519878bc7f7357d85bd034770e47e744ccc859fc23b01b4752
+2021-01-08 22:40:42.953 [INF] UTXN: Attempting to graduate height=447: num_kids=0, num_babies=0
+2021-01-08 22:40:42.953 [DBG] DISC: New block: height=447, hash=5dbb7c464003db519878bc7f7357d85bd034770e47e744ccc859fc23b01b4752
+2021-01-08 22:40:42.954 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 448
+2021-01-08 22:40:42.954 [INF] NTFN: New block: height=448, sha=69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e
+2021-01-08 22:40:42.954 [DBG] SWPR: New block: height=448, sha=69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e
+2021-01-08 22:40:42.955 [DBG] DISC: New block: height=448, hash=69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e
+2021-01-08 22:40:42.955 [INF] UTXN: Attempting to graduate height=448: num_kids=0, num_babies=0
+2021-01-08 22:40:43.014 [INF] CRTR: Block 40d90b173514a345fa350df99e915081a9d4c4e6843edd11cf978eba6b9fe0e7 (height=441) closed 0 channels
+2021-01-08 22:40:43.015 [INF] CRTR: Pruning channel graph using block 2460f1f31e9e0cf390efc704c6fa27a4ad94644564772705bbae8d51b5d9c0c8 (height=442)
+2021-01-08 22:40:43.014 [INF] LNWL: Marking unconfirmed transaction d5bbd428740fe43c9b941cbcd55e505224875cb5742bc3db3dcdc488952ec27e mined in block 439
+2021-01-08 22:40:43.015 [DBG] LNWL: Marked address bcrt1qxaayf0c7lfqf9zqhkrm6qfhlrxgevaqetj4zum used
+2021-01-08 22:40:43.066 [INF] CRTR: Block 2460f1f31e9e0cf390efc704c6fa27a4ad94644564772705bbae8d51b5d9c0c8 (height=442) closed 0 channels
+2021-01-08 22:40:43.067 [INF] CRTR: Pruning channel graph using block 449dffc0b64f5b3b1e387631939b320acf2a855221bd2fe0d2fe8f10a20ca6af (height=443)
+2021-01-08 22:40:43.095 [INF] LNWL: Marking unconfirmed transaction 58ce9324928ef3c337147d33c95de5719f15f24d2f7b700f42cd69f0aa84a26f mined in block 439
+2021-01-08 22:40:43.096 [DBG] LNWL: Marked address bcrt1qut6qe2zrus5wwagpdyquxxhp2lmqg8ktkl8ppv used
+2021-01-08 22:40:43.121 [INF] CRTR: Block 449dffc0b64f5b3b1e387631939b320acf2a855221bd2fe0d2fe8f10a20ca6af (height=443) closed 0 channels
+2021-01-08 22:40:43.128 [INF] CRTR: Pruning channel graph using block 4ef6b12452ddbd6abab864d4f8dd8a40125352c649874df867f6c5a419593bcc (height=444)
+2021-01-08 22:40:43.160 [INF] LNWL: Marking unconfirmed transaction 0fcbdd03cc2f5cdd687dcbd171269fdd3745898fda5e3236a2b49f5976cf21b0 mined in block 439
+2021-01-08 22:40:43.168 [INF] SRVR: New inbound connection from 127.0.0.1:49949
+2021-01-08 22:40:43.181 [INF] SRVR: Finalizing connection to 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949, inbound=true
+2021-01-08 22:40:43.168 [DBG] LNWL: Marked address bcrt1qdpmuyeaym4yttrxh7yfx44pt3dcjeec95cs8qv used
+2021-01-08 22:40:43.190 [INF] CRTR: Block 4ef6b12452ddbd6abab864d4f8dd8a40125352c649874df867f6c5a419593bcc (height=444) closed 0 channels
+2021-01-08 22:40:43.201 [INF] CRTR: Pruning channel graph using block 2137aeac97e5ef9af13242ed483df0d49e4c2c8f1019078ee9db55aef97fc130 (height=445)
+2021-01-08 22:40:43.201 [DBG] PRNF: PeerNotifier notifying peer: 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3 online
+2021-01-08 22:40:43.201 [DBG] PEER: Sending Init to 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.202 [DBG] PEER: Received Init from 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.202 [DBG] PEER: Loaded 0 active channels from database with NodeKey(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3)
+2021-01-08 22:40:43.202 [DBG] SRVR: Notifying that peer 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949 is online
+2021-01-08 22:40:43.202 [INF] PEER: Negotiated chan series queries with 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3
+2021-01-08 22:40:43.202 [INF] DISC: Creating new GossipSyncer for peer=02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3
+2021-01-08 22:40:43.202 [DBG] DISC: Starting GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3)
+2021-01-08 22:40:43.202 [DBG] DISC: Attempting initial historical sync with GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3)
+2021-01-08 22:40:43.202 [DBG] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): state=chansSynced, type=PassiveSync
+2021-01-08 22:40:43.203 [DBG] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): state=syncingChans, type=PassiveSync
+2021-01-08 22:40:43.203 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): requesting new chans from height=0 and 448 blocks after
+2021-01-08 22:40:43.203 [DBG] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): state=waitingQueryRangeReply, type=PassiveSync
+2021-01-08 22:40:43.203 [DBG] PEER: Sending QueryChannelRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, start_height=0, end_height=447) to 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.203 [DBG] PEER: Received QueryChannelRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, start_height=0, end_height=447) from 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.203 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): filtering chan range: start_height=0, num_blocks=448
+2021-01-08 22:40:43.203 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): sending final chan range chunk, size=0
+2021-01-08 22:40:43.203 [DBG] PEER: Sending ReplyChannelRange(start_height=0, end_height=447, num_chans=0, encoding=0) to 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.203 [DBG] PEER: Received ReplyChannelRange(start_height=0, end_height=447, num_chans=0, encoding=0) from 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.203 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): buffering chan range reply of size=0
+2021-01-08 22:40:43.203 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): filtering through 0 chans
+2021-01-08 22:40:43.203 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): remote peer has no new chans
+2021-01-08 22:40:43.203 [DBG] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): state=chansSynced, type=PassiveSync
+2021-01-08 22:40:43.203 [DBG] DISC: Initial historical sync completed
+2021-01-08 22:40:43.203 [DBG] DISC: Attempting to transition 3 passive GossipSyncers to active
+2021-01-08 22:40:43.203 [DBG] DISC: Transitioning passive GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3) to active
+2021-01-08 22:40:43.204 [DBG] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): transitioning from PassiveSync to ActiveSync
+2021-01-08 22:40:43.204 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): applying gossipFilter(start=2021-01-08 22:40:43.204067 -0600 CST m=+6.080709837, end=2157-02-15 05:08:58.204067 -0600 CST m=+4294967301.080709837)
+2021-01-08 22:40:43.204 [DBG] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): state=chansSynced, type=ActiveSync
+2021-01-08 22:40:43.204 [DBG] PEER: Sending GossipTimestampRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, first_stamp=2021-01-08 22:40:43 -0600 CST, stamp_range=4294967295) to 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.204 [DBG] PEER: Received GossipTimestampRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, first_stamp=2021-01-08 22:40:43 -0600 CST, stamp_range=4294967295) from 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:43.238 [INF] CRTR: Block 2137aeac97e5ef9af13242ed483df0d49e4c2c8f1019078ee9db55aef97fc130 (height=445) closed 0 channels
+2021-01-08 22:40:43.238 [DBG] CHDB: ChanUpdatesInHorizon hit percentage: NaN (0/0)
+2021-01-08 22:40:43.238 [INF] CRTR: Pruning channel graph using block 073492f399c3265f88084e243c88a5af1d600fead98996abb8588735ce8e606b (height=446)
+2021-01-08 22:40:43.248 [INF] DISC: GossipSyncer(02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3): applying new update horizon: start=2021-01-08 22:40:43 -0600 CST, end=2157-02-15 05:08:58 -0600 CST, backlog_size=0
+2021-01-08 22:40:43.257 [INF] LNWL: Marking unconfirmed transaction 7973ccf30b4e1a6471ef643818706e6ceb8a3c8be9a8c1cd856e5d7734539d4a mined in block 439
+2021-01-08 22:40:43.269 [DBG] LNWL: Marked address bcrt1qr276yq9svsxtdu6ttnpfrzs4jjnkrdk7zrhgnu used
+2021-01-08 22:40:43.282 [INF] CRTR: Block 073492f399c3265f88084e243c88a5af1d600fead98996abb8588735ce8e606b (height=446) closed 0 channels
+2021-01-08 22:40:43.300 [INF] CRTR: Pruning channel graph using block 5dbb7c464003db519878bc7f7357d85bd034770e47e744ccc859fc23b01b4752 (height=447)
+2021-01-08 22:40:43.327 [INF] LNWL: Marking unconfirmed transaction 41d09e1f37e40ffa9edfa8b9745a522b730d6b065bf4d51766b2a885ccef0b80 mined in block 439
+2021-01-08 22:40:43.328 [DBG] LNWL: Marked address bcrt1quuwl949nset0tq643sv6vly4ppnztvzcmfwa0n used
+2021-01-08 22:40:43.353 [INF] CRTR: Block 5dbb7c464003db519878bc7f7357d85bd034770e47e744ccc859fc23b01b4752 (height=447) closed 0 channels
+2021-01-08 22:40:43.362 [INF] CRTR: Pruning channel graph using block 69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e (height=448)
+2021-01-08 22:40:43.394 [INF] LNWL: Marking unconfirmed transaction c652eae64da68cbe6a8e3575440d2f6eda944a07ec3f47ccf24ac879f39a4718 mined in block 439
+2021-01-08 22:40:43.395 [DBG] LNWL: Marked address bcrt1qaq4v236a9lqu5esq37mkgtmnfh0u6qnj6hjdr3 used
+2021-01-08 22:40:43.527 [INF] CRTR: Block 69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e (height=448) closed 0 channels
+2021-01-08 22:40:43.566 [INF] LNWL: Marking unconfirmed transaction 4145a099c0a300ad63f6bae76661f34802bb7b165721a052034234fa8588d479 mined in block 439
+2021-01-08 22:40:43.568 [DBG] LNWL: Marked address bcrt1qpg7t55h324mn9fchrjtululdhvvugj59ma8hap used
+2021-01-08 22:40:43.604 [DBG] LNWL: Marking transaction 1229fb8b389b4d25679170f3bbad0a226d7579997354b1800f14240a75ebd978 output 0 (1 BTC) spendable
+2021-01-08 22:40:43.604 [DBG] LNWL: Marked address bcrt1q8sygfqtuuswhkewy96ch0vwdssppvyju5kvsvx used
+2021-01-08 22:40:43.745 [DBG] RPCS: [walletbalance] Total balance=10 BTC (confirmed=10 BTC, unconfirmed=0 BTC)
+2021-01-08 22:40:44.232 [DBG] RPCS: [connectpeer] requested connection to 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:5561
+2021-01-08 22:40:44.232 [ERR] RPCS: [connectpeer]: error connecting to peer: already connected to peer: 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:40:44.232 [ERR] RPCS: [/lnrpc.Lightning/ConnectPeer]: already connected to peer: 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+STARTING ============ test multi-hop htlc ============
+2021-01-08 22:40:50.809 [INF] CRTR: Pruning channel graph using block 6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4 (height=449)
+2021-01-08 22:40:50.851 [INF] CRTR: Block 6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4 (height=449) closed 0 channels
+2021-01-08 22:40:50.912 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 449
+2021-01-08 22:40:50.912 [INF] NTFN: New block: height=449, sha=6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4
+2021-01-08 22:40:50.912 [INF] UTXN: Attempting to graduate height=449: num_kids=0, num_babies=0
+2021-01-08 22:40:50.912 [DBG] DISC: New block: height=449, hash=6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4
+2021-01-08 22:40:50.912 [DBG] SWPR: New block: height=449, sha=6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4
+2021-01-08 22:40:50.912 [INF] CRTR: Pruning channel graph using block 34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28 (height=450)
+2021-01-08 22:40:50.913 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 450
+2021-01-08 22:40:50.913 [INF] NTFN: New block: height=450, sha=34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28
+2021-01-08 22:40:50.913 [DBG] DISC: New block: height=450, hash=34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28
+2021-01-08 22:40:50.913 [DBG] SWPR: New block: height=450, sha=34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28
+2021-01-08 22:40:50.914 [INF] UTXN: Attempting to graduate height=450: num_kids=0, num_babies=0
+2021-01-08 22:40:50.914 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 451
+2021-01-08 22:40:50.914 [INF] NTFN: New block: height=451, sha=175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495
+2021-01-08 22:40:50.915 [DBG] SWPR: New block: height=451, sha=175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495
+2021-01-08 22:40:50.915 [INF] UTXN: Attempting to graduate height=451: num_kids=0, num_babies=0
+2021-01-08 22:40:50.915 [DBG] DISC: New block: height=451, hash=175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495
+2021-01-08 22:40:50.916 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 452
+2021-01-08 22:40:50.916 [INF] NTFN: New block: height=452, sha=0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70
+2021-01-08 22:40:50.916 [DBG] SWPR: New block: height=452, sha=0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70
+2021-01-08 22:40:50.916 [INF] UTXN: Attempting to graduate height=452: num_kids=0, num_babies=0
+2021-01-08 22:40:50.916 [DBG] DISC: New block: height=452, hash=0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70
+2021-01-08 22:40:50.917 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 453
+2021-01-08 22:40:50.917 [INF] NTFN: New block: height=453, sha=65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89
+2021-01-08 22:40:50.917 [INF] UTXN: Attempting to graduate height=453: num_kids=0, num_babies=0
+2021-01-08 22:40:50.917 [DBG] DISC: New block: height=453, hash=65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89
+2021-01-08 22:40:50.917 [DBG] SWPR: New block: height=453, sha=65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89
+2021-01-08 22:40:51.010 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 454
+2021-01-08 22:40:51.022 [INF] CRTR: Block 34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28 (height=450) closed 0 channels
+2021-01-08 22:40:51.045 [INF] NTFN: New block: height=454, sha=62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8
+2021-01-08 22:40:51.092 [DBG] DISC: New block: height=454, hash=62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8
+2021-01-08 22:40:51.067 [INF] CRTR: Pruning channel graph using block 175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495 (height=451)
+2021-01-08 22:40:51.092 [INF] UTXN: Attempting to graduate height=454: num_kids=0, num_babies=0
+2021-01-08 22:40:51.092 [DBG] SWPR: New block: height=454, sha=62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8
+2021-01-08 22:40:51.259 [INF] CRTR: Block 175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495 (height=451) closed 0 channels
+2021-01-08 22:40:51.261 [INF] CRTR: Pruning channel graph using block 0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70 (height=452)
+2021-01-08 22:40:51.315 [INF] CRTR: Block 0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70 (height=452) closed 0 channels
+2021-01-08 22:40:51.316 [INF] CRTR: Pruning channel graph using block 65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89 (height=453)
+2021-01-08 22:40:51.366 [INF] CRTR: Block 65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89 (height=453) closed 0 channels
+2021-01-08 22:40:51.367 [INF] CRTR: Pruning channel graph using block 62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8 (height=454)
+2021-01-08 22:40:51.442 [INF] CRTR: Block 62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8 (height=454) closed 0 channels
+2021-01-08 22:40:51.644 [INF] CRTR: Pruning channel graph using block 33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2 (height=455)
+2021-01-08 22:40:51.644 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 455
+2021-01-08 22:40:51.644 [INF] NTFN: New block: height=455, sha=33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2
+2021-01-08 22:40:51.644 [INF] UTXN: Attempting to graduate height=455: num_kids=0, num_babies=0
+2021-01-08 22:40:51.644 [DBG] DISC: New block: height=455, hash=33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2
+2021-01-08 22:40:51.645 [DBG] SWPR: New block: height=455, sha=33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2
+2021-01-08 22:40:51.647 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 456
+2021-01-08 22:40:51.647 [INF] NTFN: New block: height=456, sha=77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392
+2021-01-08 22:40:51.647 [DBG] SWPR: New block: height=456, sha=77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392
+2021-01-08 22:40:51.647 [DBG] DISC: New block: height=456, hash=77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392
+2021-01-08 22:40:51.647 [INF] UTXN: Attempting to graduate height=456: num_kids=0, num_babies=0
+2021-01-08 22:40:51.649 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 457
+2021-01-08 22:40:51.649 [INF] NTFN: New block: height=457, sha=2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d
+2021-01-08 22:40:51.649 [DBG] DISC: New block: height=457, hash=2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d
+2021-01-08 22:40:51.649 [DBG] SWPR: New block: height=457, sha=2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d
+2021-01-08 22:40:51.649 [INF] UTXN: Attempting to graduate height=457: num_kids=0, num_babies=0
+2021-01-08 22:40:51.650 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 458
+2021-01-08 22:40:51.650 [INF] NTFN: New block: height=458, sha=4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc
+2021-01-08 22:40:51.650 [DBG] SWPR: New block: height=458, sha=4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc
+2021-01-08 22:40:51.650 [INF] UTXN: Attempting to graduate height=458: num_kids=0, num_babies=0
+2021-01-08 22:40:51.650 [DBG] DISC: New block: height=458, hash=4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc
+2021-01-08 22:40:51.650 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 459
+2021-01-08 22:40:51.650 [INF] NTFN: New block: height=459, sha=4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424
+2021-01-08 22:40:51.651 [DBG] SWPR: New block: height=459, sha=4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424
+2021-01-08 22:40:51.651 [INF] UTXN: Attempting to graduate height=459: num_kids=0, num_babies=0
+2021-01-08 22:40:51.651 [DBG] DISC: New block: height=459, hash=4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424
+2021-01-08 22:40:51.651 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 460
+2021-01-08 22:40:51.651 [INF] NTFN: New block: height=460, sha=3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951
+2021-01-08 22:40:51.651 [INF] UTXN: Attempting to graduate height=460: num_kids=0, num_babies=0
+2021-01-08 22:40:51.651 [DBG] DISC: New block: height=460, hash=3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951
+2021-01-08 22:40:51.651 [DBG] SWPR: New block: height=460, sha=3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951
+2021-01-08 22:40:51.741 [INF] CRTR: Block 33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2 (height=455) closed 0 channels
+2021-01-08 22:40:51.766 [INF] CRTR: Pruning channel graph using block 77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392 (height=456)
+2021-01-08 22:40:51.868 [INF] CRTR: Block 77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392 (height=456) closed 0 channels
+2021-01-08 22:40:51.869 [INF] CRTR: Pruning channel graph using block 2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d (height=457)
+2021-01-08 22:40:52.052 [INF] CRTR: Block 2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d (height=457) closed 0 channels
+2021-01-08 22:40:52.054 [INF] CRTR: Pruning channel graph using block 4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc (height=458)
+2021-01-08 22:40:52.188 [INF] CRTR: Block 4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc (height=458) closed 0 channels
+2021-01-08 22:40:52.189 [INF] CRTR: Pruning channel graph using block 4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424 (height=459)
+2021-01-08 22:40:52.392 [INF] CRTR: Block 4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424 (height=459) closed 0 channels
+2021-01-08 22:40:52.393 [INF] CRTR: Pruning channel graph using block 3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951 (height=460)
+2021-01-08 22:40:52.454 [INF] CRTR: Block 3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951 (height=460) closed 0 channels
+2021-01-08 22:40:52.589 [INF] CRTR: Pruning channel graph using block 351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830 (height=461)
+2021-01-08 22:40:52.636 [INF] CRTR: Block 351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830 (height=461) closed 0 channels
+2021-01-08 22:40:52.652 [INF] CRTR: Pruning channel graph using block 57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1 (height=462)
+2021-01-08 22:40:52.702 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 461
+2021-01-08 22:40:52.736 [INF] NTFN: New block: height=461, sha=351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830
+2021-01-08 22:40:52.747 [INF] CRTR: Block 57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1 (height=462) closed 0 channels
+2021-01-08 22:40:52.748 [DBG] SWPR: New block: height=461, sha=351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830
+2021-01-08 22:40:52.749 [INF] UTXN: Attempting to graduate height=461: num_kids=0, num_babies=0
+2021-01-08 22:40:52.749 [DBG] DISC: New block: height=461, hash=351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830
+2021-01-08 22:40:52.778 [INF] CRTR: Pruning channel graph using block 090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea (height=463)
+2021-01-08 22:40:52.800 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 462
+2021-01-08 22:40:52.836 [INF] NTFN: New block: height=462, sha=57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1
+2021-01-08 22:40:52.865 [INF] UTXN: Attempting to graduate height=462: num_kids=0, num_babies=0
+2021-01-08 22:40:52.864 [INF] CRTR: Block 090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea (height=463) closed 0 channels
+2021-01-08 22:40:52.865 [DBG] DISC: New block: height=462, hash=57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1
+2021-01-08 22:40:52.865 [DBG] SWPR: New block: height=462, sha=57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1
+2021-01-08 22:40:52.866 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 463
+2021-01-08 22:40:52.867 [INF] NTFN: New block: height=463, sha=090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea
+2021-01-08 22:40:52.867 [DBG] DISC: New block: height=463, hash=090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea
+2021-01-08 22:40:52.867 [DBG] SWPR: New block: height=463, sha=090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea
+2021-01-08 22:40:52.868 [INF] CRTR: Pruning channel graph using block 1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3 (height=464)
+2021-01-08 22:40:52.868 [INF] UTXN: Attempting to graduate height=463: num_kids=0, num_babies=0
+2021-01-08 22:40:52.938 [INF] CRTR: Block 1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3 (height=464) closed 0 channels
+2021-01-08 22:40:52.953 [INF] CRTR: Pruning channel graph using block 1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584 (height=465)
+2021-01-08 22:40:53.015 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 464
+2021-01-08 22:40:53.110 [INF] NTFN: New block: height=464, sha=1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3
+2021-01-08 22:40:53.141 [INF] CRTR: Block 1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584 (height=465) closed 0 channels
+2021-01-08 22:40:53.142 [INF] CRTR: Pruning channel graph using block 735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d (height=466)
+2021-01-08 22:40:53.142 [INF] UTXN: Attempting to graduate height=464: num_kids=0, num_babies=0
+2021-01-08 22:40:53.142 [DBG] SWPR: New block: height=464, sha=1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3
+2021-01-08 22:40:53.142 [DBG] DISC: New block: height=464, hash=1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3
+2021-01-08 22:40:53.205 [INF] CRTR: Block 735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d (height=466) closed 0 channels
+2021-01-08 22:40:53.218 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 465
+2021-01-08 22:40:53.218 [INF] NTFN: New block: height=465, sha=1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584
+2021-01-08 22:40:53.218 [DBG] SWPR: New block: height=465, sha=1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584
+2021-01-08 22:40:53.218 [INF] UTXN: Attempting to graduate height=465: num_kids=0, num_babies=0
+2021-01-08 22:40:53.218 [DBG] DISC: New block: height=465, hash=1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584
+2021-01-08 22:40:53.219 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 466
+2021-01-08 22:40:53.219 [INF] NTFN: New block: height=466, sha=735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d
+2021-01-08 22:40:53.219 [DBG] SWPR: New block: height=466, sha=735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d
+2021-01-08 22:40:53.219 [DBG] DISC: New block: height=466, hash=735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d
+2021-01-08 22:40:53.219 [INF] UTXN: Attempting to graduate height=466: num_kids=0, num_babies=0
+2021-01-08 22:40:53.431 [INF] CRTR: Pruning channel graph using block 66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a (height=467)
+2021-01-08 22:40:53.514 [INF] CRTR: Block 66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a (height=467) closed 0 channels
+2021-01-08 22:40:53.527 [INF] CRTR: Pruning channel graph using block 56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85 (height=468)
+2021-01-08 22:40:53.537 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 467
+2021-01-08 22:40:53.593 [INF] NTFN: New block: height=467, sha=66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a
+2021-01-08 22:40:53.603 [INF] CRTR: Block 56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85 (height=468) closed 0 channels
+2021-01-08 22:40:53.616 [INF] UTXN: Attempting to graduate height=467: num_kids=0, num_babies=0
+2021-01-08 22:40:53.616 [DBG] DISC: New block: height=467, hash=66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a
+2021-01-08 22:40:53.616 [DBG] SWPR: New block: height=467, sha=66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a
+2021-01-08 22:40:53.689 [INF] CRTR: Pruning channel graph using block 181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337 (height=469)
+2021-01-08 22:40:53.690 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 468
+2021-01-08 22:40:53.690 [INF] NTFN: New block: height=468, sha=56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85
+2021-01-08 22:40:53.690 [DBG] DISC: New block: height=468, hash=56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85
+2021-01-08 22:40:53.690 [DBG] SWPR: New block: height=468, sha=56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85
+2021-01-08 22:40:53.690 [INF] UTXN: Attempting to graduate height=468: num_kids=0, num_babies=0
+2021-01-08 22:40:53.691 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 469
+2021-01-08 22:40:53.692 [INF] NTFN: New block: height=469, sha=181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337
+2021-01-08 22:40:53.692 [DBG] SWPR: New block: height=469, sha=181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337
+2021-01-08 22:40:53.692 [INF] UTXN: Attempting to graduate height=469: num_kids=0, num_babies=0
+2021-01-08 22:40:53.692 [DBG] DISC: New block: height=469, hash=181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337
+2021-01-08 22:40:53.726 [INF] CRTR: Block 181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337 (height=469) closed 0 channels
+2021-01-08 22:40:53.784 [INF] CRTR: Pruning channel graph using block 7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68 (height=470)
+2021-01-08 22:40:53.891 [INF] CRTR: Block 7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68 (height=470) closed 0 channels
+2021-01-08 22:40:53.892 [INF] CRTR: Pruning channel graph using block 6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241 (height=471)
+2021-01-08 22:40:53.893 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 470
+2021-01-08 22:40:53.914 [INF] NTFN: New block: height=470, sha=7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68
+2021-01-08 22:40:53.937 [INF] CRTR: Block 6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241 (height=471) closed 0 channels
+2021-01-08 22:40:53.969 [INF] CRTR: Pruning channel graph using block 53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d (height=472)
+2021-01-08 22:40:53.969 [DBG] SWPR: New block: height=470, sha=7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68
+2021-01-08 22:40:53.969 [INF] UTXN: Attempting to graduate height=470: num_kids=0, num_babies=0
+2021-01-08 22:40:53.970 [DBG] DISC: New block: height=470, hash=7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68
+2021-01-08 22:40:53.970 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 471
+2021-01-08 22:40:53.970 [INF] NTFN: New block: height=471, sha=6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241
+2021-01-08 22:40:53.970 [DBG] DISC: New block: height=471, hash=6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241
+2021-01-08 22:40:53.970 [INF] UTXN: Attempting to graduate height=471: num_kids=0, num_babies=0
+2021-01-08 22:40:53.971 [DBG] SWPR: New block: height=471, sha=6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241
+2021-01-08 22:40:53.971 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 472
+2021-01-08 22:40:53.971 [INF] NTFN: New block: height=472, sha=53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d
+2021-01-08 22:40:53.971 [DBG] DISC: New block: height=472, hash=53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d
+2021-01-08 22:40:53.971 [DBG] SWPR: New block: height=472, sha=53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d
+2021-01-08 22:40:53.971 [INF] UTXN: Attempting to graduate height=472: num_kids=0, num_babies=0
+2021-01-08 22:40:54.015 [INF] CRTR: Block 53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d (height=472) closed 0 channels
+2021-01-08 22:40:54.845 [INF] CRTR: Pruning channel graph using block 4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee (height=473)
+2021-01-08 22:40:54.927 [INF] CRTR: Block 4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee (height=473) closed 0 channels
+2021-01-08 22:40:54.944 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 473
+2021-01-08 22:40:54.944 [INF] NTFN: New block: height=473, sha=4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee
+2021-01-08 22:40:54.945 [DBG] SWPR: New block: height=473, sha=4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee
+2021-01-08 22:40:54.945 [INF] UTXN: Attempting to graduate height=473: num_kids=0, num_babies=0
+2021-01-08 22:40:54.945 [DBG] DISC: New block: height=473, hash=4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee
+2021-01-08 22:40:54.945 [INF] CRTR: Pruning channel graph using block 6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c (height=474)
+2021-01-08 22:40:55.020 [INF] CRTR: Block 6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c (height=474) closed 0 channels
+2021-01-08 22:40:55.020 [INF] CRTR: Pruning channel graph using block 64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5 (height=475)
+2021-01-08 22:40:55.022 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 474
+2021-01-08 22:40:55.022 [INF] NTFN: New block: height=474, sha=6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c
+2021-01-08 22:40:55.022 [DBG] SWPR: New block: height=474, sha=6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c
+2021-01-08 22:40:55.022 [INF] UTXN: Attempting to graduate height=474: num_kids=0, num_babies=0
+2021-01-08 22:40:55.022 [DBG] DISC: New block: height=474, hash=6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c
+2021-01-08 22:40:55.033 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 475
+2021-01-08 22:40:55.045 [INF] NTFN: New block: height=475, sha=64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5
+2021-01-08 22:40:55.065 [DBG] SWPR: New block: height=475, sha=64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5
+2021-01-08 22:40:55.065 [INF] UTXN: Attempting to graduate height=475: num_kids=0, num_babies=0
+2021-01-08 22:40:55.065 [DBG] DISC: New block: height=475, hash=64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5
+2021-01-08 22:40:55.092 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 476
+2021-01-08 22:40:55.228 [INF] NTFN: New block: height=476, sha=1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3
+2021-01-08 22:40:55.095 [INF] CRTR: Block 64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5 (height=475) closed 0 channels
+2021-01-08 22:40:55.275 [INF] CRTR: Pruning channel graph using block 1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3 (height=476)
+2021-01-08 22:40:55.266 [DBG] DISC: New block: height=476, hash=1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3
+2021-01-08 22:40:55.267 [DBG] SWPR: New block: height=476, sha=1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3
+2021-01-08 22:40:55.267 [INF] UTXN: Attempting to graduate height=476: num_kids=0, num_babies=0
+2021-01-08 22:40:55.277 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 477
+2021-01-08 22:40:55.277 [INF] NTFN: New block: height=477, sha=64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025
+2021-01-08 22:40:55.277 [DBG] SWPR: New block: height=477, sha=64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025
+2021-01-08 22:40:55.277 [INF] UTXN: Attempting to graduate height=477: num_kids=0, num_babies=0
+2021-01-08 22:40:55.277 [DBG] DISC: New block: height=477, hash=64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025
+2021-01-08 22:40:55.327 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 478
+2021-01-08 22:40:55.345 [INF] NTFN: New block: height=478, sha=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:55.372 [DBG] DISC: New block: height=478, hash=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:55.374 [DBG] SWPR: New block: height=478, sha=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:55.374 [INF] UTXN: Attempting to graduate height=478: num_kids=0, num_babies=0
+2021-01-08 22:40:55.394 [INF] CRTR: Block 1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3 (height=476) closed 0 channels
+2021-01-08 22:40:55.458 [INF] CRTR: Pruning channel graph using block 64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025 (height=477)
+2021-01-08 22:40:55.506 [INF] CRTR: Block 64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025 (height=477) closed 0 channels
+2021-01-08 22:40:55.507 [INF] CRTR: Pruning channel graph using block 29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb (height=478)
+2021-01-08 22:40:55.580 [INF] CRTR: Block 29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb (height=478) closed 0 channels
+2021-01-08 22:40:59.980 [INF] CRTR: Pruning channel graph using block 048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66 (height=479)
+2021-01-08 22:41:00.047 [INF] CRTR: Block 048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66 (height=479) closed 0 channels
+2021-01-08 22:41:00.058 [INF] CRTR: Pruning channel graph using block 4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8 (height=480)
+2021-01-08 22:41:00.160 [INF] CRTR: Block 4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8 (height=480) closed 0 channels
+2021-01-08 22:41:00.191 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 479
+2021-01-08 22:41:00.233 [INF] NTFN: New block: height=479, sha=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.246 [DBG] DISC: New block: height=479, hash=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.246 [DBG] SWPR: New block: height=479, sha=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.246 [INF] UTXN: Attempting to graduate height=479: num_kids=0, num_babies=0
+2021-01-08 22:41:00.248 [INF] CRTR: Pruning channel graph using block 7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6 (height=481)
+2021-01-08 22:41:00.248 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 480
+2021-01-08 22:41:00.248 [INF] NTFN: New block: height=480, sha=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.248 [DBG] SWPR: New block: height=480, sha=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.248 [INF] UTXN: Attempting to graduate height=480: num_kids=0, num_babies=0
+2021-01-08 22:41:00.248 [DBG] DISC: New block: height=480, hash=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.250 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 481
+2021-01-08 22:41:00.250 [INF] NTFN: New block: height=481, sha=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.250 [DBG] DISC: New block: height=481, hash=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.250 [DBG] SWPR: New block: height=481, sha=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.250 [INF] UTXN: Attempting to graduate height=481: num_kids=0, num_babies=0
+2021-01-08 22:41:00.251 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 482
+2021-01-08 22:41:00.258 [INF] NTFN: New block: height=482, sha=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.376 [INF] CRTR: Block 7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6 (height=481) closed 0 channels
+2021-01-08 22:41:00.411 [INF] CRTR: Pruning channel graph using block 4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9 (height=482)
+2021-01-08 22:41:00.378 [INF] UTXN: Attempting to graduate height=482: num_kids=0, num_babies=0
+2021-01-08 22:41:00.378 [DBG] SWPR: New block: height=482, sha=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.378 [DBG] DISC: New block: height=482, hash=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.456 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 483
+2021-01-08 22:41:00.496 [INF] CRTR: Block 4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9 (height=482) closed 0 channels
+2021-01-08 22:41:00.565 [INF] CRTR: Pruning channel graph using block 68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089 (height=483)
+2021-01-08 22:41:00.565 [INF] NTFN: New block: height=483, sha=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.565 [INF] UTXN: Attempting to graduate height=483: num_kids=0, num_babies=0
+2021-01-08 22:41:00.565 [DBG] DISC: New block: height=483, hash=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.566 [DBG] SWPR: New block: height=483, sha=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.566 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 484
+2021-01-08 22:41:00.566 [INF] NTFN: New block: height=484, sha=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.567 [DBG] DISC: New block: height=484, hash=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.567 [DBG] SWPR: New block: height=484, sha=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.567 [INF] UTXN: Attempting to graduate height=484: num_kids=0, num_babies=0
+2021-01-08 22:41:00.625 [INF] CRTR: Block 68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089 (height=483) closed 0 channels
+2021-01-08 22:41:00.626 [INF] CRTR: Pruning channel graph using block 64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424 (height=484)
+2021-01-08 22:41:00.725 [INF] CRTR: Block 64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424 (height=484) closed 0 channels
+2021-01-08 22:41:00.926 [INF] CRTR: Pruning channel graph using block 6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b (height=485)
+2021-01-08 22:41:00.927 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 485
+2021-01-08 22:41:00.927 [INF] NTFN: New block: height=485, sha=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:00.927 [DBG] SWPR: New block: height=485, sha=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:00.927 [INF] UTXN: Attempting to graduate height=485: num_kids=0, num_babies=0
+2021-01-08 22:41:00.927 [DBG] DISC: New block: height=485, hash=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:01.015 [INF] CRTR: Block 6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b (height=485) closed 0 channels
+2021-01-08 22:41:01.034 [INF] CRTR: Pruning channel graph using block 09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0 (height=486)
+2021-01-08 22:41:01.129 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 486
+2021-01-08 22:41:01.161 [INF] NTFN: New block: height=486, sha=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.169 [INF] CRTR: Block 09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0 (height=486) closed 0 channels
+2021-01-08 22:41:01.196 [INF] CRTR: Pruning channel graph using block 6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0 (height=487)
+2021-01-08 22:41:01.184 [INF] UTXN: Attempting to graduate height=486: num_kids=0, num_babies=0
+2021-01-08 22:41:01.184 [DBG] DISC: New block: height=486, hash=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.184 [DBG] SWPR: New block: height=486, sha=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.288 [INF] CRTR: Block 6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0 (height=487) closed 0 channels
+2021-01-08 22:41:01.338 [INF] CRTR: Pruning channel graph using block 1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200 (height=488)
+2021-01-08 22:41:01.303 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 487
+2021-01-08 22:41:01.403 [INF] NTFN: New block: height=487, sha=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.414 [DBG] DISC: New block: height=487, hash=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.414 [INF] UTXN: Attempting to graduate height=487: num_kids=0, num_babies=0
+2021-01-08 22:41:01.414 [DBG] SWPR: New block: height=487, sha=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.415 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 488
+2021-01-08 22:41:01.415 [INF] NTFN: New block: height=488, sha=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.415 [DBG] SWPR: New block: height=488, sha=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.415 [INF] UTXN: Attempting to graduate height=488: num_kids=0, num_babies=0
+2021-01-08 22:41:01.415 [DBG] DISC: New block: height=488, hash=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.417 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 489
+2021-01-08 22:41:01.417 [INF] NTFN: New block: height=489, sha=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:01.417 [DBG] SWPR: New block: height=489, sha=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:01.417 [INF] UTXN: Attempting to graduate height=489: num_kids=0, num_babies=0
+2021-01-08 22:41:01.417 [DBG] DISC: New block: height=489, hash=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:01.424 [INF] CRTR: Block 1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200 (height=488) closed 0 channels
+2021-01-08 22:41:01.425 [INF] CRTR: Pruning channel graph using block 6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b (height=489)
+2021-01-08 22:41:01.462 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 490
+2021-01-08 22:41:01.496 [INF] NTFN: New block: height=490, sha=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:01.569 [INF] CRTR: Block 6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b (height=489) closed 0 channels
+2021-01-08 22:41:01.631 [INF] CRTR: Pruning channel graph using block 720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d (height=490)
+2021-01-08 22:41:01.570 [DBG] SWPR: New block: height=490, sha=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:01.570 [DBG] DISC: New block: height=490, hash=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:01.570 [INF] UTXN: Attempting to graduate height=490: num_kids=0, num_babies=0
+2021-01-08 22:41:01.706 [INF] CRTR: Block 720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d (height=490) closed 0 channels
+2021-01-08 22:41:02.548 [INF] CRTR: Pruning channel graph using block 73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0 (height=491)
+2021-01-08 22:41:02.640 [INF] CRTR: Block 73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0 (height=491) closed 0 channels
+2021-01-08 22:41:02.641 [INF] CRTR: Pruning channel graph using block 5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1 (height=492)
+2021-01-08 22:41:02.650 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 491
+2021-01-08 22:41:02.739 [INF] NTFN: New block: height=491, sha=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.738 [INF] CRTR: Block 5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1 (height=492) closed 0 channels
+2021-01-08 22:41:02.764 [DBG] SWPR: New block: height=491, sha=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.764 [INF] UTXN: Attempting to graduate height=491: num_kids=0, num_babies=0
+2021-01-08 22:41:02.764 [DBG] DISC: New block: height=491, hash=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.766 [INF] CRTR: Pruning channel graph using block 546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f (height=493)
+2021-01-08 22:41:02.766 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 492
+2021-01-08 22:41:02.766 [INF] NTFN: New block: height=492, sha=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:02.766 [DBG] SWPR: New block: height=492, sha=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:02.766 [INF] UTXN: Attempting to graduate height=492: num_kids=0, num_babies=0
+2021-01-08 22:41:02.766 [DBG] DISC: New block: height=492, hash=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:02.768 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 493
+2021-01-08 22:41:02.768 [INF] NTFN: New block: height=493, sha=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:02.768 [DBG] SWPR: New block: height=493, sha=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:02.768 [DBG] DISC: New block: height=493, hash=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:02.768 [INF] UTXN: Attempting to graduate height=493: num_kids=0, num_babies=0
+2021-01-08 22:41:02.769 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 494
+2021-01-08 22:41:02.769 [INF] NTFN: New block: height=494, sha=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:02.769 [DBG] SWPR: New block: height=494, sha=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:02.769 [DBG] DISC: New block: height=494, hash=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:02.769 [INF] UTXN: Attempting to graduate height=494: num_kids=0, num_babies=0
+2021-01-08 22:41:02.769 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 495
+2021-01-08 22:41:02.776 [INF] NTFN: New block: height=495, sha=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:02.829 [DBG] SWPR: New block: height=495, sha=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:02.829 [INF] UTXN: Attempting to graduate height=495: num_kids=0, num_babies=0
+2021-01-08 22:41:02.829 [DBG] DISC: New block: height=495, hash=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:02.917 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 496
+2021-01-08 22:41:03.085 [INF] NTFN: New block: height=496, sha=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.018 [INF] CRTR: Block 546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f (height=493) closed 0 channels
+2021-01-08 22:41:03.163 [INF] CRTR: Pruning channel graph using block 41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b (height=494)
+2021-01-08 22:41:03.142 [INF] UTXN: Attempting to graduate height=496: num_kids=0, num_babies=0
+2021-01-08 22:41:03.142 [DBG] DISC: New block: height=496, hash=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.142 [DBG] SWPR: New block: height=496, sha=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.224 [INF] CRTR: Block 41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b (height=494) closed 0 channels
+2021-01-08 22:41:03.225 [INF] CRTR: Pruning channel graph using block 3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c (height=495)
+2021-01-08 22:41:03.317 [INF] CRTR: Block 3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c (height=495) closed 0 channels
+2021-01-08 22:41:03.318 [INF] CRTR: Pruning channel graph using block 31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876 (height=496)
+2021-01-08 22:41:03.395 [INF] CRTR: Block 31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876 (height=496) closed 0 channels
+2021-01-08 22:41:06.798 [INF] CRTR: Pruning channel graph using block 61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c (height=497)
+2021-01-08 22:41:06.800 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 497
+2021-01-08 22:41:06.800 [INF] NTFN: New block: height=497, sha=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:06.800 [INF] UTXN: Attempting to graduate height=497: num_kids=0, num_babies=0
+2021-01-08 22:41:06.800 [DBG] DISC: New block: height=497, hash=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:06.800 [DBG] SWPR: New block: height=497, sha=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:06.803 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 498
+2021-01-08 22:41:06.882 [INF] NTFN: New block: height=498, sha=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:06.945 [DBG] SWPR: New block: height=498, sha=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:06.945 [INF] UTXN: Attempting to graduate height=498: num_kids=0, num_babies=0
+2021-01-08 22:41:06.945 [DBG] DISC: New block: height=498, hash=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:06.973 [INF] CRTR: Block 61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c (height=497) closed 0 channels
+2021-01-08 22:41:07.130 [INF] CRTR: Pruning channel graph using block 2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482 (height=498)
+2021-01-08 22:41:07.093 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 499
+2021-01-08 22:41:07.155 [INF] NTFN: New block: height=499, sha=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.155 [DBG] SWPR: New block: height=499, sha=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.155 [INF] UTXN: Attempting to graduate height=499: num_kids=0, num_babies=0
+2021-01-08 22:41:07.156 [DBG] DISC: New block: height=499, hash=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.157 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 500
+2021-01-08 22:41:07.157 [INF] NTFN: New block: height=500, sha=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:07.157 [DBG] SWPR: New block: height=500, sha=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:07.157 [INF] UTXN: Attempting to graduate height=500: num_kids=0, num_babies=0
+2021-01-08 22:41:07.157 [DBG] DISC: New block: height=500, hash=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:07.159 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 501
+2021-01-08 22:41:07.159 [INF] NTFN: New block: height=501, sha=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:07.159 [DBG] SWPR: New block: height=501, sha=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:07.159 [DBG] DISC: New block: height=501, hash=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:07.159 [INF] UTXN: Attempting to graduate height=501: num_kids=0, num_babies=0
+2021-01-08 22:41:07.235 [INF] CRTR: Block 2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482 (height=498) closed 0 channels
+2021-01-08 22:41:07.371 [INF] CRTR: Pruning channel graph using block 2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8 (height=499)
+2021-01-08 22:41:07.322 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 502
+2021-01-08 22:41:07.463 [INF] NTFN: New block: height=502, sha=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:07.661 [DBG] SWPR: New block: height=502, sha=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:07.497 [INF] CRTR: Block 2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8 (height=499) closed 0 channels
+2021-01-08 22:41:07.661 [INF] UTXN: Attempting to graduate height=502: num_kids=0, num_babies=0
+2021-01-08 22:41:07.661 [DBG] DISC: New block: height=502, hash=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:07.668 [INF] CRTR: Pruning channel graph using block 224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d (height=500)
+2021-01-08 22:41:07.672 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 503
+2021-01-08 22:41:07.680 [INF] NTFN: New block: height=503, sha=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:07.733 [INF] UTXN: Attempting to graduate height=503: num_kids=0, num_babies=0
+2021-01-08 22:41:07.733 [DBG] DISC: New block: height=503, hash=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:07.733 [DBG] SWPR: New block: height=503, sha=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:07.767 [INF] CRTR: Block 224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d (height=500) closed 0 channels
+2021-01-08 22:41:07.947 [INF] CRTR: Pruning channel graph using block 4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf (height=501)
+2021-01-08 22:41:07.948 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 504
+2021-01-08 22:41:07.977 [INF] NTFN: New block: height=504, sha=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:08.036 [INF] CRTR: Block 4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf (height=501) closed 0 channels
+2021-01-08 22:41:08.074 [INF] CRTR: Pruning channel graph using block 2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff (height=502)
+2021-01-08 22:41:08.074 [DBG] DISC: New block: height=504, hash=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:08.075 [INF] UTXN: Attempting to graduate height=504: num_kids=0, num_babies=0
+2021-01-08 22:41:08.075 [DBG] SWPR: New block: height=504, sha=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:08.075 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 505
+2021-01-08 22:41:08.076 [INF] NTFN: New block: height=505, sha=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:08.076 [DBG] SWPR: New block: height=505, sha=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:08.076 [INF] UTXN: Attempting to graduate height=505: num_kids=0, num_babies=0
+2021-01-08 22:41:08.076 [DBG] DISC: New block: height=505, hash=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:08.077 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 506
+2021-01-08 22:41:08.077 [INF] NTFN: New block: height=506, sha=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:08.078 [DBG] SWPR: New block: height=506, sha=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:08.078 [INF] UTXN: Attempting to graduate height=506: num_kids=0, num_babies=0
+2021-01-08 22:41:08.078 [DBG] DISC: New block: height=506, hash=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:08.079 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 507
+2021-01-08 22:41:08.079 [INF] NTFN: New block: height=507, sha=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:08.079 [DBG] DISC: New block: height=507, hash=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:08.079 [DBG] SWPR: New block: height=507, sha=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:08.080 [INF] UTXN: Attempting to graduate height=507: num_kids=0, num_babies=0
+2021-01-08 22:41:08.081 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 508
+2021-01-08 22:41:08.081 [INF] NTFN: New block: height=508, sha=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:08.081 [INF] UTXN: Attempting to graduate height=508: num_kids=0, num_babies=0
+2021-01-08 22:41:08.081 [DBG] DISC: New block: height=508, hash=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:08.081 [DBG] SWPR: New block: height=508, sha=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:08.083 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 509
+2021-01-08 22:41:08.188 [INF] CRTR: Block 2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff (height=502) closed 0 channels
+2021-01-08 22:41:08.225 [INF] CRTR: Pruning channel graph using block 70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e (height=503)
+2021-01-08 22:41:08.189 [INF] NTFN: New block: height=509, sha=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:08.314 [DBG] SWPR: New block: height=509, sha=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:08.313 [INF] CRTR: Block 70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e (height=503) closed 0 channels
+2021-01-08 22:41:08.407 [INF] CRTR: Pruning channel graph using block 142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb (height=504)
+2021-01-08 22:41:08.314 [DBG] DISC: New block: height=509, hash=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:08.314 [INF] UTXN: Attempting to graduate height=509: num_kids=0, num_babies=0
+2021-01-08 22:41:08.603 [INF] CRTR: Block 142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb (height=504) closed 0 channels
+2021-01-08 22:41:08.653 [INF] CRTR: Pruning channel graph using block 6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112 (height=505)
+2021-01-08 22:41:08.654 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 510
+2021-01-08 22:41:08.768 [INF] NTFN: New block: height=510, sha=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:08.804 [INF] CRTR: Block 6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112 (height=505) closed 0 channels
+2021-01-08 22:41:08.843 [INF] CRTR: Pruning channel graph using block 3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c (height=506)
+2021-01-08 22:41:08.817 [INF] UTXN: Attempting to graduate height=510: num_kids=0, num_babies=0
+2021-01-08 22:41:08.817 [DBG] SWPR: New block: height=510, sha=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:08.817 [DBG] DISC: New block: height=510, hash=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:08.872 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 511
+2021-01-08 22:41:08.872 [INF] NTFN: New block: height=511, sha=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:08.872 [DBG] SWPR: New block: height=511, sha=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:08.872 [INF] UTXN: Attempting to graduate height=511: num_kids=0, num_babies=0
+2021-01-08 22:41:08.872 [DBG] DISC: New block: height=511, hash=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:08.874 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 512
+2021-01-08 22:41:08.874 [INF] NTFN: New block: height=512, sha=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:08.874 [DBG] SWPR: New block: height=512, sha=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:08.874 [INF] UTXN: Attempting to graduate height=512: num_kids=0, num_babies=0
+2021-01-08 22:41:08.874 [DBG] DISC: New block: height=512, hash=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:08.876 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 513
+2021-01-08 22:41:08.876 [INF] NTFN: New block: height=513, sha=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:08.876 [DBG] SWPR: New block: height=513, sha=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:08.876 [INF] UTXN: Attempting to graduate height=513: num_kids=0, num_babies=0
+2021-01-08 22:41:08.876 [DBG] DISC: New block: height=513, hash=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:08.934 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 514
+2021-01-08 22:41:08.950 [INF] NTFN: New block: height=514, sha=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:08.949 [INF] CRTR: Block 3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c (height=506) closed 0 channels
+2021-01-08 22:41:09.168 [INF] CRTR: Pruning channel graph using block 530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb (height=507)
+2021-01-08 22:41:09.060 [DBG] SWPR: New block: height=514, sha=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:09.060 [DBG] DISC: New block: height=514, hash=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:09.060 [INF] UTXN: Attempting to graduate height=514: num_kids=0, num_babies=0
+2021-01-08 22:41:09.307 [INF] CRTR: Block 530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb (height=507) closed 0 channels
+2021-01-08 22:41:09.495 [INF] CRTR: Pruning channel graph using block 412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50 (height=508)
+2021-01-08 22:41:09.498 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 515
+2021-01-08 22:41:09.498 [INF] NTFN: New block: height=515, sha=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:09.499 [DBG] DISC: New block: height=515, hash=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:09.499 [DBG] SWPR: New block: height=515, sha=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:09.499 [INF] UTXN: Attempting to graduate height=515: num_kids=0, num_babies=0
+2021-01-08 22:41:09.502 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 516
+2021-01-08 22:41:09.510 [INF] NTFN: New block: height=516, sha=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:09.536 [DBG] SWPR: New block: height=516, sha=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:09.536 [DBG] DISC: New block: height=516, hash=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:09.536 [INF] UTXN: Attempting to graduate height=516: num_kids=0, num_babies=0
+2021-01-08 22:41:09.601 [INF] CRTR: Block 412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50 (height=508) closed 0 channels
+2021-01-08 22:41:09.804 [INF] CRTR: Pruning channel graph using block 3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233 (height=509)
+2021-01-08 22:41:09.716 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 517
+2021-01-08 22:41:09.804 [INF] NTFN: New block: height=517, sha=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:09.805 [DBG] SWPR: New block: height=517, sha=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:09.805 [INF] UTXN: Attempting to graduate height=517: num_kids=0, num_babies=0
+2021-01-08 22:41:09.805 [DBG] DISC: New block: height=517, hash=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:09.805 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 518
+2021-01-08 22:41:09.805 [INF] NTFN: New block: height=518, sha=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:09.806 [DBG] SWPR: New block: height=518, sha=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:09.806 [INF] UTXN: Attempting to graduate height=518: num_kids=0, num_babies=0
+2021-01-08 22:41:09.806 [DBG] DISC: New block: height=518, hash=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:09.807 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 519
+2021-01-08 22:41:09.807 [INF] NTFN: New block: height=519, sha=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:09.807 [DBG] SWPR: New block: height=519, sha=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:09.807 [INF] UTXN: Attempting to graduate height=519: num_kids=0, num_babies=0
+2021-01-08 22:41:09.807 [DBG] DISC: New block: height=519, hash=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:09.808 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 520
+2021-01-08 22:41:09.808 [INF] NTFN: New block: height=520, sha=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:09.808 [DBG] SWPR: New block: height=520, sha=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:09.808 [INF] UTXN: Attempting to graduate height=520: num_kids=0, num_babies=0
+2021-01-08 22:41:09.808 [DBG] DISC: New block: height=520, hash=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:09.848 [INF] CRTR: Block 3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233 (height=509) closed 0 channels
+2021-01-08 22:41:09.980 [INF] CRTR: Pruning channel graph using block 47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087 (height=510)
+2021-01-08 22:41:09.934 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 521
+2021-01-08 22:41:10.191 [INF] NTFN: New block: height=521, sha=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:10.176 [INF] CRTR: Block 47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087 (height=510) closed 0 channels
+2021-01-08 22:41:10.245 [DBG] SWPR: New block: height=521, sha=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:10.246 [DBG] DISC: New block: height=521, hash=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:10.246 [INF] UTXN: Attempting to graduate height=521: num_kids=0, num_babies=0
+2021-01-08 22:41:10.272 [INF] CRTR: Pruning channel graph using block 27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb (height=511)
+2021-01-08 22:41:10.365 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 522
+2021-01-08 22:41:10.476 [INF] NTFN: New block: height=522, sha=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:10.504 [INF] CRTR: Block 27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb (height=511) closed 0 channels
+2021-01-08 22:41:10.505 [INF] CRTR: Pruning channel graph using block 4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8 (height=512)
+2021-01-08 22:41:10.507 [INF] UTXN: Attempting to graduate height=522: num_kids=0, num_babies=0
+2021-01-08 22:41:10.507 [DBG] DISC: New block: height=522, hash=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:10.507 [DBG] SWPR: New block: height=522, sha=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:10.508 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 523
+2021-01-08 22:41:10.508 [INF] NTFN: New block: height=523, sha=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:10.508 [DBG] DISC: New block: height=523, hash=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:10.508 [DBG] SWPR: New block: height=523, sha=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:10.508 [INF] UTXN: Attempting to graduate height=523: num_kids=0, num_babies=0
+2021-01-08 22:41:10.574 [INF] CRTR: Block 4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8 (height=512) closed 0 channels
+2021-01-08 22:41:10.575 [INF] CRTR: Pruning channel graph using block 61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed (height=513)
+2021-01-08 22:41:10.575 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 524
+2021-01-08 22:41:10.695 [INF] NTFN: New block: height=524, sha=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:10.707 [INF] CRTR: Block 61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed (height=513) closed 0 channels
+2021-01-08 22:41:10.777 [INF] CRTR: Pruning channel graph using block 45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f (height=514)
+2021-01-08 22:41:10.725 [DBG] SWPR: New block: height=524, sha=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:10.727 [INF] UTXN: Attempting to graduate height=524: num_kids=0, num_babies=0
+2021-01-08 22:41:10.727 [DBG] DISC: New block: height=524, hash=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:10.778 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 525
+2021-01-08 22:41:10.778 [INF] NTFN: New block: height=525, sha=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:10.779 [DBG] SWPR: New block: height=525, sha=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:10.779 [DBG] DISC: New block: height=525, hash=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:10.779 [INF] UTXN: Attempting to graduate height=525: num_kids=0, num_babies=0
+2021-01-08 22:41:10.783 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 526
+2021-01-08 22:41:10.783 [INF] NTFN: New block: height=526, sha=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:10.787 [INF] UTXN: Attempting to graduate height=526: num_kids=0, num_babies=0
+2021-01-08 22:41:10.787 [DBG] SWPR: New block: height=526, sha=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:10.787 [DBG] DISC: New block: height=526, hash=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:10.844 [INF] CRTR: Block 45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f (height=514) closed 0 channels
+2021-01-08 22:41:10.952 [INF] CRTR: Pruning channel graph using block 1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000 (height=515)
+2021-01-08 22:41:10.887 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 527
+2021-01-08 22:41:11.035 [INF] NTFN: New block: height=527, sha=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:11.058 [INF] CRTR: Block 1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000 (height=515) closed 0 channels
+2021-01-08 22:41:11.061 [INF] CRTR: Pruning channel graph using block 0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa (height=516)
+2021-01-08 22:41:11.061 [INF] UTXN: Attempting to graduate height=527: num_kids=0, num_babies=0
+2021-01-08 22:41:11.062 [DBG] SWPR: New block: height=527, sha=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:11.062 [DBG] DISC: New block: height=527, hash=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:11.165 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 528
+2021-01-08 22:41:11.165 [INF] NTFN: New block: height=528, sha=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:11.171 [INF] CRTR: Block 0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa (height=516) closed 0 channels
+2021-01-08 22:41:11.193 [INF] CRTR: Pruning channel graph using block 5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013 (height=517)
+2021-01-08 22:41:11.173 [DBG] DISC: New block: height=528, hash=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:11.173 [INF] UTXN: Attempting to graduate height=528: num_kids=0, num_babies=0
+2021-01-08 22:41:11.173 [DBG] SWPR: New block: height=528, sha=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:11.194 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 529
+2021-01-08 22:41:11.194 [INF] NTFN: New block: height=529, sha=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:11.194 [DBG] SWPR: New block: height=529, sha=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:11.194 [INF] UTXN: Attempting to graduate height=529: num_kids=0, num_babies=0
+2021-01-08 22:41:11.194 [DBG] DISC: New block: height=529, hash=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:11.195 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 530
+2021-01-08 22:41:11.195 [INF] NTFN: New block: height=530, sha=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:11.195 [DBG] SWPR: New block: height=530, sha=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:11.195 [DBG] DISC: New block: height=530, hash=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:11.195 [INF] UTXN: Attempting to graduate height=530: num_kids=0, num_babies=0
+2021-01-08 22:41:11.196 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 531
+2021-01-08 22:41:11.196 [INF] NTFN: New block: height=531, sha=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:11.196 [DBG] DISC: New block: height=531, hash=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:11.196 [DBG] SWPR: New block: height=531, sha=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:11.197 [INF] UTXN: Attempting to graduate height=531: num_kids=0, num_babies=0
+2021-01-08 22:41:11.197 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 532
+2021-01-08 22:41:11.197 [INF] NTFN: New block: height=532, sha=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:11.198 [DBG] DISC: New block: height=532, hash=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:11.198 [DBG] SWPR: New block: height=532, sha=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:11.198 [INF] UTXN: Attempting to graduate height=532: num_kids=0, num_babies=0
+2021-01-08 22:41:11.199 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 533
+2021-01-08 22:41:11.209 [INF] NTFN: New block: height=533, sha=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:11.244 [DBG] SWPR: New block: height=533, sha=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:11.244 [INF] UTXN: Attempting to graduate height=533: num_kids=0, num_babies=0
+2021-01-08 22:41:11.244 [DBG] DISC: New block: height=533, hash=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:11.257 [INF] CRTR: Block 5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013 (height=517) closed 0 channels
+2021-01-08 22:41:11.396 [INF] CRTR: Pruning channel graph using block 1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d (height=518)
+2021-01-08 22:41:11.347 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 534
+2021-01-08 22:41:11.422 [INF] NTFN: New block: height=534, sha=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:11.423 [DBG] SWPR: New block: height=534, sha=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:11.423 [INF] UTXN: Attempting to graduate height=534: num_kids=0, num_babies=0
+2021-01-08 22:41:11.423 [DBG] DISC: New block: height=534, hash=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:11.424 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 535
+2021-01-08 22:41:11.424 [INF] NTFN: New block: height=535, sha=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:11.424 [DBG] SWPR: New block: height=535, sha=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:11.424 [INF] UTXN: Attempting to graduate height=535: num_kids=0, num_babies=0
+2021-01-08 22:41:11.425 [DBG] DISC: New block: height=535, hash=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:11.426 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 536
+2021-01-08 22:41:11.426 [INF] NTFN: New block: height=536, sha=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:11.426 [DBG] DISC: New block: height=536, hash=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:11.426 [INF] UTXN: Attempting to graduate height=536: num_kids=0, num_babies=0
+2021-01-08 22:41:11.426 [DBG] SWPR: New block: height=536, sha=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:11.427 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 537
+2021-01-08 22:41:11.427 [INF] NTFN: New block: height=537, sha=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:11.427 [DBG] SWPR: New block: height=537, sha=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:11.427 [INF] UTXN: Attempting to graduate height=537: num_kids=0, num_babies=0
+2021-01-08 22:41:11.427 [DBG] DISC: New block: height=537, hash=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:11.428 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 538
+2021-01-08 22:41:11.428 [INF] NTFN: New block: height=538, sha=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:11.428 [DBG] DISC: New block: height=538, hash=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:11.428 [DBG] SWPR: New block: height=538, sha=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:11.428 [INF] UTXN: Attempting to graduate height=538: num_kids=0, num_babies=0
+2021-01-08 22:41:11.429 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 539
+2021-01-08 22:41:11.429 [INF] NTFN: New block: height=539, sha=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:11.429 [DBG] DISC: New block: height=539, hash=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:11.429 [DBG] SWPR: New block: height=539, sha=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:11.429 [INF] UTXN: Attempting to graduate height=539: num_kids=0, num_babies=0
+2021-01-08 22:41:11.482 [INF] CRTR: Block 1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d (height=518) closed 0 channels
+2021-01-08 22:41:11.510 [INF] CRTR: Pruning channel graph using block 5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363 (height=519)
+2021-01-08 22:41:11.650 [INF] CRTR: Block 5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363 (height=519) closed 0 channels
+2021-01-08 22:41:11.662 [INF] CRTR: Pruning channel graph using block 7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35 (height=520)
+2021-01-08 22:41:11.738 [INF] CRTR: Block 7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35 (height=520) closed 0 channels
+2021-01-08 22:41:11.739 [INF] CRTR: Pruning channel graph using block 6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526 (height=521)
+2021-01-08 22:41:11.867 [INF] CRTR: Block 6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526 (height=521) closed 0 channels
+2021-01-08 22:41:11.880 [INF] CRTR: Pruning channel graph using block 29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3 (height=522)
+2021-01-08 22:41:11.980 [INF] CRTR: Block 29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3 (height=522) closed 0 channels
+2021-01-08 22:41:11.981 [INF] CRTR: Pruning channel graph using block 2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24 (height=523)
+2021-01-08 22:41:12.071 [INF] CRTR: Block 2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24 (height=523) closed 0 channels
+2021-01-08 22:41:12.072 [INF] CRTR: Pruning channel graph using block 3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc (height=524)
+2021-01-08 22:41:12.150 [INF] CRTR: Block 3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc (height=524) closed 0 channels
+2021-01-08 22:41:12.170 [INF] CRTR: Pruning channel graph using block 2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd (height=525)
+2021-01-08 22:41:12.297 [INF] CRTR: Block 2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd (height=525) closed 0 channels
+2021-01-08 22:41:12.301 [INF] CRTR: Pruning channel graph using block 30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e (height=526)
+2021-01-08 22:41:12.382 [INF] CRTR: Block 30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e (height=526) closed 0 channels
+2021-01-08 22:41:12.384 [INF] CRTR: Pruning channel graph using block 5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e (height=527)
+2021-01-08 22:41:12.492 [INF] CRTR: Block 5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e (height=527) closed 0 channels
+2021-01-08 22:41:12.493 [INF] CRTR: Pruning channel graph using block 3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e (height=528)
+2021-01-08 22:41:12.583 [INF] CRTR: Block 3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e (height=528) closed 0 channels
+2021-01-08 22:41:12.585 [INF] CRTR: Pruning channel graph using block 10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740 (height=529)
+2021-01-08 22:41:12.635 [INF] CRTR: Block 10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740 (height=529) closed 0 channels
+2021-01-08 22:41:12.637 [INF] CRTR: Pruning channel graph using block 2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e (height=530)
+2021-01-08 22:41:12.710 [INF] CRTR: Block 2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e (height=530) closed 0 channels
+2021-01-08 22:41:12.712 [INF] CRTR: Pruning channel graph using block 36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd (height=531)
+2021-01-08 22:41:12.801 [INF] CRTR: Block 36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd (height=531) closed 0 channels
+2021-01-08 22:41:12.802 [INF] CRTR: Pruning channel graph using block 5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc (height=532)
+2021-01-08 22:41:12.898 [INF] CRTR: Block 5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc (height=532) closed 0 channels
+2021-01-08 22:41:12.922 [INF] CRTR: Pruning channel graph using block 2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd (height=533)
+2021-01-08 22:41:13.024 [INF] CRTR: Block 2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd (height=533) closed 0 channels
+2021-01-08 22:41:13.038 [INF] CRTR: Pruning channel graph using block 645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec (height=534)
+2021-01-08 22:41:13.107 [INF] CRTR: Block 645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec (height=534) closed 0 channels
+2021-01-08 22:41:13.121 [INF] CRTR: Pruning channel graph using block 31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb (height=535)
+2021-01-08 22:41:13.218 [INF] CRTR: Block 31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb (height=535) closed 0 channels
+2021-01-08 22:41:13.219 [INF] CRTR: Pruning channel graph using block 00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae (height=536)
+2021-01-08 22:41:13.287 [INF] CRTR: Block 00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae (height=536) closed 0 channels
+2021-01-08 22:41:13.298 [INF] CRTR: Pruning channel graph using block 5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae (height=537)
+2021-01-08 22:41:13.413 [INF] CRTR: Block 5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae (height=537) closed 0 channels
+2021-01-08 22:41:13.414 [INF] CRTR: Pruning channel graph using block 3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af (height=538)
+2021-01-08 22:41:13.499 [INF] CRTR: Block 3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af (height=538) closed 0 channels
+2021-01-08 22:41:13.500 [INF] CRTR: Pruning channel graph using block 7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891 (height=539)
+2021-01-08 22:41:13.624 [INF] CRTR: Block 7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891 (height=539) closed 0 channels
+2021-01-08 22:41:15.575 [INF] CRTR: Pruning channel graph using block 1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90 (height=540)
+2021-01-08 22:41:15.641 [INF] CRTR: Block 1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90 (height=540) closed 0 channels
+2021-01-08 22:41:15.682 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 540
+2021-01-08 22:41:15.682 [INF] NTFN: New block: height=540, sha=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.682 [DBG] DISC: New block: height=540, hash=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.682 [DBG] SWPR: New block: height=540, sha=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.682 [INF] UTXN: Attempting to graduate height=540: num_kids=0, num_babies=0
+2021-01-08 22:41:16.649 [INF] CRTR: Pruning channel graph using block 32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b (height=541)
+2021-01-08 22:41:16.748 [INF] CRTR: Block 32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b (height=541) closed 0 channels
+2021-01-08 22:41:16.814 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 541
+2021-01-08 22:41:16.815 [INF] NTFN: New block: height=541, sha=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:16.815 [INF] UTXN: Attempting to graduate height=541: num_kids=0, num_babies=0
+2021-01-08 22:41:16.815 [DBG] SWPR: New block: height=541, sha=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:16.815 [DBG] DISC: New block: height=541, hash=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:16.815 [INF] CRTR: Pruning channel graph using block 2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de (height=542)
+2021-01-08 22:41:16.818 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 542
+2021-01-08 22:41:16.818 [INF] NTFN: New block: height=542, sha=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:16.818 [INF] UTXN: Attempting to graduate height=542: num_kids=0, num_babies=0
+2021-01-08 22:41:16.818 [DBG] DISC: New block: height=542, hash=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:16.818 [DBG] SWPR: New block: height=542, sha=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:16.819 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 543
+2021-01-08 22:41:16.819 [INF] NTFN: New block: height=543, sha=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:16.819 [DBG] SWPR: New block: height=543, sha=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:16.819 [INF] UTXN: Attempting to graduate height=543: num_kids=0, num_babies=0
+2021-01-08 22:41:16.819 [DBG] DISC: New block: height=543, hash=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:16.899 [INF] CRTR: Block 2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de (height=542) closed 0 channels
+2021-01-08 22:41:16.910 [INF] CRTR: Pruning channel graph using block 5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca (height=543)
+2021-01-08 22:41:17.007 [INF] CRTR: Block 5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca (height=543) closed 0 channels
+2021-01-08 22:41:25.624 [INF] CRTR: Pruning channel graph using block 44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2 (height=544)
+2021-01-08 22:41:25.626 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 544
+2021-01-08 22:41:25.640 [INF] NTFN: New block: height=544, sha=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.704 [INF] CRTR: Block 44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2 (height=544) closed 0 channels
+2021-01-08 22:41:25.727 [INF] CRTR: Pruning channel graph using block 37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280 (height=545)
+2021-01-08 22:41:25.704 [DBG] DISC: New block: height=544, hash=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.704 [INF] UTXN: Attempting to graduate height=544: num_kids=0, num_babies=0
+2021-01-08 22:41:25.704 [DBG] SWPR: New block: height=544, sha=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.833 [INF] CRTR: Block 37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280 (height=545) closed 0 channels
+2021-01-08 22:41:25.856 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 545
+2021-01-08 22:41:25.856 [INF] NTFN: New block: height=545, sha=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.856 [INF] UTXN: Attempting to graduate height=545: num_kids=0, num_babies=0
+2021-01-08 22:41:25.856 [DBG] SWPR: New block: height=545, sha=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.856 [DBG] DISC: New block: height=545, hash=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:34.081 [INF] LTND: Received interrupt
+2021-01-08 22:41:34.085 [INF] LTND: Shutting down...
+2021-01-08 22:41:34.086 [INF] LTND: Gracefully shutting down.
+2021-01-08 22:41:34.086 [INF] CRTR: FilteredChainView stopping
+2021-01-08 22:41:34.086 [INF] HSWC: HTLC Switch shutting down
+2021-01-08 22:41:34.086 [INF] HSWC: Decaying hash log received shutdown request
+2021-01-08 22:41:34.086 [INF] UTXN: UTXO nursery shutting down
+2021-01-08 22:41:34.086 [INF] BRAR: Breach arbiter shutting down
+2021-01-08 22:41:34.087 [INF] DISC: Authenticated Gossiper is stopping
+2021-01-08 22:41:34.087 [INF] CNCT: Stopping ChainArbitrator
+2021-01-08 22:41:34.087 [DBG] SWPR: Sweeper shutting down
+2021-01-08 22:41:34.087 [DBG] SWPR: Sweeper shut down
+2021-01-08 22:41:34.087 [INF] PRNF: Stopping PeerNotifier
+2021-01-08 22:41:34.087 [INF] FNDG: Funding manager shutting down
+2021-01-08 22:41:34.087 [INF] CHBU: Stopping chanbackup.SubSwapper
+2021-01-08 22:41:34.088 [INF] CHFT: Stopping event store
+2021-01-08 22:41:34.088 [DBG] CHFT: recording flap count for: 1 peers
+2021-01-08 22:41:34.154 [INF] SRVR: Disconnecting from 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:41:34.155 [DBG] SRVR: removing peer 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:41:34.155 [INF] PEER: disconnecting 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949, reason: server: disconnecting peer 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949
+2021-01-08 22:41:34.155 [INF] PEER: unable to read message from 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949: read tcp 127.0.0.1:5562->127.0.0.1:49949: use of closed network connection
+2021-01-08 22:41:34.255 [DBG] SRVR: Peer 02d73051b838f9a1a12dbad0ac29166502555d6e6bdcd634bc510df4c87933d4f3@127.0.0.1:49949 has been disconnected
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping RouterRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping ChainRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping VersionRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping WatchtowerClientRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping SignRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping AutopilotRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping InvoicesRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping WalletKitRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] RPCS: Stopping WatchtowerRPC Sub-RPC Server
+2021-01-08 22:41:34.256 [INF] LTND: Shutdown complete
+

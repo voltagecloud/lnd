@@ -1,0 +1,1625 @@
+2021-01-08 22:40:44.296 [WRN] LTND: open /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data: no such file or directory
+2021-01-08 22:40:44.296 [INF] LTND: Version: 0.12.0-beta.rc4 commit=cert/v1.0.3-744-g1da3994a-dirty, build=development, logging=default, debuglevel=debug
+2021-01-08 22:40:44.296 [INF] LTND: Active chain: Bitcoin (network=regtest)
+2021-01-08 22:40:44.296 [INF] LTND: Opening the main database, this might take a few minutes...
+2021-01-08 22:40:44.296 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2021-01-08 22:40:44.327 [INF] CHDB: Checking for schema update: latest_version=20, db_version=20
+2021-01-08 22:40:44.327 [INF] LTND: Database now open (time_to_open=30.975756ms)!
+2021-01-08 22:40:44.328 [INF] RPCS: Generating TLS certificates...
+2021-01-08 22:40:44.343 [INF] RPCS: Done generating TLS certificates
+2021-01-08 22:40:44.462 [INF] CHRE: Primary chain is set to: bitcoin
+2021-01-08 22:40:44.506 [INF] CHRE: Using external fee estimator http://localhost:5560/fee-estimates.json: cached=false
+2021-01-08 22:40:44.594 [INF] LNWL: Opened wallet
+2021-01-08 22:40:44.599 [INF] LNWL: The wallet has been unlocked without a time limit
+2021-01-08 22:40:44.715 [INF] CHRE: LightningWallet opened
+2021-01-08 22:40:44.723 [DBG] LNWL: Locating suitable block for birthday 2021-01-06 22:40:44 -0600 CST between blocks 0-448
+2021-01-08 22:40:44.725 [DBG] LNWL: Checking candidate block: height=224, hash=674e2424932e2150f5df36689065f3aa492519d1ab1f017faf35542d1ac170b8, timestamp=2021-01-08 22:41:13 -0600 CST
+2021-01-08 22:40:44.727 [DBG] LNWL: Checking candidate block: height=112, hash=7290f6b52997b8321f6c3b0b3fc9274b2ccc1670805f8cfacd9c13ffedf63577, timestamp=2021-01-08 22:40:54 -0600 CST
+2021-01-08 22:40:44.727 [DBG] LNWL: Checking candidate block: height=56, hash=0c43f525c02a9616e7ea2f37751c8a39a6640c7f5489253e8352fac82eaaba99, timestamp=2021-01-08 22:40:45 -0600 CST
+2021-01-08 22:40:44.729 [DBG] LNWL: Checking candidate block: height=28, hash=3658d90841fa6b2b7d5db75931072f3e28b94b08739861422f7d6d1e387e2382, timestamp=2021-01-08 22:40:40 -0600 CST
+2021-01-08 22:40:44.730 [DBG] LNWL: Checking candidate block: height=14, hash=279133534a67af6075b3a097666c0e435db9bf3d50a7f99ebd116b5ecdf13b92, timestamp=2021-01-08 22:40:38 -0600 CST
+2021-01-08 22:40:44.732 [DBG] LNWL: Checking candidate block: height=7, hash=57f552f113a498724b21c2fa2a503c569b91e390c9c7e15dc2fbc9002a34117f, timestamp=2021-01-08 22:40:36 -0600 CST
+2021-01-08 22:40:44.733 [DBG] LNWL: Checking candidate block: height=3, hash=109d2873e02b77a34eaf14d1d647770721b7bf96ce6d9d4f68be51720fd44058, timestamp=2021-01-08 22:40:35 -0600 CST
+2021-01-08 22:40:44.734 [DBG] LNWL: Checking candidate block: height=1, hash=7976a25a158f0510c124a8b07f9f6ab928282748b3c8ddba083051a554dd4e67, timestamp=2021-01-08 22:40:34 -0600 CST
+2021-01-08 22:40:44.735 [DBG] LNWL: Checking candidate block: height=0, hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, timestamp=2011-02-02 17:16:42 -0600 CST
+2021-01-08 22:40:44.736 [DBG] LNWL: Found birthday block: height=0, hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, timestamp=2011-02-02 17:16:42 -0600 CST
+2021-01-08 22:40:44.798 [INF] HSWC: Restoring in-memory circuit state from disk
+2021-01-08 22:40:44.848 [INF] HSWC: Payment circuits loaded: num_pending=0, num_open=0
+2021-01-08 22:40:44.873 [INF] LNWL: Started rescan from block 0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206 (height 0) for 0 addresses
+2021-01-08 22:40:44.877 [INF] LNWL: Catching up block hashes to height 448, this might take a while
+2021-01-08 22:40:44.962 [DBG] CRTR: Instantiating mission control with config: PenaltyHalfLife=1h0m0s, AprioriHopProbability=0.6, AprioriWeight=0.5
+2021-01-08 22:40:44.989 [DBG] CRTR: Mission control state reconstruction started
+2021-01-08 22:40:44.989 [DBG] CRTR: Mission control state reconstruction finished: n=0, time=68.321µs
+2021-01-08 22:40:44.989 [DBG] SRVR: Instantiating payment session source with config: AttemptCost=100 + 0.1%, MinRouteProbability=0.01
+2021-01-08 22:40:45.021 [INF] SWPR: Migrating UTXO nursery finalized TXIDs
+2021-01-08 22:40:45.041 [INF] LTND: Channel backup proxy channel notifier starting
+2021-01-08 22:40:45.042 [INF] ATPL: Instantiating autopilot with active=false, max_channels=5, allocation=0.600000, min_chan_size=20000, max_chan_size=16777215, private=false, min_confs=1, conf_target=3
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: SignRPC
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: WalletKitRPC
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: AutopilotRPC
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: ChainRPC
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: InvoicesRPC
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: RouterRPC
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: WatchtowerRPC
+2021-01-08 22:40:45.042 [DBG] LTND: Populating dependencies for sub RPC server: WatchtowerClientRPC
+2021-01-08 22:40:45.043 [INF] NTFR: Baking macaroons for ChainNotifier RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/chainnotifier.macaroon
+2021-01-08 22:40:45.059 [INF] IRPC: Baking macaroons for invoices RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/invoices.macaroon
+2021-01-08 22:40:45.079 [INF] RRPC: Making macaroons for Router RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/router.macaroon
+2021-01-08 22:40:45.106 [INF] SGNR: Making macaroons for Signer RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/signer.macaroon
+2021-01-08 22:40:45.137 [INF] WLKT: Baking macaroons for WalletKit RPC Server at: /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/walletkit.macaroon
+2021-01-08 22:40:45.159 [DBG] NTFR: ChainNotifier RPC server successfully register with root gRPC server
+2021-01-08 22:40:45.159 [DBG] IRPC: Invoices RPC server successfully registered with root gRPC server
+2021-01-08 22:40:45.159 [DBG] RPCS: WatchtowerClient RPC server successfully registered with  root gRPC server
+2021-01-08 22:40:45.159 [DBG] RRPC: Router RPC server successfully register with root gRPC server
+2021-01-08 22:40:45.160 [DBG] SGNR: Signer RPC server successfully register with root gRPC server
+2021-01-08 22:40:45.160 [DBG] ARPC: Autopilot RPC server successfully register with root gRPC server
+2021-01-08 22:40:45.160 [DBG] VRPC: Versioner RPC server successfully registered with root gRPC server
+2021-01-08 22:40:45.160 [DBG] WLKT: WalletKit RPC server successfully registered with root gRPC server
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: ChainRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: InvoicesRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: WatchtowerClientRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: RouterRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: SignRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: AutopilotRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: VersionRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: WalletKitRPC
+2021-01-08 22:40:45.160 [DBG] RPCS: Starting sub RPC server: WatchtowerRPC
+2021-01-08 22:40:45.160 [INF] RPCS: RPC server listening on 127.0.0.1:5570
+2021-01-08 22:40:45.161 [DBG] NTFR: ChainNotifier REST server successfully registered with root REST server
+2021-01-08 22:40:45.161 [DBG] IRPC: Invoices REST server successfully registered with root REST server
+2021-01-08 22:40:45.161 [DBG] RRPC: Router REST server successfully registered with root REST server
+2021-01-08 22:40:45.162 [DBG] SGNR: Signer REST server successfully registered with root REST server
+2021-01-08 22:40:45.162 [DBG] ARPC: Autopilot REST server successfully registered with root REST server
+2021-01-08 22:40:45.162 [DBG] VRPC: Versioner REST server successfully registered with root REST server
+2021-01-08 22:40:45.162 [DBG] WLKT: WalletKit REST server successfully registered with root REST server
+2021-01-08 22:40:45.162 [WRN] HLCK: check: disk space configured with 0 attempts, skipping it
+2021-01-08 22:40:45.162 [WRN] HLCK: check: tls configured with 0 attempts, skipping it
+2021-01-08 22:40:45.165 [INF] RPCS: gRPC proxy started at 127.0.0.1:5571
+2021-01-08 22:40:45.165 [DBG] HLCK: Monitoring: chain backend
+2021-01-08 22:40:45.245 [INF] PRNF: PeerNotifier starting
+2021-01-08 22:40:45.293 [INF] HSWC: Starting HTLC Switch
+2021-01-08 22:40:45.293 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:45.293 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:45.294 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:45.295 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:45.297 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:45.297 [INF] DISC: Authenticated Gossiper is starting
+2021-01-08 22:40:45.298 [INF] BRAR: Starting contract observer, watching for breaches.
+2021-01-08 22:40:45.298 [INF] NTFN: New block epoch subscription
+2021-01-08 22:40:45.298 [DBG] DISC: New block: height=448, hash=69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e
+2021-01-08 22:40:45.377 [INF] CRTR: FilteredChainView starting
+2021-01-08 22:40:45.425 [INF] CRTR: Filtering chain using 0 channels active
+2021-01-08 22:40:45.425 [INF] CRTR: Prune tip for Channel Graph: height=448, hash=69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e
+2021-01-08 22:40:45.461 [INF] LNWL: Done catching up block hashes
+2021-01-08 22:40:45.462 [INF] LNWL: Finished rescan for 0 addresses (synced to block 69b36e7d5609956819f93c7fb8d1aed03cdd064885f7c6ab4a5cfb1b70ced11e, height 448)
+2021-01-08 22:40:45.473 [DBG] CRTR: Cleaning network result store.
+2021-01-08 22:40:45.497 [DBG] INVC: Adding 0 pending invoices to the expiry watcher
+2021-01-08 22:40:45.497 [WRN] INVC: Deleting old invoices failed: there are no existing invoices
+2021-01-08 22:40:45.497 [INF] CHFT: Adding 0 channels to event store
+2021-01-08 22:40:45.497 [INF] CHBU: Starting chanbackup.SubSwapper
+2021-01-08 22:40:45.517 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:45.525 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:45.526 [DBG] CHBU: SubSwapper's backupUpdater is active!
+2021-01-08 22:40:45.526 [INF] BTCN: Server listening on 127.0.0.1:5569
+2021-01-08 22:40:45.541 [INF] SRVR: Auto peer bootstrapping is disabled
+2021-01-08 22:40:46.064 [DBG] CRTR: New graph topology client subscription, client 1
+2021-01-08 22:40:47.067 [DBG] CRTR: New graph topology client subscription, client 2
+2021-01-08 22:40:49.906 [DBG] RPCS: [connectpeer] requested connection to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.906 [DBG] SRVR: Connecting to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.953 [INF] SRVR: Established connection to: 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.953 [INF] SRVR: Finalizing connection to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573, inbound=false
+2021-01-08 22:40:49.953 [DBG] PRNF: PeerNotifier notifying peer: 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 online
+2021-01-08 22:40:49.953 [DBG] RPCS: Connected to peer: 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.953 [DBG] PEER: Sending Init to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.954 [DBG] PEER: Received Init from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.954 [DBG] PEER: Loaded 0 active channels from database with NodeKey(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:40:49.955 [DBG] SRVR: Notifying that peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573 is online
+2021-01-08 22:40:49.955 [INF] PEER: Negotiated chan series queries with 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:49.955 [INF] DISC: Creating new GossipSyncer for peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:49.955 [DBG] DISC: Starting GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:40:49.955 [DBG] DISC: Attempting initial historical sync with GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:40:49.955 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=chansSynced, type=PassiveSync
+2021-01-08 22:40:49.955 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=syncingChans, type=PassiveSync
+2021-01-08 22:40:49.955 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): requesting new chans from height=0 and 448 blocks after
+2021-01-08 22:40:49.955 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=waitingQueryRangeReply, type=PassiveSync
+2021-01-08 22:40:49.955 [DBG] PEER: Sending QueryChannelRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, start_height=0, end_height=447) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.955 [DBG] PEER: Received QueryChannelRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, start_height=0, end_height=447) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.955 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): filtering chan range: start_height=0, num_blocks=448
+2021-01-08 22:40:49.955 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): sending final chan range chunk, size=0
+2021-01-08 22:40:49.955 [DBG] PEER: Sending ReplyChannelRange(start_height=0, end_height=447, num_chans=0, encoding=0) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.956 [DBG] PEER: Received ReplyChannelRange(start_height=0, end_height=447, num_chans=0, encoding=0) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.956 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): buffering chan range reply of size=0
+2021-01-08 22:40:49.956 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): filtering through 0 chans
+2021-01-08 22:40:49.956 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): remote peer has no new chans
+2021-01-08 22:40:49.956 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=chansSynced, type=PassiveSync
+2021-01-08 22:40:49.956 [DBG] DISC: Initial historical sync completed
+2021-01-08 22:40:49.956 [DBG] DISC: Attempting to transition 3 passive GossipSyncers to active
+2021-01-08 22:40:49.956 [DBG] DISC: Transitioning passive GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782) to active
+2021-01-08 22:40:49.956 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): transitioning from PassiveSync to ActiveSync
+2021-01-08 22:40:49.956 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): applying gossipFilter(start=2021-01-08 22:40:49.956384 -0600 CST m=+5.710482776, end=2157-02-15 05:09:04.956384 -0600 CST m=+4294967300.710482776)
+2021-01-08 22:40:49.956 [DBG] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): state=chansSynced, type=ActiveSync
+2021-01-08 22:40:49.956 [DBG] PEER: Sending GossipTimestampRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, first_stamp=2021-01-08 22:40:49 -0600 CST, stamp_range=4294967295) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.956 [DBG] PEER: Received GossipTimestampRange(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, first_stamp=2021-01-08 22:40:49 -0600 CST, stamp_range=4294967295) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:49.956 [DBG] CHDB: ChanUpdatesInHorizon hit percentage: NaN (0/0)
+2021-01-08 22:40:49.956 [INF] DISC: GossipSyncer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782): applying new update horizon: start=2021-01-08 22:40:49 -0600 CST, end=2157-02-15 05:09:04 -0600 CST, backlog_size=0
+2021-01-08 22:40:50.159 [DBG] RPCS: [listpeers] yielded [03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573] peers
+2021-01-08 22:40:50.368 [DBG] RPCS: [connectpeer] requested connection to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:50.368 [ERR] RPCS: [connectpeer]: error connecting to peer: already connected to peer: 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:50.368 [ERR] RPCS: [/lnrpc.Lightning/ConnectPeer]: already connected to peer: 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:50.572 [DBG] RPCS: [walletbalance] Total balance=0 BTC (confirmed=0 BTC, unconfirmed=0 BTC)
+2021-01-08 22:40:50.597 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1qncy4tgc2cjena2q7l8u39z0xc4qzdkds9vglty
+2021-01-08 22:40:50.636 [INF] LNWL: Inserting unconfirmed transaction 47bdc4a50da0c8549a74e4191a02ff130795037bf1d09318c38297c022b6ed62
+2021-01-08 22:40:50.636 [DBG] LNWL: Marked address bcrt1qncy4tgc2cjena2q7l8u39z0xc4qzdkds9vglty used
+2021-01-08 22:40:50.805 [DBG] RPCS: [listunspent] min=0 max=0, generated utxos: [47bdc4a50da0c8549a74e4191a02ff130795037bf1d09318c38297c022b6ed62:0]
+2021-01-08 22:40:50.809 [INF] LNWL: Marking unconfirmed transaction 47bdc4a50da0c8549a74e4191a02ff130795037bf1d09318c38297c022b6ed62 mined in block 449
+2021-01-08 22:40:50.809 [DBG] LNWL: Marked address bcrt1qncy4tgc2cjena2q7l8u39z0xc4qzdkds9vglty used
+2021-01-08 22:40:50.809 [INF] CRTR: Pruning channel graph using block 6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4 (height=449)
+2021-01-08 22:40:50.909 [INF] CRTR: Block 6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4 (height=449) closed 0 channels
+2021-01-08 22:40:50.911 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 449
+2021-01-08 22:40:50.911 [INF] NTFN: New block: height=449, sha=6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4
+2021-01-08 22:40:50.911 [DBG] SWPR: New block: height=449, sha=6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4
+2021-01-08 22:40:50.911 [INF] UTXN: Attempting to graduate height=449: num_kids=0, num_babies=0
+2021-01-08 22:40:50.912 [DBG] DISC: New block: height=449, hash=6da88b9b90e284872f5c40d895c2441b7942832a52dedbb0c8edecfaceec11e4
+2021-01-08 22:40:50.912 [INF] CRTR: Pruning channel graph using block 34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28 (height=450)
+2021-01-08 22:40:50.914 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 450
+2021-01-08 22:40:50.914 [INF] NTFN: New block: height=450, sha=34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28
+2021-01-08 22:40:50.914 [DBG] SWPR: New block: height=450, sha=34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28
+2021-01-08 22:40:50.914 [INF] UTXN: Attempting to graduate height=450: num_kids=0, num_babies=0
+2021-01-08 22:40:50.914 [DBG] DISC: New block: height=450, hash=34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28
+2021-01-08 22:40:50.915 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 451
+2021-01-08 22:40:50.915 [INF] NTFN: New block: height=451, sha=175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495
+2021-01-08 22:40:50.915 [DBG] DISC: New block: height=451, hash=175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495
+2021-01-08 22:40:50.915 [DBG] SWPR: New block: height=451, sha=175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495
+2021-01-08 22:40:50.916 [INF] UTXN: Attempting to graduate height=451: num_kids=0, num_babies=0
+2021-01-08 22:40:50.916 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 452
+2021-01-08 22:40:50.916 [INF] NTFN: New block: height=452, sha=0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70
+2021-01-08 22:40:50.917 [DBG] SWPR: New block: height=452, sha=0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70
+2021-01-08 22:40:50.917 [INF] UTXN: Attempting to graduate height=452: num_kids=0, num_babies=0
+2021-01-08 22:40:50.917 [DBG] DISC: New block: height=452, hash=0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70
+2021-01-08 22:40:50.993 [INF] CRTR: Block 34dec4642d0d9f5257eb3c39717f9357a8f1315fe2f337bf519103930e1f9f28 (height=450) closed 0 channels
+2021-01-08 22:40:50.994 [INF] CRTR: Pruning channel graph using block 175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495 (height=451)
+2021-01-08 22:40:50.995 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 453
+2021-01-08 22:40:51.067 [INF] NTFN: New block: height=453, sha=65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89
+2021-01-08 22:40:51.083 [INF] CRTR: Block 175cd10bde3a3ebe574cf669c86daec1663bdcf2b933a101fc6a4a4c5a8ab495 (height=451) closed 0 channels
+2021-01-08 22:40:51.149 [INF] CRTR: Pruning channel graph using block 0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70 (height=452)
+2021-01-08 22:40:51.092 [INF] UTXN: Attempting to graduate height=453: num_kids=0, num_babies=0
+2021-01-08 22:40:51.092 [DBG] SWPR: New block: height=453, sha=65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89
+2021-01-08 22:40:51.092 [DBG] DISC: New block: height=453, hash=65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89
+2021-01-08 22:40:51.118 [DBG] RPCS: [walletbalance] Total balance=1 BTC (confirmed=1 BTC, unconfirmed=0 BTC)
+2021-01-08 22:40:51.172 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 454
+2021-01-08 22:40:51.259 [INF] CRTR: Block 0f67e877f525d75aacb5e7bb755b1735f5308bf4556ed72c16b6ac297ea2bf70 (height=452) closed 0 channels
+2021-01-08 22:40:51.261 [INF] NTFN: New block: height=454, sha=62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8
+2021-01-08 22:40:51.261 [DBG] DISC: New block: height=454, hash=62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8
+2021-01-08 22:40:51.261 [DBG] SWPR: New block: height=454, sha=62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8
+2021-01-08 22:40:51.261 [INF] CRTR: Pruning channel graph using block 65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89 (height=453)
+2021-01-08 22:40:51.261 [INF] UTXN: Attempting to graduate height=454: num_kids=0, num_babies=0
+2021-01-08 22:40:51.391 [INF] CRTR: Block 65fb7730c3fa2122e1b04cddab117ff3a1a53e646f86c5661bd6efbd550aac89 (height=453) closed 0 channels
+2021-01-08 22:40:51.392 [INF] CRTR: Pruning channel graph using block 62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8 (height=454)
+2021-01-08 22:40:51.456 [INF] CRTR: Block 62857fae2b5b1bc49558cdfc58f16b39dfeeeaede9edb3eac1982acb86b46ce8 (height=454) closed 0 channels
+2021-01-08 22:40:51.643 [INF] CRTR: Pruning channel graph using block 33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2 (height=455)
+2021-01-08 22:40:51.645 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 455
+2021-01-08 22:40:51.645 [INF] NTFN: New block: height=455, sha=33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2
+2021-01-08 22:40:51.645 [DBG] DISC: New block: height=455, hash=33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2
+2021-01-08 22:40:51.645 [INF] UTXN: Attempting to graduate height=455: num_kids=0, num_babies=0
+2021-01-08 22:40:51.645 [DBG] SWPR: New block: height=455, sha=33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2
+2021-01-08 22:40:51.647 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 456
+2021-01-08 22:40:51.647 [INF] NTFN: New block: height=456, sha=77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392
+2021-01-08 22:40:51.647 [DBG] SWPR: New block: height=456, sha=77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392
+2021-01-08 22:40:51.647 [INF] UTXN: Attempting to graduate height=456: num_kids=0, num_babies=0
+2021-01-08 22:40:51.647 [DBG] DISC: New block: height=456, hash=77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392
+2021-01-08 22:40:51.648 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 457
+2021-01-08 22:40:51.648 [INF] NTFN: New block: height=457, sha=2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d
+2021-01-08 22:40:51.648 [DBG] SWPR: New block: height=457, sha=2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d
+2021-01-08 22:40:51.649 [INF] UTXN: Attempting to graduate height=457: num_kids=0, num_babies=0
+2021-01-08 22:40:51.649 [DBG] DISC: New block: height=457, hash=2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d
+2021-01-08 22:40:51.649 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 458
+2021-01-08 22:40:51.649 [INF] NTFN: New block: height=458, sha=4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc
+2021-01-08 22:40:51.649 [DBG] DISC: New block: height=458, hash=4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc
+2021-01-08 22:40:51.649 [INF] UTXN: Attempting to graduate height=458: num_kids=0, num_babies=0
+2021-01-08 22:40:51.649 [DBG] SWPR: New block: height=458, sha=4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc
+2021-01-08 22:40:51.650 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 459
+2021-01-08 22:40:51.650 [INF] NTFN: New block: height=459, sha=4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424
+2021-01-08 22:40:51.651 [DBG] SWPR: New block: height=459, sha=4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424
+2021-01-08 22:40:51.651 [INF] UTXN: Attempting to graduate height=459: num_kids=0, num_babies=0
+2021-01-08 22:40:51.651 [DBG] DISC: New block: height=459, hash=4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424
+2021-01-08 22:40:51.651 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 460
+2021-01-08 22:40:51.651 [INF] NTFN: New block: height=460, sha=3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951
+2021-01-08 22:40:51.651 [DBG] DISC: New block: height=460, hash=3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951
+2021-01-08 22:40:51.651 [INF] UTXN: Attempting to graduate height=460: num_kids=0, num_babies=0
+2021-01-08 22:40:51.651 [DBG] SWPR: New block: height=460, sha=3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951
+2021-01-08 22:40:51.741 [INF] CRTR: Block 33c853a8cf160c97c8896ef6796400dd0b4356881f3e190b7a32d399a4d73db2 (height=455) closed 0 channels
+2021-01-08 22:40:51.754 [INF] CRTR: Pruning channel graph using block 77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392 (height=456)
+2021-01-08 22:40:51.847 [INF] CRTR: Block 77e3c5eeef34d3599482e220b7f416a574434502219376517e3bc667f7e39392 (height=456) closed 0 channels
+2021-01-08 22:40:51.869 [INF] CRTR: Pruning channel graph using block 2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d (height=457)
+2021-01-08 22:40:51.920 [DBG] RPCS: [walletbalance] Total balance=1 BTC (confirmed=1 BTC, unconfirmed=0 BTC)
+2021-01-08 22:40:52.029 [INF] CRTR: Block 2f08fc87dd8769acd2194207edc4b01cdc0bb45d95c098c4fc896ef535b70c5d (height=457) closed 0 channels
+2021-01-08 22:40:52.030 [INF] CRTR: Pruning channel graph using block 4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc (height=458)
+2021-01-08 22:40:52.116 [DBG] RPCS: [newaddress] type=WITNESS_PUBKEY_HASH addr=bcrt1q3qd2kzgm3z9rpuj0taaxfu55ktx4nq590pcg40
+2021-01-08 22:40:52.129 [INF] CRTR: Block 4a2fed1910692f70bb431788744738b986e5ddeec760cbbdaacfb0864cd409cc (height=458) closed 0 channels
+2021-01-08 22:40:52.131 [INF] CRTR: Pruning channel graph using block 4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424 (height=459)
+2021-01-08 22:40:52.188 [INF] CRTR: Block 4e9f673a60bab69fbedd125a095a2126079c4f2b37279880ba86e5797e296424 (height=459) closed 0 channels
+2021-01-08 22:40:52.189 [INF] CRTR: Pruning channel graph using block 3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951 (height=460)
+2021-01-08 22:40:52.369 [DBG] RPCS: [listunspent] min=0 max=0, generated utxos: []
+2021-01-08 22:40:52.392 [INF] CRTR: Block 3162bcc2a2f847b17c7072931e37739690583aa16245f2b561da394c758e0951 (height=460) closed 0 channels
+2021-01-08 22:40:52.393 [INF] LNWL: Inserting unconfirmed transaction 85bcbf3dc780f99e5aa285f33f6d1170444d25262ad50fa94f6a318205295849
+2021-01-08 22:40:52.394 [DBG] LNWL: Marked address bcrt1q3qd2kzgm3z9rpuj0taaxfu55ktx4nq590pcg40 used
+2021-01-08 22:40:52.584 [DBG] RPCS: [listunspent] min=0 max=0, generated utxos: [85bcbf3dc780f99e5aa285f33f6d1170444d25262ad50fa94f6a318205295849:0]
+2021-01-08 22:40:52.588 [INF] LNWL: Marking unconfirmed transaction 85bcbf3dc780f99e5aa285f33f6d1170444d25262ad50fa94f6a318205295849 mined in block 461
+2021-01-08 22:40:52.588 [DBG] LNWL: Marked address bcrt1q3qd2kzgm3z9rpuj0taaxfu55ktx4nq590pcg40 used
+2021-01-08 22:40:52.589 [INF] CRTR: Pruning channel graph using block 351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830 (height=461)
+2021-01-08 22:40:52.612 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 461
+2021-01-08 22:40:52.625 [INF] NTFN: New block: height=461, sha=351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830
+2021-01-08 22:40:52.651 [INF] CRTR: Block 351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830 (height=461) closed 0 channels
+2021-01-08 22:40:52.652 [INF] UTXN: Attempting to graduate height=461: num_kids=0, num_babies=0
+2021-01-08 22:40:52.652 [DBG] SWPR: New block: height=461, sha=351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830
+2021-01-08 22:40:52.652 [DBG] DISC: New block: height=461, hash=351241d5a41eee52f2aed7bffbf5193f9ea4b2d0893bf3b3ed672ad88ca32830
+2021-01-08 22:40:52.714 [INF] CRTR: Pruning channel graph using block 57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1 (height=462)
+2021-01-08 22:40:52.786 [INF] CRTR: Block 57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1 (height=462) closed 0 channels
+2021-01-08 22:40:52.800 [INF] CRTR: Pruning channel graph using block 090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea (height=463)
+2021-01-08 22:40:52.827 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 462
+2021-01-08 22:40:52.846 [INF] NTFN: New block: height=462, sha=57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1
+2021-01-08 22:40:52.842 [DBG] RPCS: [walletbalance] Total balance=2 BTC (confirmed=2 BTC, unconfirmed=0 BTC)
+2021-01-08 22:40:52.865 [DBG] SWPR: New block: height=462, sha=57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1
+2021-01-08 22:40:52.865 [INF] UTXN: Attempting to graduate height=462: num_kids=0, num_babies=0
+2021-01-08 22:40:52.865 [DBG] DISC: New block: height=462, hash=57e937b7267c3bcd56dd56c1274be3139cc645f78ffa79a529e94c95b6d484b1
+2021-01-08 22:40:52.866 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 463
+2021-01-08 22:40:52.866 [INF] NTFN: New block: height=463, sha=090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea
+2021-01-08 22:40:52.867 [DBG] SWPR: New block: height=463, sha=090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea
+2021-01-08 22:40:52.867 [INF] UTXN: Attempting to graduate height=463: num_kids=0, num_babies=0
+2021-01-08 22:40:52.867 [DBG] DISC: New block: height=463, hash=090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea
+2021-01-08 22:40:52.875 [INF] CRTR: Block 090d1f8c1a73da0828db1b212e0de992c4566892688715178ce2e0b9a26bb7ea (height=463) closed 0 channels
+2021-01-08 22:40:52.899 [INF] CRTR: Pruning channel graph using block 1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3 (height=464)
+2021-01-08 22:40:53.063 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 464
+2021-01-08 22:40:53.076 [INF] NTFN: New block: height=464, sha=1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3
+2021-01-08 22:40:53.121 [DBG] SWPR: New block: height=464, sha=1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3
+2021-01-08 22:40:53.086 [INF] CRTR: Block 1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3 (height=464) closed 0 channels
+2021-01-08 22:40:53.121 [INF] UTXN: Attempting to graduate height=464: num_kids=0, num_babies=0
+2021-01-08 22:40:53.121 [DBG] DISC: New block: height=464, hash=1cb097f769f14c605e64bdb40c4f3c49e20cb2e42baf9fc690c45c25cbfd1ed3
+2021-01-08 22:40:53.142 [INF] CRTR: Pruning channel graph using block 1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584 (height=465)
+2021-01-08 22:40:53.218 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 465
+2021-01-08 22:40:53.218 [INF] NTFN: New block: height=465, sha=1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584
+2021-01-08 22:40:53.218 [DBG] SWPR: New block: height=465, sha=1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584
+2021-01-08 22:40:53.218 [INF] UTXN: Attempting to graduate height=465: num_kids=0, num_babies=0
+2021-01-08 22:40:53.218 [DBG] DISC: New block: height=465, hash=1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584
+2021-01-08 22:40:53.219 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 466
+2021-01-08 22:40:53.219 [INF] NTFN: New block: height=466, sha=735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d
+2021-01-08 22:40:53.219 [DBG] DISC: New block: height=466, hash=735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d
+2021-01-08 22:40:53.219 [DBG] SWPR: New block: height=466, sha=735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d
+2021-01-08 22:40:53.219 [INF] UTXN: Attempting to graduate height=466: num_kids=0, num_babies=0
+2021-01-08 22:40:53.224 [INF] CRTR: Block 1b427225ec94d822d0f7be0c87555c81aa994fe0a990c481ea399e544666f584 (height=465) closed 0 channels
+2021-01-08 22:40:53.255 [INF] CRTR: Pruning channel graph using block 735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d (height=466)
+2021-01-08 22:40:53.314 [INF] CRTR: Block 735ae821b5c97b539d010dacbc442d831a4b34a0c377004fbf827a52fa4ed86d (height=466) closed 0 channels
+2021-01-08 22:40:53.430 [INF] CRTR: Pruning channel graph using block 66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a (height=467)
+2021-01-08 22:40:53.536 [INF] CRTR: Block 66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a (height=467) closed 0 channels
+2021-01-08 22:40:53.550 [INF] CRTR: Pruning channel graph using block 56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85 (height=468)
+2021-01-08 22:40:53.564 [DBG] NTFN: Filtering 2 txns for 0 spend requests at height 467
+2021-01-08 22:40:53.604 [INF] NTFN: New block: height=467, sha=66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a
+2021-01-08 22:40:53.626 [DBG] SWPR: New block: height=467, sha=66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a
+2021-01-08 22:40:53.626 [DBG] DISC: New block: height=467, hash=66c203cfdc3e5853d9355dd1e33a6dee3b380d44ad54b70a656ede73f230bd6a
+2021-01-08 22:40:53.626 [INF] UTXN: Attempting to graduate height=467: num_kids=0, num_babies=0
+2021-01-08 22:40:53.673 [INF] CRTR: Block 56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85 (height=468) closed 0 channels
+2021-01-08 22:40:53.689 [INF] CRTR: Pruning channel graph using block 181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337 (height=469)
+2021-01-08 22:40:53.690 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 468
+2021-01-08 22:40:53.690 [INF] NTFN: New block: height=468, sha=56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85
+2021-01-08 22:40:53.691 [DBG] SWPR: New block: height=468, sha=56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85
+2021-01-08 22:40:53.691 [DBG] DISC: New block: height=468, hash=56f457bdf4617163b865ce5a1b13eedbe848da3755da9a62948e462ec6debc85
+2021-01-08 22:40:53.691 [INF] UTXN: Attempting to graduate height=468: num_kids=0, num_babies=0
+2021-01-08 22:40:53.692 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 469
+2021-01-08 22:40:53.693 [INF] NTFN: New block: height=469, sha=181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337
+2021-01-08 22:40:53.726 [INF] UTXN: Attempting to graduate height=469: num_kids=0, num_babies=0
+2021-01-08 22:40:53.726 [DBG] SWPR: New block: height=469, sha=181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337
+2021-01-08 22:40:53.726 [DBG] DISC: New block: height=469, hash=181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337
+2021-01-08 22:40:53.749 [INF] CRTR: Block 181c432948e2614abf6f8faed13e039941830863d49eb21286501cd6f8033337 (height=469) closed 0 channels
+2021-01-08 22:40:53.892 [INF] CRTR: Pruning channel graph using block 7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68 (height=470)
+2021-01-08 22:40:53.893 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 470
+2021-01-08 22:40:53.904 [INF] NTFN: New block: height=470, sha=7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68
+2021-01-08 22:40:53.948 [INF] CRTR: Block 7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68 (height=470) closed 0 channels
+2021-01-08 22:40:53.969 [INF] CRTR: Pruning channel graph using block 6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241 (height=471)
+2021-01-08 22:40:53.949 [DBG] SWPR: New block: height=470, sha=7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68
+2021-01-08 22:40:53.949 [INF] UTXN: Attempting to graduate height=470: num_kids=0, num_babies=0
+2021-01-08 22:40:53.949 [DBG] DISC: New block: height=470, hash=7e9b9550c2a0e5b8cefce725971c21f05b044d824d95145322cf495aabf5ff68
+2021-01-08 22:40:53.970 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 471
+2021-01-08 22:40:53.970 [INF] NTFN: New block: height=471, sha=6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241
+2021-01-08 22:40:53.970 [DBG] DISC: New block: height=471, hash=6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241
+2021-01-08 22:40:53.970 [INF] UTXN: Attempting to graduate height=471: num_kids=0, num_babies=0
+2021-01-08 22:40:53.971 [DBG] SWPR: New block: height=471, sha=6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241
+2021-01-08 22:40:53.971 [DBG] NTFN: Filtering 1 txns for 0 spend requests at height 472
+2021-01-08 22:40:53.971 [INF] NTFN: New block: height=472, sha=53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d
+2021-01-08 22:40:53.972 [DBG] DISC: New block: height=472, hash=53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d
+2021-01-08 22:40:53.972 [INF] UTXN: Attempting to graduate height=472: num_kids=0, num_babies=0
+2021-01-08 22:40:53.972 [DBG] SWPR: New block: height=472, sha=53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d
+2021-01-08 22:40:54.015 [INF] CRTR: Block 6a76bef1cc62cbc04d1b7bf5044b21e7ffcb941e413abe53651f01c023b11241 (height=471) closed 0 channels
+2021-01-08 22:40:54.016 [INF] CRTR: Pruning channel graph using block 53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d (height=472)
+2021-01-08 22:40:54.100 [INF] CRTR: Block 53144f9357dbc7097de3f18dacba7a14b7a9ca37d1c0da60a9bf5345f5fbca2d (height=472) closed 0 channels
+2021-01-08 22:40:54.142 [DBG] RPCS: [openchannel] request to NodeKey(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782) allocation(us=1000000, them=0)
+2021-01-08 22:40:54.144 [DBG] LNWL: Web API returning 12500 sat/kw for conf target of 6
+2021-01-08 22:40:54.144 [DBG] RPCS: [openchannel]: using fee of 12500 sat/kw for funding tx
+2021-01-08 22:40:54.144 [INF] FNDG: Initiating fundingRequest(local_amt=0.01 BTC (subtract_fees=false), push_amt=0 mSAT, chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, dust_limit=0.00000573 BTC, min_confs=1)
+2021-01-08 22:40:54.145 [DBG] LNWL: Web API returning 12500 sat/kw for conf target of 3
+2021-01-08 22:40:54.145 [INF] CHFD: Performing funding tx coin selection using 12500 sat/kw as fee rate
+2021-01-08 22:40:54.330 [INF] FNDG: Target commit tx sat/kw for pendingID(701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c): 12500
+2021-01-08 22:40:54.330 [INF] FNDG: Starting funding workflow with 127.0.0.1:5573 for pending_id(701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c), committype=legacy
+2021-01-08 22:40:54.330 [DBG] PEER: Sending MsgOpenChannel(temp_chan_id=701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c, chain=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, csv=4, amt=0.01 BTC, push_amt=0 mSAT, reserve=0.0001 BTC, flags=1) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:54.481 [DBG] PEER: Received MsgAcceptChannel(temp_chan_id=701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c, reserve=0.0001 BTC, csv=4, num_confs=1) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:54.481 [INF] FNDG: Recv'd fundingResponse for pending_id(701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c)
+2021-01-08 22:40:54.482 [DBG] LNWL: Funding tx for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) generated: (*wire.MsgTx)(0xc000d1c840)({
+ Version: (int32) 2,
+ TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+  (*wire.TxIn)(0xc000701c20)({
+   PreviousOutPoint: (wire.OutPoint) 85bcbf3dc780f99e5aa285f33f6d1170444d25262ad50fa94f6a318205295849:0,
+   SignatureScript: ([]uint8) <nil>,
+   Witness: (wire.TxWitness) (len=2 cap=2) {
+    ([]uint8) (len=72 cap=144) {
+     00000000  30 45 02 21 00 f3 6e 67  54 9b ac 8f 44 c1 b3 a6  |0E.!..ngT...D...|
+     00000010  41 47 10 2e b5 19 61 7f  07 94 00 1e 9c 7f 2a 6a  |AG....a.......*j|
+     00000020  8d bd 0d 52 cb 02 20 2a  8b 5c 94 66 5c e7 73 3b  |...R.. *.\.f\.s;|
+     00000030  c0 48 f8 af 3a 9d ff 24  9e c5 d0 5f 09 08 80 9e  |.H..:..$..._....|
+     00000040  3f 11 7e b2 85 3c 71 01                           |?.~..<q.|
+    },
+    ([]uint8) (len=33 cap=33) {
+     00000000  02 ed 5a b9 c8 44 cf 1c  c5 15 18 eb 22 b4 f2 3c  |..Z..D......"..<|
+     00000010  6a 55 64 60 1f bd 3b a5  91 4a 91 15 30 15 32 d4  |jUd`..;..J..0.2.|
+     00000020  1a                                                |.|
+    }
+   },
+   Sequence: (uint32) 0
+  })
+ },
+ TxOut: ([]*wire.TxOut) (len=2 cap=15) {
+  (*wire.TxOut)(0xc000c7fa20)({
+   Value: (int64) 1000000,
+   PkScript: ([]uint8) (len=34 cap=500) {
+    00000000  00 20 35 a1 ad 4e b4 25  e6 d3 47 19 0b 46 32 1f  |. 5..N.%..G..F2.|
+    00000010  f7 32 0b 9d 08 cf d1 2e  8e c2 ba 4d 90 47 a9 b0  |.2.........M.G..|
+    00000020  64 34                                             |d4|
+   }
+  }),
+  (*wire.TxOut)(0xc0011c0e40)({
+   Value: (int64) 98992363,
+   PkScript: ([]uint8) (len=22 cap=500) {
+    00000000  00 14 14 b4 63 f9 6f 37  c1 89 e9 66 5b 30 b1 a0  |....c.o7...f[0..|
+    00000010  23 f8 aa 0a 42 16                                 |#...B.|
+   }
+  })
+ },
+ LockTime: (uint32) 0
+})
+
+2021-01-08 22:40:54.484 [DBG] LNWL: Local commit tx for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): (*wire.MsgTx)(0xc001082300)({
+ Version: (int32) 2,
+ TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+  (*wire.TxIn)(0xc000114de0)({
+   PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+   SignatureScript: ([]uint8) <nil>,
+   Witness: (wire.TxWitness) <nil>,
+   Sequence: (uint32) 2155439093
+  })
+ },
+ TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+  (*wire.TxOut)(0xc001090480)({
+   Value: (int64) 990950,
+   PkScript: ([]uint8) (len=34 cap=500) {
+    00000000  00 20 67 cb 04 43 99 09  c5 07 d2 20 ff 75 58 0d  |. g..C..... .uX.|
+    00000010  42 e8 59 13 7a 3d a0 a9  3c 24 3e 03 57 93 1d d2  |B.Y.z=..<$>.W...|
+    00000020  75 e8                                             |u.|
+   }
+  })
+ },
+ LockTime: (uint32) 541953523
+})
+
+2021-01-08 22:40:54.484 [DBG] LNWL: Remote commit tx for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): (*wire.MsgTx)(0xc001082340)({
+ Version: (int32) 2,
+ TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+  (*wire.TxIn)(0xc000114e40)({
+   PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+   SignatureScript: ([]uint8) <nil>,
+   Witness: (wire.TxWitness) <nil>,
+   Sequence: (uint32) 2155439093
+  })
+ },
+ TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+  (*wire.TxOut)(0xc0010904a0)({
+   Value: (int64) 990950,
+   PkScript: ([]uint8) (len=22 cap=500) {
+    00000000  00 14 66 f7 ee 43 93 73  d9 62 c6 41 ad fb 87 22  |..f..C.s.b.A..."|
+    00000010  14 24 73 3d 19 f9                                 |.$s=..|
+   }
+  })
+ },
+ LockTime: (uint32) 541953523
+})
+
+2021-01-08 22:40:54.484 [INF] FNDG: pendingChan(701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c): remote party proposes num_confs=1, csv_delay=4
+2021-01-08 22:40:54.484 [DBG] FNDG: Remote party accepted commitment constraints: (channeldb.ChannelConstraints) {
+ DustLimit: (btcutil.Amount) 0.00000573 BTC,
+ ChanReserve: (btcutil.Amount) 0.0001 BTC,
+ MaxPendingAmount: (lnwire.MilliSatoshi) 990000000 mSAT,
+ MinHTLC: (lnwire.MilliSatoshi) 1 mSAT,
+ MaxAcceptedHtlcs: (uint16) 483,
+ CsvDelay: (uint16) 4
+}
+
+2021-01-08 22:40:54.484 [DBG] FNDG: Creating chan barrier for ChanID(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366)
+2021-01-08 22:40:54.485 [INF] FNDG: Generated ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) for pending_id(701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c)
+2021-01-08 22:40:54.485 [DBG] PEER: Sending MsgFundingCreated(temp_chan_id=701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c, chan_point=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:54.517 [DBG] PEER: Received MsgFundingSigned(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:54.554 [INF] FNDG: Broadcasting funding tx for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): 020000000001014958290582316a4fa90fd52a26254d4470116d3ff385a25a9ef980c73dbfbc850000000000000000000240420f000000000022002035a1ad4eb425e6d347190b46321ff7320b9d08cfd12e8ec2ba4d9047a9b06434eb80e6050000000016001414b463f96f37c189e9665b30b1a023f8aa0a421602483045022100f36e67549bac8f44c1b3a64147102eb519617f0794001e9c7f2a6a8dbd0d52cb02202a8b5c94665ce7733bc048f8af3a9dff249ec5d05f0908809e3f117eb2853c71012102ed5ab9c844cf1cc51518eb22b4f23c6a5564601fbd3ba5914a9115301532d41a00000000
+2021-01-08 22:40:54.555 [INF] LNWL: Inserting unconfirmed transaction 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9
+2021-01-08 22:40:54.555 [DBG] LNWL: Marked address bcrt1qzj6x87t0xlqcn6txtvctrgprlz4q5sskmhw8pd used
+2021-01-08 22:40:54.598 [INF] CNCT: Creating new ChannelArbitrator for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0)
+2021-01-08 22:40:54.598 [DBG] CNCT: New ChainEventSubscription(id=0) for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0)
+2021-01-08 22:40:54.598 [DBG] CNCT: Starting ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0), htlc_set=(map[contractcourt.HtlcSetKey]contractcourt.htlcSet) (len=2) {
+ (contractcourt.HtlcSetKey) LocalHtlcSet: (contractcourt.htlcSet) {
+  incomingHTLCs: (map[uint64]channeldb.HTLC) {
+  },
+  outgoingHTLCs: (map[uint64]channeldb.HTLC) {
+  }
+ },
+ (contractcourt.HtlcSetKey) RemoteHtlcSet: (contractcourt.htlcSet) {
+  incomingHTLCs: (map[uint64]channeldb.HTLC) {
+  },
+  outgoingHTLCs: (map[uint64]channeldb.HTLC) {
+  }
+ }
+}
+
+2021-01-08 22:40:54.598 [DBG] LNWL: Marked address bcrt1qzj6x87t0xlqcn6txtvctrgprlz4q5sskmhw8pd used
+2021-01-08 22:40:54.598 [INF] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): starting state=StateDefault, trigger=chainTrigger, triggerHeight=472
+2021-01-08 22:40:54.598 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=472) examining active HTLC's
+2021-01-08 22:40:54.598 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=472, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:40:54.598 [DBG] CNCT: Starting chain watcher for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0)
+2021-01-08 22:40:54.598 [INF] NTFN: New spend subscription: spend_id=1, outpoint=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0, script=0 35a1ad4eb425e6d347190b46321ff7320b9d08cfd12e8ec2ba4d9047a9b06434, height_hint=472
+2021-01-08 22:40:54.599 [INF] NTFN: Dispatching historical spend rescan for outpoint=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0, script=0 35a1ad4eb425e6d347190b46321ff7320b9d08cfd12e8ec2ba4d9047a9b06434, start=472, end=472
+2021-01-08 22:40:54.774 [DBG] LNWL: Marked address bcrt1qzj6x87t0xlqcn6txtvctrgprlz4q5sskmhw8pd used
+2021-01-08 22:40:54.780 [DBG] NTFN: Updated spend hint to height=472 for unconfirmed spend request outpoint=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0, script=0 35a1ad4eb425e6d347190b46321ff7320b9d08cfd12e8ec2ba4d9047a9b06434
+2021-01-08 22:40:54.782 [INF] FNDG: Finalizing pending_id(701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c) over ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0), waiting for channel open on-chain
+2021-01-08 22:40:54.782 [INF] CNCT: Close observer for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) active
+2021-01-08 22:40:54.782 [INF] NTFN: New confirmation subscription: conf_id=1, txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9, num_confs=1 height_hint=472
+2021-01-08 22:40:54.782 [DBG] NTFN: Dispatching historical confirmation rescan for txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9
+2021-01-08 22:40:54.782 [INF] FNDG: Waiting for funding tx (66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9) to reach 1 confirmations
+2021-01-08 22:40:54.782 [DBG] CHBU: Adding channel 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0 to backup state
+2021-01-08 22:40:54.782 [INF] CHBU: Updating on-disk multi SCB backup: num_old_chans=0, num_new_chans=1
+2021-01-08 22:40:54.787 [DBG] NTFN: Confirmation details for txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9 not found during historical dispatch, waiting to dispatch at tip
+2021-01-08 22:40:54.844 [INF] CRTR: Pruning channel graph using block 4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee (height=473)
+2021-01-08 22:40:54.901 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 473
+2021-01-08 22:40:54.917 [DBG] NTFN: Found initial confirmation of txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9: height=473, hash=4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee
+2021-01-08 22:40:54.927 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:54.927 [INF] LNWL: Marking unconfirmed transaction 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9 mined in block 473
+2021-01-08 22:40:54.941 [DBG] LNWL: Marked address bcrt1qzj6x87t0xlqcn6txtvctrgprlz4q5sskmhw8pd used
+2021-01-08 22:40:54.965 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:54.975 [INF] CRTR: Block 4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee (height=473) closed 0 channels
+2021-01-08 22:40:55.008 [INF] CRTR: Pruning channel graph using block 6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c (height=474)
+2021-01-08 22:40:55.033 [DBG] LNWL: Marked address bcrt1qzj6x87t0xlqcn6txtvctrgprlz4q5sskmhw8pd used
+2021-01-08 22:40:55.088 [INF] CRTR: Block 6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c (height=474) closed 0 channels
+2021-01-08 22:40:55.118 [INF] CRTR: Pruning channel graph using block 64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5 (height=475)
+2021-01-08 22:40:55.169 [INF] NTFN: New block: height=473, sha=4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee
+2021-01-08 22:40:55.196 [INF] NTFN: Dispatching 1 confirmation notification for txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9
+2021-01-08 22:40:55.196 [DBG] SWPR: New block: height=473, sha=4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee
+2021-01-08 22:40:55.196 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=473) examining active HTLC's
+2021-01-08 22:40:55.275 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=473, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:40:55.196 [DBG] DISC: New block: height=473, hash=4f9b971ac4c13fb2bc440cd0ed03d14fd055b485072ac95418e2b247174642ee
+2021-01-08 22:40:55.196 [INF] UTXN: Attempting to graduate height=473: num_kids=0, num_babies=0
+2021-01-08 22:40:55.228 [INF] FNDG: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) is now active: ChannelID(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366)
+2021-01-08 22:40:55.237 [INF] CRTR: Block 64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5 (height=475) closed 0 channels
+2021-01-08 22:40:55.276 [INF] CRTR: Pruning channel graph using block 1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3 (height=476)
+2021-01-08 22:40:55.276 [DBG] FNDG: ChannelID(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) is now fully confirmed! (shortChanID=473:1:0)
+2021-01-08 22:40:55.277 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 474
+2021-01-08 22:40:55.279 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): starting local commitment: (*lnwallet.commitment)(0xc00013a600)({
+ height: (uint64) 0,
+ isOurs: (bool) true,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001082300)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000114de0)({
+    PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2155439093
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc001090480)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=34 cap=500) {
+     00000000  00 20 67 cb 04 43 99 09  c5 07 d2 20 ff 75 58 0d  |. g..C..... .uX.|
+     00000010  42 e8 59 13 7a 3d a0 a9  3c 24 3e 03 57 93 1d d2  |B.Y.z=..<$>.W...|
+     00000020  75 e8                                             |u.|
+    }
+   })
+  },
+  LockTime: (uint32) 541953523
+ }),
+ sig: ([]uint8) (len=70 cap=70) {
+  00000000  30 44 02 20 6c bc d2 93  5f 8c 09 b9 e2 21 6e 23  |0D. l..._....!n#|
+  00000010  89 a0 ae d0 20 94 95 4c  a2 da 1b f2 af a9 8b 40  |.... ..L.......@|
+  00000020  dd f9 ee 7a 02 20 50 11  25 48 01 33 dd 0e f9 34  |...z. P.%H.3...4|
+  00000030  b4 a7 60 fe 9c 51 ad 51  50 40 c0 a7 a8 45 59 86  |..`..Q.QP@...EY.|
+  00000040  80 81 d4 dc 6a a2                                 |....j.|
+ },
+ ourBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:40:55.289 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): starting remote commitment: (*lnwallet.commitment)(0xc000e70000)({
+ height: (uint64) 0,
+ isOurs: (bool) false,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001082340)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000114e40)({
+    PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2155439093
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc0010904a0)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=22 cap=500) {
+     00000000  00 14 66 f7 ee 43 93 73  d9 62 c6 41 ad fb 87 22  |..f..C.s.b.A..."|
+     00000010  14 24 73 3d 19 f9                                 |.$s=..|
+    }
+   })
+  },
+  LockTime: (uint32) 541953523
+ }),
+ sig: ([]uint8) <nil>,
+ ourBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:40:55.459 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): Restoring 0 dangling remote updates
+2021-01-08 22:40:55.394 [INF] CRTR: Block 1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3 (height=476) closed 0 channels
+2021-01-08 22:40:55.456 [INF] NTFN: New block: height=474, sha=6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c
+2021-01-08 22:40:55.460 [INF] CRTR: Pruning channel graph using block 64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025 (height=477)
+2021-01-08 22:40:55.460 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): Restoring 0 local updates that the peer should sign
+2021-01-08 22:40:55.460 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=474) examining active HTLC's
+2021-01-08 22:40:55.462 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=474, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:40:55.462 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 475
+2021-01-08 22:40:55.460 [DBG] DISC: New block: height=474, hash=6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c
+2021-01-08 22:40:55.460 [DBG] SWPR: New block: height=474, sha=6ee8d465515733447a7bb8d239f1d94ecd6f0b2a759cedcd4309d0b9ebe0ab3c
+2021-01-08 22:40:55.460 [INF] UTXN: Attempting to graduate height=474: num_kids=0, num_babies=0
+2021-01-08 22:40:55.517 [INF] CRTR: Block 64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025 (height=477) closed 0 channels
+2021-01-08 22:40:55.518 [INF] CRTR: Pruning channel graph using block 29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb (height=478)
+2021-01-08 22:40:55.619 [INF] NTFN: New block: height=475, sha=64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5
+2021-01-08 22:40:55.622 [DBG] SWPR: New block: height=475, sha=64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5
+2021-01-08 22:40:55.622 [DBG] DISC: New block: height=475, hash=64c2e8dd230bb126f0687da1b788fb3fc13026502549f8638f13126477dacda5
+2021-01-08 22:40:55.622 [INF] UTXN: Attempting to graduate height=475: num_kids=0, num_babies=0
+2021-01-08 22:40:55.622 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=475) examining active HTLC's
+2021-01-08 22:40:55.629 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=475, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:40:55.630 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 476
+2021-01-08 22:40:55.658 [INF] CRTR: Block 29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb (height=478) closed 0 channels
+2021-01-08 22:40:55.670 [DBG] PEER: Received FundingLocked(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, next_point=03a4f5951cc8150d2dd1d5cc6e23eab2c93dd5accdfa064de3f26345ac617933ad) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:55.670 [DBG] FNDG: Received FundingLocked for ChannelID(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) from peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:55.706 [ERR] FNDG: unable to report short chan id: link d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366 not found
+2021-01-08 22:40:55.706 [DBG] CHBU: Adding channel 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0 to backup state
+2021-01-08 22:40:55.723 [INF] CHBU: Updating on-disk multi SCB backup: num_old_chans=1, num_new_chans=1
+2021-01-08 22:40:55.738 [INF] NTFN: New block: height=476, sha=1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3
+2021-01-08 22:40:55.750 [DBG] SWPR: New block: height=476, sha=1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3
+2021-01-08 22:40:55.750 [INF] UTXN: Attempting to graduate height=476: num_kids=0, num_babies=0
+2021-01-08 22:40:55.750 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=476) examining active HTLC's
+2021-01-08 22:40:55.750 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=476, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:40:55.750 [DBG] DISC: New block: height=476, hash=1f55ff790b9f4766df2e7efed5648fa50ed7e03d6698779dde0f7add3c71a0f3
+2021-01-08 22:40:55.752 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 477
+2021-01-08 22:40:55.752 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): starting local commitment: (*lnwallet.commitment)(0xc000e70240)({
+ height: (uint64) 0,
+ isOurs: (bool) true,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001082300)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000114de0)({
+    PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2155439093
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc001090480)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=34 cap=500) {
+     00000000  00 20 67 cb 04 43 99 09  c5 07 d2 20 ff 75 58 0d  |. g..C..... .uX.|
+     00000010  42 e8 59 13 7a 3d a0 a9  3c 24 3e 03 57 93 1d d2  |B.Y.z=..<$>.W...|
+     00000020  75 e8                                             |u.|
+    }
+   })
+  },
+  LockTime: (uint32) 541953523
+ }),
+ sig: ([]uint8) (len=70 cap=70) {
+  00000000  30 44 02 20 6c bc d2 93  5f 8c 09 b9 e2 21 6e 23  |0D. l..._....!n#|
+  00000010  89 a0 ae d0 20 94 95 4c  a2 da 1b f2 af a9 8b 40  |.... ..L.......@|
+  00000020  dd f9 ee 7a 02 20 50 11  25 48 01 33 dd 0e f9 34  |...z. P.%H.3...4|
+  00000030  b4 a7 60 fe 9c 51 ad 51  50 40 c0 a7 a8 45 59 86  |..`..Q.QP@...EY.|
+  00000040  80 81 d4 dc 6a a2                                 |....j.|
+ },
+ ourBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:40:55.756 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): starting remote commitment: (*lnwallet.commitment)(0xc0003120c0)({
+ height: (uint64) 0,
+ isOurs: (bool) false,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc001082340)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=15) {
+   (*wire.TxIn)(0xc000114e40)({
+    PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+    SignatureScript: ([]uint8) <nil>,
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2155439093
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=15) {
+   (*wire.TxOut)(0xc0010904a0)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=22 cap=500) {
+     00000000  00 14 66 f7 ee 43 93 73  d9 62 c6 41 ad fb 87 22  |..f..C.s.b.A..."|
+     00000010  14 24 73 3d 19 f9                                 |.$s=..|
+    }
+   })
+  },
+  LockTime: (uint32) 541953523
+ }),
+ sig: ([]uint8) <nil>,
+ ourBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:40:55.843 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): Restoring 0 dangling remote updates
+2021-01-08 22:40:55.797 [WRN] CHBU: Replacing disk backup for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) w/ newer version
+2021-01-08 22:40:55.811 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): starting local commitment: (*lnwallet.commitment)(0xc000312180)({
+ height: (uint64) 0,
+ isOurs: (bool) true,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc000648e00)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=1) {
+   (*wire.TxIn)(0xc0007013e0)({
+    PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+    SignatureScript: ([]uint8) {
+    },
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2155439093
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=1) {
+   (*wire.TxOut)(0xc0005786c0)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=34 cap=34) {
+     00000000  00 20 67 cb 04 43 99 09  c5 07 d2 20 ff 75 58 0d  |. g..C..... .uX.|
+     00000010  42 e8 59 13 7a 3d a0 a9  3c 24 3e 03 57 93 1d d2  |B.Y.z=..<$>.W...|
+     00000020  75 e8                                             |u.|
+    }
+   })
+  },
+  LockTime: (uint32) 541953523
+ }),
+ sig: ([]uint8) (len=70 cap=70) {
+  00000000  30 44 02 20 6c bc d2 93  5f 8c 09 b9 e2 21 6e 23  |0D. l..._....!n#|
+  00000010  89 a0 ae d0 20 94 95 4c  a2 da 1b f2 af a9 8b 40  |.... ..L.......@|
+  00000020  dd f9 ee 7a 02 20 50 11  25 48 01 33 dd 0e f9 34  |...z. P.%H.3...4|
+  00000030  b4 a7 60 fe 9c 51 ad 51  50 40 c0 a7 a8 45 59 86  |..`..Q.QP@...EY.|
+  00000040  80 81 d4 dc 6a a2                                 |....j.|
+ },
+ ourBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:40:55.844 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): Restoring 0 local updates that the peer should sign
+2021-01-08 22:40:55.845 [DBG] FNDG: Channel(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) with ShortChanID 473:1:0 has opening state 0
+2021-01-08 22:40:55.845 [DBG] SRVR: Notifying that peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 is online
+2021-01-08 22:40:55.851 [INF] FNDG: Peer(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782) is online, sending FundingLocked for ChannelID(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366)
+2021-01-08 22:40:55.847 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): starting remote commitment: (*lnwallet.commitment)(0xc000312240)({
+ height: (uint64) 0,
+ isOurs: (bool) false,
+ ourMessageIndex: (uint64) 0,
+ theirMessageIndex: (uint64) 0,
+ ourHtlcIndex: (uint64) 0,
+ theirHtlcIndex: (uint64) 0,
+ txn: (*wire.MsgTx)(0xc000648e40)({
+  Version: (int32) 2,
+  TxIn: ([]*wire.TxIn) (len=1 cap=1) {
+   (*wire.TxIn)(0xc0007014a0)({
+    PreviousOutPoint: (wire.OutPoint) 66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0,
+    SignatureScript: ([]uint8) {
+    },
+    Witness: (wire.TxWitness) <nil>,
+    Sequence: (uint32) 2155439093
+   })
+  },
+  TxOut: ([]*wire.TxOut) (len=1 cap=1) {
+   (*wire.TxOut)(0xc000578700)({
+    Value: (int64) 990950,
+    PkScript: ([]uint8) (len=22 cap=22) {
+     00000000  00 14 66 f7 ee 43 93 73  d9 62 c6 41 ad fb 87 22  |..f..C.s.b.A..."|
+     00000010  14 24 73 3d 19 f9                                 |.$s=..|
+    }
+   })
+  },
+  LockTime: (uint32) 541953523
+ }),
+ sig: ([]uint8) {
+ },
+ ourBalance: (lnwire.MilliSatoshi) 990950000 mSAT,
+ theirBalance: (lnwire.MilliSatoshi) 0 mSAT,
+ fee: (btcutil.Amount) 0.0000905 BTC,
+ feePerKw: (chainfee.SatPerKWeight) 12500 sat/kw,
+ dustLimit: (btcutil.Amount) 0.00000573 BTC,
+ outgoingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCs: ([]lnwallet.PaymentDescriptor) <nil>,
+ outgoingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>,
+ incomingHTLCIndex: (map[int32]*lnwallet.PaymentDescriptor) <nil>
+})
+
+2021-01-08 22:40:55.851 [INF] NTFN: New block: height=477, sha=64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025
+2021-01-08 22:40:55.853 [DBG] PEER: Sending FundingLocked(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, next_point=03375e429f44958a059385f7f56d1fc19b4924f275d193a0abec9acb1b6d4444b2) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:55.855 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): Restoring 0 dangling remote updates
+2021-01-08 22:40:55.855 [DBG] LNWL: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): Restoring 0 local updates that the peer should sign
+2021-01-08 22:40:55.855 [INF] PEER: New channel active ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) with NodeKey(03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782)
+2021-01-08 22:40:55.855 [DBG] CNCT: New ChainEventSubscription(id=1) for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0)
+2021-01-08 22:40:55.855 [INF] HSWC: Removing channel link with ChannelID(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366)
+2021-01-08 22:40:55.855 [INF] HSWC: ChannelLink(473:1:0): starting
+2021-01-08 22:40:55.855 [DBG] DISC: New block: height=477, hash=64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025
+2021-01-08 22:40:55.855 [INF] UTXN: Attempting to graduate height=477: num_kids=0, num_babies=0
+2021-01-08 22:40:55.855 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=477) examining active HTLC's
+2021-01-08 22:40:55.856 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=477, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:40:55.855 [DBG] SWPR: New block: height=477, sha=64fc8e971a11846e41376cc1ff8a453f3a9ccef38bfaec860dabb4485bffb025
+2021-01-08 22:40:55.858 [INF] HSWC: Trimming open circuits for chan_id=473:1:0, start_htlc_id=0
+2021-01-08 22:40:55.864 [INF] HSWC: Adding live link chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, short_chan_id=473:1:0
+2021-01-08 22:40:55.864 [INF] CNCT: Attempting to update ContractSignals for ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0)
+2021-01-08 22:40:55.864 [INF] HSWC: ChannelLink(473:1:0): HTLC manager started, bandwidth=978800000 mSAT
+2021-01-08 22:40:55.864 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 478
+2021-01-08 22:40:55.895 [DBG] FNDG: Channel(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) with ShortChanID 473:1:0: successfully sent FundingLocked
+2021-01-08 22:40:55.898 [DBG] FNDG: Channel(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) with ShortChanID 473:1:0 has opening state 1
+2021-01-08 22:40:55.895 [INF] CHBU: Updating backup file at /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:55.897 [DBG] HSWC: ChannelLink(473:1:0): loaded 0 fwd pks
+2021-01-08 22:40:55.961 [INF] CHBU: Swapping old multi backup file from /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/temp-dont-use.backup to /var/folders/9b/0hp311xj57q9rf39z17lzdgm0000gn/T/lndtest-node002945067/data/chain/bitcoin/regtest/channel.backup
+2021-01-08 22:40:55.978 [INF] NTFN: New block: height=478, sha=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:55.978 [DBG] DISC: New block: height=478, hash=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:55.978 [DBG] SWPR: New block: height=478, sha=29fd1c59cdcff1321b6aa5f1e0dce29d2af6da6625a48cb5777f20f3874eb7fb
+2021-01-08 22:40:55.978 [INF] UTXN: Attempting to graduate height=478: num_kids=0, num_babies=0
+2021-01-08 22:40:55.978 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=478) examining active HTLC's
+2021-01-08 22:40:55.980 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=478, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:40:56.107 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584, mflags=00000001, cflags=00000001, update_time=2021-01-08 22:40:55 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.169 [ERR] RPCS: [/lnrpc.Lightning/SubscribeChannelGraph]: rpc error: code = Internal desc = transport: transport: the stream is done or WriteHeader was already called
+2021-01-08 22:40:56.217 [DBG] DISC: Requesting online notification for peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:56.218 [DBG] SRVR: Notifying that peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 is online
+2021-01-08 22:40:56.228 [DBG] DISC: Peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 is now online, proceeding to send pending messages
+2021-01-08 22:40:56.228 [DBG] DISC: Requesting offline notification for peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:56.228 [DBG] DISC: Successfully sent ChannelUpdate message for channel=473:1:0 with peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 upon reconnection
+2021-01-08 22:40:56.228 [DBG] PEER: Sending ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584, mflags=00000001, cflags=00000000, update_time=2021-01-08 22:40:55 -0600 CST) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.268 [DBG] FNDG: Channel(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) with ShortChanID 473:1:0: successfully added to router graph
+2021-01-08 22:40:56.268 [DBG] FNDG: Channel(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) with ShortChanID 473:1:0 has opening state 2
+2021-01-08 22:40:56.268 [DBG] FNDG: Will announce channel 520069000003584 after ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) has gotten 6 confirmations
+2021-01-08 22:40:56.268 [DBG] NTFN: Using height hint 473 retrieved from cache for txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9 instead of 472
+2021-01-08 22:40:56.268 [INF] NTFN: New confirmation subscription: conf_id=2, txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9, num_confs=6 height_hint=473
+2021-01-08 22:40:56.268 [DBG] NTFN: Attempting to dispatch confirmation for txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9 on registration since rescan has finished
+2021-01-08 22:40:56.268 [INF] NTFN: Dispatching 6 confirmation notification for txid=66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9
+2021-01-08 22:40:56.268 [INF] FNDG: Announcing ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0), short_chan_id=473:1:0
+2021-01-08 22:40:56.306 [DBG] PEER: Received AnnounceSignatures(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, short_chan_id=520069000003584) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.318 [INF] DISC: Received new remote channel announcement for 473:1:0
+2021-01-08 22:40:56.454 [INF] DISC: 1/2 of channel ann proof received for short_chan_id=520069000003584, waiting for other half
+2021-01-08 22:40:56.454 [INF] DISC: Received new local channel announcement for 473:1:0
+2021-01-08 22:40:56.470 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:40:56.487 [DBG] DISC: Successfully sent AnnounceSignatures message for channel=473:1:0 with peer=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782
+2021-01-08 22:40:56.487 [DBG] PEER: Sending AnnounceSignatures(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, short_chan_id=520069000003584) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.565 [INF] DISC: Fully valid channel proof for short_chan_id=520069000003584 constructed, adding to next ann batch
+2021-01-08 22:40:56.566 [DBG] DISC: Unable to fetch node announcement for 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782: node does not have node announcement
+2021-01-08 22:40:56.566 [INF] DISC: Broadcasting 4 new announcements in 1 sub batches
+2021-01-08 22:40:56.566 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:40:56.566 [DBG] PEER: Sending ChannelAnnouncement(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.566 [DBG] PEER: Sending ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584, mflags=00000001, cflags=00000000, update_time=2021-01-08 22:40:55 -0600 CST) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.606 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:40:56.607 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:40:56.607 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:40:56.607 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=520069000003584, mflags=00000001, cflags=00000001, update_time=2021-01-08 22:40:55 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.608 [DBG] PEER: Received NodeAnnouncement(node=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, update_time=2021-01-08 22:40:56 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:56.655 [DBG] FNDG: Channel with ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0), short_chan_id=473:1:0 announced
+2021-01-08 22:40:56.669 [DBG] FNDG: Channel(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366) with ShortChanID 473:1:0: successfully announced
+2021-01-08 22:40:56.670 [DBG] FNDG: ChannelPoint(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0) with chan_id=701323ae6d1b3e0cf9d074f1f8caf6f89139e98476c74a7ecc69d55a5c3d197c not found in opening database, assuming already announced to the network
+2021-01-08 22:40:56.702 [INF] DISC: Broadcasting 2 new announcements in 1 sub batches
+2021-01-08 22:40:56.702 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:40:56.702 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:40:56.702 [DBG] PEER: Sending NodeAnnouncement(node=024934751e8bdf7d3282f835d7a2adc81d29bcfeec5b50b3a2f75ced0ab4174953, update_time=2021-01-08 22:40:56 -0600 CST) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:40:59.980 [INF] CRTR: Pruning channel graph using block 048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66 (height=479)
+2021-01-08 22:41:00.048 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 479
+2021-01-08 22:41:00.089 [INF] CRTR: Block 048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66 (height=479) closed 0 channels
+2021-01-08 22:41:00.118 [INF] CRTR: Pruning channel graph using block 4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8 (height=480)
+2021-01-08 22:41:00.148 [INF] NTFN: New block: height=479, sha=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.246 [DBG] SWPR: New block: height=479, sha=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.246 [DBG] DISC: New block: height=479, hash=048486c9221df319488a6c7eafaa4531f65b942b078b00510dce37d1f94e7c66
+2021-01-08 22:41:00.246 [INF] UTXN: Attempting to graduate height=479: num_kids=0, num_babies=0
+2021-01-08 22:41:00.246 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=479) examining active HTLC's
+2021-01-08 22:41:00.246 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=479, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:00.248 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 480
+2021-01-08 22:41:00.292 [INF] CRTR: Block 4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8 (height=480) closed 0 channels
+2021-01-08 22:41:00.319 [INF] CRTR: Pruning channel graph using block 7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6 (height=481)
+2021-01-08 22:41:00.366 [INF] NTFN: New block: height=480, sha=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.439 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=480) examining active HTLC's
+2021-01-08 22:41:00.468 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=480, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:00.439 [DBG] SWPR: New block: height=480, sha=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.439 [DBG] DISC: New block: height=480, hash=4aa2f3921dedc9b831b907bba73a9ef209ac425a2b8391e6d00193b7ee7fd1e8
+2021-01-08 22:41:00.439 [INF] UTXN: Attempting to graduate height=480: num_kids=0, num_babies=0
+2021-01-08 22:41:00.447 [INF] CRTR: Block 7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6 (height=481) closed 0 channels
+2021-01-08 22:41:00.518 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 481
+2021-01-08 22:41:00.565 [INF] CRTR: Pruning channel graph using block 4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9 (height=482)
+2021-01-08 22:41:00.645 [INF] CRTR: Block 4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9 (height=482) closed 0 channels
+2021-01-08 22:41:00.656 [INF] CRTR: Pruning channel graph using block 68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089 (height=483)
+2021-01-08 22:41:00.683 [INF] NTFN: New block: height=481, sha=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.714 [DBG] SWPR: New block: height=481, sha=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.714 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=481) examining active HTLC's
+2021-01-08 22:41:00.726 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=481, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:00.714 [DBG] DISC: New block: height=481, hash=7e4ab34fe180ad12e2a22ab9f7fe3e8dde858f613c7cdc65188d103ea59502c6
+2021-01-08 22:41:00.714 [INF] UTXN: Attempting to graduate height=481: num_kids=0, num_babies=0
+2021-01-08 22:41:00.737 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 482
+2021-01-08 22:41:00.762 [INF] CRTR: Block 68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089 (height=483) closed 0 channels
+2021-01-08 22:41:00.762 [INF] CRTR: Pruning channel graph using block 64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424 (height=484)
+2021-01-08 22:41:00.804 [INF] NTFN: New block: height=482, sha=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.804 [DBG] SWPR: New block: height=482, sha=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.804 [DBG] DISC: New block: height=482, hash=4ff7aa7d0e98ce493c4298c61951fa6b1f3fb7dd7cc0b8f380bb9c72b38c59b9
+2021-01-08 22:41:00.804 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=482) examining active HTLC's
+2021-01-08 22:41:00.804 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=482, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:00.804 [INF] UTXN: Attempting to graduate height=482: num_kids=0, num_babies=0
+2021-01-08 22:41:00.805 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 483
+2021-01-08 22:41:00.818 [INF] CRTR: Block 64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424 (height=484) closed 0 channels
+2021-01-08 22:41:00.844 [INF] NTFN: New block: height=483, sha=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.844 [DBG] DISC: New block: height=483, hash=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.844 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=483) examining active HTLC's
+2021-01-08 22:41:00.844 [DBG] SWPR: New block: height=483, sha=68cdc923e057300d98dcc53d6be6ee331df467a07525916a1db1a1b33b37b089
+2021-01-08 22:41:00.844 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=483, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:00.844 [INF] UTXN: Attempting to graduate height=483: num_kids=0, num_babies=0
+2021-01-08 22:41:00.845 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 484
+2021-01-08 22:41:00.903 [INF] NTFN: New block: height=484, sha=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.903 [DBG] DISC: New block: height=484, hash=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.903 [DBG] SWPR: New block: height=484, sha=64843d0101e2cbc23d1a914cd2a4178d837fc98a3cbd4021c89727c737b4f424
+2021-01-08 22:41:00.903 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=484) examining active HTLC's
+2021-01-08 22:41:00.904 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=484, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:00.903 [INF] UTXN: Attempting to graduate height=484: num_kids=0, num_babies=0
+2021-01-08 22:41:00.926 [INF] CRTR: Pruning channel graph using block 6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b (height=485)
+2021-01-08 22:41:00.927 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 485
+2021-01-08 22:41:01.015 [INF] CRTR: Block 6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b (height=485) closed 0 channels
+2021-01-08 22:41:01.058 [INF] CRTR: Pruning channel graph using block 09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0 (height=486)
+2021-01-08 22:41:01.073 [INF] NTFN: New block: height=485, sha=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:01.160 [INF] CRTR: Block 09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0 (height=486) closed 0 channels
+2021-01-08 22:41:01.196 [INF] CRTR: Pruning channel graph using block 6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0 (height=487)
+2021-01-08 22:41:01.184 [DBG] DISC: New block: height=485, hash=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:01.184 [DBG] SWPR: New block: height=485, sha=6da4176919f4dba33cdf15d8ac8e17b82ec2e11eef42e894021e897c104ba28b
+2021-01-08 22:41:01.184 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=485) examining active HTLC's
+2021-01-08 22:41:01.234 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=485, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:01.184 [INF] UTXN: Attempting to graduate height=485: num_kids=0, num_babies=0
+2021-01-08 22:41:01.250 [INF] CRTR: Block 6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0 (height=487) closed 0 channels
+2021-01-08 22:41:01.289 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 486
+2021-01-08 22:41:01.339 [INF] CRTR: Pruning channel graph using block 1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200 (height=488)
+2021-01-08 22:41:01.402 [INF] CRTR: Block 1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200 (height=488) closed 0 channels
+2021-01-08 22:41:01.415 [INF] CRTR: Pruning channel graph using block 6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b (height=489)
+2021-01-08 22:41:01.447 [INF] NTFN: New block: height=486, sha=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.462 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=486) examining active HTLC's
+2021-01-08 22:41:01.462 [DBG] SWPR: New block: height=486, sha=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.462 [DBG] DISC: New block: height=486, hash=09e5860fc7751cee939838fc0a1f2d97694bb75bc352a665a0b704c37edd56e0
+2021-01-08 22:41:01.462 [INF] UTXN: Attempting to graduate height=486: num_kids=0, num_babies=0
+2021-01-08 22:41:01.559 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=486, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:01.584 [INF] CRTR: Block 6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b (height=489) closed 0 channels
+2021-01-08 22:41:01.631 [INF] CRTR: Pruning channel graph using block 720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d (height=490)
+2021-01-08 22:41:01.631 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 487
+2021-01-08 22:41:01.706 [INF] CRTR: Block 720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d (height=490) closed 0 channels
+2021-01-08 22:41:01.757 [INF] NTFN: New block: height=487, sha=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.757 [DBG] SWPR: New block: height=487, sha=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.757 [INF] UTXN: Attempting to graduate height=487: num_kids=0, num_babies=0
+2021-01-08 22:41:01.757 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=487) examining active HTLC's
+2021-01-08 22:41:01.758 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=487, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:01.757 [DBG] DISC: New block: height=487, hash=6ec39eedf82aece038129bcbe9366da2757c40c35fa38c79f1d018e745ad5ae0
+2021-01-08 22:41:01.758 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 488
+2021-01-08 22:41:01.823 [INF] NTFN: New block: height=488, sha=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.823 [DBG] DISC: New block: height=488, hash=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.823 [DBG] SWPR: New block: height=488, sha=1c757a3e1eed0be5cb7338d28069c36daf17f6ce26900e11749a86f8fe46e200
+2021-01-08 22:41:01.823 [INF] UTXN: Attempting to graduate height=488: num_kids=0, num_babies=0
+2021-01-08 22:41:01.823 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=488) examining active HTLC's
+2021-01-08 22:41:01.824 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=488, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:01.824 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 489
+2021-01-08 22:41:02.037 [INF] NTFN: New block: height=489, sha=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:02.038 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=489) examining active HTLC's
+2021-01-08 22:41:02.039 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=489, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:02.039 [DBG] DISC: New block: height=489, hash=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:02.039 [DBG] SWPR: New block: height=489, sha=6eb4623418367d82e26378a7d868d1c89cb2621a77a6250f86daabf4bf2ecd5b
+2021-01-08 22:41:02.039 [INF] UTXN: Attempting to graduate height=489: num_kids=0, num_babies=0
+2021-01-08 22:41:02.039 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 490
+2021-01-08 22:41:02.089 [INF] NTFN: New block: height=490, sha=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:02.090 [DBG] SWPR: New block: height=490, sha=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:02.090 [DBG] DISC: New block: height=490, hash=720b085e494b5a50ce11fb0f8edc1d720de9bf57f1ee958edbf748cc0ccd569d
+2021-01-08 22:41:02.090 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=490) examining active HTLC's
+2021-01-08 22:41:02.090 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=490, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:02.090 [INF] UTXN: Attempting to graduate height=490: num_kids=0, num_babies=0
+2021-01-08 22:41:02.549 [INF] CRTR: Pruning channel graph using block 73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0 (height=491)
+2021-01-08 22:41:02.550 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 491
+2021-01-08 22:41:02.603 [INF] CRTR: Block 73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0 (height=491) closed 0 channels
+2021-01-08 22:41:02.622 [INF] CRTR: Pruning channel graph using block 5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1 (height=492)
+2021-01-08 22:41:02.640 [INF] NTFN: New block: height=491, sha=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.686 [INF] UTXN: Attempting to graduate height=491: num_kids=0, num_babies=0
+2021-01-08 22:41:02.686 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=491) examining active HTLC's
+2021-01-08 22:41:02.764 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=491, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:02.687 [DBG] DISC: New block: height=491, hash=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.687 [DBG] SWPR: New block: height=491, sha=73e07e1e846aef5efdfe4d9068695c28b02b7e53e048ece656fdd7f3ec78b9d0
+2021-01-08 22:41:02.718 [INF] CRTR: Block 5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1 (height=492) closed 0 channels
+2021-01-08 22:41:02.765 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 492
+2021-01-08 22:41:02.765 [INF] CRTR: Pruning channel graph using block 546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f (height=493)
+2021-01-08 22:41:02.838 [INF] CRTR: Block 546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f (height=493) closed 0 channels
+2021-01-08 22:41:02.890 [INF] NTFN: New block: height=492, sha=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:02.891 [INF] CRTR: Pruning channel graph using block 41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b (height=494)
+2021-01-08 22:41:02.960 [INF] UTXN: Attempting to graduate height=492: num_kids=0, num_babies=0
+2021-01-08 22:41:02.960 [DBG] DISC: New block: height=492, hash=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:02.960 [DBG] SWPR: New block: height=492, sha=5f71a862df7310bcad4b24ffc926fc25e0722aca277a6e70135ba5e564334bd1
+2021-01-08 22:41:02.961 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=492) examining active HTLC's
+2021-01-08 22:41:03.152 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=492, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.045 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 493
+2021-01-08 22:41:03.084 [INF] CRTR: Block 41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b (height=494) closed 0 channels
+2021-01-08 22:41:03.163 [INF] CRTR: Pruning channel graph using block 3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c (height=495)
+2021-01-08 22:41:03.224 [INF] CRTR: Block 3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c (height=495) closed 0 channels
+2021-01-08 22:41:03.225 [INF] CRTR: Pruning channel graph using block 31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876 (height=496)
+2021-01-08 22:41:03.273 [INF] NTFN: New block: height=493, sha=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:03.285 [DBG] DISC: New block: height=493, hash=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:03.285 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=493) examining active HTLC's
+2021-01-08 22:41:03.318 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=493, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.285 [DBG] SWPR: New block: height=493, sha=546b1f6488466891abb02c755c5a8b5b087fa03f0579f70b2dd333251286d22f
+2021-01-08 22:41:03.285 [INF] UTXN: Attempting to graduate height=493: num_kids=0, num_babies=0
+2021-01-08 22:41:03.317 [INF] CRTR: Block 31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876 (height=496) closed 0 channels
+2021-01-08 22:41:03.319 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 494
+2021-01-08 22:41:03.469 [INF] NTFN: New block: height=494, sha=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:03.470 [DBG] DISC: New block: height=494, hash=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:03.470 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=494) examining active HTLC's
+2021-01-08 22:41:03.518 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=494, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.470 [DBG] SWPR: New block: height=494, sha=41f8ae0f3b6239cd4fc82cd7a7114548f3abd216f1eb2d56d3469d97965b910b
+2021-01-08 22:41:03.470 [INF] UTXN: Attempting to graduate height=494: num_kids=0, num_babies=0
+2021-01-08 22:41:03.519 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 495
+2021-01-08 22:41:03.691 [INF] NTFN: New block: height=495, sha=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:03.716 [DBG] DISC: New block: height=495, hash=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:03.716 [DBG] SWPR: New block: height=495, sha=3d59e60e06f91514818699a6e59c682ecccb5be8ff611a3c07001d6b423da47c
+2021-01-08 22:41:03.716 [INF] UTXN: Attempting to graduate height=495: num_kids=0, num_babies=0
+2021-01-08 22:41:03.716 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=495) examining active HTLC's
+2021-01-08 22:41:03.726 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=495, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:03.736 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 496
+2021-01-08 22:41:03.813 [INF] NTFN: New block: height=496, sha=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.814 [DBG] SWPR: New block: height=496, sha=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.814 [DBG] DISC: New block: height=496, hash=31f89d29eae8d88530c1ed18754880ea25cc1a2f2725f8d90d216480176bb876
+2021-01-08 22:41:03.814 [INF] UTXN: Attempting to graduate height=496: num_kids=0, num_babies=0
+2021-01-08 22:41:03.814 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=496) examining active HTLC's
+2021-01-08 22:41:03.901 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=496, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:04.502 [DBG] PEER: Received ChannelAnnouncement(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:04.502 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552, mflags=00000001, cflags=00000000, update_time=2021-01-08 22:41:03 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:04.502 [DBG] PEER: Received ChannelUpdate(chain_hash=0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206, short_chan_id=539860209303552, mflags=00000001, cflags=00000001, update_time=2021-01-08 22:41:03 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:04.502 [DBG] PEER: Received NodeAnnouncement(node=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, update_time=2021-01-08 22:40:56 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:04.599 [INF] DISC: Broadcasting 1 new announcements in 1 sub batches
+2021-01-08 22:41:04.607 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.608 [DBG] PEER: Received NodeAnnouncement(node=03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569, update_time=2021-01-08 22:41:04 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:04.651 [INF] DISC: Broadcasting 1 new announcements in 1 sub batches
+2021-01-08 22:41:04.653 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.665 [DBG] PEER: Received NodeAnnouncement(node=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, update_time=2021-01-08 22:41:04 -0600 CST) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:04.699 [INF] DISC: Broadcasting 1 new announcements in 1 sub batches
+2021-01-08 22:41:04.700 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.749 [INF] DISC: Broadcasting 2 new announcements in 1 sub batches
+2021-01-08 22:41:04.750 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:04.750 [DBG] SRVR: Broadcasting 1 messages
+2021-01-08 22:41:05.746 [DBG] CRTR: Payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb in state terminate=false, active_shards=0, rem_value=100000 mSAT, fee_limit=9223372036854775807 mSAT
+2021-01-08 22:41:05.746 [DBG] CRTR: Payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 in state terminate=false, active_shards=0, rem_value=300000000 mSAT, fee_limit=9223372036854775807 mSAT
+2021-01-08 22:41:05.746 [DBG] CRTR: PaymentSession(d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb): pathfinding for amt=100000 mSAT
+2021-01-08 22:41:05.746 [DBG] CRTR: PaymentSession(9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5): pathfinding for amt=300000000 mSAT
+2021-01-08 22:41:05.748 [DBG] CRTR: Pathfinding absolute attempt cost: 100.1 sats
+2021-01-08 22:41:05.748 [DBG] CRTR: Pathfinding absolute attempt cost: 400 sats
+2021-01-08 22:41:05.748 [DBG] CRTR: Found route: probability=0.57, hops=2, fee=1000 mSAT
+2021-01-08 22:41:05.748 [DBG] CRTR: Pathfinding perf metrics: nodes=2, edges=2, time=2.011038ms
+2021-01-08 22:41:05.748 [DBG] CRTR: Found route: probability=0.57, hops=2, fee=1300 mSAT
+2021-01-08 22:41:05.749 [DBG] CRTR: Pathfinding perf metrics: nodes=2, edges=2, time=2.029542ms
+2021-01-08 22:41:05.851 [DBG] HSWC: ChannelLink(473:1:0): queueing keystone of ADD open circuit: (Chan ID=0:0:0, HTLC ID=2)->(Chan ID=473:1:0, HTLC ID=0)
+2021-01-08 22:41:05.851 [DBG] HSWC: ChannelLink(473:1:0): queueing keystone of ADD open circuit: (Chan ID=0:0:0, HTLC ID=1)->(Chan ID=473:1:0, HTLC ID=1)
+2021-01-08 22:41:05.851 [DBG] PEER: Sending UpdateAddHTLC(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, id=0, amt=300001300 mSAT, expiry=579, hash=9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:05.851 [DBG] CRTR: Payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 (pid=2) successfully sent to switch, route: 520069000003584 (300001300 mSAT) -> 539860209303552 (300000000 mSAT), cltv 579
+2021-01-08 22:41:05.851 [DBG] CRTR: Payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb (pid=1) successfully sent to switch, route: 520069000003584 (101000 mSAT) -> 539860209303552 (100000 mSAT), cltv 579
+2021-01-08 22:41:05.851 [DBG] PEER: Sending UpdateAddHTLC(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, id=1, amt=101000 mSAT, expiry=579, hash=d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:05.851 [DBG] CRTR: Payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 in state terminate=false, active_shards=1, rem_value=0 mSAT, fee_limit=9223372036854774507 mSAT
+2021-01-08 22:41:05.851 [DBG] CRTR: Payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb in state terminate=false, active_shards=1, rem_value=0 mSAT, fee_limit=9223372036854774807 mSAT
+2021-01-08 22:41:05.852 [DBG] HSWC: Subscribing to result for paymentID=2
+2021-01-08 22:41:05.852 [DBG] HSWC: Subscribing to result for paymentID=1
+2021-01-08 22:41:05.911 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:06.047 [DBG] HSWC: ChannelLink(473:1:0): removing Add packet (Chan ID=0:0:0, HTLC ID=2) from mailbox
+2021-01-08 22:41:06.047 [DBG] HSWC: ChannelLink(473:1:0): removing Add packet (Chan ID=0:0:0, HTLC ID=1) from mailbox
+2021-01-08 22:41:06.079 [DBG] PEER: Sending CommitSig(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, num_htlcs=1) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:06.103 [DBG] PEER: Received RevokeAndAck(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, rev=15f1243a94d5e6925524909fc242f08669731cdac379842aa35eeca0d7211677, next_point=0270006854f250bc1c810b9e4758cdd1f7960f4524e3649ef2ebff7a437dcc4d84) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:06.116 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:06.202 [DBG] PEER: Received CommitSig(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, num_htlcs=1) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:06.251 [DBG] PEER: Sending RevokeAndAck(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, rev=f829daf993d84470d8f30e798f76aa42d7da75df1c1238dd4a46cecd15e735ed, next_point=0290a6ffeba3125a04c700960e7c523ec4f300423c6300c15abf7503a8374fdca7) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:06.350 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:06.558 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:06.765 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:06.798 [INF] CRTR: Pruning channel graph using block 61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c (height=497)
+2021-01-08 22:41:06.799 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 497
+2021-01-08 22:41:06.933 [INF] CRTR: Block 61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c (height=497) closed 0 channels
+2021-01-08 22:41:07.004 [INF] CRTR: Pruning channel graph using block 2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482 (height=498)
+2021-01-08 22:41:07.003 [INF] NTFN: New block: height=497, sha=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:07.093 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=497) examining active HTLC's
+2021-01-08 22:41:07.143 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=497, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:07.093 [DBG] DISC: New block: height=497, hash=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:07.093 [DBG] SWPR: New block: height=497, sha=61afdcc9f0b180a400138b10aef744c09afbde923c0b378a18af8c225238af7c
+2021-01-08 22:41:07.093 [INF] UTXN: Attempting to graduate height=497: num_kids=0, num_babies=0
+2021-01-08 22:41:07.106 [INF] CRTR: Block 2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482 (height=498) closed 0 channels
+2021-01-08 22:41:07.155 [INF] CRTR: Pruning channel graph using block 2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8 (height=499)
+2021-01-08 22:41:07.156 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 498
+2021-01-08 22:41:07.213 [INF] CRTR: Block 2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8 (height=499) closed 0 channels
+2021-01-08 22:41:07.225 [INF] CRTR: Pruning channel graph using block 224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d (height=500)
+2021-01-08 22:41:07.283 [INF] NTFN: New block: height=498, sha=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:07.348 [INF] UTXN: Attempting to graduate height=498: num_kids=0, num_babies=0
+2021-01-08 22:41:07.348 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=498) examining active HTLC's
+2021-01-08 22:41:07.463 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=498, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:07.348 [DBG] DISC: New block: height=498, hash=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:07.348 [DBG] SWPR: New block: height=498, sha=2d07689bfd8fc4fcb99de21ca3425560826b1fd39d22037d9961e1ac71301482
+2021-01-08 22:41:07.370 [INF] CRTR: Block 224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d (height=500) closed 0 channels
+2021-01-08 22:41:07.668 [INF] CRTR: Pruning channel graph using block 4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf (height=501)
+2021-01-08 22:41:07.669 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 499
+2021-01-08 22:41:07.767 [INF] CRTR: Block 4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf (height=501) closed 0 channels
+2021-01-08 22:41:07.812 [INF] CRTR: Pruning channel graph using block 2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff (height=502)
+2021-01-08 22:41:07.811 [INF] NTFN: New block: height=499, sha=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.934 [INF] CRTR: Block 2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff (height=502) closed 0 channels
+2021-01-08 22:41:07.948 [INF] CRTR: Pruning channel graph using block 70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e (height=503)
+2021-01-08 22:41:07.948 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=499) examining active HTLC's
+2021-01-08 22:41:07.948 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=499, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:07.948 [DBG] DISC: New block: height=499, hash=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.948 [DBG] SWPR: New block: height=499, sha=2c734834f12c813ae5746363be19a6cc76dd6b27b5877789d7741151621388f8
+2021-01-08 22:41:07.948 [INF] UTXN: Attempting to graduate height=499: num_kids=0, num_babies=0
+2021-01-08 22:41:08.000 [INF] CRTR: Block 70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e (height=503) closed 0 channels
+2021-01-08 22:41:08.074 [INF] CRTR: Pruning channel graph using block 142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb (height=504)
+2021-01-08 22:41:08.075 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 500
+2021-01-08 22:41:08.175 [INF] CRTR: Block 142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb (height=504) closed 0 channels
+2021-01-08 22:41:08.189 [INF] CRTR: Pruning channel graph using block 6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112 (height=505)
+2021-01-08 22:41:08.262 [INF] NTFN: New block: height=500, sha=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:08.328 [DBG] SWPR: New block: height=500, sha=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:08.328 [INF] UTXN: Attempting to graduate height=500: num_kids=0, num_babies=0
+2021-01-08 22:41:08.328 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=500) examining active HTLC's
+2021-01-08 22:41:08.328 [DBG] DISC: New block: height=500, hash=224ef5337c48ce0c868954a80a1bcd7e0f5e9d8742c89e0e1811889fdc13279d
+2021-01-08 22:41:08.350 [INF] CRTR: Block 6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112 (height=505) closed 0 channels
+2021-01-08 22:41:08.653 [INF] CRTR: Pruning channel graph using block 3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c (height=506)
+2021-01-08 22:41:08.560 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=500, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:08.654 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 501
+2021-01-08 22:41:08.692 [INF] CRTR: Block 3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c (height=506) closed 0 channels
+2021-01-08 22:41:08.805 [INF] CRTR: Pruning channel graph using block 530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb (height=507)
+2021-01-08 22:41:08.830 [INF] NTFN: New block: height=501, sha=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:08.871 [INF] UTXN: Attempting to graduate height=501: num_kids=0, num_babies=0
+2021-01-08 22:41:08.871 [DBG] DISC: New block: height=501, hash=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:08.871 [DBG] SWPR: New block: height=501, sha=4bd386421db38447cca19703c3aba6dc651f7b5b814b0fda5dcc312067a50edf
+2021-01-08 22:41:08.871 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=501) examining active HTLC's
+2021-01-08 22:41:08.871 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=501, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:08.874 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 502
+2021-01-08 22:41:08.917 [INF] CRTR: Block 530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb (height=507) closed 0 channels
+2021-01-08 22:41:08.918 [INF] CRTR: Pruning channel graph using block 412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50 (height=508)
+2021-01-08 22:41:08.975 [INF] NTFN: New block: height=502, sha=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:09.032 [INF] CRTR: Block 412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50 (height=508) closed 0 channels
+2021-01-08 22:41:09.137 [INF] CRTR: Pruning channel graph using block 3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233 (height=509)
+2021-01-08 22:41:09.046 [DBG] SWPR: New block: height=502, sha=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:09.046 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=502) examining active HTLC's
+2021-01-08 22:41:09.046 [INF] UTXN: Attempting to graduate height=502: num_kids=0, num_babies=0
+2021-01-08 22:41:09.046 [DBG] DISC: New block: height=502, hash=2baafb0824333bbc655df6706dc6e811fa020304994e4f97ad3c3e3e0ffe2bff
+2021-01-08 22:41:09.255 [INF] CRTR: Block 3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233 (height=509) closed 0 channels
+2021-01-08 22:41:09.299 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=502, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:09.495 [INF] CRTR: Pruning channel graph using block 47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087 (height=510)
+2021-01-08 22:41:09.497 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 503
+2021-01-08 22:41:09.601 [INF] CRTR: Block 47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087 (height=510) closed 0 channels
+2021-01-08 22:41:09.613 [INF] CRTR: Pruning channel graph using block 27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb (height=511)
+2021-01-08 22:41:09.648 [INF] NTFN: New block: height=503, sha=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:09.743 [DBG] SWPR: New block: height=503, sha=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:09.730 [INF] CRTR: Block 27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb (height=511) closed 0 channels
+2021-01-08 22:41:09.743 [INF] UTXN: Attempting to graduate height=503: num_kids=0, num_babies=0
+2021-01-08 22:41:09.743 [DBG] DISC: New block: height=503, hash=70e792ab49a82b66502202e9b1d91fc2bdb5c2a0e39a5dc2deb5419f2cb8884e
+2021-01-08 22:41:09.743 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=503) examining active HTLC's
+2021-01-08 22:41:09.804 [INF] CRTR: Pruning channel graph using block 4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8 (height=512)
+2021-01-08 22:41:09.804 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=503, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:09.805 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 504
+2021-01-08 22:41:09.897 [INF] CRTR: Block 4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8 (height=512) closed 0 channels
+2021-01-08 22:41:09.912 [INF] CRTR: Pruning channel graph using block 61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed (height=513)
+2021-01-08 22:41:09.992 [INF] NTFN: New block: height=504, sha=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:10.033 [DBG] DISC: New block: height=504, hash=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:10.033 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=504) examining active HTLC's
+2021-01-08 22:41:10.191 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=504, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:10.033 [DBG] SWPR: New block: height=504, sha=142a885bb0769c6c1d65ae8c8429eadfaeff637b36034e49323c593034aff1cb
+2021-01-08 22:41:10.033 [INF] UTXN: Attempting to graduate height=504: num_kids=0, num_babies=0
+2021-01-08 22:41:10.046 [INF] CRTR: Block 61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed (height=513) closed 0 channels
+2021-01-08 22:41:10.203 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 505
+2021-01-08 22:41:10.355 [INF] CRTR: Pruning channel graph using block 45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f (height=514)
+2021-01-08 22:41:10.394 [INF] CRTR: Block 45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f (height=514) closed 0 channels
+2021-01-08 22:41:10.404 [INF] CRTR: Pruning channel graph using block 1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000 (height=515)
+2021-01-08 22:41:10.518 [INF] NTFN: New block: height=505, sha=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:10.536 [DBG] DISC: New block: height=505, hash=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:10.536 [DBG] SWPR: New block: height=505, sha=6547251636431e53acabb37acc0299669efae1b08d6e70ca904fcba795760112
+2021-01-08 22:41:10.536 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=505) examining active HTLC's
+2021-01-08 22:41:10.536 [INF] UTXN: Attempting to graduate height=505: num_kids=0, num_babies=0
+2021-01-08 22:41:10.598 [INF] CRTR: Block 1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000 (height=515) closed 0 channels
+2021-01-08 22:41:10.708 [INF] CRTR: Pruning channel graph using block 0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa (height=516)
+2021-01-08 22:41:10.628 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=505, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:10.658 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 506
+2021-01-08 22:41:10.821 [INF] CRTR: Block 0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa (height=516) closed 0 channels
+2021-01-08 22:41:10.833 [INF] CRTR: Pruning channel graph using block 5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013 (height=517)
+2021-01-08 22:41:10.936 [INF] NTFN: New block: height=506, sha=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:10.952 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=506) examining active HTLC's
+2021-01-08 22:41:10.985 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=506, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:10.952 [DBG] DISC: New block: height=506, hash=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:10.952 [INF] UTXN: Attempting to graduate height=506: num_kids=0, num_babies=0
+2021-01-08 22:41:10.952 [DBG] SWPR: New block: height=506, sha=3cc77b1c1a1f9b5169d7e2938297c43b1a047971e32c61e9d31fe852a6996d3c
+2021-01-08 22:41:10.994 [INF] CRTR: Block 5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013 (height=517) closed 0 channels
+2021-01-08 22:41:11.035 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 507
+2021-01-08 22:41:11.061 [INF] CRTR: Pruning channel graph using block 1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d (height=518)
+2021-01-08 22:41:11.163 [INF] NTFN: New block: height=507, sha=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:11.164 [DBG] SWPR: New block: height=507, sha=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:11.164 [INF] UTXN: Attempting to graduate height=507: num_kids=0, num_babies=0
+2021-01-08 22:41:11.164 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=507) examining active HTLC's
+2021-01-08 22:41:11.164 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=507, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:11.164 [DBG] DISC: New block: height=507, hash=530831013c1a92881c10a94a394222ca3ff3e4b6121d3ba897cff1f47d09afeb
+2021-01-08 22:41:11.174 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 508
+2021-01-08 22:41:11.207 [INF] CRTR: Block 1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d (height=518) closed 0 channels
+2021-01-08 22:41:11.218 [INF] CRTR: Pruning channel graph using block 5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363 (height=519)
+2021-01-08 22:41:11.273 [INF] NTFN: New block: height=508, sha=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:11.274 [INF] UTXN: Attempting to graduate height=508: num_kids=0, num_babies=0
+2021-01-08 22:41:11.275 [DBG] DISC: New block: height=508, hash=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:11.275 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=508) examining active HTLC's
+2021-01-08 22:41:11.375 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=508, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:11.275 [DBG] SWPR: New block: height=508, sha=412216a25ac6b29ee3f92ac425b22fe7673fffe700f892e698fd8bb098b7af50
+2021-01-08 22:41:11.346 [INF] CRTR: Block 5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363 (height=519) closed 0 channels
+2021-01-08 22:41:11.396 [INF] CRTR: Pruning channel graph using block 7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35 (height=520)
+2021-01-08 22:41:11.379 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 509
+2021-01-08 22:41:11.509 [INF] CRTR: Block 7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35 (height=520) closed 0 channels
+2021-01-08 22:41:11.548 [INF] CRTR: Pruning channel graph using block 6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526 (height=521)
+2021-01-08 22:41:11.584 [INF] NTFN: New block: height=509, sha=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:11.595 [INF] UTXN: Attempting to graduate height=509: num_kids=0, num_babies=0
+2021-01-08 22:41:11.596 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=509) examining active HTLC's
+2021-01-08 22:41:11.662 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=509, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:11.596 [DBG] DISC: New block: height=509, hash=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:11.596 [DBG] SWPR: New block: height=509, sha=3cc5b3f2c72b1a901eea1adbe07cf8f5eb27c3cd2d2a456f69c6fd12b6273233
+2021-01-08 22:41:11.641 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 510
+2021-01-08 22:41:11.650 [INF] CRTR: Block 6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526 (height=521) closed 0 channels
+2021-01-08 22:41:11.675 [INF] CRTR: Pruning channel graph using block 29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3 (height=522)
+2021-01-08 22:41:11.738 [INF] CRTR: Block 29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3 (height=522) closed 0 channels
+2021-01-08 22:41:11.739 [INF] CRTR: Pruning channel graph using block 2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24 (height=523)
+2021-01-08 22:41:11.777 [INF] NTFN: New block: height=510, sha=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:11.779 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=510) examining active HTLC's
+2021-01-08 22:41:11.817 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=510, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:11.780 [DBG] DISC: New block: height=510, hash=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:11.780 [INF] UTXN: Attempting to graduate height=510: num_kids=0, num_babies=0
+2021-01-08 22:41:11.780 [DBG] SWPR: New block: height=510, sha=47528ec4e9da90f89d28189c4a0a06b922b24d9d2b3e32b865d45aae35622087
+2021-01-08 22:41:11.832 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 511
+2021-01-08 22:41:11.867 [INF] CRTR: Block 2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24 (height=523) closed 0 channels
+2021-01-08 22:41:12.007 [INF] CRTR: Pruning channel graph using block 3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc (height=524)
+2021-01-08 22:41:12.047 [INF] NTFN: New block: height=511, sha=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:12.061 [INF] UTXN: Attempting to graduate height=511: num_kids=0, num_babies=0
+2021-01-08 22:41:12.061 [DBG] SWPR: New block: height=511, sha=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:12.061 [DBG] DISC: New block: height=511, hash=27e7e33e557f3f87d016fbbd9c52a46b24a7f624bd86e90286eb09feee6327cb
+2021-01-08 22:41:12.061 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=511) examining active HTLC's
+2021-01-08 22:41:12.061 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=511, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:12.062 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 512
+2021-01-08 22:41:12.098 [INF] CRTR: Block 3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc (height=524) closed 0 channels
+2021-01-08 22:41:12.107 [INF] CRTR: Pruning channel graph using block 2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd (height=525)
+2021-01-08 22:41:12.167 [INF] NTFN: New block: height=512, sha=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:12.215 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=512) examining active HTLC's
+2021-01-08 22:41:12.300 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=512, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:12.215 [DBG] SWPR: New block: height=512, sha=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:12.215 [INF] UTXN: Attempting to graduate height=512: num_kids=0, num_babies=0
+2021-01-08 22:41:12.215 [DBG] DISC: New block: height=512, hash=4aebe0a5bf0fb95e91efebf866dd99ebb510786528511f2e88ac2c19e86a7fe8
+2021-01-08 22:41:12.249 [INF] CRTR: Block 2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd (height=525) closed 0 channels
+2021-01-08 22:41:12.301 [INF] CRTR: Pruning channel graph using block 30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e (height=526)
+2021-01-08 22:41:12.301 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 513
+2021-01-08 22:41:12.382 [INF] CRTR: Block 30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e (height=526) closed 0 channels
+2021-01-08 22:41:12.384 [INF] CRTR: Pruning channel graph using block 5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e (height=527)
+2021-01-08 22:41:12.466 [INF] NTFN: New block: height=513, sha=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:12.467 [DBG] DISC: New block: height=513, hash=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:12.467 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=513) examining active HTLC's
+2021-01-08 22:41:12.521 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=513, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:12.467 [DBG] SWPR: New block: height=513, sha=61e41e4302182e556595001129467c32df10ac6707b83f467d5e00c9fb9d82ed
+2021-01-08 22:41:12.467 [INF] UTXN: Attempting to graduate height=513: num_kids=0, num_babies=0
+2021-01-08 22:41:12.494 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 514
+2021-01-08 22:41:12.520 [INF] CRTR: Block 5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e (height=527) closed 0 channels
+2021-01-08 22:41:12.585 [INF] CRTR: Pruning channel graph using block 3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e (height=528)
+2021-01-08 22:41:12.661 [INF] CRTR: Block 3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e (height=528) closed 0 channels
+2021-01-08 22:41:12.664 [INF] CRTR: Pruning channel graph using block 10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740 (height=529)
+2021-01-08 22:41:12.710 [INF] NTFN: New block: height=514, sha=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:12.724 [DBG] SWPR: New block: height=514, sha=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:12.724 [INF] UTXN: Attempting to graduate height=514: num_kids=0, num_babies=0
+2021-01-08 22:41:12.724 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=514) examining active HTLC's
+2021-01-08 22:41:12.758 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=514, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:12.724 [DBG] DISC: New block: height=514, hash=45cbb75d5184999522c49b7611be9b993d9266a35384eec008bcc9074ef43c0f
+2021-01-08 22:41:12.757 [INF] CRTR: Block 10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740 (height=529) closed 0 channels
+2021-01-08 22:41:12.785 [INF] CRTR: Pruning channel graph using block 2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e (height=530)
+2021-01-08 22:41:12.786 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 515
+2021-01-08 22:41:12.853 [INF] CRTR: Block 2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e (height=530) closed 0 channels
+2021-01-08 22:41:12.864 [INF] CRTR: Pruning channel graph using block 36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd (height=531)
+2021-01-08 22:41:12.954 [INF] NTFN: New block: height=515, sha=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:12.972 [DBG] SWPR: New block: height=515, sha=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:12.972 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=515) examining active HTLC's
+2021-01-08 22:41:13.050 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=515, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:12.972 [INF] UTXN: Attempting to graduate height=515: num_kids=0, num_babies=0
+2021-01-08 22:41:12.972 [DBG] DISC: New block: height=515, hash=1f60eb7843f2fbcf9ed4d6491394a0fd7872435e6777be47ab5674599ea15000
+2021-01-08 22:41:13.003 [INF] CRTR: Block 36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd (height=531) closed 0 channels
+2021-01-08 22:41:13.025 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 516
+2021-01-08 22:41:13.050 [INF] CRTR: Pruning channel graph using block 5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc (height=532)
+2021-01-08 22:41:13.107 [INF] CRTR: Block 5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc (height=532) closed 0 channels
+2021-01-08 22:41:13.108 [INF] CRTR: Pruning channel graph using block 2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd (height=533)
+2021-01-08 22:41:13.152 [INF] NTFN: New block: height=516, sha=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:13.153 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=516) examining active HTLC's
+2021-01-08 22:41:13.180 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=516, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:13.153 [DBG] DISC: New block: height=516, hash=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:13.153 [DBG] SWPR: New block: height=516, sha=0362e49e8db82deaaa0fa4c93924db7c2ba9ac2121f8773b9777be4e818a34fa
+2021-01-08 22:41:13.153 [INF] UTXN: Attempting to graduate height=516: num_kids=0, num_babies=0
+2021-01-08 22:41:13.201 [INF] CRTR: Block 2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd (height=533) closed 0 channels
+2021-01-08 22:41:13.203 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 517
+2021-01-08 22:41:13.210 [INF] CRTR: Pruning channel graph using block 645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec (height=534)
+2021-01-08 22:41:13.256 [INF] CRTR: Block 645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec (height=534) closed 0 channels
+2021-01-08 22:41:13.267 [INF] CRTR: Pruning channel graph using block 31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb (height=535)
+2021-01-08 22:41:13.297 [INF] NTFN: New block: height=517, sha=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:13.336 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=517) examining active HTLC's
+2021-01-08 22:41:13.355 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=517, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:13.336 [DBG] DISC: New block: height=517, hash=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:13.336 [DBG] SWPR: New block: height=517, sha=5717458fecdabd9b86bb4a4ae0b61a2501694b5361044fe418a14c27a9f86013
+2021-01-08 22:41:13.336 [INF] UTXN: Attempting to graduate height=517: num_kids=0, num_babies=0
+2021-01-08 22:41:13.354 [INF] CRTR: Block 31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb (height=535) closed 0 channels
+2021-01-08 22:41:13.355 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 518
+2021-01-08 22:41:13.428 [INF] CRTR: Pruning channel graph using block 00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae (height=536)
+2021-01-08 22:41:13.499 [INF] CRTR: Block 00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae (height=536) closed 0 channels
+2021-01-08 22:41:13.500 [INF] CRTR: Pruning channel graph using block 5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae (height=537)
+2021-01-08 22:41:13.566 [INF] NTFN: New block: height=518, sha=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:13.613 [DBG] DISC: New block: height=518, hash=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:13.613 [INF] UTXN: Attempting to graduate height=518: num_kids=0, num_babies=0
+2021-01-08 22:41:13.613 [DBG] SWPR: New block: height=518, sha=1de627bb0c821e5bcda603af67eb23b475763d7345c0f98c3cf191d8a1510c3d
+2021-01-08 22:41:13.613 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=518) examining active HTLC's
+2021-01-08 22:41:13.613 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=518, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:13.640 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 519
+2021-01-08 22:41:13.650 [INF] CRTR: Block 5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae (height=537) closed 0 channels
+2021-01-08 22:41:13.663 [INF] CRTR: Pruning channel graph using block 3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af (height=538)
+2021-01-08 22:41:13.711 [INF] CRTR: Block 3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af (height=538) closed 0 channels
+2021-01-08 22:41:13.712 [INF] CRTR: Pruning channel graph using block 7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891 (height=539)
+2021-01-08 22:41:13.756 [INF] NTFN: New block: height=519, sha=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:13.781 [DBG] DISC: New block: height=519, hash=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:13.781 [DBG] SWPR: New block: height=519, sha=5b7999765628afefd37e4342cbfa37f890fa98fb721da1a1666b8c1ebff6a363
+2021-01-08 22:41:13.781 [INF] UTXN: Attempting to graduate height=519: num_kids=0, num_babies=0
+2021-01-08 22:41:13.781 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=519) examining active HTLC's
+2021-01-08 22:41:13.817 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=519, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:13.803 [INF] CRTR: Block 7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891 (height=539) closed 0 channels
+2021-01-08 22:41:13.804 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 520
+2021-01-08 22:41:13.886 [INF] NTFN: New block: height=520, sha=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:13.887 [DBG] SWPR: New block: height=520, sha=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:13.887 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=520) examining active HTLC's
+2021-01-08 22:41:13.887 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=520, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:13.887 [DBG] DISC: New block: height=520, hash=7314f3eb8d83f34e14c8795b5cbd451510bc383fa13e5785e30c8db868883c35
+2021-01-08 22:41:13.887 [INF] UTXN: Attempting to graduate height=520: num_kids=0, num_babies=0
+2021-01-08 22:41:13.888 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 521
+2021-01-08 22:41:13.940 [INF] NTFN: New block: height=521, sha=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:13.941 [DBG] DISC: New block: height=521, hash=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:13.941 [DBG] SWPR: New block: height=521, sha=6a8e4bdf15007d1abd145a6197e02e8653a77d153cdb0044e5309538a563b526
+2021-01-08 22:41:13.941 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=521) examining active HTLC's
+2021-01-08 22:41:13.941 [INF] UTXN: Attempting to graduate height=521: num_kids=0, num_babies=0
+2021-01-08 22:41:13.969 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 522
+2021-01-08 22:41:13.980 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=521, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.029 [INF] NTFN: New block: height=522, sha=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:14.044 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=522) examining active HTLC's
+2021-01-08 22:41:14.044 [DBG] SWPR: New block: height=522, sha=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:14.044 [DBG] DISC: New block: height=522, hash=29fdc5f944fb945838940d0326e11722e332ca5a2ad11c7fbdabc017bed10dd3
+2021-01-08 22:41:14.045 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=522, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.045 [INF] UTXN: Attempting to graduate height=522: num_kids=0, num_babies=0
+2021-01-08 22:41:14.045 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 523
+2021-01-08 22:41:14.100 [INF] NTFN: New block: height=523, sha=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:14.101 [DBG] SWPR: New block: height=523, sha=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:14.101 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=523) examining active HTLC's
+2021-01-08 22:41:14.101 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=523, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.101 [DBG] DISC: New block: height=523, hash=2706c8da5cc242cd78ae99eddf4ccbbeb52b22f78170077c1c25eaa5df4adb24
+2021-01-08 22:41:14.101 [INF] UTXN: Attempting to graduate height=523: num_kids=0, num_babies=0
+2021-01-08 22:41:14.102 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 524
+2021-01-08 22:41:14.169 [INF] NTFN: New block: height=524, sha=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:14.171 [DBG] DISC: New block: height=524, hash=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:14.171 [DBG] SWPR: New block: height=524, sha=3e2937ac308957cd4ca5b82e9b2f53b9d74d8e94dea5a8990a8a36312902d9bc
+2021-01-08 22:41:14.171 [INF] UTXN: Attempting to graduate height=524: num_kids=0, num_babies=0
+2021-01-08 22:41:14.171 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=524) examining active HTLC's
+2021-01-08 22:41:14.171 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=524, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.173 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 525
+2021-01-08 22:41:14.237 [INF] NTFN: New block: height=525, sha=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:14.238 [DBG] DISC: New block: height=525, hash=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:14.238 [INF] UTXN: Attempting to graduate height=525: num_kids=0, num_babies=0
+2021-01-08 22:41:14.238 [DBG] SWPR: New block: height=525, sha=2a98a1ad2a6dbd316d8686fd55d03c8d209d02badfb8c699c5c7e1601c7806cd
+2021-01-08 22:41:14.238 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=525) examining active HTLC's
+2021-01-08 22:41:14.276 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=525, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.276 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 526
+2021-01-08 22:41:14.325 [INF] NTFN: New block: height=526, sha=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:14.325 [DBG] DISC: New block: height=526, hash=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:14.325 [INF] UTXN: Attempting to graduate height=526: num_kids=0, num_babies=0
+2021-01-08 22:41:14.325 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=526) examining active HTLC's
+2021-01-08 22:41:14.335 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=526, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.325 [DBG] SWPR: New block: height=526, sha=30537c0815ba8e7f3f6dd228bca3441a706cec36f4d854d7fbafc1c2b6a0aa3e
+2021-01-08 22:41:14.346 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 527
+2021-01-08 22:41:14.399 [INF] NTFN: New block: height=527, sha=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:14.399 [DBG] SWPR: New block: height=527, sha=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:14.399 [DBG] DISC: New block: height=527, hash=5c88314a1429fcbed05142bce0dd3d9592fa5fba74771b6f68b9f73fac5b2f0e
+2021-01-08 22:41:14.399 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=527) examining active HTLC's
+2021-01-08 22:41:14.400 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=527, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.399 [INF] UTXN: Attempting to graduate height=527: num_kids=0, num_babies=0
+2021-01-08 22:41:14.400 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 528
+2021-01-08 22:41:14.461 [INF] NTFN: New block: height=528, sha=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:14.462 [DBG] SWPR: New block: height=528, sha=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:14.462 [DBG] DISC: New block: height=528, hash=3aca163a48340758cc3043337bfe974e0d8e37b3118d65d96ba43f8733fb580e
+2021-01-08 22:41:14.462 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=528) examining active HTLC's
+2021-01-08 22:41:14.462 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=528, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.462 [INF] UTXN: Attempting to graduate height=528: num_kids=0, num_babies=0
+2021-01-08 22:41:14.463 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 529
+2021-01-08 22:41:14.531 [INF] NTFN: New block: height=529, sha=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:14.533 [INF] UTXN: Attempting to graduate height=529: num_kids=0, num_babies=0
+2021-01-08 22:41:14.533 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=529) examining active HTLC's
+2021-01-08 22:41:14.570 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=529, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.533 [DBG] DISC: New block: height=529, hash=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:14.533 [DBG] SWPR: New block: height=529, sha=10cba72c814d668b48f9f7d6030c0a0a1332e2f77e57a95d86694d11f5de4740
+2021-01-08 22:41:14.554 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 530
+2021-01-08 22:41:14.612 [INF] NTFN: New block: height=530, sha=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:14.613 [DBG] DISC: New block: height=530, hash=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:14.613 [INF] UTXN: Attempting to graduate height=530: num_kids=0, num_babies=0
+2021-01-08 22:41:14.613 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=530) examining active HTLC's
+2021-01-08 22:41:14.613 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=530, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.613 [DBG] SWPR: New block: height=530, sha=2f68219e4ad992044f4a65affb09dedb21b18f4970d80101b7381b5ef763ce3e
+2021-01-08 22:41:14.614 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 531
+2021-01-08 22:41:14.687 [INF] NTFN: New block: height=531, sha=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:14.688 [DBG] SWPR: New block: height=531, sha=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:14.688 [DBG] DISC: New block: height=531, hash=36f374b35c3f0e14b6201691d7b0b2c6d7d7dcbf3680967b3d9a2a6e986ee1cd
+2021-01-08 22:41:14.688 [INF] UTXN: Attempting to graduate height=531: num_kids=0, num_babies=0
+2021-01-08 22:41:14.688 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=531) examining active HTLC's
+2021-01-08 22:41:14.688 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=531, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.689 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 532
+2021-01-08 22:41:14.742 [INF] NTFN: New block: height=532, sha=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:14.743 [DBG] DISC: New block: height=532, hash=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:14.743 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=532) examining active HTLC's
+2021-01-08 22:41:14.743 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=532, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.743 [INF] UTXN: Attempting to graduate height=532: num_kids=0, num_babies=0
+2021-01-08 22:41:14.743 [DBG] SWPR: New block: height=532, sha=5b34f51e232e16a86fcc5c574028e01aeba3819eb8bd16aab271faaafa1441cc
+2021-01-08 22:41:14.744 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 533
+2021-01-08 22:41:14.806 [INF] NTFN: New block: height=533, sha=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:14.807 [DBG] SWPR: New block: height=533, sha=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:14.807 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=533) examining active HTLC's
+2021-01-08 22:41:14.816 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=533, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.807 [INF] UTXN: Attempting to graduate height=533: num_kids=0, num_babies=0
+2021-01-08 22:41:14.807 [DBG] DISC: New block: height=533, hash=2cb202b2e56be0e9092f9bb43aa54bcc024b3a97f71282fddef02f24160130cd
+2021-01-08 22:41:14.826 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 534
+2021-01-08 22:41:14.890 [INF] NTFN: New block: height=534, sha=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:14.891 [DBG] DISC: New block: height=534, hash=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:14.891 [INF] UTXN: Attempting to graduate height=534: num_kids=0, num_babies=0
+2021-01-08 22:41:14.891 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=534) examining active HTLC's
+2021-01-08 22:41:14.902 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=534, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.891 [DBG] SWPR: New block: height=534, sha=645facf57b6f96f26346eb9063e33dffd2a905984744652208c36b90fa0b3fec
+2021-01-08 22:41:14.902 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 535
+2021-01-08 22:41:14.936 [INF] NTFN: New block: height=535, sha=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:14.937 [INF] UTXN: Attempting to graduate height=535: num_kids=0, num_babies=0
+2021-01-08 22:41:14.937 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=535) examining active HTLC's
+2021-01-08 22:41:14.960 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=535, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:14.937 [DBG] DISC: New block: height=535, hash=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:14.937 [DBG] SWPR: New block: height=535, sha=31ca0f70aefac63316aaadcc7d0986cdd30d13d5a0b717e477b517b4a0cb4bcb
+2021-01-08 22:41:14.962 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 536
+2021-01-08 22:41:15.017 [INF] NTFN: New block: height=536, sha=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:15.018 [INF] UTXN: Attempting to graduate height=536: num_kids=0, num_babies=0
+2021-01-08 22:41:15.018 [DBG] SWPR: New block: height=536, sha=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:15.018 [DBG] DISC: New block: height=536, hash=00f899da76ef7eec42b6e78d2bd8733f25fd8cd3be74a85b23b9f4ec2eec90ae
+2021-01-08 22:41:15.018 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=536) examining active HTLC's
+2021-01-08 22:41:15.018 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=536, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:15.019 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 537
+2021-01-08 22:41:15.074 [INF] NTFN: New block: height=537, sha=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:15.074 [DBG] SWPR: New block: height=537, sha=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:15.074 [DBG] DISC: New block: height=537, hash=5402d839e8790e16391e97f08611da24a13321d222a8941cd1c3be3f0b9b24ae
+2021-01-08 22:41:15.074 [INF] UTXN: Attempting to graduate height=537: num_kids=0, num_babies=0
+2021-01-08 22:41:15.074 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=537) examining active HTLC's
+2021-01-08 22:41:15.075 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=537, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:15.075 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 538
+2021-01-08 22:41:15.130 [INF] NTFN: New block: height=538, sha=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:15.131 [DBG] SWPR: New block: height=538, sha=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:15.131 [DBG] DISC: New block: height=538, hash=3dad6f28c55c4f8a218b425f4273bbd51d04554a4ad15e402631b98cd12a45af
+2021-01-08 22:41:15.131 [INF] UTXN: Attempting to graduate height=538: num_kids=0, num_babies=0
+2021-01-08 22:41:15.131 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=538) examining active HTLC's
+2021-01-08 22:41:15.131 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=538, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:15.131 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 539
+2021-01-08 22:41:15.200 [INF] NTFN: New block: height=539, sha=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:15.201 [DBG] DISC: New block: height=539, hash=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:15.201 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=539) examining active HTLC's
+2021-01-08 22:41:15.239 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=539, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:15.201 [DBG] SWPR: New block: height=539, sha=7f8a9a362388de60fea77749e258f4c2ced4a185b2c3d6e662fead4911a06891
+2021-01-08 22:41:15.201 [INF] UTXN: Attempting to graduate height=539: num_kids=0, num_babies=0
+2021-01-08 22:41:15.297 [DBG] HSWC: Sent 0 satoshis and received 0 satoshis in the last 10 seconds (0.100000 tx/sec)
+2021-01-08 22:41:15.576 [INF] CRTR: Pruning channel graph using block 1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90 (height=540)
+2021-01-08 22:41:15.596 [INF] CHDB: Pruned unconnected node 03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569 from channel graph
+2021-01-08 22:41:15.628 [INF] CHDB: Pruned 1 unconnected nodes from the channel graph
+2021-01-08 22:41:15.682 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 540
+2021-01-08 22:41:15.703 [INF] CRTR: Block 1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90 (height=540) closed 1 channels
+2021-01-08 22:41:15.765 [INF] NTFN: New block: height=540, sha=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.766 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=540) examining active HTLC's
+2021-01-08 22:41:15.799 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=540, in_htlc_count=0, out_htlc_count=2
+2021-01-08 22:41:15.766 [DBG] DISC: New block: height=540, hash=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.766 [DBG] SWPR: New block: height=540, sha=1b833c2b84d15333b46d38172a2dff9c8509efed949e140773da9fe9dd450e90
+2021-01-08 22:41:15.766 [INF] UTXN: Attempting to graduate height=540: num_kids=0, num_babies=0
+2021-01-08 22:41:15.778 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:16.045 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:16.050 [DBG] PEER: Received UpdateFailHTLC(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, id=1, reason=a99d09739c7d2a8305317ac032ed1db884e15d1b2ab776712703c2e7bbb27de169550dcad002f2b11fa20d004de97a4f191bd7e352944edc2613f6d5883b0c38ef00d459ca6226ae4814c607167da9b630ad4b2830f23c6fb1bf8d4bcce14852c7ee7c87863a02d3568423dcce179a3758150c32315cfb07936bc38db166e56ab753ad3766a16e5abdf78023c16fc79f905419ea9bdde20a9ee58750b65f6075b6c074c60a03a6a36b744a98d8598425a23f96db39bfb469581c4ef20857a6cb3ddecf554ec14887062dfc9e1708be11ad89dd8475e02fa9e6d3aaebf7db4f6fddf3abfc6062e9d0da312d288809228dc93a7ccf24f987d32ec436309de270a8d3b96ff9c525e4ef20287f29fdb383c9bd30df13cb57f9b4d0bd7c5fdda10bbd12823c3f) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:16.255 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:16.382 [DBG] PEER: Received CommitSig(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, num_htlcs=1) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:16.448 [DBG] PEER: Sending RevokeAndAck(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, rev=95222cb84511ac4c189c7ee39fadcb3005b6da68aa916766fd4d9212d3d8e74a, next_point=029bd85bf37bfb72390f3addf7ea746c16d04d1aa305002d29f6186acdcb53c4c3) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:16.467 [DBG] RPCS: [listchannels] fetched 1 channels from DB
+2021-01-08 22:41:16.568 [DBG] PEER: Sending CommitSig(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, num_htlcs=1) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:16.609 [DBG] PEER: Received RevokeAndAck(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, rev=1fad6cb8bc5424ff7f2968bba12cc3aba3a4bef463a99153dbc72006f7f6c067, next_point=02b5904829c14c53591cd266a7ba2ea5fc3b05484ad49d198dc8f590effe68cbeb) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:16.636 [DBG] HSWC: ChannelLink(473:1:0): settle-fail-filter &{1 [0]}
+2021-01-08 22:41:16.636 [DBG] HSWC: Closed completed FAIL circuit for d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb: (0:0:0, 1) <-> (473:1:0, 1)
+2021-01-08 22:41:16.636 [DBG] HSWC: Storing result for paymentID=1
+2021-01-08 22:41:16.649 [INF] CRTR: Pruning channel graph using block 32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b (height=541)
+2021-01-08 22:41:16.684 [DBG] HSWC: Received network result *lnwire.UpdateFailHTLC for paymentID=1
+2021-01-08 22:41:16.748 [INF] CRTR: Block 32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b (height=541) closed 0 channels
+2021-01-08 22:41:16.750 [WRN] CRTR: Attempt 1 for payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb failed: PermanentChannelFailure@1
+2021-01-08 22:41:16.802 [DBG] HSWC: Tearing down open circuit with FAIL pkt, removing circuit=(Chan ID=0:0:0, HTLC ID=1) with keystone=(Chan ID=473:1:0, HTLC ID=1)
+2021-01-08 22:41:16.814 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 541
+2021-01-08 22:41:16.815 [INF] CRTR: Pruning channel graph using block 2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de (height=542)
+2021-01-08 22:41:16.928 [INF] CRTR: Block 2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de (height=542) closed 0 channels
+2021-01-08 22:41:16.940 [INF] CRTR: Pruning channel graph using block 5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca (height=543)
+2021-01-08 22:41:16.985 [INF] NTFN: New block: height=541, sha=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:16.985 [DBG] HSWC: Closed completed FAIL circuit for d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb: (0:0:0, 1) <-> (473:1:0, 1)
+2021-01-08 22:41:17.008 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=541) examining active HTLC's
+2021-01-08 22:41:17.008 [DBG] SWPR: New block: height=541, sha=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:17.008 [DBG] DISC: New block: height=541, hash=32d7767798ec623eee6a8512675fa2829d4be2bfcfcc3ad8435165288bf63a9b
+2021-01-08 22:41:17.008 [INF] UTXN: Attempting to graduate height=541: num_kids=0, num_babies=0
+2021-01-08 22:41:17.008 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=541, in_htlc_count=0, out_htlc_count=1
+2021-01-08 22:41:17.009 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 542
+2021-01-08 22:41:17.019 [DBG] CRTR: Reporting pair failure to Mission Control: pair=03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569 -> 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, amt=0 mSAT
+2021-01-08 22:41:17.020 [DBG] CRTR: Setting 03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569->03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 range to [0 mSAT-0 mSAT]
+2021-01-08 22:41:17.038 [DBG] CRTR: Reporting pair failure to Mission Control: pair=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 -> 03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569, amt=0 mSAT
+2021-01-08 22:41:17.051 [DBG] CRTR: Setting 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782->03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569 range to [0 mSAT-0 mSAT]
+2021-01-08 22:41:17.052 [DBG] CRTR: Payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb in state terminate=false, active_shards=0, rem_value=100000 mSAT, fee_limit=9223372036854775807 mSAT
+2021-01-08 22:41:17.052 [DBG] CRTR: PaymentSession(d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb): pathfinding for amt=100000 mSAT
+2021-01-08 22:41:17.054 [DBG] PEER: Received UpdateFailHTLC(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, id=0, reason=fb33fd806d3452e1899a79d004dc17de7e2b9b65284b5dec546e882363d6e1f7b52aed01ea748e854d7123a4a992a5646af450da18a3b8c7cef6c24195973c9d0615d4ea32d92efa582dcff3193cc61acd5cf9a1c1d824a48da74bb4d5b98e14413159a2d43d631d1c0d3baae5dd0aa2920136d1b46d6036ead80d9e3950ec11010ba35016ad51bc1af0f92ea7041a2206b3dd49df188b1738ae28d52e6482799143bcded08a43646baffb809816d0112100345edae457b0cd96d6f41d4dda9b518cb7d8da17955b4e03228d3252c9c1a72bb4855801c24bda288eb4e6b0fe03ccbda1c6e1aa78c80b96a8bff5212b6f1774ae6b7b2aec5d7e6a597b4a93beb40d1890f7b8aeb2994558ce1dcc4821061d138ecd2590a7acacdd3e8c916487668b355184) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:17.054 [DBG] CRTR: Pathfinding absolute attempt cost: 100.1 sats
+2021-01-08 22:41:17.054 [DBG] CRTR: Pathfinding perf metrics: nodes=1, edges=0, time=2.217625ms
+2021-01-08 22:41:17.054 [DBG] CRTR: PaymentSession(d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb): not splitting because payment address is unspecified
+2021-01-08 22:41:17.054 [WRN] CRTR: Failed to find route for payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb: unable to find a path to destination
+2021-01-08 22:41:17.054 [DBG] CRTR: Marking payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb permanently failed with no route: no_route
+2021-01-08 22:41:17.062 [INF] CRTR: Block 5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca (height=543) closed 0 channels
+2021-01-08 22:41:17.108 [INF] NTFN: New block: height=542, sha=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:17.134 [DBG] SWPR: New block: height=542, sha=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:17.134 [INF] UTXN: Attempting to graduate height=542: num_kids=0, num_babies=0
+2021-01-08 22:41:17.134 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=542) examining active HTLC's
+2021-01-08 22:41:17.144 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=542, in_htlc_count=0, out_htlc_count=1
+2021-01-08 22:41:17.134 [DBG] DISC: New block: height=542, hash=2cd8e04d2130327c584698a26bd8b53183fcaf282d25463597bdaa2466f529de
+2021-01-08 22:41:17.151 [DBG] CRTR: Payment d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb in state terminate=true, active_shards=0, rem_value=100000 mSAT, fee_limit=9223372036854775807 mSAT
+2021-01-08 22:41:17.152 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 543
+2021-01-08 22:41:17.164 [ERR] CRTR: Payment with hash d115c35c9633e07638edd4f2d9d029ece567c8a09b80afbc37a1f6f9cf72deeb failed: no_route
+2021-01-08 22:41:17.242 [INF] NTFN: New block: height=543, sha=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:17.243 [DBG] DISC: New block: height=543, hash=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:17.243 [INF] UTXN: Attempting to graduate height=543: num_kids=0, num_babies=0
+2021-01-08 22:41:17.243 [DBG] SWPR: New block: height=543, sha=5091e556ff3c34dfda4c82a3b964a150a9730f8d86488867e1e7037bda77e0ca
+2021-01-08 22:41:17.243 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=543) examining active HTLC's
+2021-01-08 22:41:17.243 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=543, in_htlc_count=0, out_htlc_count=1
+2021-01-08 22:41:17.243 [DBG] PEER: Received CommitSig(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, num_htlcs=0) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:17.285 [DBG] PEER: Sending RevokeAndAck(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, rev=1f2d31f8fd269a5ef12fed82e8605672310cb1241a09816fca5dd4d73e5826d2, next_point=03457469de72d6a7c12e2ba6e83cae40dc0641dbf925f866d64746c95f360fecc7) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:17.388 [DBG] PEER: Sending CommitSig(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, num_htlcs=0) to 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:17.428 [DBG] PEER: Received RevokeAndAck(chan_id=d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366, rev=cafba4996371ff1c7b3bc0098b283f8369ed211df2de84071d613e9d817500c9, next_point=02dc73a57bca72ba2f0c4e8eb5038cc8f6751134653503747d76eb4aa414ae2ab1) from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:17.448 [DBG] HSWC: ChannelLink(473:1:0): settle-fail-filter &{1 [0]}
+2021-01-08 22:41:17.448 [DBG] HSWC: Closed completed FAIL circuit for 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5: (0:0:0, 2) <-> (473:1:0, 0)
+2021-01-08 22:41:17.448 [DBG] HSWC: Storing result for paymentID=2
+2021-01-08 22:41:17.489 [DBG] HSWC: Received network result *lnwire.UpdateFailHTLC for paymentID=2
+2021-01-08 22:41:17.490 [WRN] CRTR: Attempt 2 for payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 failed: PermanentChannelFailure@1
+2021-01-08 22:41:17.538 [DBG] HSWC: Tearing down open circuit with FAIL pkt, removing circuit=(Chan ID=0:0:0, HTLC ID=2) with keystone=(Chan ID=473:1:0, HTLC ID=0)
+2021-01-08 22:41:17.561 [DBG] CRTR: Reporting pair failure to Mission Control: pair=03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 -> 03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569, amt=0 mSAT
+2021-01-08 22:41:17.561 [DBG] CRTR: Setting 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782->03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569 range to [0 mSAT-0 mSAT]
+2021-01-08 22:41:17.561 [DBG] CRTR: Reporting pair failure to Mission Control: pair=03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569 -> 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782, amt=0 mSAT
+2021-01-08 22:41:17.561 [DBG] CRTR: Setting 03cd8d6cb050de5d166ddbd4e519dc80b089a98edb925d7aca02731a3595a72569->03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782 range to [0 mSAT-0 mSAT]
+2021-01-08 22:41:17.562 [DBG] CRTR: Payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 in state terminate=false, active_shards=0, rem_value=300000000 mSAT, fee_limit=9223372036854775807 mSAT
+2021-01-08 22:41:17.562 [DBG] CRTR: PaymentSession(9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5): pathfinding for amt=300000000 mSAT
+2021-01-08 22:41:17.563 [DBG] CRTR: Pathfinding absolute attempt cost: 400 sats
+2021-01-08 22:41:17.563 [DBG] CRTR: Pathfinding perf metrics: nodes=1, edges=0, time=989.13µs
+2021-01-08 22:41:17.563 [DBG] CRTR: PaymentSession(9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5): not splitting because payment address is unspecified
+2021-01-08 22:41:17.563 [WRN] CRTR: Failed to find route for payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5: unable to find a path to destination
+2021-01-08 22:41:17.563 [DBG] CRTR: Marking payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 permanently failed with no route: no_route
+2021-01-08 22:41:17.584 [DBG] HSWC: Closed completed FAIL circuit for 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5: (0:0:0, 2) <-> (473:1:0, 0)
+2021-01-08 22:41:17.606 [DBG] CRTR: Payment 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 in state terminate=true, active_shards=0, rem_value=300000000 mSAT, fee_limit=9223372036854775807 mSAT
+2021-01-08 22:41:17.606 [ERR] CRTR: Payment with hash 9ab2c2443010bce6e8ba3acfc899d882daa72e974356d39938f0bf21ffde63a5 failed: no_route
+2021-01-08 22:41:25.293 [DBG] HSWC: Sent 0 satoshis and received 0 satoshis in the last 10 seconds (0.200000 tx/sec)
+2021-01-08 22:41:25.624 [INF] CRTR: Pruning channel graph using block 44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2 (height=544)
+2021-01-08 22:41:25.626 [DBG] NTFN: Filtering 2 txns for 1 spend requests at height 544
+2021-01-08 22:41:25.678 [INF] CRTR: Block 44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2 (height=544) closed 0 channels
+2021-01-08 22:41:25.717 [INF] CRTR: Pruning channel graph using block 37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280 (height=545)
+2021-01-08 22:41:25.726 [INF] NTFN: New block: height=544, sha=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.809 [DBG] SWPR: New block: height=544, sha=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.809 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=544) examining active HTLC's
+2021-01-08 22:41:25.855 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=544, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:25.809 [INF] UTXN: Attempting to graduate height=544: num_kids=0, num_babies=0
+2021-01-08 22:41:25.809 [DBG] DISC: New block: height=544, hash=44819d1a01db10880afcc3920bd66c8b322012a7e185b93bec9fd308a40d9db2
+2021-01-08 22:41:25.841 [INF] CRTR: Block 37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280 (height=545) closed 0 channels
+2021-01-08 22:41:25.856 [DBG] NTFN: Filtering 1 txns for 1 spend requests at height 545
+2021-01-08 22:41:25.930 [INF] NTFN: New block: height=545, sha=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.931 [DBG] DISC: New block: height=545, hash=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.931 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): new block (height=545) examining active HTLC's
+2021-01-08 22:41:25.931 [DBG] CNCT: ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0): checking commit chain actions at height=545, in_htlc_count=0, out_htlc_count=0
+2021-01-08 22:41:25.931 [DBG] SWPR: New block: height=545, sha=37f465b88c4fc51728685c41467d03e788be5ef4303a0309694c41c220b27280
+2021-01-08 22:41:25.931 [INF] UTXN: Attempting to graduate height=545: num_kids=0, num_babies=0
+2021-01-08 22:41:34.082 [INF] LTND: Received interrupt
+2021-01-08 22:41:34.085 [INF] LTND: Shutting down...
+2021-01-08 22:41:34.085 [INF] LTND: Gracefully shutting down.
+2021-01-08 22:41:34.085 [INF] HSWC: Block epoch canceled, decaying hash log shutting down
+2021-01-08 22:41:34.085 [INF] HSWC: Removing channel link with ChannelID(d93dc4df2f33ba72b4c76af657e6cfd0d2e2284667c7e6f292c155199830b366)
+2021-01-08 22:41:34.086 [INF] HSWC: ChannelLink(473:1:0): stopping
+2021-01-08 22:41:34.086 [INF] HSWC: ChannelLink(473:1:0): exited
+2021-01-08 22:41:34.085 [INF] CRTR: FilteredChainView stopping
+2021-01-08 22:41:34.086 [INF] HSWC: HTLC Switch shutting down
+2021-01-08 22:41:34.088 [INF] UTXN: UTXO nursery shutting down
+2021-01-08 22:41:34.088 [INF] BRAR: Breach arbiter shutting down
+2021-01-08 22:41:34.088 [INF] DISC: Authenticated Gossiper is stopping
+2021-01-08 22:41:34.089 [INF] CNCT: Stopping ChainArbitrator
+2021-01-08 22:41:34.089 [DBG] CNCT: Stopping ChannelArbitrator(66b330981955c192f2e6c7674628e2d2d0cfe657f66ac7b472ba332fdfc43dd9:0)
+2021-01-08 22:41:34.089 [DBG] SWPR: Sweeper shutting down
+2021-01-08 22:41:34.089 [DBG] SWPR: Sweeper shut down
+2021-01-08 22:41:34.089 [INF] PRNF: Stopping PeerNotifier
+2021-01-08 22:41:34.089 [INF] FNDG: Funding manager shutting down
+2021-01-08 22:41:34.089 [INF] CHBU: Stopping chanbackup.SubSwapper
+2021-01-08 22:41:34.089 [INF] CHFT: Stopping event store
+2021-01-08 22:41:34.089 [DBG] CHFT: recording flap count for: 1 peers
+2021-01-08 22:41:34.154 [INF] SRVR: Disconnecting from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:34.155 [DBG] SRVR: removing peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:34.155 [INF] PEER: disconnecting 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573, reason: server: disconnecting peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573
+2021-01-08 22:41:34.155 [INF] PEER: unable to read message from 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573: read tcp 127.0.0.1:50007->127.0.0.1:5573: use of closed network connection
+2021-01-08 22:41:34.360 [DBG] SRVR: Peer 03a3714eb3935d9e1fbcf2178c5e170b302ba03029f6fdff34651155dfdc834782@127.0.0.1:5573 has been disconnected
+2021-01-08 22:41:34.360 [INF] RPCS: Stopping RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping ChainRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping InvoicesRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping WatchtowerClientRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping RouterRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping SignRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping AutopilotRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping VersionRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping WalletKitRPC Sub-RPC Server
+2021-01-08 22:41:34.361 [INF] RPCS: Stopping WatchtowerRPC Sub-RPC Server
+2021-01-08 22:41:34.362 [INF] LTND: Shutdown complete
+
