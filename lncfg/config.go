@@ -16,6 +16,10 @@ const (
 	// pending channels permitted per peer.
 	DefaultMaxPendingChannels = 1
 
+	// DefaultMaxOpenChannels is the default maximum number of open
+	// channels allowed for the node. A value of 0 means no limit applied.
+	DefaultMaxOpenChannels = 0
+
 	// DefaultIncomingBroadcastDelta defines the number of blocks before the
 	// expiry of an incoming htlc at which we force close the channel. We
 	// only go to chain if we also have the preimage to actually pull in the

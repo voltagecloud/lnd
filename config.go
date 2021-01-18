@@ -242,6 +242,7 @@ type Config struct {
 	UnsafeDisconnect   bool   `long:"unsafe-disconnect" description:"DEPRECATED: Allows the rpcserver to intentionally disconnect from peers with open channels. THIS FLAG WILL BE REMOVED IN 0.10.0"`
 	UnsafeReplay       bool   `long:"unsafe-replay" description:"Causes a link to replay the adds on its commitment txn after starting up, this enables testing of the sphinx replay logic."`
 	MaxPendingChannels int    `long:"maxpendingchannels" description:"The maximum number of incoming pending channels permitted per peer."`
+	MaxOpenChannels    int    `long:"maxopenchannels" description:"The maximum number of open channels that are allowed on the node. Default is no limit"`
 	BackupFilePath     string `long:"backupfilepath" description:"The target location of the channel backup file"`
 
 	FeeURL string `long:"feeurl" description:"Optional URL for external fee estimation. If no URL is specified, the method for fee estimation will depend on the chosen backend and network. Must be set for neutrino on mainnet."`
@@ -410,6 +411,7 @@ func DefaultConfig() Config {
 		},
 		UnsafeDisconnect:   true,
 		MaxPendingChannels: lncfg.DefaultMaxPendingChannels,
+		MaxOpenChannels:    lncfg.DefaultMaxOpenChannels,
 		NoSeedBackup:       defaultNoSeedBackup,
 		MinBackoff:         defaultMinBackoff,
 		MaxBackoff:         defaultMaxBackoff,
