@@ -898,6 +898,8 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 		path := externalCert.Validation.OtherValidation[domain].FileValidationUrlHttp
 		path = strings.Replace(path, "http://"+domain, "", -1)
 		content := strings.Join(externalCert.Validation.OtherValidation[domain].FileValidationContent[:], "\n")
+		rpcsLog.Debugf("using path %s", path)
+		rpcsLog.Debugf("using content %s", content)
 		go func() {
 			addr := fmt.Sprintf(":%v", cfg.ExternalSSLPort)
 			http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
@@ -936,16 +938,17 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 				rpcsLog.Infof("found certificate in state %s", status)
 				break
 			} else if status == "draft" {
+				rpcsLog.Debug("Certificate was in draft so attempting to validate")
 				err = certprovider.ZeroSSLValidateCert(externalCert)
 				if err != nil {
 					return returnCert, err
 				}
 			}
-			if retries > 3 {
-				rpcsLog.Error("Still can't get a certificate after 3 retries. Failing...")
+			if retries > 5 {
+				rpcsLog.Error("Still can't get a certificate after 5 retries. Failing...")
 				return returnCert, fmt.Errorf("Timed out trying to create SSL Certificate")
 			}
-			if checkCount > 15 {
+			if checkCount > 30 {
 				rpcsLog.Warn("Timed out waiting for cert. Requesting a new one.")
 				externalCert, err = certprovider.ZeroSSLRequestCert(csr, cfg.ExternalSSLDomain)
 				if err != nil {

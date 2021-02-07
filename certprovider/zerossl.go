@@ -149,6 +149,7 @@ func ZeroSSLValidateCert(certificate ZeroSSLExternalCert) error {
 	if err != nil {
 		return err
 	}
+	fmt.Printf("%s", resp.Body)
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
 		body, _ := ioutil.ReadAll(resp.Body)
