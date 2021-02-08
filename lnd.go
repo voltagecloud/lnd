@@ -10,6 +10,7 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net"
 	"net/http"
@@ -276,6 +277,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, shutdownChan <-chan struct{}) error {
 	var serverOpts []grpc.ServerOption
 	var restDialOpts []grpc.DialOption
 	var restListen func(net.Addr) (net.Listener, error)
+	var certId string
 
 	// The real KeyRing isn't available until after the wallet is unlocked,
 	// but we need one now. Because we aren't encrypting anything here it can
@@ -286,7 +288,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, shutdownChan <-chan struct{}) error {
 	// get thrown away for the real certificates once the wallet is unlocked.
 	// If TLSEncryptKey is false, then get the TLSConfig like normal.
 	if cfg.TLSEncryptKey {
-		serverOpts, restDialOpts, restListen, cleanUp, err = getEphemeralTLSConfig(cfg, emptyKeyRing)
+		serverOpts, restDialOpts, restListen, cleanUp, certId, err = getEphemeralTLSConfig(cfg, emptyKeyRing)
 	} else {
 		serverOpts, restDialOpts, restListen, cleanUp, err = getTLSConfig(cfg, emptyKeyRing)
 	}
@@ -753,6 +755,12 @@ func Main(cfg *Config, lisCfg ListenerCfg, shutdownChan <-chan struct{}) error {
 		if err != nil {
 			ltndLog.Warn("unable to delete temp external cert at %v", tmpExternalCertPath)
 		}
+		err = certprovider.ZeroSSLRevokeCert(certId)
+		if err != nil {
+			ltndLog.Error("Failed to revoke temporary certifiate:")
+			ltndLog.Error(err)
+		}
+
 		serverOpts, restDialOpts, restListen, _, err = getTLSConfig(cfg, activeChainControl.KeyRing)
 		if err != nil {
 			err := fmt.Errorf("unable to load TLS credentials: %v", err)
@@ -881,23 +889,25 @@ func Main(cfg *Config, lisCfg ListenerCfg, shutdownChan <-chan struct{}) error {
 }
 
 // createExternalCert creates an Externally provisioned SSL Certificate
-func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (returnCert tls.Certificate, err error) {
+func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (returnCert tls.Certificate, certId string, err error) {
 	var certServer *http.Server
 	if cfg.ExternalSSLProvider == "zerossl" {
 		csr, err := certprovider.ZeroSSLGenerateCsr(keyBytes, cfg.ExternalSSLDomain)
 		if err != nil {
-			return returnCert, err
+			return returnCert, certId, err
 		}
 		rpcsLog.Debugf("created csr for %s", cfg.ExternalSSLDomain)
 		externalCert, err := certprovider.ZeroSSLRequestCert(csr, cfg.ExternalSSLDomain)
 		if err != nil {
-			return returnCert, err
+			return returnCert, certId, err
 		}
 		rpcsLog.Infof("received cert request with id %s", externalCert.Id)
 		domain := externalCert.CommonName
 		path := externalCert.Validation.OtherValidation[domain].FileValidationUrlHttp
 		path = strings.Replace(path, "http://"+domain, "", -1)
 		content := strings.Join(externalCert.Validation.OtherValidation[domain].FileValidationContent[:], "\n")
+		rpcsLog.Debugf("using cert path: %s", path)
+		rpcsLog.Debugf("using cert content: %s", content)
 		go func() {
 			addr := fmt.Sprintf(":%v", cfg.ExternalSSLPort)
 			http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
@@ -920,7 +930,7 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 		}()
 		err = certprovider.ZeroSSLValidateCert(externalCert)
 		if err != nil {
-			return returnCert, err
+			return returnCert, certId, err
 		}
 		rpcsLog.Debug("requested certificate to be validated")
 		checkCount := 0
@@ -928,7 +938,7 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 		for {
 			newCert, err := certprovider.ZeroSSLGetCert(externalCert)
 			if err != nil {
-				return returnCert, err
+				return returnCert, certId, err
 			}
 			status := newCert.Status
 			rpcsLog.Debugf("found certificate in state %s", status)
@@ -938,18 +948,20 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 			} else if status == "draft" {
 				err = certprovider.ZeroSSLValidateCert(externalCert)
 				if err != nil {
-					return returnCert, err
+					return returnCert, certId, err
 				}
 			}
 			if retries > 3 {
 				rpcsLog.Error("Still can't get a certificate after 3 retries. Failing...")
-				return returnCert, fmt.Errorf("Timed out trying to create SSL Certificate")
+				rpcsLog.Info("shutting down certificate validator server")
+				certServer.Close()
+				return returnCert, certId, fmt.Errorf("Timed out trying to create SSL Certificate")
 			}
 			if checkCount > 15 {
 				rpcsLog.Warn("Timed out waiting for cert. Requesting a new one.")
 				externalCert, err = certprovider.ZeroSSLRequestCert(csr, cfg.ExternalSSLDomain)
 				if err != nil {
-					return returnCert, err
+					return returnCert, certId, err
 				}
 				rpcsLog.Infof("received cert request with id %s", externalCert.Id)
 				retries += 1
@@ -958,13 +970,14 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 			checkCount += 1
 			time.Sleep(2 * time.Second)
 		}
+		certId = externalCert.Id
 		certificate, caBundle, err := certprovider.ZeroSSLDownloadCert(externalCert)
 		if err != nil {
-			return returnCert, err
+			return returnCert, certId, err
 		}
 		externalCertBytes := []byte(certificate + "\n" + caBundle)
 		if err = ioutil.WriteFile(certLocation, externalCertBytes, 0644); err != nil {
-			return returnCert, err
+			return returnCert, certId, err
 		}
 		rpcsLog.Infof("successfully wrote external SSL certificate to %s",
 			certLocation)
@@ -972,13 +985,13 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 			externalCertBytes, keyBytes,
 		)
 		if err != nil {
-			return returnCert, err
+			return returnCert, certId, err
 		}
 		rpcsLog.Info("shutting down certificate validator server")
 		certServer.Close()
-		return externalCertData, nil
+		return externalCertData, certId, nil
 	} else {
-		return returnCert, fmt.Errorf("Unknown external certificate provider: %s", cfg.ExternalSSLProvider)
+		return returnCert, certId, fmt.Errorf("Unknown external certificate provider: %s", cfg.ExternalSSLProvider)
 	}
 }
 
@@ -987,7 +1000,7 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 // for the REST reverse proxy. The key is not written to disk.
 func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	[]grpc.ServerOption, []grpc.DialOption,
-	func(net.Addr) (net.Listener, error), func(), error) {
+	func(net.Addr) (net.Listener, error), func(), string, error) {
 
 	rpcsLog.Infof("Generating ephemeral TLS certificates...")
 	tmpValidity := 24 * time.Hour
@@ -1008,16 +1021,35 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		cfg.TLSDisableAutofill, tmpValidity, false, keyRing, keyType,
 	)
 	if err != nil {
-		return nil, nil, nil, nil, err
+		return nil, nil, nil, nil, "", err
 	}
 
 	var externalCertData tls.Certificate
+	var certId string
+	var failedProvision bool
 	if cfg.ExternalSSLProvider != "" {
-		externalCertData, err = createExternalCert(
+		externalCertData, certId, err = createExternalCert(
 			cfg, keyBytes, externalSSLCertPath,
 		)
 		if err != nil {
-			return nil, nil, nil, nil, err
+			rpcsLog.Info(err)
+			failedProvision = true
+		}
+	}
+	if cfg.ExternalSSLProvider != "" && failedProvision {
+		source, err := os.Open(tmpCertPath)
+		if err != nil {
+			return nil, nil, nil, nil, "", err
+		}
+		defer source.Close()
+
+		destination, err := os.Create(externalSSLCertPath)
+		if err != nil {
+			return nil, nil, nil, nil, "", err
+		}
+		_, err = io.Copy(destination, source)
+		if err != nil {
+			return nil, nil, nil, nil, "", err
 		}
 	}
 
@@ -1027,11 +1059,11 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		certBytes, keyBytes,
 	)
 	if err != nil {
-		return nil, nil, nil, nil, err
+		return nil, nil, nil, nil, "", err
 	}
 
 	certList := []tls.Certificate{certData}
-	if cfg.ExternalSSLProvider != "" {
+	if cfg.ExternalSSLProvider != "" && !failedProvision {
 		certList = append(certList, externalCertData)
 	}
 
@@ -1068,7 +1100,7 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		return lncfg.TLSListenOnAddress(addr, tlsCfg)
 	}
 
-	return serverOpts, restDialOpts, restListen, cleanUp, nil
+	return serverOpts, restDialOpts, restListen, cleanUp, certId, nil
 }
 
 // getTLSConfig returns a TLS configuration for the gRPC server and credentials
@@ -1150,28 +1182,49 @@ func getTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	}
 
 	var externalCertData tls.Certificate
+	var failedProvision bool
 	if cfg.ExternalSSLProvider != "" {
 		// Ensure we create external TLS certificate if they don't exist.
 		if !fileExists(externalSSLCertPath) {
 			ltndLog.Infof("Requesting external certificate for domain %v",
 				cfg.ExternalSSLDomain)
-			_, err = createExternalCert(
+			_, _, err = createExternalCert(
 				cfg, keyBytes, externalSSLCertPath,
+			)
+			if err != nil {
+				rpcsLog.Info(err)
+				failedProvision = true
+			}
+		}
+		if !failedProvision {
+			externalCertBytes, err := ioutil.ReadFile(externalSSLCertPath)
+			if err != nil {
+				return nil, nil, nil, nil, err
+			}
+			externalCertData, _, err = cert.LoadCert(
+				externalCertBytes, keyBytes,
 			)
 			if err != nil {
 				return nil, nil, nil, nil, err
 			}
+		} else {
+			os.MkdirAll(fmt.Sprintf("%s/%s", cfg.LndDir, cfg.ExternalSSLProvider), os.ModePerm)
+			source, err := os.Open(cfg.TLSCertPath)
+			if err != nil {
+				return nil, nil, nil, nil, err
+			}
+			defer source.Close()
+
+			destination, err := os.Create(externalSSLCertPath)
+			if err != nil {
+				return nil, nil, nil, nil, err
+			}
+			_, err = io.Copy(destination, source)
+			if err != nil {
+				return nil, nil, nil, nil, err
+			}
 		}
-		externalCertBytes, err := ioutil.ReadFile(externalSSLCertPath)
-		if err != nil {
-			return nil, nil, nil, nil, err
-		}
-		externalCertData, _, err = cert.LoadCert(
-			externalCertBytes, keyBytes,
-		)
-		if err != nil {
-			return nil, nil, nil, nil, err
-		}
+
 	}
 
 	certData, parsedCert, err := cert.LoadCert(
@@ -1246,22 +1299,25 @@ func getTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 			if !fileExists(externalSSLCertPath) {
 				ltndLog.Infof("Requesting external certificate for domain %v",
 					cfg.ExternalSSLDomain)
-				_, err = createExternalCert(
+				_, _, err = createExternalCert(
 					cfg, keyBytes, externalSSLCertPath,
+				)
+				if err != nil {
+					rpcsLog.Info(err)
+					failedProvision = true
+				}
+			}
+			if !failedProvision {
+				externalCertBytes, err := ioutil.ReadFile(externalSSLCertPath)
+				if err != nil {
+					return nil, nil, nil, nil, err
+				}
+				externalCertData, _, err = cert.LoadCert(
+					externalCertBytes, keyBytes,
 				)
 				if err != nil {
 					return nil, nil, nil, nil, err
 				}
-			}
-			externalCertBytes, err := ioutil.ReadFile(externalSSLCertPath)
-			if err != nil {
-				return nil, nil, nil, nil, err
-			}
-			externalCertData, _, err = cert.LoadCert(
-				externalCertBytes, keyBytes,
-			)
-			if err != nil {
-				return nil, nil, nil, nil, err
 			}
 		}
 
@@ -1285,7 +1341,7 @@ func getTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	}
 
 	certList := []tls.Certificate{certData}
-	if cfg.ExternalSSLProvider != "" {
+	if cfg.ExternalSSLProvider != "" && !failedProvision {
 		certList = append(certList, externalCertData)
 	}
 	tlsCfg := cert.TLSConfFromCert(certList)
