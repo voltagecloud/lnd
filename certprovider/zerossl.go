@@ -62,6 +62,10 @@ type ZeroSSLCertResponse struct {
 	CaBundle    string `json:"ca_bundle.crt"`
 }
 
+type ZeroSSLCertRevoke struct {
+	Success string `json:"success"`
+}
+
 func ZeroSSLGenerateCsr(keyBytes []byte, domain string) (csrBuffer bytes.Buffer, err error) {
 	block, _ := pem.Decode(keyBytes)
 	x509Encoded := block.Bytes
@@ -236,4 +240,50 @@ func ZeroSSLDownloadCert(certificate ZeroSSLExternalCert) (string, string, error
 		return "", "", fmt.Errorf("There was a problem requesting a certificate: %s", apiError.Error.Type)
 	}
 	return certResponse.Certificate, certResponse.CaBundle, nil
+}
+
+func ZeroSSLRevokeCert(certificateId string) (err error) {
+	apiKey, found := os.LookupEnv("ZEROSSL_API_KEY")
+	if !found {
+		return fmt.Errorf("Failed to get the ZEROSSL_API_KEY environment variable. Make sure it's set")
+	}
+	apiUrl := fmt.Sprintf(
+		"%s/certificates/%s/revoke?access_key=%s",
+		zeroSSLBaseUrl, certificateId, apiKey,
+	)
+	client := &http.Client{}
+	request, err := http.NewRequest("POST", apiUrl, nil)
+	if err != nil {
+		return err
+	}
+	request.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	resp, err := client.Do(request)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != 200 {
+		body, _ := ioutil.ReadAll(resp.Body)
+		return fmt.Errorf("Received bad response from ZeroSSL: %v - %v", resp.StatusCode, string(body))
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	var revokeCert ZeroSSLCertRevoke
+	err = json.Unmarshal(body, &revokeCert)
+	if err != nil {
+		var apiError ZeroSSLApiError
+		err = json.Unmarshal(body, &apiError)
+		if err != nil {
+			fmt.Printf("Unknown error occured: %v\n", string(body))
+			return err
+		}
+		return fmt.Errorf("There was a problem requesting a certificate: %s", apiError.Error.Type)
+	}
+	if revokeCert.Success != "1" {
+		fmt.Printf("Unknown error occured: %v\n", string(body))
+		return fmt.Errorf("There was a problem requesting a certificate: %s", revokeCert)
+	}
+	return nil
 }
