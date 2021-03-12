@@ -63,7 +63,7 @@ type ZeroSSLCertResponse struct {
 }
 
 type ZeroSSLCertRevoke struct {
-	Success string `json:"success"`
+	Success int `json:"success"`
 }
 
 func ZeroSSLGenerateCsr(keyBytes []byte, domain string) (csrBuffer bytes.Buffer, err error) {
@@ -281,7 +281,7 @@ func ZeroSSLRevokeCert(certificateId string) (err error) {
 		}
 		return fmt.Errorf("There was a problem requesting a certificate: %s", apiError.Error.Type)
 	}
-	if revokeCert.Success != "1" {
+	if revokeCert.Success != 1 {
 		fmt.Printf("Unknown error occured: %v\n", string(body))
 		return fmt.Errorf("There was a problem requesting a certificate: %s", revokeCert)
 	}
