@@ -853,6 +853,7 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 		}()
 		err = certprovider.ZeroSSLValidateCert(externalCert)
 		if err != nil {
+			certServer.Close()
 			return returnCert, certId, err
 		}
 		rpcsLog.Debug("requested certificate to be validated")
@@ -861,6 +862,7 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 		for {
 			newCert, err := certprovider.ZeroSSLGetCert(externalCert)
 			if err != nil {
+				certServer.Close()
 				return returnCert, certId, err
 			}
 			status := newCert.Status
@@ -871,17 +873,20 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 			} else if status == "draft" {
 				err = certprovider.ZeroSSLValidateCert(externalCert)
 				if err != nil {
+					certServer.Close()
 					return returnCert, certId, err
 				}
 			}
 			if retries > 3 {
 				rpcsLog.Error("Still can't get a certificate after 3 retries. Failing...")
+				certServer.Close()
 				return returnCert, "", fmt.Errorf("Timed out trying to create SSL Certificate")
 			}
 			if checkCount > 15 {
 				rpcsLog.Warn("Timed out waiting for cert. Requesting a new one.")
 				externalCert, err = certprovider.ZeroSSLRequestCert(csr, cfg.ExternalSSLDomain)
 				if err != nil {
+					certServer.Close()
 					return returnCert, certId, err
 				}
 				rpcsLog.Infof("received cert request with id %s", externalCert.Id)
@@ -894,10 +899,12 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 		certId = externalCert.Id
 		certificate, caBundle, err := certprovider.ZeroSSLDownloadCert(externalCert)
 		if err != nil {
+			certServer.Close()
 			return returnCert, certId, err
 		}
 		externalCertBytes := []byte(certificate + "\n" + caBundle)
 		if err = ioutil.WriteFile(certLocation, externalCertBytes, 0644); err != nil {
+			certServer.Close()
 			return returnCert, certId, err
 		}
 		rpcsLog.Infof("successfully wrote external SSL certificate to %s",
@@ -906,6 +913,7 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 			externalCertBytes, keyBytes,
 		)
 		if err != nil {
+			certServer.Close()
 			return returnCert, certId, err
 		}
 		rpcsLog.Info("shutting down certificate validator server")
@@ -952,7 +960,7 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (*tls.Config,
 			cfg, keyBytes, externalSSLCertPath,
 		)
 		if err != nil {
-			rpcsLog.Info(err)
+			rpcsLog.Warn(err)
 			failedProvision = true
 		}
 	}
