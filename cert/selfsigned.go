@@ -16,7 +16,7 @@ import (
 	"time"
 
 	"github.com/lightningnetwork/lnd/keychain"
- 	"github.com/lightningnetwork/lnd/lnencrypt"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 )
 
 var (
@@ -203,7 +203,7 @@ func IsOutdated(cert *x509.Certificate, tlsExtraIPs,
 func GenCertPair(org, certFile, keyFile string, tlsExtraIPs,
 	tlsExtraDomains []string, tlsDisableAutofill bool,
 	certValidity time.Duration, encryptKey bool,
- 	keyRing keychain.KeyRing) ([]byte, []byte, error) {
+	keyRing keychain.KeyRing) ([]byte, []byte, error) {
 
 	now := time.Now()
 	validUntil := now.Add(certValidity)
