@@ -1231,7 +1231,6 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 			failedProvision = true
 		}
 	}
-
 	rpcsLog.Infof("Done generating ephemeral TLS certificates")
 
 	certData, _, err := cert.LoadCert(
@@ -1392,7 +1391,6 @@ func getTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 			}
 		}
 	}
-
 	certData, parsedCert, err := cert.LoadCert(
 		certBytes, keyBytes,
 	)
@@ -1482,7 +1480,6 @@ func getTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 				}
 			}
 		}
-
 		// If key encryption is set, then decrypt the file.
 		// We don't need to do a file type check here because GenCertPair
 		// has been ran with the same value for cfg.TLSEncryptKey.
