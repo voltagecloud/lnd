@@ -297,6 +297,13 @@ func GenCertPair(org, certFile, keyFile string, tlsExtraIPs,
 		return nil, nil, fmt.Errorf("failed to encode certificate: %v", err)
 	}
 
+<<<<<<< HEAD
+=======
+	keybytes, err := x509.MarshalECPrivateKey(priv)
+	if err != nil {
+		return nil, nil, fmt.Errorf("unable to encode privkey: %v", err)
+	}
+>>>>>>> config+lnd+cert: Add support in lnd for encrypting the TLS private key.
 	keyBuf := &bytes.Buffer{}
 	err = pem.Encode(keyBuf, &pem.Block{Type: encodeString,
 		Bytes: keyBytes})

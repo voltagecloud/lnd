@@ -142,3 +142,39 @@ func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
 		return tlsr.cert, nil
 	}
 }
+
+// NewTLSReloader is used to create a new TLS Reloader that will be used
+// to update the TLS certificate without restarting the server.
+func NewTLSReloader(certBytes, keyBytes []byte) (*TlsReloader, error) {
+	result := &TlsReloader{}
+	cert, _, err := LoadCert(certBytes, keyBytes)
+	if err != nil {
+		return nil, err
+	}
+	result.cert = &cert
+	return result, nil
+}
+
+// AttemptReload will make an attempt to update the TLS certificate
+// and key used by the server.
+func (tlsr *TlsReloader) AttemptReload(certBytes, keyBytes []byte) error {
+	newCert, _, err := LoadCert(certBytes, keyBytes)
+	if err != nil {
+		return err
+	}
+	tlsr.certMu.Lock()
+	defer tlsr.certMu.Unlock()
+	tlsr.cert = &newCert
+	return nil
+}
+
+// GetCertificateFunc is used in the server's TLS configuration to
+// determine the correct TLS certificate to server on a request.
+func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
+	*tls.Certificate, error) {
+	return func(clientHello *tls.ClientHelloInfo) (*tls.Certificate, error) {
+		tlsr.certMu.RLock()
+		defer tlsr.certMu.RUnlock()
+		return tlsr.cert, nil
+	}
+}
