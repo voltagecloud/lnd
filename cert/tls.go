@@ -141,6 +141,7 @@ func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
 		defer tlsr.certMu.RUnlock()
 		return tlsr.cert, nil
 	}
+	return config
 }
 
 // NewTLSReloader is used to create a new TLS Reloader that will be used
