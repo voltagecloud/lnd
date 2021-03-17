@@ -58,6 +58,7 @@ const (
 	defaultRPCPort            = 10009
 	defaultRESTPort           = 8080
 	defaultPeerPort           = 9735
+	defaultExternalSSLPort    = 8787
 	defaultRPCHost            = "localhost"
 
 	defaultNoSeedBackup                  = false
@@ -241,6 +242,10 @@ type Config struct {
 	LetsEncryptListen string `long:"letsencryptlisten" description:"The IP:port on which lnd will listen for Let's Encrypt challenges. Let's Encrypt will always try to contact on port 80. Often non-root processes are not allowed to bind to ports lower than 1024. This configuration option allows a different port to be used, but must be used in combination with port forwarding from port 80. This configuration can also be used to specify another IP address to listen on, for example an IPv6 address."`
 	LetsEncryptDomain string `long:"letsencryptdomain" description:"Request a Let's Encrypt certificate for this domain. Note that the certicate is only requested and stored when the first rpc connection comes in."`
 
+	ExternalSSLProvider string `long:"externalsslprovider" description:"The provider to use when requesting SSL Certificates"`
+	ExternalSSLPort     int    `long:"externalsslport" description:"The port on which lnd will listen for certificate validation challenges."`
+	ExternalSSLDomain   string `long:"externalssldomain" description:"Request an external certificate for this domain"`
+
 	// We'll parse these 'raw' string arguments into real net.Addrs in the
 	// loadConfig function. We need to expose the 'raw' strings so the
 	// command line library can access them.
@@ -413,6 +418,7 @@ func DefaultConfig() Config {
 		TLSCertDuration:   defaultTLSCertDuration,
 		LetsEncryptDir:    defaultLetsEncryptDir,
 		LetsEncryptListen: defaultLetsEncryptListen,
+		ExternalSSLPort:   defaultExternalSSLPort,
 		LogDir:            defaultLogDir,
 		MaxLogFiles:       defaultMaxLogFiles,
 		MaxLogFileSize:    defaultMaxLogFileSize,
@@ -638,6 +644,15 @@ func LoadConfig(interceptor signal.Interceptor) (*Config, error) {
 	return cleanCfg, nil
 }
 
+func contains(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
+}
+
 // ValidateConfig check the given configuration to be sane. This makes sure no
 // illegal values or combination of values are set. All file system paths are
 // normalized. The cleaned up config is returned on success.
@@ -661,6 +676,24 @@ func ValidateConfig(cfg Config, usageMessage string,
 		if cfg.Watchtower.TowerDir == defaultTowerDir {
 			cfg.Watchtower.TowerDir =
 				filepath.Join(cfg.DataDir, defaultTowerSubDirname)
+		}
+	}
+
+	if cfg.ExternalSSLProvider != "" {
+		if cfg.ExternalSSLDomain == "" {
+			return nil, fmt.Errorf("you must supply a domain when requesting external certificates")
+		}
+
+		supportedSSLProviders := []string{"zerossl"}
+		isSupported := contains(supportedSSLProviders, cfg.ExternalSSLProvider)
+		if !isSupported {
+			return nil, fmt.Errorf("Received unsupported external ssl provider: %s", cfg.ExternalSSLProvider)
+		}
+
+		if cfg.ExternalSSLProvider != "" {
+			if err := os.MkdirAll(fmt.Sprintf("%s/%s/", lndDir, cfg.ExternalSSLProvider), 0700); err != nil {
+				return nil, err
+			}
 		}
 	}
 
