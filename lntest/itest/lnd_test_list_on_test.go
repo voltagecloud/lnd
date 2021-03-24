@@ -387,4 +387,15 @@ var allTestCases = []*testCase{
 		name: "3rd party anchor spend",
 		test: testAnchorThirdPartySpend,
 	},
+<<<<<<< HEAD
+=======
+	{
+		name: "taproot",
+		test: testTaproot,
+	},
+	{
+		name: "addpeer config",
+		test: testAddPeerConfig,
+	},
+>>>>>>> 4d9fff916 (itest: test config option for picking particular peers)
 }
