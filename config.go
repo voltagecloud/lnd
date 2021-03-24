@@ -229,6 +229,7 @@ type Config struct {
 	DisableRest       bool          `long:"norest" description:"Disable REST API"`
 	DisableRestTLS    bool          `long:"no-rest-tls" description:"Disable TLS for REST connections"`
 	NAT               bool          `long:"nat" description:"Toggle NAT traversal support (using either UPnP or NAT-PMP) to automatically advertise your external IP address to the network -- NOTE this does not support devices behind multiple NATs"`
+	AddPeers	  []string	`long:"addpeer" description:"Specify peers to connect to first"`
 	MinBackoff        time.Duration `long:"minbackoff" description:"Shortest backoff when reconnecting to persistent peers. Valid time units are {s, m, h}."`
 	MaxBackoff        time.Duration `long:"maxbackoff" description:"Longest backoff when reconnecting to persistent peers. Valid time units are {s, m, h}."`
 	ConnectionTimeout time.Duration `long:"connectiontimeout" description:"The timeout value for network connections. Valid time units are {ms, s, m, h}."`
