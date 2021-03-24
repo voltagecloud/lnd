@@ -290,4 +290,8 @@ var allTestCases = []*testCase{
 		name: "stateless init",
 		test: testStatelessInit,
 	},
+        {
+		name: "addpeer config",
+		test: testAddPeerConfig,
+	},
 }
