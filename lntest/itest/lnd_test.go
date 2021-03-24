@@ -11,9 +11,12 @@ import (
 	"io"
 	"io/ioutil"
 	"math"
+	network "net"
 	"os"
 	"reflect"
+	"strconv"
 	"strings"
+	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
@@ -36,6 +39,7 @@ import (
 	"github.com/lightningnetwork/lnd/labels"
 	"github.com/lightningnetwork/lnd/lncfg"
 	"github.com/lightningnetwork/lnd/lnrpc"
+	"github.com/lightningnetwork/lnd/lnrpc/invoicesrpc"
 	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
 	"github.com/lightningnetwork/lnd/lnrpc/signrpc"
 	"github.com/lightningnetwork/lnd/lnrpc/walletrpc"
@@ -43,6 +47,7 @@ import (
 	"github.com/lightningnetwork/lnd/lnrpc/wtclientrpc"
 	"github.com/lightningnetwork/lnd/lntest"
 	"github.com/lightningnetwork/lnd/lntest/wait"
+	"github.com/lightningnetwork/lnd/lntypes"
 	"github.com/lightningnetwork/lnd/lnwallet"
 	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
 	"github.com/lightningnetwork/lnd/lnwire"
@@ -13793,6 +13798,565 @@ func assertTxLabel(ctx context.Context, t *harnessTest,
 					label, txn.Label)
 			}
 		}
+	}
+}
+
+// testHoldInvoicePersistence tests that a sender to a hold-invoice, can be
+// restarted before the payment gets settled, and still be able to receive the
+// preimage.
+func testHoldInvoicePersistence(net *lntest.NetworkHarness, t *harnessTest) {
+	ctxb := context.Background()
+
+	const (
+		chanAmt     = btcutil.Amount(1000000)
+		numPayments = 10
+	)
+
+	// Create carol, and clean up when the test finishes.
+	carol, err := net.NewNode("Carol", nil)
+	if err != nil {
+		t.Fatalf("unable to create new nodes: %v", err)
+	}
+	defer shutdownAndAssert(net, t, carol)
+
+	// Connect Alice to Carol.
+	ctxt, _ := context.WithTimeout(ctxb, defaultTimeout)
+	if err := net.ConnectNodes(ctxb, net.Alice, carol); err != nil {
+		t.Fatalf("unable to connect alice to carol: %v", err)
+	}
+
+	// Open a channel between Alice and Carol which is private so that we
+	// cover the addition of hop hints for hold invoices.
+	ctxt, _ = context.WithTimeout(ctxb, channelOpenTimeout)
+	chanPointAlice := openChannelAndAssert(
+		ctxt, t, net, net.Alice, carol,
+		lntest.OpenChannelParams{
+			Amt:     chanAmt,
+			Private: true,
+		},
+	)
+
+	// Wait for Alice and Carol to receive the channel edge from the
+	// funding manager.
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	err = net.Alice.WaitForNetworkChannelOpen(ctxt, chanPointAlice)
+	if err != nil {
+		t.Fatalf("alice didn't see the alice->carol channel before "+
+			"timeout: %v", err)
+	}
+
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	err = carol.WaitForNetworkChannelOpen(ctxt, chanPointAlice)
+	if err != nil {
+		t.Fatalf("carol didn't see the carol->alice channel before "+
+			"timeout: %v", err)
+	}
+
+	// Create preimages for all payments we are going to initiate.
+	var preimages []lntypes.Preimage
+	for i := 0; i < numPayments; i++ {
+		var preimage lntypes.Preimage
+		_, err = rand.Read(preimage[:])
+		if err != nil {
+			t.Fatalf("unable to generate preimage: %v", err)
+		}
+
+		preimages = append(preimages, preimage)
+	}
+
+	// Let Carol create hold-invoices for all the payments.
+	var (
+		payAmt         = btcutil.Amount(4)
+		payReqs        []string
+		invoiceStreams []invoicesrpc.Invoices_SubscribeSingleInvoiceClient
+	)
+
+	for _, preimage := range preimages {
+		payHash := preimage.Hash()
+
+		// Make our invoices private so that we get coverage for adding
+		// hop hints.
+		invoiceReq := &invoicesrpc.AddHoldInvoiceRequest{
+			Memo:    "testing",
+			Value:   int64(payAmt),
+			Hash:    payHash[:],
+			Private: true,
+		}
+		ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+		resp, err := carol.AddHoldInvoice(ctxt, invoiceReq)
+		if err != nil {
+			t.Fatalf("unable to add invoice: %v", err)
+		}
+
+		ctx, cancel := context.WithCancel(ctxb)
+		defer cancel()
+
+		stream, err := carol.SubscribeSingleInvoice(
+			ctx,
+			&invoicesrpc.SubscribeSingleInvoiceRequest{
+				RHash: payHash[:],
+			},
+		)
+		if err != nil {
+			t.Fatalf("unable to subscribe to invoice: %v", err)
+		}
+
+		invoiceStreams = append(invoiceStreams, stream)
+		payReqs = append(payReqs, resp.PaymentRequest)
+	}
+
+	// Wait for all the invoices to reach the OPEN state.
+	for _, stream := range invoiceStreams {
+		invoice, err := stream.Recv()
+		if err != nil {
+			t.Fatalf("err: %v", err)
+		}
+
+		if invoice.State != lnrpc.Invoice_OPEN {
+			t.Fatalf("expected OPEN, got state: %v", invoice.State)
+		}
+	}
+
+	// Let Alice initiate payments for all the created invoices.
+	var paymentStreams []routerrpc.Router_SendPaymentV2Client
+	for _, payReq := range payReqs {
+		ctx, cancel := context.WithCancel(ctxb)
+		defer cancel()
+
+		payStream, err := net.Alice.RouterClient.SendPaymentV2(
+			ctx, &routerrpc.SendPaymentRequest{
+				PaymentRequest: payReq,
+				TimeoutSeconds: 60,
+				FeeLimitSat:    1000000,
+			},
+		)
+		if err != nil {
+			t.Fatalf("unable to send alice htlc: %v", err)
+		}
+
+		paymentStreams = append(paymentStreams, payStream)
+	}
+
+	// Wait for inlight status update.
+	for _, payStream := range paymentStreams {
+		payment, err := payStream.Recv()
+		if err != nil {
+			t.Fatalf("Failed receiving status update: %v", err)
+		}
+
+		if payment.Status != lnrpc.Payment_IN_FLIGHT {
+			t.Fatalf("state not in flight: %v", payment.Status)
+		}
+	}
+
+	// The payments should now show up in Alice's ListInvoices, with a zero
+	// preimage, indicating they are not yet settled.
+	err = wait.NoError(func() error {
+		req := &lnrpc.ListPaymentsRequest{
+			IncludeIncomplete: true,
+		}
+		ctxt, _ = context.WithTimeout(ctxt, defaultTimeout)
+		paymentsResp, err := net.Alice.ListPayments(ctxt, req)
+		if err != nil {
+			return fmt.Errorf("error when obtaining payments: %v",
+				err)
+		}
+
+		// Gather the payment hashes we are looking for in the
+		// response.
+		payHashes := make(map[string]struct{})
+		for _, preimg := range preimages {
+			payHashes[preimg.Hash().String()] = struct{}{}
+		}
+
+		var zeroPreimg lntypes.Preimage
+		for _, payment := range paymentsResp.Payments {
+			_, ok := payHashes[payment.PaymentHash]
+			if !ok {
+				continue
+			}
+
+			// The preimage should NEVER be non-zero at this point.
+			if payment.PaymentPreimage != zeroPreimg.String() {
+				t.Fatalf("expected zero preimage, got %v",
+					payment.PaymentPreimage)
+			}
+
+			// We wait for the payment attempt to have been
+			// properly recorded in the DB.
+			if len(payment.Htlcs) == 0 {
+				return fmt.Errorf("no attempt recorded")
+			}
+
+			delete(payHashes, payment.PaymentHash)
+		}
+
+		if len(payHashes) != 0 {
+			return fmt.Errorf("payhash not found in response")
+		}
+
+		return nil
+	}, defaultTimeout)
+	if err != nil {
+		t.Fatalf("predicate not satisfied: %v", err)
+	}
+
+	// Wait for all invoices to be accepted.
+	for _, stream := range invoiceStreams {
+		invoice, err := stream.Recv()
+		if err != nil {
+			t.Fatalf("err: %v", err)
+		}
+
+		if invoice.State != lnrpc.Invoice_ACCEPTED {
+			t.Fatalf("expected ACCEPTED, got state: %v",
+				invoice.State)
+		}
+	}
+
+	// Restart alice. This to ensure she will still be able to handle
+	// settling the invoices after a restart.
+	if err := net.RestartNode(net.Alice, nil); err != nil {
+		t.Fatalf("Node restart failed: %v", err)
+	}
+
+	// Now after a restart, we must re-track the payments. We set up a
+	// goroutine for each to track thir status updates.
+	var (
+		statusUpdates []chan *lnrpc.Payment
+		wg            sync.WaitGroup
+		quit          = make(chan struct{})
+	)
+
+	defer close(quit)
+	for _, preimg := range preimages {
+		hash := preimg.Hash()
+
+		ctx, cancel := context.WithCancel(ctxb)
+		defer cancel()
+
+		payStream, err := net.Alice.RouterClient.TrackPaymentV2(
+			ctx, &routerrpc.TrackPaymentRequest{
+				PaymentHash: hash[:],
+			},
+		)
+		if err != nil {
+			t.Fatalf("unable to send track payment: %v", err)
+		}
+
+		// We set up a channel where we'll forward any status update.
+		upd := make(chan *lnrpc.Payment)
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+
+			for {
+				payment, err := payStream.Recv()
+				if err != nil {
+					close(upd)
+					return
+				}
+
+				select {
+				case upd <- payment:
+				case <-quit:
+					return
+				}
+			}
+		}()
+
+		statusUpdates = append(statusUpdates, upd)
+	}
+
+	// Wait for the in-flight status update.
+	for _, upd := range statusUpdates {
+		select {
+		case payment, ok := <-upd:
+			if !ok {
+				t.Fatalf("failed getting payment update")
+			}
+
+			if payment.Status != lnrpc.Payment_IN_FLIGHT {
+				t.Fatalf("state not in in flight: %v",
+					payment.Status)
+			}
+		case <-time.After(5 * time.Second):
+			t.Fatalf("in flight status not recevied")
+		}
+	}
+
+	// Settle invoices half the invoices, cancel the rest.
+	for i, preimage := range preimages {
+		ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+		if i%2 == 0 {
+			settle := &invoicesrpc.SettleInvoiceMsg{
+				Preimage: preimage[:],
+			}
+			_, err = carol.SettleInvoice(ctxt, settle)
+		} else {
+			hash := preimage.Hash()
+			settle := &invoicesrpc.CancelInvoiceMsg{
+				PaymentHash: hash[:],
+			}
+			_, err = carol.CancelInvoice(ctxt, settle)
+		}
+		if err != nil {
+			t.Fatalf("unable to cancel/settle invoice: %v", err)
+		}
+	}
+
+	// Make sure we get the expected status update.
+	for i, upd := range statusUpdates {
+		// Read until the payment is in a terminal state.
+		var payment *lnrpc.Payment
+		for payment == nil {
+			select {
+			case p, ok := <-upd:
+				if !ok {
+					t.Fatalf("failed getting payment update")
+				}
+
+				if p.Status == lnrpc.Payment_IN_FLIGHT {
+					continue
+				}
+
+				payment = p
+			case <-time.After(5 * time.Second):
+				t.Fatalf("in flight status not recevied")
+			}
+		}
+
+		// Assert terminal payment state.
+		if i%2 == 0 {
+			if payment.Status != lnrpc.Payment_SUCCEEDED {
+				t.Fatalf("state not succeeded : %v",
+					payment.Status)
+			}
+		} else {
+			if payment.FailureReason !=
+				lnrpc.PaymentFailureReason_FAILURE_REASON_INCORRECT_PAYMENT_DETAILS {
+
+				t.Fatalf("state not failed: %v",
+					payment.FailureReason)
+			}
+		}
+	}
+
+	// Check that Alice's invoices to be shown as settled and failed
+	// accordingly, and preimages matching up.
+	req := &lnrpc.ListPaymentsRequest{
+		IncludeIncomplete: true,
+	}
+	ctxt, _ = context.WithTimeout(ctxt, defaultTimeout)
+	paymentsResp, err := net.Alice.ListPayments(ctxt, req)
+	if err != nil {
+		t.Fatalf("error when obtaining Alice payments: %v", err)
+	}
+	for i, preimage := range preimages {
+		paymentHash := preimage.Hash()
+		var p string
+		for _, resp := range paymentsResp.Payments {
+			if resp.PaymentHash == paymentHash.String() {
+				p = resp.PaymentPreimage
+				break
+			}
+		}
+		if p == "" {
+			t.Fatalf("payment not found")
+		}
+
+		if i%2 == 0 {
+			if p != preimage.String() {
+				t.Fatalf("preimage doesn't match: %v vs %v",
+					p, preimage.String())
+			}
+		} else {
+			if p != lntypes.ZeroHash.String() {
+				t.Fatalf("preimage not zero: %v", p)
+			}
+		}
+	}
+}
+
+// testExternalFundingChanPoint tests that we're able to carry out a normal
+// channel funding workflow given a channel point that was constructed outside
+// the main daemon.
+func testExternalFundingChanPoint(net *lntest.NetworkHarness, t *harnessTest) {
+	ctxb := context.Background()
+
+	// First, we'll create two new nodes that we'll use to open channel
+	// between for this test.
+	carol, err := net.NewNode("carol", nil)
+	require.NoError(t.t, err)
+	defer shutdownAndAssert(net, t, carol)
+
+	dave, err := net.NewNode("dave", nil)
+	require.NoError(t.t, err)
+	defer shutdownAndAssert(net, t, dave)
+
+	// Carol will be funding the channel, so we'll send some coins over to
+	// her and ensure they have enough confirmations before we proceed.
+	ctxt, _ := context.WithTimeout(ctxb, defaultTimeout)
+	err = net.SendCoins(ctxt, btcutil.SatoshiPerBitcoin, carol)
+	require.NoError(t.t, err)
+
+	// Before we start the test, we'll ensure both sides are connected to
+	// the funding flow can properly be executed.
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	err = net.EnsureConnected(ctxt, carol, dave)
+	require.NoError(t.t, err)
+
+	// At this point, we're ready to simulate our external channel funding
+	// flow. To start with, we'll create a pending channel with a shim for
+	// a transaction that will never be published.
+	const thawHeight uint32 = 10
+	const chanSize = funding.MaxBtcFundingAmount
+	fundingShim1, chanPoint1, _ := deriveFundingShim(
+		net, t, carol, dave, chanSize, thawHeight, 1, false,
+	)
+	_ = openChannelStream(
+		ctxb, t, net, carol, dave, lntest.OpenChannelParams{
+			Amt:         chanSize,
+			FundingShim: fundingShim1,
+		},
+	)
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	assertNumOpenChannelsPending(ctxt, t, carol, dave, 1)
+
+	// That channel is now pending forever and normally would saturate the
+	// max pending channel limit for both nodes. But because the channel is
+	// externally funded, we should still be able to open another one. Let's
+	// do exactly that now. For this one we publish the transaction so we
+	// can mine it later.
+	fundingShim2, chanPoint2, _ := deriveFundingShim(
+		net, t, carol, dave, chanSize, thawHeight, 2, true,
+	)
+
+	// At this point, we'll now carry out the normal basic channel funding
+	// test as everything should now proceed as normal (a regular channel
+	// funding flow).
+	carolChan, daveChan, _, err := basicChannelFundingTest(
+		t, net, carol, dave, fundingShim2,
+	)
+	require.NoError(t.t, err)
+
+	// Both channels should be marked as frozen with the proper thaw
+	// height.
+	if carolChan.ThawHeight != thawHeight {
+		t.Fatalf("expected thaw height of %v, got %v",
+			carolChan.ThawHeight, thawHeight)
+	}
+	if daveChan.ThawHeight != thawHeight {
+		t.Fatalf("expected thaw height of %v, got %v",
+			daveChan.ThawHeight, thawHeight)
+	}
+
+	// Next, to make sure the channel functions as normal, we'll make some
+	// payments within the channel.
+	payAmt := btcutil.Amount(100000)
+	invoice := &lnrpc.Invoice{
+		Memo:  "new chans",
+		Value: int64(payAmt),
+	}
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	resp, err := dave.AddInvoice(ctxt, invoice)
+	require.NoError(t.t, err)
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	err = completePaymentRequests(
+		ctxt, carol, carol.RouterClient, []string{resp.PaymentRequest},
+		true,
+	)
+	require.NoError(t.t, err)
+
+	// Now that the channels are open, and we've confirmed that they're
+	// operational, we'll now ensure that the channels are frozen as
+	// intended (if requested).
+	//
+	// First, we'll try to close the channel as Carol, the initiator. This
+	// should fail as a frozen channel only allows the responder to
+	// initiate a channel close.
+	ctxt, _ = context.WithTimeout(ctxb, channelCloseTimeout)
+	_, _, err = net.CloseChannel(ctxt, carol, chanPoint2, false)
+	if err == nil {
+		t.Fatalf("carol wasn't denied a co-op close attempt for a " +
+			"frozen channel")
+	}
+
+	// Next we'll try but this time with Dave (the responder) as the
+	// initiator. This time the channel should be closed as normal.
+	ctxt, _ = context.WithTimeout(ctxb, channelCloseTimeout)
+	closeChannelAndAssert(ctxt, t, net, dave, chanPoint2, false)
+
+	// As a last step, we check if we still have the pending channel hanging
+	// around because we never published the funding TX.
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	assertNumOpenChannelsPending(ctxt, t, carol, dave, 1)
+
+	// Let's make sure we can abandon it.
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	_, err = carol.AbandonChannel(ctxt, &lnrpc.AbandonChannelRequest{
+		ChannelPoint:           chanPoint1,
+		PendingFundingShimOnly: true,
+	})
+	require.NoError(t.t, err)
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	_, err = dave.AbandonChannel(ctxt, &lnrpc.AbandonChannelRequest{
+		ChannelPoint:           chanPoint1,
+		PendingFundingShimOnly: true,
+	})
+	require.NoError(t.t, err)
+
+	// It should now not appear in the pending channels anymore.
+	assertNumOpenChannelsPending(ctxt, t, carol, dave, 0)
+}
+
+// testAddPeerConfig tests that the "--addpeer" config flag successfully adds
+// a new peer.
+func testAddPeerConfig(net *lntest.NetworkHarness, t *harnessTest) {
+	ctxb := context.Background()
+
+	ctxt, _ := context.WithTimeout(ctxb, defaultTimeout)
+	alice := net.Alice
+	info, err := alice.GetInfo(ctxt, &lnrpc.GetInfoRequest{})
+	if err != nil {
+		t.Fatalf("unable to retrieve node info: %v", err)
+	}
+
+	alicePeerAddress := info.Uris[0]
+
+	// Create a new node (Carol) with Alice as a peer.
+	args := []string{
+		fmt.Sprintf("--addpeer=%v", alicePeerAddress),
+	}
+	carol, err := net.NewNode("Carol", args)
+	if err != nil {
+		t.Fatalf("unable to create new node: %v", err)
+	}
+	defer shutdownAndAssert(net, t, carol)
+
+	// If we list Carol's peers, Alice should already be
+	// listed as one, since we specified her using the
+	// addpeer flag.
+	ctxt, _ = context.WithTimeout(ctxb, defaultTimeout)
+	listPeersRequest := &lnrpc.ListPeersRequest{}
+	listPeersResp, err := carol.ListPeers(ctxt, listPeersRequest)
+	if err != nil {
+		t.Fatalf("unable to query for peers: %v", err)
+	}
+
+	parsedPeerAddr, err := lncfg.ParseLNAddressString(
+		alicePeerAddress, strconv.Itoa(9735), network.ResolveTCPAddr,
+	)
+	if err != nil {
+		t.Fatalf("Couldn't parse address string: %v", err)
+	}
+
+	parsedKeyStr := fmt.Sprintf(
+		"%x", parsedPeerAddr.IdentityKey.SerializeCompressed(),
+	)
+
+	if parsedKeyStr != listPeersResp.Peers[0].PubKey {
+		t.Fatalf("addpeer flag did not work as expected")
 	}
 }
 

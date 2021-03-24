@@ -322,4 +322,8 @@ var allTestCases = []*testCase{
 		name: "etcd_failover",
 		test: testEtcdFailover,
 	},
+	{
+		name: "addpeer config",
+		test: testAddPeerConfig,
+	},
 }
