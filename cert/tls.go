@@ -179,3 +179,7 @@ func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
 		return tlsr.cert, nil
 	}
 }
+
+func (tlsr *TlsReloader) GetCert() *tls.Certificate {
+	return tlsr.cert
+}
