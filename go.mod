@@ -17,6 +17,9 @@ require (
 	github.com/btcsuite/btcwallet/wtxmgr v1.3.0
 	github.com/davecgh/go-spew v1.1.1
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/dustin/go-humanize v1.0.0 // indirect
+	github.com/go-co-op/gocron v1.0.0 // indirect
 	github.com/go-errors/errors v1.0.1
 	github.com/go-openapi/strfmt v0.19.5 // indirect
 	github.com/golang/protobuf v1.4.3
