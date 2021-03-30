@@ -66,7 +66,18 @@ type ZeroSSLCertRevoke struct {
 	Success int `json:"success"`
 }
 
-func ZeroSSLGenerateCsr(keyBytes []byte, domain string) (csrBuffer bytes.Buffer, err error) {
+type CertProvider interface {
+	GenerateCsr([]byte, string) (bytes.Buffer, error)
+	RequestCert(bytes.Buffer, string) (ZeroSSLExternalCert, error)
+	ValidateCert(ZeroSSLExternalCert) error
+	GetCert(string) (ZeroSSLExternalCert, error)
+	DownloadCert(ZeroSSLExternalCert) (string, string, error)
+	RevokeCert(string) error
+}
+
+type ZeroSSL struct{}
+
+func (ZeroSSL) GenerateCsr(keyBytes []byte, domain string) (csrBuffer bytes.Buffer, err error) {
 	block, _ := pem.Decode(keyBytes)
 	x509Encoded := block.Bytes
 	privKey, err := x509.ParsePKCS1PrivateKey(x509Encoded)
@@ -90,7 +101,7 @@ func ZeroSSLGenerateCsr(keyBytes []byte, domain string) (csrBuffer bytes.Buffer,
 	return csrBuffer, nil
 }
 
-func ZeroSSLRequestCert(csr bytes.Buffer, domain string) (certificate ZeroSSLExternalCert, err error) {
+func (ZeroSSL) RequestCert(csr bytes.Buffer, domain string) (certificate ZeroSSLExternalCert, err error) {
 	apiKey, found := os.LookupEnv("ZEROSSL_API_KEY")
 	if !found {
 		return certificate, fmt.Errorf("Failed to get the ZEROSSL_API_KEY environment variable. Make sure it's set")
@@ -132,7 +143,7 @@ func ZeroSSLRequestCert(csr bytes.Buffer, domain string) (certificate ZeroSSLExt
 	return certificate, nil
 }
 
-func ZeroSSLValidateCert(certificate ZeroSSLExternalCert) error {
+func (ZeroSSL) ValidateCert(certificate ZeroSSLExternalCert) error {
 	apiKey, found := os.LookupEnv("ZEROSSL_API_KEY")
 	if !found {
 		return fmt.Errorf("Failed to get the ZEROSSL_API_KEY environment variable. Make sure it's set")
@@ -161,14 +172,14 @@ func ZeroSSLValidateCert(certificate ZeroSSLExternalCert) error {
 	return nil
 }
 
-func ZeroSSLGetCert(certificate ZeroSSLExternalCert) (newCertificate ZeroSSLExternalCert, err error) {
+func (ZeroSSL) GetCert(certId string) (newCertificate ZeroSSLExternalCert, err error) {
 	apiKey, found := os.LookupEnv("ZEROSSL_API_KEY")
 	if !found {
 		return newCertificate, fmt.Errorf("Failed to get the ZEROSSL_API_KEY environment variable. Make sure it's set")
 	}
 	apiUrl := fmt.Sprintf(
 		"%s/certificates/%s?access_key=%s",
-		zeroSSLBaseUrl, certificate.Id, apiKey,
+		zeroSSLBaseUrl, certId, apiKey,
 	)
 	client := &http.Client{}
 	request, err := http.NewRequest("GET", apiUrl, nil)
@@ -201,7 +212,7 @@ func ZeroSSLGetCert(certificate ZeroSSLExternalCert) (newCertificate ZeroSSLExte
 	return newCertificate, nil
 }
 
-func ZeroSSLDownloadCert(certificate ZeroSSLExternalCert) (string, string, error) {
+func (ZeroSSL) DownloadCert(certificate ZeroSSLExternalCert) (string, string, error) {
 	apiKey, found := os.LookupEnv("ZEROSSL_API_KEY")
 	if !found {
 		return "", "", fmt.Errorf("Failed to get the ZEROSSL_API_KEY environment variable. Make sure it's set")
@@ -242,7 +253,7 @@ func ZeroSSLDownloadCert(certificate ZeroSSLExternalCert) (string, string, error
 	return certResponse.Certificate, certResponse.CaBundle, nil
 }
 
-func ZeroSSLRevokeCert(certificateId string) (err error) {
+func (ZeroSSL) RevokeCert(certificateId string) (err error) {
 	apiKey, found := os.LookupEnv("ZEROSSL_API_KEY")
 	if !found {
 		return fmt.Errorf("Failed to get the ZEROSSL_API_KEY environment variable. Make sure it's set")
