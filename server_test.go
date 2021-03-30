@@ -11,6 +11,7 @@ import (
 	"crypto/x509"
 	"crypto/x509/pkix"
 	"encoding/pem"
+	"fmt"
 	"io/ioutil"
 	"math/big"
 	"net"
@@ -18,6 +19,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/lightningnetwork/lnd/cert"
+	"github.com/lightningnetwork/lnd/certprovider"
+	"github.com/lightningnetwork/lnd/chainreg"
 	"github.com/lightningnetwork/lnd/lntest/mock"
 )
 
@@ -72,42 +76,12 @@ func TestTLSAutoRegeneration(t *testing.T) {
 	certPath := tempDirPath + "/tls.cert"
 	keyPath := tempDirPath + "/tls.key"
 
-	certDerBytes, keyBytes := genExpiredCertPair(t, tempDirPath)
-	expiredCert, err := x509.ParseCertificate(certDerBytes)
-	if err != nil {
-		t.Fatalf("failed to parse certificate: %v", err)
-	}
+	// Generate an expired certificate.
+	certDerBytes, keyBytes := genTestCertPair(t, time.Now())
 
-	certBuf := bytes.Buffer{}
-	err = pem.Encode(
-		&certBuf, &pem.Block{
-			Type:  "CERTIFICATE",
-			Bytes: certDerBytes,
-		},
-	)
+	expiredCert := encodeAndWriteCert(t, certDerBytes, keyBytes, certPath, keyPath)
 	if err != nil {
-		t.Fatalf("failed to encode certificate: %v", err)
-	}
-
-	keyBuf := bytes.Buffer{}
-	err = pem.Encode(
-		&keyBuf, &pem.Block{
-			Type:  "EC PRIVATE KEY",
-			Bytes: keyBytes,
-		},
-	)
-	if err != nil {
-		t.Fatalf("failed to encode private key: %v", err)
-	}
-
-	// Write cert and key files.
-	err = ioutil.WriteFile(tempDirPath+"/tls.cert", certBuf.Bytes(), 0644)
-	if err != nil {
-		t.Fatalf("failed to write cert file: %v", err)
-	}
-	err = ioutil.WriteFile(tempDirPath+"/tls.key", keyBuf.Bytes(), 0600)
-	if err != nil {
-		t.Fatalf("failed to write key file: %v", err)
+		t.Fatalf("couldn't encode are write cert")
 	}
 
 	rpcListener := net.IPAddr{IP: net.ParseIP("127.0.0.1"), Zone: ""}
@@ -122,7 +96,8 @@ func TestTLSAutoRegeneration(t *testing.T) {
 		RPCListeners: rpcListeners,
 	}
 	keyRing := &mock.SecretKeyRing{}
-	_, _, _, cleanUp, _, err := getTLSConfig(cfg, keyRing)
+	externalCertMaker := externalCert{}
+	_, _, _, cleanUp, _, _, err := getTLSConfig(cfg, keyRing, externalCertMaker)
 	if err != nil {
 		t.Fatalf("couldn't retrieve TLS config")
 	}
@@ -147,9 +122,8 @@ func TestTLSAutoRegeneration(t *testing.T) {
 	}
 }
 
-// genExpiredCertPair generates an expired key/cert pair to test that expired
-// certificates are being regenerated correctly.
-func genExpiredCertPair(t *testing.T, certDirPath string) ([]byte, []byte) {
+// genTestCertPair generates a test expired key/cert pair.
+func genTestCertPair(t *testing.T, expiredTime time.Time) ([]byte, []byte) {
 	// Max serial number.
 	serialNumberLimit := new(big.Int).Lsh(big.NewInt(1), 128)
 
@@ -174,7 +148,7 @@ func genExpiredCertPair(t *testing.T, certDirPath string) ([]byte, []byte) {
 			CommonName:   host,
 		},
 		NotBefore: time.Now().Add(-time.Hour * 24),
-		NotAfter:  time.Now(),
+		NotAfter:  expiredTime,
 
 		KeyUsage: x509.KeyUsageKeyEncipherment |
 			x509.KeyUsageDigitalSignature | x509.KeyUsageCertSign,
@@ -204,4 +178,250 @@ func genExpiredCertPair(t *testing.T, certDirPath string) ([]byte, []byte) {
 	}
 
 	return certDerBytes, keyBytes
+}
+
+func encodeAndWriteCert(t *testing.T, certDerBytes, keyBytes []byte, certPath, keyPath string) *x509.Certificate {
+	expiredCert, err := x509.ParseCertificate(certDerBytes)
+	if err != nil {
+		t.Fatalf("failed to parse certificate: %v", err)
+	}
+
+	certBuf := bytes.Buffer{}
+	err = pem.Encode(
+		&certBuf, &pem.Block{
+			Type:  "CERTIFICATE",
+			Bytes: certDerBytes,
+		},
+	)
+	if err != nil {
+		t.Fatalf("failed to encode certificate: %v", err)
+	}
+
+	keyBuf := bytes.Buffer{}
+	err = pem.Encode(
+		&keyBuf, &pem.Block{
+			Type:  "EC PRIVATE KEY",
+			Bytes: keyBytes,
+		},
+	)
+	if err != nil {
+		t.Fatalf("failed to encode private key: %v", err)
+	}
+
+	// Write cert and key files.
+	err = ioutil.WriteFile(certPath, certBuf.Bytes(), 0644)
+	if err != nil {
+		t.Fatalf("failed to write cert file: %v", err)
+	}
+	err = ioutil.WriteFile(keyPath, keyBuf.Bytes(), 0600)
+	if err != nil {
+		t.Fatalf("failed to write key file: %v", err)
+	}
+
+	return expiredCert
+}
+
+type mockExternalCert struct{}
+
+// createExternalCert creates an Externally provisioned SSL Certificate
+func (c mockExternalCert) create(cfg *Config, keyBytes []byte, certLocation string) (returnCert tls.Certificate, certId string, err error) {
+	testCertId := "certId"
+
+	// Max serial number.
+	serialNumberLimit := new(big.Int).Lsh(big.NewInt(1), 128)
+
+	// Generate a serial number that's below the serialNumberLimit.
+	serialNumber, err := rand.Int(rand.Reader, serialNumberLimit)
+	if err != nil {
+		return tls.Certificate{}, certId, err
+	}
+
+	host := "lightning"
+
+	// Create a simple ip address for the fake certificate.
+	ipAddresses := []net.IP{net.ParseIP("127.0.0.1"), net.ParseIP("::1")}
+
+	dnsNames := []string{host, "unix", "unixpacket"}
+
+	// Construct the certificate template.
+	template := x509.Certificate{
+		SerialNumber: serialNumber,
+		Subject: pkix.Name{
+			Organization: []string{"lnd autogenerated cert"},
+			CommonName:   host,
+		},
+		NotBefore: time.Now().Add(-time.Hour * 24),
+		NotAfter:  time.Now().Add(time.Hour * time.Duration(720)),
+
+		KeyUsage: x509.KeyUsageKeyEncipherment |
+			x509.KeyUsageDigitalSignature | x509.KeyUsageCertSign,
+		IsCA:                  true, // so can sign self.
+		BasicConstraintsValid: true,
+
+		DNSNames:    dnsNames,
+		IPAddresses: ipAddresses,
+	}
+
+	block, _ := pem.Decode(keyBytes)
+	x509Encoded := block.Bytes
+	priv, err := x509.ParsePKCS1PrivateKey(x509Encoded)
+	if err != nil {
+		return tls.Certificate{}, certId, err
+	}
+
+	certDerBytes, err := x509.CreateCertificate(
+		rand.Reader, &template, &template, &priv.PublicKey, priv,
+	)
+	if err != nil {
+		return tls.Certificate{}, certId, err
+	}
+
+	certBuf := bytes.Buffer{}
+	err = pem.Encode(
+		&certBuf, &pem.Block{
+			Type:  "CERTIFICATE",
+			Bytes: certDerBytes,
+		},
+	)
+	if err != nil {
+		return tls.Certificate{}, certId, err
+	}
+
+	// Write cert and key files.
+	err = ioutil.WriteFile(certLocation, certBuf.Bytes(), 0644)
+	if err != nil {
+		return tls.Certificate{}, certId, err
+	}
+
+	tlsCert, _, err := cert.LoadCert(
+		certBuf.Bytes(), keyBytes,
+	)
+	if err != nil {
+		return tls.Certificate{}, testCertId, err
+	}
+
+	return tlsCert, testCertId, nil
+}
+
+// TestExpiredCertDetector tests that when ZeroSSL is used, the program checks
+// correctly whether the ZeroSSL certificate is expiring soon. And, if so,
+// deletes and regenerates the certificate.
+func TestExpiredCertDetector(t *testing.T) {
+	provider := "zerossl"
+
+	tempDir, err := ioutil.TempDir("", "certtest")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.RemoveAll(tempDir)
+
+	tempZerosslDir := fmt.Sprintf("%s/%s", tempDir, provider)
+
+	err = os.MkdirAll(tempZerosslDir, 0755)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	certPath := tempDir + "/tls.cert"
+	externalCertPath := tempZerosslDir + "/tls.cert"
+	keyPath := tempDir + "/tls.key"
+
+	certBytes, keyBytes := genTestCertPair(t, time.Now().Add(time.Hour*time.Duration(48)))
+	_ = encodeAndWriteCert(t, certBytes, keyBytes, externalCertPath, keyPath)
+
+	testCfg := &Config{
+		LndDir:              tempDir,
+		TLSKeyPath:          keyPath,
+		TLSCertPath:         certPath,
+		ExternalSSLProvider: provider,
+		TLSEncryptKey:       false,
+	}
+
+	// The certificate is expiring in two days. Our expired cert detector
+	// should notice this.
+	expired, err := CheckForExpiredCert(testCfg)
+	if err != nil {
+		t.Fatal("failed to check whether certificate is expiring")
+	}
+	if !expired {
+		t.Fatal("failed to detect expiring certificate")
+	}
+
+	// The cert is expiring soon. Let's see if the code deletes and
+	// regenerates the certificate successfully.
+	testCertprovider := certprovider.MockZeroSSLProvider{}
+	var testActiveChainControl chainreg.ChainControl
+
+	certBytes, keyBytes, err = cert.GetCertBytesFromPath(externalCertPath, keyPath)
+	if err != nil {
+		t.Fatal("failed to retrieve cert bytes from disk: ", err)
+	}
+
+	testTlsReloader, err := cert.NewTLSReloader(certBytes, keyBytes)
+	if err != nil {
+		t.Fatal("failed to create tls reloader: ", err)
+	}
+
+	testCertId := "testCertId"
+	mockExternalCert := mockExternalCert{}
+
+	err = DeleteAndRegenerateCert(testCfg.TLSCertPath, &testCertprovider, testCfg, &testActiveChainControl, testCertId, testTlsReloader, mockExternalCert)
+	if err != nil {
+		t.Fatal("failed to regenerate certificate: ", err)
+	}
+
+	// DeleteAndRegenerateCert should have regenerated a certificate with a longer expiry.
+	certBytes, keyBytes, err = cert.GetCertBytesFromPath(externalCertPath, testCfg.TLSKeyPath)
+	if err != nil {
+		t.Fatal("failed to retrieve cert bytes from disk: ", err)
+	}
+
+	_, certData, err := cert.LoadCert(
+		certBytes, keyBytes,
+	)
+	if err != nil {
+		t.Fatal("failed to load cert: ", err)
+	}
+
+	expiresTime := certData.NotAfter
+	currTime := time.Now()
+	timeRemaining := expiresTime.Sub(currTime).Hours()
+
+	if timeRemaining <= 72 {
+		t.Fatal("did not successfully create a new certificate: ", err)
+	}
+
+	// Also ensure that the newly generated certificate made it into the tlsReloader
+	reloaderCert := testTlsReloader.GetCert()
+
+	// Now parse the PEM block of the reloader's certificate
+	certData, err = x509.ParseCertificate(reloaderCert.Certificate[0])
+	if err != nil {
+		t.Fatal("did not successfully parse certificate from reloader: ", err)
+	}
+
+	expiresTime = certData.NotAfter
+	currTime = time.Now()
+	timeRemaining = expiresTime.Sub(currTime).Hours()
+
+	if timeRemaining <= 72 {
+		t.Fatal("did not successfully reload certificate: ", err)
+	}
+
+	// Also should check that the detector notices when the certificate
+	// is NOT expiring soon. Try a certificate that's expiring in 4 days.
+	certDerBytes, keyBytes := genTestCertPair(t, time.Now().Add(time.Hour*time.Duration(96)))
+
+	_ = encodeAndWriteCert(t, certDerBytes, keyBytes, externalCertPath, keyPath)
+	if err != nil {
+		t.Fatalf("couldn't encode are write cert")
+	}
+
+	expired, err = CheckForExpiredCert(testCfg)
+	if err != nil {
+		t.Fatal("failed to check whether certificate is expiring")
+	}
+	if expired {
+		t.Fatalf("this certificate is not expiring in three days or less")
+	}
 }
