@@ -968,6 +968,11 @@ func createExternalCert(cfg *Config, keyBytes []byte, certLocation string) (retu
 					return returnCert, certId, err
 				}
 				rpcsLog.Infof("received cert request with id %s", externalCert.Id)
+				err = certprovider.ZeroSSLValidateCert(externalCert)
+				if err != nil {
+					certServer.Close()
+					return returnCert, certId, err
+				}
 				retries += 1
 				checkCount = 0
 			}
