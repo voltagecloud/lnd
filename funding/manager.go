@@ -1236,9 +1236,17 @@ func (f *Manager) handleFundingOpen(peer lnpeer.Peer,
 		return
 	}
 
+	allChannels, err := f.cfg.Wallet.Cfg.Database.FetchAllChannels()
+        if err != nil {
+                f.failFundingFlow(
+                        peer, msg.PendingChannelID, err,
+                )
+                return
+        }
+
 	// If there's a maxopenchannels value set, then we compare the number of
 	// currently open channels against the max.
-	if f.cfg.MaxOpenChannels > 0 && len(channels) >= f.cfg.MaxOpenChannels {
+	if f.cfg.MaxOpenChannels > 0 && len(allChannels) >= f.cfg.MaxOpenChannels {
 		f.failFundingFlow(
 			peer, msg.PendingChannelID,
 			lnwire.ErrMaxOpenChannels,
