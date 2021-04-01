@@ -3089,12 +3089,17 @@ func TestFundingManagerMaxOpenChannels(t *testing.T) {
 			errorMsg, gotError := aliceMsg.(*lnwire.Error)
 			if gotError {
 				t.Fatalf("expected OpenChannel to be sent "+
-					"from bob, instead got error: %v",
+					"from alice, instead got error: %v",
 					errorMsg.Error())
 			}
 			t.Fatalf("expected OpenChannel to be sent from "+
 				"alice, instead got %T", aliceMsg)
 		}
+
+		if i == len(initReqs) - 1 {
+                        lastOpen = openChannelReq
+                        continue
+                }
 
 		// Let Bob handle the init message.
 		bob.fundingMgr.ProcessFundingMsg(openChannelReq, alice)
