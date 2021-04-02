@@ -3,6 +3,8 @@ package lnencrypt
 import (
 	"testing"
 
+	"github.com/btcsuite/btcd/btcec"
+	"github.com/lightningnetwork/lnd/lntest/channels"
 	"github.com/lightningnetwork/lnd/lntest/mock"
 	"github.com/stretchr/testify/require"
 )
@@ -11,12 +13,19 @@ import (
 func TestTorPrivateKey(t *testing.T) {
 	t.Parallel()
 
+	testPrivKeyBytes := channels.AlicesPrivKey
+
+	testPrivKey, _ := btcec.PrivKeyFromBytes(btcec.S256(),
+		testPrivKeyBytes[:])
+
 	tmpPrivateKey := "thisisasecretkey"
 	tmpPrivateKeyPath := "/tmp/torprivatekey"
-	keyRing := &mock.SecretKeyRing{}
+	keyRing := &mock.SecretKeyRing{
+		RootKey: testPrivKey,
+	}
 
 	err := WriteTorPrivateKey(
-		tmpPrivateKey,
+		tmpPrivateKeyPath,
 		tmpPrivateKey,
 		keyRing,
 	)
@@ -31,7 +40,7 @@ func TestTorPrivateKey(t *testing.T) {
 		false,
 		keyRing,
 	)
-	require.NoError(
+	require.Error(
 		t, err,
 		"should have failed to get private key",
 	)
