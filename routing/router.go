@@ -1055,7 +1055,10 @@ func (r *ChannelRouter) networkHandler() {
 			// we've somehow missed some blocks. Here we'll catch
 			// up the chain with the latest blocks.
 			currentHeight := atomic.LoadUint32(&r.bestHeight)
+			log.Infof("DDEBUG: Received height: %v ", currentHeight)
+			log.Infof("DDEBUG: Received chainUpdate: %v ", chainUpdate.Height)
 			if chainUpdate.Height == currentHeight+1 {
+				log.Infof("DDEBUG: Heights are equal: %v / %v ", chainUpdate.Height, currentHeight+1)
 				err := r.updateGraphWithClosedChannels(chainUpdate, uint32(chainUpdate.Height))
 				if err != nil {
 					log.Errorf("unable to prune graph with closed channels: "+
