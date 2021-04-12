@@ -73,6 +73,16 @@ func ZeroSSLGenerateCsr(keyBytes []byte, domain string) (csrBuffer bytes.Buffer,
 	if err != nil {
 		return csrBuffer, err
 	}
+
+	// If there's more than one domain, turn it into a slice for procesing.
+	domains := make([]string, 0)
+	multi_domains := false
+	if strings.ContainsAny(domain, ",") {
+		multi_domains = true
+		domains = strings.Split(domain, ",")
+		domain = domains[0]
+	}
+
 	subj := pkix.Name{
 		CommonName: domain,
 	}
@@ -82,6 +92,11 @@ func ZeroSSLGenerateCsr(keyBytes []byte, domain string) (csrBuffer bytes.Buffer,
 		RawSubject:         asn1Subj,
 		SignatureAlgorithm: x509.SHA256WithRSA,
 	}
+
+	if multi_domains {
+		template.DNSNames = domains[1:]
+	}
+
 	csrBytes, err := x509.CreateCertificateRequest(rand.Reader, &template, privKey)
 	if err != nil {
 		return csrBuffer, err
