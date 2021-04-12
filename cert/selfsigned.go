@@ -5,6 +5,7 @@ import (
 	"crypto/ecdsa"
 	"crypto/elliptic"
 	"crypto/rand"
+	"crypto/rsa"
 	"crypto/x509"
 	"crypto/x509/pkix"
 	"encoding/pem"
@@ -208,8 +209,9 @@ func IsOutdated(cert *x509.Certificate, tlsExtraIPs,
 // This function is adapted from https://github.com/btcsuite/btcd and
 // https://github.com/btcsuite/btcutil
 func GenCertPair(org, certFile, keyFile string, tlsExtraIPs,
-	tlsExtraDomains []string, tlsDisableAutofill bool, certValidity time.Duration,
-	encryptKey bool, keyRing keychain.KeyRing) ([]byte, []byte, error) {
+	tlsExtraDomains []string, certValidity time.Duration,
+	tlsDisableAutofill bool, encryptKey bool,
+	keyRing keychain.KeyRing, keyType string) ([]byte, []byte, error) {
 
 	now := time.Now()
 	validUntil := now.Add(certValidity)
@@ -229,12 +231,6 @@ func GenCertPair(org, certFile, keyFile string, tlsExtraIPs,
 	// certificate.
 	host, dnsNames := dnsNames(tlsExtraDomains, tlsDisableAutofill)
 	ipAddresses, err := ipAddresses(tlsExtraIPs, tlsDisableAutofill)
-	if err != nil {
-		return nil, nil, err
-	}
-
-	// Generate a private key for the certificate.
-	priv, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -259,10 +255,46 @@ func GenCertPair(org, certFile, keyFile string, tlsExtraIPs,
 		IPAddresses: ipAddresses,
 	}
 
-	derBytes, err := x509.CreateCertificate(rand.Reader, &template,
-		&template, &priv.PublicKey, priv)
-	if err != nil {
-		return nil, nil, fmt.Errorf("failed to create certificate: %v", err)
+	// Generate a private key for the certificate.
+	var derBytes []byte
+	var keyBytes []byte
+	var encodeString string
+	if keyType == "ec" {
+		priv, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
+		if err != nil {
+			return nil, nil, err
+		}
+
+		derBytes, err = x509.CreateCertificate(rand.Reader, &template,
+			&template, &priv.PublicKey, priv)
+		if err != nil {
+			return nil, nil, fmt.Errorf("failed to create certificate: %v", err)
+		}
+
+		keyBytes, err = x509.MarshalECPrivateKey(priv)
+		if err != nil {
+			return nil, nil, fmt.Errorf("unable to encode privkey: %v", err)
+		}
+		encodeString = "EC PRIVATE KEY"
+	} else if keyType == "rsa" {
+		priv, err := rsa.GenerateKey(rand.Reader, 2048)
+		if err != nil {
+			return nil, nil, err
+		}
+
+		derBytes, err = x509.CreateCertificate(rand.Reader, &template,
+			&template, &priv.PublicKey, priv)
+		if err != nil {
+			return nil, nil, fmt.Errorf("failed to create certificate: %v", err)
+		}
+
+		keyBytes = x509.MarshalPKCS1PrivateKey(priv)
+		if err != nil {
+			return nil, nil, fmt.Errorf("unable to encode privkey: %v", err)
+		}
+		encodeString = "RSA PRIVATE KEY"
+	} else {
+		return nil, nil, fmt.Errorf("Unknown keyType: %s", keyType)
 	}
 
 	certBuf := &bytes.Buffer{}
@@ -272,13 +304,9 @@ func GenCertPair(org, certFile, keyFile string, tlsExtraIPs,
 		return nil, nil, fmt.Errorf("failed to encode certificate: %v", err)
 	}
 
-	keybytes, err := x509.MarshalECPrivateKey(priv)
-	if err != nil {
-		return nil, nil, fmt.Errorf("unable to encode privkey: %v", err)
-	}
 	keyBuf := &bytes.Buffer{}
-	err = pem.Encode(keyBuf, &pem.Block{Type: "EC PRIVATE KEY",
-		Bytes: keybytes})
+	err = pem.Encode(keyBuf, &pem.Block{Type: encodeString,
+		Bytes: keyBytes})
 	if err != nil {
 		return nil, nil, fmt.Errorf("failed to encode private key: %v", err)
 	}
