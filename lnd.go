@@ -245,12 +245,14 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 		return err
 	}
 
+	var cleanUp func()
 	defer cleanUp()
 
 	var serverOpts []grpc.ServerOption
 	var restDialOpts []grpc.DialOption
 	var restListen func(net.Addr) (net.Listener, error)
 	var tlsReloader *cert.TlsReloader
+	var err error
 	var certId string
 	externalCertMaker := externalCert{}
 
@@ -1235,19 +1237,6 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	if cfg.ExternalSSLProvider != "" {
 		externalCertMaker := externalCert{}
 		externalCertData, certId, err = externalCertMaker.create(
-			cfg, keyBytes, externalSSLCertPath,
-		)
-		if err != nil {
-			rpcsLog.Warn(err)
-			failedProvision = true
-		}
-	}
-
-	var externalCertData tls.Certificate
-	var certId string
-	var failedProvision bool
-	if cfg.ExternalSSLProvider != "" {
-		externalCertData, certId, err = createExternalCert(
 			cfg, keyBytes, externalSSLCertPath,
 		)
 		if err != nil {
