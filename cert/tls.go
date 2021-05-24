@@ -3,6 +3,9 @@ package cert
 import (
 	"crypto/tls"
 	"crypto/x509"
+	"io/ioutil"
+	"strings"
+	"sync"
 )
 
 var (
@@ -22,19 +25,42 @@ var (
 		tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
 		tls.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,
 	}
+	tlsRSACipherSuites = []uint16{
+		tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+		tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+	}
 )
 
+type TlsReloader struct {
+	certMu sync.RWMutex
+	cert   *tls.Certificate
+}
+
+// GetCertBytesFromPath reads the TLS certificate and key files at the given
+// certPath and keyPath and returns the file bytes.
+func GetCertBytesFromPath(certPath, keyPath string) (certBytes, keyBytes []byte, err error) {
+	certBytes, err = ioutil.ReadFile(certPath)
+	if err != nil {
+		return nil, nil, err
+	}
+	keyBytes, err = ioutil.ReadFile(keyPath)
+	if err != nil {
+		return nil, nil, err
+	}
+	return certBytes, keyBytes, nil
+}
+
 // LoadCert loads a certificate and its corresponding private key from the PEM
-// files indicated and returns the certificate in the two formats it is most
+// bytes indicated and returns the certificate in the two formats it is most
 // commonly used.
-func LoadCert(certPath, keyPath string) (tls.Certificate, *x509.Certificate,
+func LoadCert(certBytes, keyBytes []byte) (tls.Certificate, *x509.Certificate,
 	error) {
 
 	// The certData returned here is just a wrapper around the PEM blocks
 	// loaded from the file. The PEM is not yet fully parsed but a basic
 	// check is performed that the certificate and private key actually
 	// belong together.
-	certData, err := tls.LoadX509KeyPair(certPath, keyPath)
+	certData, err := tls.X509KeyPair(certBytes, keyBytes)
 	if err != nil {
 		return tls.Certificate{}, nil, err
 	}
@@ -51,10 +77,109 @@ func LoadCert(certPath, keyPath string) (tls.Certificate, *x509.Certificate,
 
 // TLSConfFromCert returns the default TLS configuration used for a server,
 // using the given certificate as identity.
-func TLSConfFromCert(certData tls.Certificate) *tls.Config {
-	return &tls.Config{
-		Certificates: []tls.Certificate{certData},
-		CipherSuites: tlsCipherSuites,
-		MinVersion:   tls.VersionTLS12,
+func TLSConfFromCert(certData []tls.Certificate) *tls.Config {
+	var config *tls.Config
+
+	getCertificate := func(h *tls.ClientHelloInfo) (*tls.Certificate, error) {
+		defaultCertList := []string{"localhost", "127.0.0.1"}
+		for _, host := range defaultCertList {
+			if strings.Contains(h.ServerName, host) {
+				return &certData[0], nil
+			}
+		}
+		return &certData[1], nil
 	}
+
+	if len(certData) > 1 {
+		config = &tls.Config{
+			Certificates:   []tls.Certificate{certData[0]},
+			GetCertificate: getCertificate,
+			CipherSuites:   tlsRSACipherSuites,
+			MinVersion:     tls.VersionTLS12,
+		}
+	} else {
+		config = &tls.Config{
+			Certificates: []tls.Certificate{certData[0]},
+			CipherSuites: tlsCipherSuites,
+			MinVersion:   tls.VersionTLS12,
+		}
+	}
+	return config
+}
+
+// NewTLSReloader is used to create a new TLS Reloader that will be used
+// to update the TLS certificate without restarting the server.
+func NewTLSReloader(certBytes, keyBytes []byte) (*TlsReloader, error) {
+	result := &TlsReloader{}
+	cert, _, err := LoadCert(certBytes, keyBytes)
+	if err != nil {
+		return nil, err
+	}
+	result.cert = &cert
+	return result, nil
+}
+
+// AttemptReload will make an attempt to update the TLS certificate
+// and key used by the server.
+func (tlsr *TlsReloader) AttemptReload(certBytes, keyBytes []byte) error {
+	newCert, _, err := LoadCert(certBytes, keyBytes)
+	if err != nil {
+		return err
+	}
+	tlsr.certMu.Lock()
+	defer tlsr.certMu.Unlock()
+	tlsr.cert = &newCert
+	return nil
+}
+
+// GetCertificateFunc is used in the server's TLS configuration to
+// determine the correct TLS certificate to server on a request.
+func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
+	*tls.Certificate, error) {
+	return func(clientHello *tls.ClientHelloInfo) (*tls.Certificate, error) {
+		tlsr.certMu.RLock()
+		defer tlsr.certMu.RUnlock()
+		return tlsr.cert, nil
+	}
+	return config
+}
+
+// NewTLSReloader is used to create a new TLS Reloader that will be used
+// to update the TLS certificate without restarting the server.
+func NewTLSReloader(certBytes, keyBytes []byte) (*TlsReloader, error) {
+	result := &TlsReloader{}
+	cert, _, err := LoadCert(certBytes, keyBytes)
+	if err != nil {
+		return nil, err
+	}
+	result.cert = &cert
+	return result, nil
+}
+
+// AttemptReload will make an attempt to update the TLS certificate
+// and key used by the server.
+func (tlsr *TlsReloader) AttemptReload(certBytes, keyBytes []byte) error {
+	newCert, _, err := LoadCert(certBytes, keyBytes)
+	if err != nil {
+		return err
+	}
+	tlsr.certMu.Lock()
+	defer tlsr.certMu.Unlock()
+	tlsr.cert = &newCert
+	return nil
+}
+
+// GetCertificateFunc is used in the server's TLS configuration to
+// determine the correct TLS certificate to server on a request.
+func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
+	*tls.Certificate, error) {
+	return func(clientHello *tls.ClientHelloInfo) (*tls.Certificate, error) {
+		tlsr.certMu.RLock()
+		defer tlsr.certMu.RUnlock()
+		return tlsr.cert, nil
+	}
+}
+
+func (tlsr *TlsReloader) GetCert() *tls.Certificate {
+	return tlsr.cert
 }
