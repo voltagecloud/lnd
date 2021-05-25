@@ -8,6 +8,7 @@ import (
 	"bytes"
 	"context"
 	"crypto/tls"
+	"crypto/x509"
 	"fmt"
 	"io/ioutil"
 	"net"
@@ -264,6 +265,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 	// so we can still have TLS even though the wallet isn't unlocked. These
 	// get thrown away for the real certificates once the wallet is unlocked.
 	// If TLSEncryptKey is false, then get the TLSConfig like normal.
+	ltndLog.Infof("Found that tlsencryption was %v", cfg.TLSEncryptKey)
 	if cfg.TLSEncryptKey {
 		serverOpts,
 			restDialOpts,
@@ -1235,6 +1237,7 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	var certId string
 	var failedProvision bool
 	if cfg.ExternalSSLProvider != "" {
+		rpcsLog.Infof("Creating an external cert here!!")
 		externalCertMaker := externalCert{}
 		externalCertData, certId, err = externalCertMaker.create(
 			cfg, keyBytes, externalSSLCertPath,
@@ -1242,12 +1245,15 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		if err != nil {
 			rpcsLog.Warn(err)
 			failedProvision = true
+		} else {
+			rpcsLog.Info("No error found on creating the certificate")
 		}
+		rpcsLog.Infof("Failed Provision was: %v", failedProvision)
 	}
 
 	rpcsLog.Infof("Done generating ephemeral TLS certificates")
 
-	certData, _, err := cert.LoadCert(
+	certData, parsedCert, err := cert.LoadCert(
 		certBytes, keyBytes,
 	)
 	if err != nil {
@@ -1265,11 +1271,11 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 
 	tlsCfg := cert.TLSConfFromCert(certList)
 	tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
-
-	restCreds, err := credentials.NewClientTLSFromFile(tmpCertPath, "")
-	if err != nil {
-		return nil, nil, nil, nil, nil, "", err
-	}
+	rpcsLog.Infof("Got list of %v", certList)
+	rpcsLog.Infof("Got tls config of %v", tlsCfg)
+	certPool := x509.NewCertPool()
+	certPool.AddCert(parsedCert)
+	restCreds := credentials.NewClientTLSFromCert(certPool, "")
 
 	cleanUp := func() {}
 	serverCreds := credentials.NewTLS(tlsCfg)
