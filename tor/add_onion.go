@@ -3,8 +3,6 @@ package tor
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
-	"os"
 )
 
 var (
@@ -45,45 +43,6 @@ type OnionStore interface {
 	DeletePrivateKey(OnionType) error
 }
 
-// OnionFile is a file-based implementation of the OnionStore interface that
-// stores an onion service's private key.
-type OnionFile struct {
-	privateKeyPath string
-	privateKeyPerm os.FileMode
-}
-
-// A compile-time constraint to ensure OnionFile satisfies the OnionStore
-// interface.
-var _ OnionStore = (*OnionFile)(nil)
-
-// NewOnionFile creates a file-based implementation of the OnionStore interface
-// to store an onion service's private key.
-func NewOnionFile(privateKeyPath string, privateKeyPerm os.FileMode) *OnionFile {
-	return &OnionFile{
-		privateKeyPath: privateKeyPath,
-		privateKeyPerm: privateKeyPerm,
-	}
-}
-
-// StorePrivateKey stores the private key at its expected path.
-func (f *OnionFile) StorePrivateKey(_ OnionType, privateKey []byte) error {
-	return ioutil.WriteFile(f.privateKeyPath, privateKey, f.privateKeyPerm)
-}
-
-// PrivateKey retrieves the private key from its expected path. If the file does
-// not exist, then ErrNoPrivateKey is returned.
-func (f *OnionFile) PrivateKey(_ OnionType) ([]byte, error) {
-	if _, err := os.Stat(f.privateKeyPath); os.IsNotExist(err) {
-		return nil, ErrNoPrivateKey
-	}
-	return ioutil.ReadFile(f.privateKeyPath)
-}
-
-// DeletePrivateKey removes the file containing the private key.
-func (f *OnionFile) DeletePrivateKey(_ OnionType) error {
-	return os.Remove(f.privateKeyPath)
-}
-
 // AddOnionConfig houses all of the required parameters in order to successfully
 // create a new onion service or restore an existing one.
 type AddOnionConfig struct {
@@ -114,8 +73,7 @@ type AddOnionConfig struct {
 // between the controller and the Tor server is closed. This can optionally
 // take an existing private key as input and return the generated onion
 // private key.
-func (c *Controller) AddOnion(cfg AddOnionConfig, privateKeyInput string,
-	returnKey bool) (*OnionAddr, error) {
+func (c *Controller) AddOnion(cfg AddOnionConfig, returnKey bool) (*OnionAddr, error) {
 
 	// Before sending the request to create an onion service to the Tor
 	// server, we'll make sure that it supports V3 onion services if that
@@ -138,24 +96,21 @@ func (c *Controller) AddOnion(cfg AddOnionConfig, privateKeyInput string,
 		keyParam = "NEW:" + V3KeyParam
 	}
 
-	if privateKeyInput == "" {
-		if cfg.Store != nil {
-			privateKey, err := cfg.Store.PrivateKey(cfg.Type)
-			switch err {
-			// Proceed to request a new onion service.
-			case ErrNoPrivateKey:
+	if cfg.Store != nil {
+		privateKey, err := cfg.Store.PrivateKey(cfg.Type)
+		switch err {
+		// Proceed to request a new onion service.
+		case ErrNoPrivateKey:
 
-			// Recover the onion service with the private key found.
-			case nil:
-				keyParam = string(privateKey)
+		// Recover the onion service with the private key found.
+		case nil:
+			keyParam = string(privateKey)
 
-			default:
-				return nil, err
-			}
+		default:
+			return nil, err
 		}
-	} else {
-		keyParam = privateKeyInput
 	}
+
 	// Now, we'll create a mapping from the virtual port to each target
 	// port. If no target ports were specified, we'll use the virtual port
 	// to provide a one-to-one mapping.
@@ -216,7 +171,7 @@ func (c *Controller) AddOnion(cfg AddOnionConfig, privateKeyInput string,
 	}
 	// If an onion store was provided and a key return wasn't requested,
 	// we'll store its private key to disk in the event that it needs to
-	// be recreated later on.We write the private key to disk every time
+	// be recreated later on. We write the private key to disk every time
 	// in case the user toggles the --tor.encryptkey flag.
 	if cfg.Store != nil && !returnKey {
 		err := cfg.Store.StorePrivateKey(cfg.Type, []byte(keyParam))

@@ -47,7 +47,6 @@ import (
 	"github.com/lightningnetwork/lnd/keychain"
 	"github.com/lightningnetwork/lnd/kvdb"
 	"github.com/lightningnetwork/lnd/lncfg"
-	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnpeer"
 	"github.com/lightningnetwork/lnd/lnrpc"
 	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
@@ -67,6 +66,7 @@ import (
 	"github.com/lightningnetwork/lnd/sweep"
 	"github.com/lightningnetwork/lnd/ticker"
 	"github.com/lightningnetwork/lnd/tor"
+	"github.com/lightningnetwork/lnd/tor/onionfile"
 	"github.com/lightningnetwork/lnd/walletunlocker"
 	"github.com/lightningnetwork/lnd/watchtower/blob"
 	"github.com/lightningnetwork/lnd/watchtower/wtclient"
@@ -2413,7 +2413,10 @@ func (s *server) createNewHiddenService() error {
 	onionCfg := tor.AddOnionConfig{
 		VirtualPort: defaultPeerPort,
 		TargetPorts: listenPorts,
-		Store:       tor.NewOnionFile(s.cfg.Tor.PrivateKeyPath, 0600),
+		Store: onionfile.NewOnionFile(
+			s.cfg.Tor.PrivateKeyPath, 0600, s.cfg.Tor.EncryptKey,
+			s.cc.KeyRing,
+		),
 	}
 
 	switch {
@@ -2423,24 +2426,9 @@ func (s *server) createNewHiddenService() error {
 		onionCfg.Type = tor.V3
 	}
 
-	returnKey := s.cfg.Tor.EncryptKey
-	privateKey, err := lnencrypt.ReadTorPrivateKey(
-		s.cfg.Tor.PrivateKeyPath, returnKey, s.cc.KeyRing,
-	)
+	addr, err := s.torController.AddOnion(onionCfg, s.cfg.Tor.EncryptKey)
 	if err != nil {
 		return err
-	}
-	addr, err := s.torController.AddOnion(onionCfg, privateKey, returnKey)
-	if err != nil {
-		return err
-	}
-	if s.cfg.Tor.EncryptKey {
-		err = lnencrypt.WriteTorPrivateKey(
-			s.cfg.Tor.PrivateKeyPath, addr.PrivateKey, s.cc.KeyRing,
-		)
-		if err != nil {
-			return err
-		}
 	}
 
 	// Now that the onion service has been created, we'll add the onion
