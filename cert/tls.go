@@ -109,9 +109,9 @@ func TLSConfFromCert(certData []tls.Certificate) *tls.Config {
 
 // NewTLSReloader is used to create a new TLS Reloader that will be used
 // to update the TLS certificate without restarting the server.
-func NewTLSReloader(certData []tls.Certificate, keyBytes []byte) (*TlsReloader, error) {
+func NewTLSReloader(certData []tls.Certificate) (*TlsReloader, error) {
 	result := &TlsReloader{}
-	result.cert = []tls.Certificate{certData[0]}
+	result.cert = certData
 	return result, nil
 }
 

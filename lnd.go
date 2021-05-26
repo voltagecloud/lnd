@@ -1268,7 +1268,7 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		certList = append(certList, externalCertData)
 	}
 
-	tlsr, err := cert.NewTLSReloader(certList, keyBytes)
+	tlsr, err := cert.NewTLSReloader(certList)
 	if err != nil {
 		return nil, nil, nil, nil, nil, "", err
 	}
@@ -1531,7 +1531,7 @@ func getTLSConfig(cfg *Config, keyRing keychain.KeyRing, externalCertMaker exter
 	if cfg.ExternalSSLProvider != "" && !failedProvision {
 		certList = append(certList, externalCertData)
 	}
-	tlsr, err := cert.NewTLSReloader(certList, keyBytes)
+	tlsr, err := cert.NewTLSReloader(certList)
 	if err != nil {
 		return nil, nil, nil, nil, nil, "", err
 	}
