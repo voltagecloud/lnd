@@ -940,10 +940,10 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 	// Now we want to remove that and load the persistent TLSConfig
 	// The wallet is unlocked at this point so we can use the real KeyRing
 	if cfg.TLSEncryptKey {
-		tmpCertPath := cfg.TLSCertPath + ".tmp"
+		tmpExternalCertPath := fmt.Sprintf("%s/%s/tls.cert.tmp", cfg.LndDir, cfg.ExternalSSLProvider)
 		zerossl := certprovider.ZeroSSL{}
 
-		err := DeleteAndRegenerateCert(tmpCertPath, zerossl, cfg, activeChainControl, certId, tlsReloader, externalCertMaker)
+		err := DeleteAndRegenerateCert(tmpExternalCertPath, zerossl, cfg, activeChainControl, certId, tlsReloader, externalCertMaker)
 		if err != nil {
 			err := fmt.Errorf("unable to delete and regenerate certificate: %v", err)
 			ltndLog.Error(err)
@@ -965,7 +965,8 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 				ltndLog.Error(err)
 			}
 			if expires {
-				err := DeleteAndRegenerateCert(cfg.TLSCertPath, zerossl, cfg, activeChainControl, certId, tlsReloader, externalCert{})
+				externalCertPath := fmt.Sprintf("%s/%s/tls.cert", cfg.LndDir, cfg.ExternalSSLProvider)
+				err := DeleteAndRegenerateCert(externalCertPath, zerossl, cfg, activeChainControl, certId, tlsReloader, externalCert{})
 				if err != nil {
 					err := fmt.Errorf("unable to delete and regenerate certificate: %v", err)
 					ltndLog.Error(err)
@@ -1659,38 +1660,21 @@ func CheckForExpiredCert(cfg *Config) (bool, error) {
 func DeleteAndRegenerateCert(certPath string, certprovider certprovider.CertProvider, cfg *Config, activeChainControl *chainreg.ChainControl, certId string, tlsReloader *cert.TlsReloader, externalCertMaker externalCertMaker) error {
 
 	if fileExists(certPath) {
-		err := os.Remove(cfg.TLSCertPath)
+		err := os.Remove(certPath)
 		if err != nil {
-			ltndLog.Warn("unable to delete cert at %v", cfg.TLSCertPath)
-			return err
-		}
-	}
-
-	if fileExists(cfg.TLSKeyPath) {
-		err := os.Remove(cfg.TLSKeyPath)
-		if err != nil {
-			ltndLog.Warn("unable to delete cert at %v", cfg.TLSCertPath)
-			return err
-		}
-	}
-
-	externalCertPath := fmt.Sprintf("%s/%s/tls.cert", cfg.LndDir, cfg.ExternalSSLProvider)
-
-	if fileExists(externalCertPath) {
-		err := os.Remove(externalCertPath)
-		if err != nil {
-			ltndLog.Warn("unable to delete temp or expiring cert at %v", externalCertPath)
+			ltndLog.Warnf("unable to delete cert at %v", certPath)
 			return err
 		}
 	}
 
 	_, _, _, _, _, _, err := getTLSConfig(cfg, activeChainControl.KeyRing, externalCertMaker)
 	if err != nil {
-		ltndLog.Error("unable to load TLS credentials: %v", err)
+		ltndLog.Errorf("unable to load TLS credentials: %v", err)
 		return err
 	}
 
-	certBytes, keyBytes, err := cert.GetCertBytesFromPath(cfg.TLSCertPath, cfg.TLSKeyPath)
+	externalCertPath := fmt.Sprintf("%s/%s/tls.cert", cfg.LndDir, cfg.ExternalSSLProvider)
+	certBytes, keyBytes, err := cert.GetCertBytesFromPath(externalCertPath, cfg.TLSKeyPath)
 	if err != nil {
 		return err
 	}
