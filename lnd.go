@@ -954,10 +954,11 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 	// If it's expiring in three days or less, we'll generate a new certificate using ZeroSSL.
 	if cfg.ExternalSSLProvider == "zerossl" {
 		zerossl := certprovider.ZeroSSL{}
-
+		ltndLog.Info("Starting up the cert checker")
 		s := gocron.NewScheduler(time.UTC)
 
 		s.Every(1).Day().Do(func() {
+			ltndLog.Info("looking at the cert now")
 			expires, err := CheckForExpiredCert(cfg)
 			if err != nil {
 				err := fmt.Errorf("failed to check whether certificate is expiring: %v", err)
@@ -1650,7 +1651,7 @@ func CheckForExpiredCert(cfg *Config) (bool, error) {
 	timeRemaining := expiresTime.Sub(currTime).Hours()
 
 	// 72 hours == three days
-	return timeRemaining < 72, nil
+	return timeRemaining < 1296, nil
 }
 
 // DeleteAndRegenerateCert deletes a certificate, either because it was a temporary certificate that is no longer needed, or it's
