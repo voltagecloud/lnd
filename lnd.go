@@ -1266,13 +1266,16 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	}
 	certList := []tls.Certificate{certData}
 	if cfg.ExternalSSLProvider != "" && !failedProvision {
+		rpcsLog.Infof("Appending cert to list here!!")
+		rpcsLog.Infof("%v", externalCertData)
 		certList = append(certList, externalCertData)
 	}
 
 	tlsCfg := cert.TLSConfFromCert(certList)
-	tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
+	//tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
 	rpcsLog.Infof("Got list of %v", certList)
 	rpcsLog.Infof("Got tls config of %v", tlsCfg)
+	rpcsLog.Infof("Got len of certList %v", len(certList))
 	certPool := x509.NewCertPool()
 	certPool.AddCert(parsedCert)
 	restCreds := credentials.NewClientTLSFromCert(certPool, "")
