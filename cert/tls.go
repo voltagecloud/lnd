@@ -33,7 +33,7 @@ var (
 
 type TlsReloader struct {
 	certMu sync.RWMutex
-	cert   *tls.Certificate
+	cert   []tls.Certificate
 }
 
 // GetCertBytesFromPath reads the TLS certificate and key files at the given
@@ -109,13 +109,9 @@ func TLSConfFromCert(certData []tls.Certificate) *tls.Config {
 
 // NewTLSReloader is used to create a new TLS Reloader that will be used
 // to update the TLS certificate without restarting the server.
-func NewTLSReloader(certBytes, keyBytes []byte) (*TlsReloader, error) {
+func NewTLSReloader(certData []tls.Certificate, keyBytes []byte) (*TlsReloader, error) {
 	result := &TlsReloader{}
-	cert, _, err := LoadCert(certBytes, keyBytes)
-	if err != nil {
-		return nil, err
-	}
-	result.cert = &cert
+	result.cert = []tls.Certificate{certData[0]}
 	return result, nil
 }
 
@@ -128,7 +124,9 @@ func (tlsr *TlsReloader) AttemptReload(certBytes, keyBytes []byte) error {
 	}
 	tlsr.certMu.Lock()
 	defer tlsr.certMu.Unlock()
-	tlsr.cert = &newCert
+	newList := []tls.Certificate{tlsr.cert[0]}
+	newList = append(newList, newCert)
+	tlsr.cert = newList
 	return nil
 }
 
@@ -137,12 +135,16 @@ func (tlsr *TlsReloader) AttemptReload(certBytes, keyBytes []byte) error {
 func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
 	*tls.Certificate, error) {
 	return func(clientHello *tls.ClientHelloInfo) (*tls.Certificate, error) {
-		tlsr.certMu.RLock()
-		defer tlsr.certMu.RUnlock()
-		return tlsr.cert, nil
+		defaultCertList := []string{"localhost", "127.0.0.1"}
+		for _, host := range defaultCertList {
+			if strings.Contains(clientHello.ServerName, host) {
+				return &tlsr.cert[0], nil
+			}
+		}
+		return &tlsr.cert[1], nil
 	}
 }
 
 func (tlsr *TlsReloader) GetCert() *tls.Certificate {
-	return tlsr.cert
+	return &tlsr.cert[0]
 }

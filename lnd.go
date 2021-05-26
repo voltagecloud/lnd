@@ -1260,10 +1260,6 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		return nil, nil, nil, nil, nil, "", err
 	}
 
-	tlsr, err := cert.NewTLSReloader(certBytes, keyBytes)
-	if err != nil {
-		return nil, nil, nil, nil, nil, "", err
-	}
 	certList := []tls.Certificate{certData}
 	if cfg.ExternalSSLProvider != "" && !failedProvision {
 		rpcsLog.Infof("Appending cert to list here!!")
@@ -1271,8 +1267,12 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		certList = append(certList, externalCertData)
 	}
 
+	tlsr, err := cert.NewTLSReloader(certList, keyBytes)
+	if err != nil {
+		return nil, nil, nil, nil, nil, "", err
+	}
 	tlsCfg := cert.TLSConfFromCert(certList)
-	//tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
+	tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
 	rpcsLog.Infof("Got list of %v", certList)
 	rpcsLog.Infof("Got tls config of %v", tlsCfg)
 	rpcsLog.Infof("Got len of certList %v", len(certList))
@@ -1526,13 +1526,13 @@ func getTLSConfig(cfg *Config, keyRing keychain.KeyRing, externalCertMaker exter
 		}
 	}
 
-	tlsr, err := cert.NewTLSReloader(certBytes, keyBytes)
-	if err != nil {
-		return nil, nil, nil, nil, nil, "", err
-	}
 	certList := []tls.Certificate{certData}
 	if cfg.ExternalSSLProvider != "" && !failedProvision {
 		certList = append(certList, externalCertData)
+	}
+	tlsr, err := cert.NewTLSReloader(certList, keyBytes)
+	if err != nil {
+		return nil, nil, nil, nil, nil, "", err
 	}
 	tlsCfg := cert.TLSConfFromCert(certList)
 	tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
