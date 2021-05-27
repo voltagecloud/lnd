@@ -81,13 +81,17 @@ func TLSConfFromCert(certData []tls.Certificate) *tls.Config {
 	var config *tls.Config
 
 	getCertificate := func(h *tls.ClientHelloInfo) (*tls.Certificate, error) {
-		defaultCertList := []string{"localhost", "127.0.0.1"}
-		for _, host := range defaultCertList {
-			if strings.Contains(h.ServerName, host) {
-				return &certData[0], nil
+		if len(certData) > 1 {
+			defaultCertList := []string{"localhost", "127.0.0.1"}
+			for _, host := range defaultCertList {
+				if strings.Contains(h.ServerName, host) {
+					return &certData[0], nil
+				}
 			}
+			return &certData[1], nil
+		} else {
+			return &certData[0], nil
 		}
-		return &certData[1], nil
 	}
 
 	if len(certData) > 1 {
@@ -135,13 +139,17 @@ func (tlsr *TlsReloader) AttemptReload(certBytes, keyBytes []byte) error {
 func (tlsr *TlsReloader) GetCertificateFunc() func(*tls.ClientHelloInfo) (
 	*tls.Certificate, error) {
 	return func(clientHello *tls.ClientHelloInfo) (*tls.Certificate, error) {
-		defaultCertList := []string{"localhost", "127.0.0.1"}
-		for _, host := range defaultCertList {
-			if strings.Contains(clientHello.ServerName, host) {
-				return &tlsr.cert[0], nil
+		if len(tlsr.cert) > 1 {
+			defaultCertList := []string{"localhost", "127.0.0.1"}
+			for _, host := range defaultCertList {
+				if strings.Contains(clientHello.ServerName, host) {
+					return &tlsr.cert[0], nil
+				}
 			}
+			return &tlsr.cert[1], nil
+		} else {
+			return &tlsr.cert[0], nil
 		}
-		return &tlsr.cert[1], nil
 	}
 }
 
