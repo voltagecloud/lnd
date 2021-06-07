@@ -26,7 +26,6 @@ import (
 	"github.com/btcsuite/btcutil"
 	"github.com/btcsuite/btcwallet/wallet"
 	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/go-co-op/gocron"
 	proxy "github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/lightninglabs/neutrino"
 	"github.com/lightninglabs/neutrino/headerfs"
@@ -950,33 +949,6 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 		}
 	}
 
-	// If we're using ZeroSSL, we'll spin up a goroutine to check when the certificate expires.
-	// If it's expiring in three days or less, we'll generate a new certificate using ZeroSSL.
-	if cfg.ExternalSSLProvider == "zerossl" {
-		zerossl := certprovider.ZeroSSL{}
-		ltndLog.Info("Starting up the cert checker")
-		s := gocron.NewScheduler(time.UTC)
-
-		s.Every(1).Day().Do(func() {
-			ltndLog.Info("looking at the cert now")
-			expires, err := CheckForExpiredCert(cfg)
-			if err != nil {
-				err := fmt.Errorf("failed to check whether certificate is expiring: %v", err)
-				ltndLog.Error(err)
-			}
-			if expires {
-				externalCertPath := fmt.Sprintf("%s/%s/tls.cert", cfg.LndDir, cfg.ExternalSSLProvider)
-				err := DeleteAndRegenerateCert(externalCertPath, zerossl, cfg, activeChainControl, certId, tlsReloader, externalCert{})
-				if err != nil {
-					err := fmt.Errorf("unable to delete and regenerate certificate: %v", err)
-					ltndLog.Error(err)
-				}
-			}
-		})
-
-		s.StartAsync()
-	}
-
 	// Now we have created all dependencies necessary to populate and
 	// start the RPC server.
 	err = rpcServer.addDeps(
@@ -1239,7 +1211,6 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	var certId string
 	var failedProvision bool
 	if cfg.ExternalSSLProvider != "" {
-		rpcsLog.Infof("Creating an external cert here!!")
 		externalCertMaker := externalCert{}
 		externalCertData, certId, err = externalCertMaker.create(
 			cfg, keyBytes, externalSSLCertPath,
@@ -1247,10 +1218,7 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 		if err != nil {
 			rpcsLog.Warn(err)
 			failedProvision = true
-		} else {
-			rpcsLog.Info("No error found on creating the certificate")
 		}
-		rpcsLog.Infof("Failed Provision was: %v", failedProvision)
 	}
 
 	rpcsLog.Infof("Done generating ephemeral TLS certificates")
@@ -1264,8 +1232,6 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 
 	certList := []tls.Certificate{certData}
 	if cfg.ExternalSSLProvider != "" && !failedProvision {
-		rpcsLog.Infof("Appending cert to list here!!")
-		rpcsLog.Infof("%v", externalCertData)
 		certList = append(certList, externalCertData)
 	}
 
@@ -1275,9 +1241,6 @@ func getEphemeralTLSConfig(cfg *Config, keyRing keychain.KeyRing) (
 	}
 	tlsCfg := cert.TLSConfFromCert(certList)
 	tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
-	rpcsLog.Infof("Got list of %v", certList)
-	rpcsLog.Infof("Got tls config of %v", tlsCfg)
-	rpcsLog.Infof("Got len of certList %v", len(certList))
 	certPool := x509.NewCertPool()
 	certPool.AddCert(parsedCert)
 	restCreds := credentials.NewClientTLSFromCert(certPool, "")
@@ -1658,6 +1621,15 @@ func CheckForExpiredCert(cfg *Config) (bool, error) {
 // DeleteAndRegenerateCert deletes a certificate, either because it was a temporary certificate that is no longer needed, or it's
 // about to expire. Then it regenerates a new one and attempts to reload the certificate.
 func DeleteAndRegenerateCert(certPath string, certprovider certprovider.CertProvider, cfg *Config, activeChainControl *chainreg.ChainControl, certId string, tlsReloader *cert.TlsReloader, externalCertMaker externalCertMaker) error {
+
+	selfsignedCertPath := fmt.Sprintf("%s.tmp", cfg.TLSCertPath)
+	if fileExists(selfsignedCertPath) {
+		err := os.Remove(selfsignedCertPath)
+		if err != nil {
+			ltndLog.Warnf("unable to delete cert at %v", selfsignedCertPath)
+			return err
+		}
+	}
 
 	if fileExists(certPath) {
 		err := os.Remove(certPath)
