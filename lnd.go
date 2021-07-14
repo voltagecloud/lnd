@@ -246,12 +246,14 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 		return err
 	}
 
+	var cleanUp func()
 	defer cleanUp()
 
 	var serverOpts []grpc.ServerOption
 	var restDialOpts []grpc.DialOption
 	var restListen func(net.Addr) (net.Listener, error)
 	var tlsReloader *cert.TlsReloader
+	var err error
 
 	// The real KeyRing isn't available until after the wallet is unlocked,
 	// but we need one now. Because we aren't encrypting anything here it can
