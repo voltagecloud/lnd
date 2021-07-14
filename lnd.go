@@ -1638,23 +1638,6 @@ func CheckForExpiredCert(cfg *Config) (bool, error) {
 // about to expire. Then it regenerates a new one and attempts to reload the certificate.
 func DeleteAndRegenerateCert(certPath string, certprovider certprovider.CertProvider, cfg *Config, activeChainControl *chainreg.ChainControl, certId string, tlsReloader *cert.TlsReloader, externalCertMaker externalCertMaker) error {
 
-	selfsignedCertPath := fmt.Sprintf("%s.tmp", cfg.TLSCertPath)
-	if fileExists(selfsignedCertPath) {
-		err := os.Remove(selfsignedCertPath)
-		if err != nil {
-			ltndLog.Warnf("unable to delete cert at %v", selfsignedCertPath)
-			return err
-		}
-	}
-
-	if fileExists(certPath) {
-		err := os.Remove(certPath)
-		if err != nil {
-			ltndLog.Warnf("unable to delete cert at %v", certPath)
-			return err
-		}
-	}
-
 	_, _, _, _, _, _, err := getTLSConfig(cfg, activeChainControl.KeyRing, externalCertMaker)
 	if err != nil {
 		ltndLog.Errorf("unable to load TLS credentials: %v", err)
