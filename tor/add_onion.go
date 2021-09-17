@@ -169,11 +169,11 @@ func (c *Controller) AddOnion(cfg AddOnionConfig, returnKey bool) (*OnionAddr, e
 	if ok {
 		keyParam = newPrivateKey
 	}
-	// If an onion store was provided and a key return wasn't requested,
+	// If an onion store was provided,
 	// we'll store its private key to disk in the event that it needs to
 	// be recreated later on. We write the private key to disk every time
 	// in case the user toggles the --tor.encryptkey flag.
-	if cfg.Store != nil && !returnKey {
+	if cfg.Store != nil {
 		err := cfg.Store.StorePrivateKey(cfg.Type, []byte(keyParam))
 		if err != nil {
 			return nil, fmt.Errorf("unable to write private key "+
