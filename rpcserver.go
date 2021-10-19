@@ -29,6 +29,7 @@ import (
 	"github.com/btcsuite/btcwallet/wallet/txauthor"
 	"github.com/davecgh/go-spew/spew"
 	proxy "github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/lightninglabs/pool/sidecar"
 	"github.com/lightningnetwork/lnd/autopilot"
 	"github.com/lightningnetwork/lnd/build"
 	"github.com/lightningnetwork/lnd/chainreg"
@@ -6898,4 +6899,51 @@ func (r *rpcServer) FundingStateStep(ctx context.Context,
 	// TODO(roasbeef): return resulting state? also add a method to query
 	// current state?
 	return &lnrpc.FundingStateStepResp{}, nil
+}
+
+// RegisterSidecar is step 2/4 of the sidecar negotiation between the provider
+// (the trader submitting the bid order) and the recipient (the trader receiving
+// the sidecar channel).
+// This step must be run by the recipient. The result is a sidecar ticket with
+// the recipient's node information and channel funding multisig pubkey filled
+// in. The ticket returned by this call will have the state "registered".
+func (r *rpcServer) RegisterSidecar(ctx context.Context,
+	req *lnrpc.RegisterSidecarRequest) (*lnrpc.SidecarTicket, error) {
+
+	if r.server.sidecarAcceptor == nil {
+		return nil, errors.New("Cannot register sidecar until sidecar"+
+			" acceptor is set up. Wait until node is fully synced.")
+	}
+
+	// Parse the ticket from its string encoded representation.
+	ticket, err := sidecar.DecodeString(req.Ticket)
+	if err != nil {
+		return nil, fmt.Errorf("error decoding ticket: %v", err)
+	}
+
+	// The sidecar acceptor will add all required information and add the
+	// ticket to our DB.
+	registeredTicket, err := r.server.sidecarAcceptor.RegisterSidecar(
+		ctx, *ticket,
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	// At this point, we'll now check if the ticket specifies that
+	// automated negotiation is to be sued, if so then we'll hand things
+	// off to the sidecar acceptor to finish the process.
+	if registeredTicket.Offer.Auto {
+		err := r.server.sidecarAcceptor.AutoAcceptSidecar(registeredTicket)
+		if err != nil {
+			return nil, fmt.Errorf("unable to start ticket auto "+
+				"negotiation: %v", err)
+		}
+	}
+
+	ticketStr, err := sidecar.EncodeToString(registeredTicket)
+	if err != nil {
+		return nil, err
+	}
+	return &lnrpc.SidecarTicket{Ticket: ticketStr}, nil
 }

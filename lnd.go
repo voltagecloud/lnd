@@ -1052,6 +1052,15 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 			bestHeight)
 	}
 
+	if cfg.SidecarAcceptor {
+		acceptor, err := StartSidecarAcceptor(cfg)
+		if err != nil {
+			ltndLog.Error(err)
+			return err
+		}
+		server.sidecarAcceptor = acceptor
+	}
+
 	// With all the relevant chains initialized, we can finally start the
 	// server itself.
 	if err := server.Start(); err != nil {
