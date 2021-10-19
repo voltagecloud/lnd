@@ -146,6 +146,9 @@ http:
       delete: "/v1/macaroon/{root_key_id}"
     - selector: lnrpc.Lightning.ListPermissions
       get: "/v1/macaroon/permissions"
+    - selector: lnrpc.Lightning.RegisterSidecar
+      post: "/v1/sidecar/register"
+      body: "*"
 
     # walletunlocker.proto
     - selector: lnrpc.WalletUnlocker.GenSeed
