@@ -5,6 +5,7 @@
 package lnd
 
 import (
+	"bytes"
 	"context"
 	"crypto/tls"
 	"crypto/x509"
@@ -36,6 +37,7 @@ import (
 	"github.com/lightningnetwork/lnd/channeldb"
 	"github.com/lightningnetwork/lnd/keychain"
 	"github.com/lightningnetwork/lnd/lncfg"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnrpc"
 	"github.com/lightningnetwork/lnd/lnwallet"
 	"github.com/lightningnetwork/lnd/macaroons"
@@ -218,11 +220,21 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 		return mkErr("error initializing DBs: %v", err)
 	}
 
-	tlsManager := TLSManager{
-		cfg: cfg,
-	}
+	// The real KeyRing isn't available until after the wallet is unlocked,
+	// but we need one now if --tlsencryptkey is true. Because we aren't
+	// encrypting anything here it can be an empty KeyRing.
+	var emptyKeyRing keychain.KeyRing
+
 	// Only process macaroons if --no-macaroons isn't set.
-	serverOpts, restDialOpts, restListen, cleanUp, err := tlsManager.getConfig()
+	tlsManager := TLSManager{
+		cfg:     cfg,
+		keyRing: emptyKeyRing,
+	}
+	serverOpts,
+		restDialOpts,
+		restListen,
+		cleanUp,
+		err := tlsManager.getConfig()
 	if err != nil {
 		return mkErr("unable to load TLS credentials: %v", err)
 	}
@@ -533,6 +545,20 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 	}
 	defer atplManager.Stop()
 
+	// If --tlsencryptkey is set, we previously generated a throwaway TLSConfig
+	// Now we want to remove that and load the persistent TLSConfig
+	// The wallet is unlocked at this point so we can use the real KeyRing
+	if cfg.TLSEncryptKey {
+		// Update tlsManager with actual key.
+		tlsManager.keyRing = activeChainControl.KeyRing
+		err := tlsManager.reloadCertificate()
+		if err != nil {
+			err := fmt.Errorf("unable to reload TLS credentials: "+
+				"%v", err)
+			ltndLog.Error(err)
+		}
+	}
+
 	// Now we have created all dependencies necessary to populate and
 	// start the RPC server.
 	err = rpcServer.addDeps(
@@ -627,10 +653,17 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 // TLSManager generates/renews a TLS certificate if needed and returns the
 // certificate configuration options needed for gRPC and REST.
 type TLSManager struct {
-	cfg        *Config
+	cfg *Config
+
+	certBytes  []byte
+	keyBytes   []byte
 	certData   *tls.Certificate
 	parsedCert *x509.Certificate
-	tlsCfg     *tls.Config
+	certPath   string
+	keyRing    keychain.KeyRing
+
+	tlsCfg      *tls.Config
+	tlsReloader *cert.TlsReloader
 }
 
 // getConfig returns a TLS configuration for the gRPC server and credentials
@@ -638,17 +671,31 @@ type TLSManager struct {
 func (t *TLSManager) getConfig() ([]grpc.ServerOption, []grpc.DialOption,
 	func(net.Addr) (net.Listener, error), func(), error) {
 
-	cleanUp, err := t.generateOrRenewCert()
+	err := t.generateOrRenewCert()
 	if err != nil {
 		return nil, nil, nil, nil, err
 	}
 
-	// Now that we know that we have a ceritificate, let's generate the
-	// required config options.
-	restCreds, err := credentials.NewClientTLSFromFile(t.cfg.TLSCertPath, "")
+	tlsr, err := cert.NewTLSReloader(t.certBytes, t.keyBytes)
 	if err != nil {
 		return nil, nil, nil, nil, err
 	}
+	t.tlsReloader = tlsr
+	tlsCfg := cert.TLSConfFromCert(*t.certData)
+	t.tlsCfg = tlsCfg
+	t.tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
+
+	// Now that we know that we have a ceritificate, let's generate the
+	// required config options.
+	restCreds, err := credentials.NewClientTLSFromFile(t.certPath, "")
+	if err != nil {
+		return nil, nil, nil, nil, err
+	}
+
+        cleanUp, err := t.setUpLetsEncrypt(tlsCfg)
+        if err != nil {
+                return nil, nil, nil, nil, err
+        }
 
 	serverCreds := credentials.NewTLS(t.tlsCfg)
 	serverOpts := []grpc.ServerOption{grpc.Creds(serverCreds)}
@@ -682,18 +729,18 @@ func (t *TLSManager) getConfig() ([]grpc.ServerOption, []grpc.DialOption,
 
 // generateOrRenewCert generates a new TLS certificate if we're not using one
 // yet or renews it if it's outdated.
-func (t *TLSManager) generateOrRenewCert() (func(), error) {
+func (t *TLSManager) generateOrRenewCert() error {
 	// Genereate a TLS pair if we don't have one yet.
 	err := t.createTLSPair()
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	certData, parsedCert, err := cert.LoadCert(
-		t.cfg.TLSCertPath, t.cfg.TLSKeyPath,
+		t.certBytes, t.keyBytes,
 	)
 	if err != nil {
-		return nil, err
+		return err
 	}
 	t.certData = &certData
 	t.parsedCert = parsedCert
@@ -701,35 +748,152 @@ func (t *TLSManager) generateOrRenewCert() (func(), error) {
 	// Check to see if the certificate needs to be renewed.
 	err = t.certMaintenance()
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	tlsCfg := cert.TLSConfFromCert(certData)
-	t.tlsCfg = tlsCfg
-
-	cleanUp, err := t.setUpLetsEncrypt(tlsCfg)
-	if err != nil {
-		return nil, err
-	}
-
-	return cleanUp, nil
+	return nil
 }
 
-// If a TLS pair doesn't exist yet, create them and write them to disk.
+// If a TLS pair doesn't exist yet, we create them and write them to disk. And
+// we encrypt the pair if needed. If the TLS pair already exists, we load it
+// into memory.
 func (t *TLSManager) createTLSPair() error {
-	// Ensure we create TLS key and certificate if they don't exist.
-	if !fileExists(t.cfg.TLSCertPath) && !fileExists(t.cfg.TLSKeyPath) {
-		rpcsLog.Infof("Generating TLS certificates...")
-		err := cert.GenCertPair(
-			"lnd autogenerated cert", t.cfg.TLSCertPath,
-			t.cfg.TLSKeyPath, t.cfg.TLSExtraIPs,
-			t.cfg.TLSExtraDomains, t.cfg.TLSDisableAutofill,
-			t.cfg.TLSCertDuration,
+	// If TLS Key Encryption is on but the keyring is empty then we need to
+	// generate a temporary certificate.
+	var emptyKeyRing keychain.KeyRing
+	if t.cfg.TLSEncryptKey && (t.keyRing == emptyKeyRing) {
+		rpcsLog.Infof("Generating ephemeral TLS certificates...")
+
+		tmpValidity := 24 * time.Hour
+		// Append .tmp to the end of the cert for differentiation.
+		tmpCertPath := t.cfg.TLSCertPath + ".tmp"
+		t.certPath = tmpCertPath
+		// Pass in a blank string for the key path so the
+		// function doesn't write them to disk.
+		certBytes, keyBytes, err := cert.GenCertPair(
+			"lnd temporary autogenerated cert", tmpCertPath,
+			"", t.cfg.TLSExtraIPs, t.cfg.TLSExtraDomains,
+			t.cfg.TLSDisableAutofill, tmpValidity,
 		)
 		if err != nil {
 			return err
 		}
+		t.certBytes = certBytes
+		t.keyBytes = keyBytes
+
+		rpcsLog.Infof("Done generating ephemeral TLS certificates")
+
+	} else {
+		// Ensure we create TLS key and certificate if they don't exist.
+		if !fileExists(t.cfg.TLSCertPath) && !fileExists(t.cfg.TLSKeyPath) {
+			rpcsLog.Infof("Generating TLS certificates...")
+
+			certBytes, keyBytes, err := cert.GenCertPair(
+				"lnd autogenerated cert", t.cfg.TLSCertPath,
+				t.cfg.TLSKeyPath, t.cfg.TLSExtraIPs,
+				t.cfg.TLSExtraDomains, t.cfg.TLSDisableAutofill,
+				t.cfg.TLSCertDuration,
+			)
+			if err != nil {
+				return err
+			}
+			t.certBytes = certBytes
+			t.keyBytes = keyBytes
+
+			if t.cfg.TLSEncryptKey {
+				keyBuf := bytes.NewBuffer(t.keyBytes)
+				var b bytes.Buffer
+				err := lnencrypt.EncryptPayloadToWriter(
+					*keyBuf, &b, t.keyRing,
+				)
+				if err != nil {
+					return err
+				}
+				if err = ioutil.WriteFile(t.cfg.TLSKeyPath, b.Bytes(),
+					0600); err != nil {
+					return err
+				}
+				t.keyBytes = b.Bytes()
+
+			} else {
+				keyBuf := bytes.NewBuffer(t.keyBytes)
+				if err := ioutil.WriteFile(t.cfg.TLSKeyPath, keyBuf.Bytes(),
+					0600); err != nil {
+					return err
+				}
+			}
+
+		} else {
+			rpcsLog.Info("Getting the existing cert data")
+			certBytes, keyBytes, err := cert.GetCertBytesFromPath(t.cfg.TLSCertPath, t.cfg.TLSKeyPath)
+			if err != nil {
+				return err
+			}
+			t.certBytes = certBytes
+			t.keyBytes = keyBytes
+
+			certData, parsedCert, err := cert.LoadCert(
+				t.certBytes, t.keyBytes,
+			)
+			if err != nil {
+				return err
+			}
+			t.certData = &certData
+			t.parsedCert = parsedCert
+		}
+		t.certPath = t.cfg.TLSCertPath
+
 		rpcsLog.Infof("Done generating TLS certificates")
+
+		err := t.getTLSKey()
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+// getTLSKey gets the TLS key, whether it's encrypted on disk or not.
+func (t *TLSManager) getTLSKey() error {
+	// We check to see if the private key is encrypted or plaintext.
+	// If it's encrypted we need to try to decrypt it so we can use it
+	// in the gRPC server.
+	privateKeyPrefix := []byte("-----BEGIN EC PRIVATE KEY-----")
+	if !bytes.HasPrefix(t.keyBytes, privateKeyPrefix) {
+		rpcsLog.Info("Saw that the private key is encrypted")
+		// If the private key is encrypted but the user didn't pass
+		// --tlsencryptkey we error out. This is because the wallet is
+		// not unlocked yet and we don't have access to the keys yet
+		// for decrypt.
+		if !t.cfg.TLSEncryptKey {
+			return fmt.Errorf("it appears the TLS key is " +
+				"encrypted but you didn't pass the " +
+				"--tlsencryptkey flag. Please restart lnd " +
+				"with the --tlsencryptkey flag or delete the " +
+				"TLS files for regeneration")
+		}
+		reader := bytes.NewReader(t.keyBytes)
+		keyBytes, err := lnencrypt.DecryptPayloadFromReader(
+			reader, t.keyRing,
+		)
+		if err != nil {
+			return err
+		}
+		t.keyBytes = keyBytes
+
+	} else if t.cfg.TLSEncryptKey {
+		// If the user requests an encrypted key but the key is in plaintext
+		// we encrypt the key before writing to disk.
+		keyBuf := bytes.NewBuffer(t.keyBytes)
+		var b bytes.Buffer
+		err := lnencrypt.EncryptPayloadToWriter(*keyBuf, &b, t.keyRing)
+		if err != nil {
+			return err
+		}
+		if err = ioutil.WriteFile(t.cfg.TLSKeyPath, b.Bytes(), 0600); err != nil {
+			return err
+		}
 	}
 
 	return nil
@@ -772,7 +936,7 @@ func (t *TLSManager) certMaintenance() error {
 		}
 
 		rpcsLog.Infof("Renewing TLS certificates...")
-		err = cert.GenCertPair(
+		certBytes, keyBytes, err := cert.GenCertPair(
 			"lnd autogenerated cert", t.cfg.TLSCertPath,
 			t.cfg.TLSKeyPath, t.cfg.TLSExtraIPs,
 			t.cfg.TLSExtraDomains, t.cfg.TLSDisableAutofill,
@@ -781,11 +945,13 @@ func (t *TLSManager) certMaintenance() error {
 		if err != nil {
 			return err
 		}
+		t.certBytes = certBytes
+		t.keyBytes = keyBytes
 		rpcsLog.Infof("Done renewing TLS certificates")
 
 		// Reload the certificate data.
 		reloadedCertData, _, err := cert.LoadCert(
-			t.cfg.TLSCertPath, t.cfg.TLSKeyPath,
+			certBytes, keyBytes,
 		)
 		if err != nil {
 			return err
@@ -857,6 +1023,46 @@ func (t *TLSManager) setUpLetsEncrypt(tlsCfg *tls.Config) (func(), error) {
 	}
 
 	return cleanUp, nil
+}
+
+// reloadCertificate deletes the temporary certificate file and generates a new
+// one with the real keyring.
+func (t *TLSManager) reloadCertificate() error {
+	tmpCertPath := t.cfg.TLSCertPath + ".tmp"
+	err := os.Remove(tmpCertPath)
+	if err != nil {
+		ltndLog.Warn("unable to delete temp cert at %v", tmpCertPath)
+	}
+
+	// Ensure the persistent TLS credentials are created
+	_, _, _, _, err = t.getConfig()
+	if err != nil {
+		err := fmt.Errorf("unable to load TLS credentials: %v", err)
+		ltndLog.Error(err)
+		return err
+	}
+	certBytes, encryptedKeyBytes, err := cert.GetCertBytesFromPath(
+		t.cfg.TLSCertPath, t.cfg.TLSKeyPath,
+	)
+	if err != nil {
+		return err
+	}
+	t.certBytes = certBytes
+
+	reader := bytes.NewReader(encryptedKeyBytes)
+	keyBytes, err := lnencrypt.DecryptPayloadFromReader(reader, t.keyRing)
+	if err != nil {
+		return err
+	}
+	t.keyBytes = keyBytes
+
+	// Switch the server's TLS certificate to the persistent one
+	err = t.tlsReloader.AttemptReload(t.certBytes, t.keyBytes)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // fileExists reports whether the named file or directory exists.
