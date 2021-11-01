@@ -65,10 +65,22 @@ import (
 //
 // NOTE: This should only be called after the RPCListener has signaled it is
 // ready.
-func AdminAuthOptions(cfg *Config, skipMacaroons bool) ([]grpc.DialOption, error) {
-	creds, err := credentials.NewClientTLSFromFile(cfg.TLSCertPath, "")
-	if err != nil {
-		return nil, fmt.Errorf("unable to read TLS cert: %v", err)
+func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool) ([]grpc.DialOption, error) {
+	var (
+		creds credentials.TransportCredentials
+		err error
+	)
+
+
+	if insecure {
+		creds = credentials.NewTLS(&tls.Config{
+	                InsecureSkipVerify: true, // nolint:gosec
+	        })
+	} else {
+		creds, err = credentials.NewClientTLSFromFile(cfg.TLSCertPath, "")
+		if err != nil {
+			return nil, fmt.Errorf("unable to read TLS cert: %v", err)
+		}
 	}
 
 	// Create a dial options array.
@@ -1050,6 +1062,15 @@ func Main(cfg *Config, lisCfg ListenerCfg, interceptor signal.Interceptor) error
 
 		ltndLog.Infof("Chain backend is fully synced (end_height=%v)!",
 			bestHeight)
+	}
+
+	if cfg.SidecarAcceptor {
+		acceptor, err := StartSidecarAcceptor(cfg)
+		if err != nil {
+			ltndLog.Error(err)
+			return err
+		}
+		server.sidecarAcceptor = acceptor
 	}
 
 	// With all the relevant chains initialized, we can finally start the
