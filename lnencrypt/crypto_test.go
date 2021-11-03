@@ -5,21 +5,13 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btcd/btcec"
+	"github.com/lightningnetwork/lnd/lntest/channels"
 	"github.com/lightningnetwork/lnd/lntest/mock"
 )
 
 var (
-	// Use hard-coded keys for Alice and Bob, the two FundingManagers that
-	// we will test the interaction between.
-	privKeyBytes = [32]byte{
-		0xb7, 0x94, 0x38, 0x5f, 0x2d, 0x1e, 0xf7, 0xab,
-		0x4d, 0x92, 0x73, 0xd1, 0x90, 0x63, 0x81, 0xb4,
-		0x4f, 0x2f, 0x6f, 0x25, 0x88, 0xa3, 0xef, 0xb9,
-		0x6a, 0x49, 0x18, 0x83, 0x31, 0x98, 0x47, 0x53,
-	}
-
 	privKey, _ = btcec.PrivKeyFromBytes(btcec.S256(),
-		privKeyBytes[:])
+		channels.AlicesPrivKey)
 )
 
 // TestEncryptDecryptPayload tests that given a static key, we're able to
