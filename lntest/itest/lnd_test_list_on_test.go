@@ -367,4 +367,8 @@ var allTestCases = []*testCase{
 		name: "remote signer",
 		test: testRemoteSigner,
 	},
+	{
+		name: "addpeer config",
+		test: testAddPeerConfig,
+	},
 }

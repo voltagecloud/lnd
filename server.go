@@ -1874,6 +1874,22 @@ func (s *server) Start() error {
 			return nil
 		})
 
+		// If peers are specified as a config option, we'll add those peers first.
+		if len(s.cfg.AddPeers) != 0 {
+			for _, peerAddr := range s.cfg.AddPeers {
+				parsedPeerAddr, err := lncfg.ParseLNAddressString(peerAddr, strconv.Itoa(defaultPeerPort), net.ResolveTCPAddr)
+				if err != nil {
+					startErr = fmt.Errorf("unable to parse peer address provided as a config option: %v", err)
+					return
+				}
+
+				err = s.ConnectToPeer(parsedPeerAddr, true, s.cfg.ConnectionTimeout)
+				if err != nil {
+					startErr = fmt.Errorf("unable to connect to peer address provided as a config option: %v", err)
+				}
+			}
+		}
+
 		// Subscribe to NodeAnnouncements that advertise new addresses
 		// our persistent peers.
 		if err := s.updatePersistentPeerAddrs(); err != nil {
