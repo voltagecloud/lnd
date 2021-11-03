@@ -22,6 +22,12 @@ const (
 
 	// V3 denotes that the onion service is V3.
 	V3
+
+	// V2KeyParam is a parameter that Tor accepts for a new V2 service.
+	V2KeyParam = "RSA1024"
+
+	// V3KeyParam is a parameter that Tor accepts for a new V3 service.
+	V3KeyParam = "ED25519-V3"
 )
 
 // OnionStore is a store containing information about a particular onion
@@ -117,9 +123,9 @@ func (c *Controller) prepareKeyparam(cfg AddOnionConfig) (string, error) {
 	switch cfg.Type {
 	// TODO(yy): drop support for v2.
 	case V2:
-		keyParam = "NEW:RSA1024"
+		keyParam = "NEW:" + V2KeyParam
 	case V3:
-		keyParam = "NEW:ED25519-V3"
+		keyParam = "NEW:" + V3KeyParam
 	}
 
 	if cfg.Store != nil {
@@ -142,11 +148,12 @@ func (c *Controller) prepareKeyparam(cfg AddOnionConfig) (string, error) {
 
 // prepareAddOnion constructs a cmd command string based on the specified
 // config.
-func (c *Controller) prepareAddOnion(cfg AddOnionConfig) (string, error) {
+func (c *Controller) prepareAddOnion(cfg AddOnionConfig) (
+	string, string, error) {
 	// Create the keyParam.
 	keyParam, err := c.prepareKeyparam(cfg)
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
 
 	// Now, we'll create a mapping from the virtual port to each target
@@ -178,7 +185,7 @@ func (c *Controller) prepareAddOnion(cfg AddOnionConfig) (string, error) {
 	// await its response.
 	cmd := fmt.Sprintf("ADD_ONION %s %s", keyParam, portParam)
 
-	return cmd, nil
+	return cmd, keyParam, nil
 }
 
 // AddOnion creates an ephemeral onion service and returns its onion address.
@@ -189,7 +196,7 @@ func (c *Controller) prepareAddOnion(cfg AddOnionConfig) (string, error) {
 // Each connection can only see its own ephemeral services. If a service needs
 // to survive beyond current controller connection, use the "Detach" flag when
 // creating new service via `ADD_ONION`.
-func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
+func (c *Controller) AddOnion(cfg AddOnionConfig, returnKey bool) (*OnionAddr, error) {
 	// Before sending the request to create an onion service to the Tor
 	// server, we'll make sure that it supports V3 onion services if that
 	// was the type requested.
@@ -201,7 +208,7 @@ func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
 	}
 
 	// Construct the cmd command.
-	cmd, err := c.prepareAddOnion(cfg)
+	cmd, keyParam, err := c.prepareAddOnion(cfg)
 	if err != nil {
 		return nil, err
 	}
@@ -233,11 +240,18 @@ func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
 		return nil, errors.New("service id not found in reply")
 	}
 
-	// If a new onion service was created and an onion store was provided,
-	// we'll store its private key to disk in the event that it needs to be
-	// recreated later on.
-	if privateKey, ok := replyParams["PrivateKey"]; cfg.Store != nil && ok {
-		err := cfg.Store.StorePrivateKey(cfg.Type, []byte(privateKey))
+	// If a new onion service was created, use the new private key for storage
+	newPrivateKey, ok := replyParams["PrivateKey"]
+	if ok {
+		keyParam = newPrivateKey
+	}
+
+	// If an onion store was provided and a key return wasn't requested,
+	// we'll store its private key to disk in the event that it needs to
+	// be recreated later on. We write the private key to disk every time
+	// in case the user toggles the --tor.encryptkey flag.
+	if cfg.Store != nil {
+		err := cfg.Store.StorePrivateKey(cfg.Type, []byte(keyParam))
 		if err != nil {
 			return nil, fmt.Errorf("unable to write private key "+
 				"to file: %v", err)
@@ -247,12 +261,19 @@ func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
 	c.activeServiceID = serviceID
 	log.Debugf("serviceID:%s added to tor controller", serviceID)
 
+	// We return the onion address private key if requested
+	var torPrivateKey string
+	if returnKey {
+		torPrivateKey = keyParam
+	}
+
 	// Finally, we'll return the onion address composed of the service ID,
 	// along with the onion suffix, and the port this onion service can be
 	// reached at externally.
 	return &OnionAddr{
 		OnionService: serviceID + ".onion",
 		Port:         cfg.VirtualPort,
+		PrivateKey:   torPrivateKey,
 	}, nil
 }
 
