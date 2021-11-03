@@ -2714,7 +2714,7 @@ func (s *server) createNewHiddenService() error {
 		onionCfg.Type = tor.V3
 	}
 
-	addr, err := s.torController.AddOnion(onionCfg)
+	addr, err := s.torController.AddOnion(onionCfg, s.cfg.Tor.EncryptKey)
 	if err != nil {
 		return err
 	}

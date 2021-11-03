@@ -176,7 +176,8 @@ func (w *Standalone) createNewHiddenService() error {
 		Type: w.cfg.Type,
 	}
 
-	addr, err := w.cfg.TorController.AddOnion(onionCfg)
+	returnKey := w.cfg.EncryptKey
+	addr, err := w.cfg.TorController.AddOnion(onionCfg, returnKey)
 	if err != nil {
 		return err
 	}
