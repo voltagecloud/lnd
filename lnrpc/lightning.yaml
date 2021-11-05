@@ -162,3 +162,6 @@ http:
       get: "/v1/custommessage/subscribe"      
     - selector: lnrpc.Lightning.ListAliases
       get: "/v1/aliases/list"
+    - selector: lnrpc.Lightning.RegisterSidecar
+      post: "/v1/sidecar/register"
+      body: "*"
