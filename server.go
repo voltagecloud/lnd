@@ -25,6 +25,7 @@ import (
 	"github.com/btcsuite/btcd/wire"
 	"github.com/btcsuite/btcutil"
 	"github.com/go-errors/errors"
+	"github.com/lightninglabs/pool/acceptor"
 	sphinx "github.com/lightningnetwork/lightning-onion"
 	"github.com/lightningnetwork/lnd/autopilot"
 	"github.com/lightningnetwork/lnd/brontide"
@@ -286,6 +287,8 @@ type server struct {
 	writePool *pool.Write
 
 	readPool *pool.Read
+
+	sidecarAcceptor *acceptor.SidecarAcceptor
 
 	// featureMgr dispatches feature vectors for various contexts within the
 	// daemon.
@@ -1775,6 +1778,21 @@ func (s *server) Start() error {
 		}
 		cleanup = cleanup.add(s.authGossiper.Stop)
 
+		if s.cfg.SidecarAcceptor {
+                        if err := s.sidecarAcceptor.FundingManager.Start(); err != nil {
+                                startErr = err
+                                return
+                        }
+                        cleanup = cleanup.add(s.sidecarAcceptor.FundingManager.Stop)
+
+                        var testErrChan = make(chan error)
+                        if err := s.sidecarAcceptor.Start(testErrChan); err != nil {
+                                startErr = err
+                                return
+                        }
+                        cleanup = cleanup.add(s.sidecarAcceptor.Stop)
+                }
+
 		if err := s.chanRouter.Start(); err != nil {
 			startErr = err
 			return
@@ -2063,6 +2081,15 @@ func (s *server) Stop() error {
 		}
 		s.chanEventStore.Stop()
 		s.missionControl.StopStoreTicker()
+		if s.cfg.SidecarAcceptor {
+			if err := s.sidecarAcceptor.FundingManager.Stop(); err != nil {
+				srvrLog.Warnf("Unable to stop funding manager: %v", err)
+			}
+
+			if err := s.sidecarAcceptor.Stop(); err != nil {
+				srvrLog.Warnf("Unable to stop sidecarAcceptor: %v", err)
+			}
+		}
 
 		// Disconnect from each active peers to ensure that
 		// peerTerminationWatchers signal completion to each peer.

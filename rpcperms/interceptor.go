@@ -93,6 +93,10 @@ var (
 		// before we can check macaroons, so we whitelist it.
 		"/lnrpc.State/SubscribeState": {},
 		"/lnrpc.State/GetState":       {},
+
+		// Let the register sidecar endpoint be unauthenticated
+		// so we can register tickets for the user.
+		"/lnrpc.Lightning/RegisterSidecar": {},
 	}
 )
 
