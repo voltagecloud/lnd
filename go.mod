@@ -10,11 +10,12 @@ require (
 	github.com/btcsuite/btcutil v1.0.3-0.20210527170813-e2ba6805a890
 	github.com/btcsuite/btcutil/psbt v1.0.3-0.20210527170813-e2ba6805a890
 	github.com/btcsuite/btcwallet v0.13.1-0.20211201210108-79de92f527dc
+	//github.com/btcsuite/btcwallet v0.13.0
 	github.com/btcsuite/btcwallet/wallet/txauthor v1.1.0
 	github.com/btcsuite/btcwallet/wallet/txrules v1.1.0
 	github.com/btcsuite/btcwallet/walletdb v1.3.6-0.20210803004036-eebed51155ec
 	github.com/btcsuite/btcwallet/wtxmgr v1.3.1-0.20210822222949-9b5a201c344c
-	github.com/coreos/go-systemd v0.0.0-20190719114852-fd7a80b32e1f
+	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf
 	github.com/davecgh/go-spew v1.1.1
 	github.com/dvyukov/go-fuzz v0.0.0-20210602112143-b1f3d6f4ef4e
 	github.com/elazarl/go-bindata-assetfs v1.0.1 // indirect
@@ -34,19 +35,21 @@ require (
 	github.com/jrick/logrotate v1.0.0
 	github.com/juju/clock v0.0.0-20190205081909-9c5c9712527c // indirect
 	github.com/juju/errors v0.0.0-20190806202954-0232dcc7464d // indirect
-	github.com/juju/loggo v0.0.0-20190526231331-6e530bcce5d8 // indirect
 	github.com/juju/retry v0.0.0-20180821225755-9058e192b216 // indirect
 	github.com/juju/testing v0.0.0-20190723135506-ce30eb24acd2 // indirect
 	github.com/juju/utils v0.0.0-20180820210520-bf9cc5bdd62d // indirect
 	github.com/juju/version v0.0.0-20180108022336-b64dbd566305 // indirect
 	github.com/kkdai/bstream v1.0.0
+	github.com/lightninglabs/lndclient v0.14.0-8
 	github.com/lightninglabs/neutrino v0.13.0
+	github.com/lightninglabs/pool v0.5.1-alpha
 	github.com/lightninglabs/protobuf-hex-display v1.4.3-hex-display
 	github.com/lightningnetwork/lightning-onion v1.0.2-0.20210520211913-522b799e65b1
 	github.com/lightningnetwork/lnd/cert v1.1.0
 	github.com/lightningnetwork/lnd/clock v1.1.0
 	github.com/lightningnetwork/lnd/healthcheck v1.2.0
 	github.com/lightningnetwork/lnd/kvdb v1.3.0
+	// github.com/lightningnetwork/lnd/kvdb v1.2.1
 	github.com/lightningnetwork/lnd/queue v1.1.0
 	github.com/lightningnetwork/lnd/ticker v1.1.0
 	github.com/ltcsuite/ltcd v0.0.0-20190101042124-f37f8bf35796
@@ -71,9 +74,12 @@ require (
 	google.golang.org/protobuf v1.26.0
 	gopkg.in/errgo.v1 v1.0.1 // indirect
 	gopkg.in/macaroon-bakery.v2 v2.0.1
-	gopkg.in/macaroon.v2 v2.0.0
+	gopkg.in/macaroon.v2 v2.1.0
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
 )
+
+replace github.com/lightninglabs/pool => github.com/orbitalturtle/pool v0.4.4-alpha.0.20220404192405-c45870660c90
+//v0.5.1-alpha.0.20220309190137-d96268cf5aba 
 
 replace github.com/lightningnetwork/lnd/ticker => ./ticker
 
