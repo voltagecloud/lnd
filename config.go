@@ -48,6 +48,7 @@ const (
 	defaultChainSubDirname    = "chain"
 	defaultGraphSubDirname    = "graph"
 	defaultTowerSubDirname    = "watchtower"
+	defaultPoolDirname        = "pool"
 	defaultTLSCertFilename    = "tls.cert"
 	defaultTLSKeyFilename     = "tls.key"
 	defaultAdminMacFilename   = "admin.macaroon"
@@ -198,6 +199,7 @@ var (
 	defaultDataDir = filepath.Join(DefaultLndDir, defaultDataDirname)
 	defaultLogDir  = filepath.Join(DefaultLndDir, defaultLogDirname)
 
+	defaultPoolDir  = filepath.Join(DefaultLndDir, defaultPoolDirname)
 	defaultTowerDir = filepath.Join(defaultDataDir, defaultTowerSubDirname)
 
 	defaultTLSCertPath    = filepath.Join(DefaultLndDir, defaultTLSCertFilename)
@@ -251,6 +253,7 @@ type Config struct {
 	ReadMacPath     string        `long:"readonlymacaroonpath" description:"Path to write the read-only macaroon for lnd's RPC and REST services if it doesn't exist"`
 	InvoiceMacPath  string        `long:"invoicemacaroonpath" description:"Path to the invoice-only macaroon for lnd's RPC and REST services if it doesn't exist"`
 	LogDir          string        `long:"logdir" description:"Directory to log output."`
+	PoolDir         string        `long:"pooldir" description:"DIrectory to store sidecar ticket data."`
 	MaxLogFiles     int           `long:"maxlogfiles" description:"Maximum logfiles to keep (0 for no rotation)"`
 	MaxLogFileSize  int           `long:"maxlogfilesize" description:"Maximum logfile size in MB"`
 	AcceptorTimeout time.Duration `long:"acceptortimeout" description:"Time after which an RPCAcceptor will time out and return false if it hasn't yet received a response"`
@@ -377,6 +380,8 @@ type Config struct {
 	GcCanceledInvoicesOnTheFly bool `long:"gc-canceled-invoices-on-the-fly" description:"If true, we'll delete newly canceled invoices on the fly."`
 
 	DustThreshold uint64 `long:"dust-threshold" description:"Sets the dust sum threshold in satoshis for a channel after which dust HTLC's will be failed."`
+
+	SidecarAcceptor bool `long:"sidecar-acceptor" description:"If true, we run a sidecar acceptor alongside lnd"`
 
 	Invoices *lncfg.Invoices `group:"invoices" namespace:"invoices"`
 
@@ -542,6 +547,7 @@ func DefaultConfig() Config {
 		Watchtower: &lncfg.Watchtower{
 			TowerDir: defaultTowerDir,
 		},
+		PoolDir: defaultPoolDir,
 		HealthChecks: &lncfg.HealthCheckConfig{
 			ChainCheck: &lncfg.CheckConfig{
 				Interval: defaultChainInterval,
@@ -731,6 +737,7 @@ func ValidateConfig(cfg Config, interceptor signal.Interceptor, fileParser,
 		cfg.TLSCertPath = filepath.Join(lndDir, defaultTLSCertFilename)
 		cfg.TLSKeyPath = filepath.Join(lndDir, defaultTLSKeyFilename)
 		cfg.LogDir = filepath.Join(lndDir, defaultLogDirname)
+		cfg.PoolDir = filepath.Join(lndDir, defaultPoolDirname)
 
 		// If the watchtower's directory is set to the default, i.e. the
 		// user has not requested a different location, we'll move the
@@ -739,6 +746,11 @@ func ValidateConfig(cfg Config, interceptor signal.Interceptor, fileParser,
 			cfg.Watchtower.TowerDir = filepath.Join(
 				cfg.DataDir, defaultTowerSubDirname,
 			)
+		}
+
+		if cfg.PoolDir == defaultPoolDir {
+			cfg.PoolDir =
+				filepath.Join(cfg.DataDir, defaultPoolDirname)
 		}
 	}
 
@@ -817,6 +829,7 @@ func ValidateConfig(cfg Config, interceptor signal.Interceptor, fileParser,
 	cfg.ReadMacPath = CleanAndExpandPath(cfg.ReadMacPath)
 	cfg.InvoiceMacPath = CleanAndExpandPath(cfg.InvoiceMacPath)
 	cfg.LogDir = CleanAndExpandPath(cfg.LogDir)
+	cfg.PoolDir = CleanAndExpandPath(cfg.PoolDir)
 	cfg.BtcdMode.Dir = CleanAndExpandPath(cfg.BtcdMode.Dir)
 	cfg.LtcdMode.Dir = CleanAndExpandPath(cfg.LtcdMode.Dir)
 	cfg.BitcoindMode.Dir = CleanAndExpandPath(cfg.BitcoindMode.Dir)
@@ -1312,6 +1325,16 @@ func ValidateConfig(cfg Config, interceptor signal.Interceptor, fileParser,
 		cfg.registeredChains.PrimaryChain().String(),
 		lncfg.NormalizeNetwork(cfg.ActiveNetParams.Name),
 	)
+
+	cfg.PoolDir = filepath.Join(cfg.PoolDir,
+		cfg.registeredChains.PrimaryChain().String(),
+		lncfg.NormalizeNetwork(cfg.ActiveNetParams.Name))
+
+	// We need to make sure the default network directory exists for when we
+	// try to create our default macaroons there.
+	if err := makeDirectory(cfg.networkDir); err != nil {
+		return nil, err
+	}
 
 	// If a custom macaroon directory wasn't specified and the data
 	// directory has changed from the default path, then we'll also update
