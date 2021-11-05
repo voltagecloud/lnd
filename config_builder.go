@@ -428,7 +428,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			ctx, macaroonService, adminPermissions(),
 		)
 		if err != nil {
-			return nil, nil, nil, err
+			return nil, nil, nil, nil, err
 		}
 		for _, lis := range grpcListeners {
 			if lis.MacChan != nil {
