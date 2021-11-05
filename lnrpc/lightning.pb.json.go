@@ -1700,4 +1700,29 @@ func RegisterLightningJSONCallbacks(registry map[string]func(ctx context.Context
 			}
 		}()
 	}
+
+	registry["lnrpc.Lightning.RegisterSidecar"] = func(ctx context.Context,
+		conn *grpc.ClientConn, reqJSON string, callback func(string, error)) {
+
+		req := &RegisterSidecarRequest{}
+		err := marshaler.Unmarshal([]byte(reqJSON), req)
+		if err != nil {
+			callback("", err)
+			return
+		}
+
+		client := NewLightningClient(conn)
+		resp, err := client.RegisterSidecar(ctx, req)
+		if err != nil {
+			callback("", err)
+			return
+		}
+
+		respBytes, err := marshaler.Marshal(resp)
+		if err != nil {
+			callback("", err)
+			return
+		}
+		callback(string(respBytes), nil)
+	}
 }
