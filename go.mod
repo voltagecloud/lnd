@@ -40,9 +40,9 @@ require (
 	github.com/juju/utils v0.0.0-20180820210520-bf9cc5bdd62d // indirect
 	github.com/juju/version v0.0.0-20180108022336-b64dbd566305 // indirect
 	github.com/kkdai/bstream v1.0.0
-	github.com/lightninglabs/lndclient v0.14.0-8
+	github.com/lightninglabs/lndclient v0.14.0-8 // indirect
 	github.com/lightninglabs/neutrino v0.13.0
-	github.com/lightninglabs/pool v0.5.1-alpha
+	github.com/lightninglabs/pool v0.5.1-alpha // indirect
 	github.com/lightninglabs/protobuf-hex-display v1.4.3-hex-display
 	github.com/lightningnetwork/lightning-onion v1.0.2-0.20210520211913-522b799e65b1
 	github.com/lightningnetwork/lnd/cert v1.1.0
@@ -79,7 +79,8 @@ require (
 )
 
 replace github.com/lightninglabs/pool => github.com/orbitalturtle/pool v0.4.4-alpha.0.20220404192405-c45870660c90
-//v0.5.1-alpha.0.20220309190137-d96268cf5aba 
+
+//v0.5.1-alpha.0.20220309190137-d96268cf5aba
 
 replace github.com/lightningnetwork/lnd/ticker => ./ticker
 
