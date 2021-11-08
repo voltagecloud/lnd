@@ -191,6 +191,8 @@ github.com/lightninglabs/neutrino v0.11.0/go.mod h1:CuhF0iuzg9Sp2HO6ZgXgayviFTn1
 github.com/lightninglabs/neutrino v0.11.1-0.20201001005746-884e01dd2d8e/go.mod h1:MlZmoKa7CJP3eR1s5yB7Rm5aSyadpKkxqAwLQmog7N0=
 github.com/lightninglabs/neutrino v0.12.1 h1:9umzk5kKNc/l3bAyak8ClSRP1qSulnjc6kppLYDnuqk=
 github.com/lightninglabs/neutrino v0.12.1/go.mod h1:GlKninWpRBbL7b8G0oQ36/8downfnFwKsr0hbRA6E/E=
+github.com/lightninglabs/neutrino v0.13.0 h1:j3PKWEJCwqwMn/qLASz2j0IuCF6AumS9DaM0i0pM/nY=
+github.com/lightninglabs/neutrino v0.13.0/go.mod h1:GlKninWpRBbL7b8G0oQ36/8downfnFwKsr0hbRA6E/E=
 github.com/lightninglabs/protobuf-hex-display v1.3.3-0.20191212020323-b444784ce75d/go.mod h1:KDb67YMzoh4eudnzClmvs2FbiLG9vxISmLApUkCa4uI=
 github.com/lightninglabs/protobuf-hex-display v1.4.3-hex-display h1:RZJ8H4ueU/aQ9pFtx5wqsuD3B/DezrewJeVwDKKYY8E=
 github.com/lightninglabs/protobuf-hex-display v1.4.3-hex-display/go.mod h1:2oKOBU042GKFHrdbgGiKax4xVrFiZu51lhacUZQ9MnE=
