@@ -19,7 +19,7 @@ import (
 )
 
 func StartSidecarAcceptor(cfg *Config) (*acceptor.SidecarAcceptor, error) {
-	opts, err := AdminAuthOptions(cfg, false, true)
+	opts, err := AdminAuthOptions(cfg, true, true)
 	if err != nil {
 		return nil, err
 	}
