@@ -383,7 +383,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 
 	defer cleanUp()
 
-	partialChainControl, walletConfig, cleanUp, err := implCfg.BuildWalletConfig(
+	partialChainControl, walletConfig, cleanUp, mac, err := implCfg.BuildWalletConfig(
 		ctx, dbs, interceptorChain, grpcListeners,
 	)
 	if err != nil {
@@ -645,7 +645,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 		bestHeight)
 
 	if cfg.SidecarAcceptor {
-		acceptor, err := StartSidecarAcceptor(cfg)
+		acceptor, err := StartSidecarAcceptor(cfg, mac)
 		if err != nil {
 			ltndLog.Error(err)
 			return err

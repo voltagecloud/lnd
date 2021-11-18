@@ -2,6 +2,7 @@ package lnd
 
 import (
 	"context"
+	"encoding/hex"
 	"errors"
 	"fmt"
 	"time"
@@ -18,8 +19,8 @@ import (
 	"google.golang.org/grpc"
 )
 
-func StartSidecarAcceptor(cfg *Config) (*acceptor.SidecarAcceptor, error) {
-	opts, err := AdminAuthOptions(cfg, false, true)
+func StartSidecarAcceptor(cfg *Config, macBytes []byte) (*acceptor.SidecarAcceptor, error) {
+	opts, err := AdminAuthOptions(cfg, true, true)
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +40,7 @@ func StartSidecarAcceptor(cfg *Config) (*acceptor.SidecarAcceptor, error) {
 		LndAddress:            host,
 		Network:               network,
 		TLSPath:               cfg.TLSCertPath,
-		CustomMacaroonPath:    cfg.AdminMacPath,
+		CustomMacaroonHex:     hex.EncodeToString(macBytes),
 		BlockUntilChainSynced: false,
 		BlockUntilUnlocked:    true,
 		CallerCtx:             ctxc,
