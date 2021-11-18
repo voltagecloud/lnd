@@ -570,6 +570,16 @@ service Lightning {
     */
     rpc SubscribeCustomMessages (SubscribeCustomMessagesRequest)
         returns (stream CustomMessage);
+
+    /*
+    RegisterSidecarRequest is step 2/4 of the sidecar negotiation between the
+    provider (the trader submitting the bid order) and the recipient (the trader
+    receiving the sidecar channel).
+    This step must be run by the recipient. The result is a sidecar ticket with
+    the recipient's node information and channel funding multisig pubkey filled
+    in. The ticket returned by this call will have the state "registered".
+    */
+    rpc RegisterSidecar (RegisterSidecarRequest) returns (SidecarTicket);
 }
 
 message SubscribeCustomMessagesRequest {
@@ -4368,4 +4378,32 @@ message InterceptFeedback {
     binary serialized gRPC response message in the protobuf format.
     */
     bytes replacement_serialized = 3;
+}
+
+message SidecarTicket {
+    /*
+    The complete sidecar ticket in its string encoded form which is base58
+    encoded, has a human readable prefix ('sidecar...') and a checksum built in.
+    The string encoded version will only be used on the trader side of the API.
+    All requests to the auctioneer expect the ticket to be in its raw, tlv
+    encoded byte form.
+    */
+    string ticket = 1;
+}
+
+message RegisterSidecarRequest {
+    /*
+    The sidecar ticket to register and add the node and channel funding
+    information to. The ticket must be in the state "offered".
+    */
+    string ticket = 1;
+
+    /*
+    If this value is True, then the daemon will attempt to finish negotiating
+    the details of the sidecar channel automatically in the background. The
+    progress of the ticket can be monitored using the SidecarState RPC. In
+    addition, if this flag is set, then this method will _block_ until the
+    sidecar negotiation either finishes or breaks down.
+    */
+    bool auto_negotiate = 2;
 }
