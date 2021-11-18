@@ -2,6 +2,7 @@ package lnd
 
 import (
 	"context"
+	"encoding/hex"
 	"errors"
 	"fmt"
 	"time"
@@ -18,13 +19,13 @@ import (
 	"google.golang.org/grpc"
 )
 
-func StartSidecarAcceptor(cfg *Config) (*acceptor.SidecarAcceptor, error) {
-	opts, err := AdminAuthOptions(cfg, false, true)
+func StartSidecarAcceptor(cfg *Config, macBytes []byte) (*acceptor.SidecarAcceptor, error) {
+	opts, err := AdminAuthOptions(cfg, false, true, macBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	host := cfg.RPCListeners[0].String()
+	host := "127.0.0.1:10009"
 	conn, err := grpc.Dial(host, opts...)
 	if err != nil {
 		return nil, fmt.Errorf("unable to connect to RPC server: %v", err)
@@ -42,7 +43,8 @@ func StartSidecarAcceptor(cfg *Config) (*acceptor.SidecarAcceptor, error) {
 		LndAddress:            host,
 		Network:               network,
 		TLSPath:               cfg.TLSCertPath,
-		CustomMacaroonPath:    cfg.AdminMacPath,
+		Insecure:              true,
+		CustomMacaroonHex:     hex.EncodeToString(macBytes),
 		BlockUntilChainSynced: false,
 		BlockUntilUnlocked:    true,
 		CallerCtx:             ctxc,
