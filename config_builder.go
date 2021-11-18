@@ -97,7 +97,7 @@ type WalletConfigBuilder interface {
 	BuildWalletConfig(context.Context, *DatabaseInstances,
 		*rpcperms.InterceptorChain,
 		[]*ListenerWithSignal) (*chainreg.PartialChainControl,
-		*btcwallet.Config, func(), error)
+		*btcwallet.Config, func(), []byte, error)
 }
 
 // ChainControlBuilder is an interface that must be satisfied by a custom wallet
@@ -221,7 +221,7 @@ func (d *DefaultWalletImpl) Permissions() map[string][]bakery.Op {
 func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 	dbs *DatabaseInstances, interceptorChain *rpcperms.InterceptorChain,
 	grpcListeners []*ListenerWithSignal) (*chainreg.PartialChainControl,
-	*btcwallet.Config, func(), error) {
+	*btcwallet.Config, func(), []byte, error) {
 
 	// Keep track of our various cleanup functions. We use a defer function
 	// as well to not repeat ourselves with every return statement.
@@ -263,7 +263,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			err := fmt.Errorf("unable to initialize neutrino "+
 				"backend: %v", err)
 			d.logger.Error(err)
-			return nil, nil, nil, err
+			return nil, nil, nil, nil, err
 		}
 		cleanUpTasks = append(cleanUpTasks, neutrinoCleanUp)
 		neutrinoCS = neutrinoBackend
@@ -288,7 +288,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 	d.pwService.SetMacaroonDB(dbs.MacaroonDB)
 	walletExists, err := d.pwService.WalletExists()
 	if err != nil {
-		return nil, nil, nil, err
+		return nil, nil, nil, nil, err
 	}
 
 	if !walletExists {
@@ -305,7 +305,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 	if d.cfg.WalletUnlockPasswordFile != "" && !walletExists &&
 		!d.cfg.WalletUnlockAllowCreate {
 
-		return nil, nil, nil, fmt.Errorf("wallet unlock password file " +
+		return nil, nil, nil, nil, fmt.Errorf("wallet unlock password file " +
 			"was specified but wallet does not exist; initialize " +
 			"the wallet before using auto unlocking")
 	}
@@ -324,7 +324,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			"password provided in file")
 		pwBytes, err := ioutil.ReadFile(d.cfg.WalletUnlockPasswordFile)
 		if err != nil {
-			return nil, nil, nil, fmt.Errorf("error reading "+
+			return nil, nil, nil, nil, fmt.Errorf("error reading "+
 				"password from file %s: %v",
 				d.cfg.WalletUnlockPasswordFile, err)
 		}
@@ -340,7 +340,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			pwBytes, 0,
 		)
 		if err != nil {
-			return nil, nil, nil, fmt.Errorf("error unlocking "+
+			return nil, nil, nil, nil, fmt.Errorf("error unlocking "+
 				"wallet with password from file: %v", err)
 		}
 
@@ -361,7 +361,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 	// over RPC.
 	default:
 		if err := d.interceptor.Notifier.NotifyReady(false); err != nil {
-			return nil, nil, nil, err
+			return nil, nil, nil, nil, err
 		}
 
 		params, err := waitForWalletPassword(
@@ -372,7 +372,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			err := fmt.Errorf("unable to set up wallet password "+
 				"listeners: %v", err)
 			d.logger.Error(err)
-			return nil, nil, nil, err
+			return nil, nil, nil, nil, err
 		}
 
 		walletInitParams = *params
@@ -392,7 +392,10 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 		}
 	}
 
-	var macaroonService *macaroons.Service
+	var (
+		macaroonService *macaroons.Service
+		adminMacBytes []byte
+	)
 	if !d.cfg.NoMacaroons {
 		// Create the macaroon authentication/authorization service.
 		macaroonService, err = macaroons.NewService(
@@ -404,7 +407,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			err := fmt.Errorf("unable to set up macaroon "+
 				"authentication: %v", err)
 			d.logger.Error(err)
-			return nil, nil, nil, err
+			return nil, nil, nil, nil, err
 		}
 		cleanUpTasks = append(cleanUpTasks, func() {
 			if err := macaroonService.Close(); err != nil {
@@ -420,7 +423,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 		if err != nil && err != macaroons.ErrAlreadyUnlocked {
 			err := fmt.Errorf("unable to unlock macaroons: %v", err)
 			d.logger.Error(err)
-			return nil, nil, nil, err
+			return nil, nil, nil, nil, err
 		}
 
 		// Send an admin macaroon to all our listeners that requested
@@ -429,7 +432,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			ctx, macaroonService, adminPermissions(),
 		)
 		if err != nil {
-			return nil, nil, nil, err
+			return nil, nil, nil, nil, err
 		}
 		for _, lis := range grpcListeners {
 			if lis.MacChan != nil {
@@ -443,6 +446,13 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 		// backup mode, there's nobody listening on the channel and we'd
 		// block here forever.
 		if !d.cfg.NoSeedBackup {
+			adminMacBytes, err = bakeMacaroon(
+				ctx, macaroonService, adminPermissions(),
+			)
+			if err != nil {
+				return nil, nil, nil, nil, err
+			}
+
 			// The channel is buffered by one element so writing
 			// should not block here.
 			walletInitParams.MacResponseChan <- adminMacBytes
@@ -465,7 +475,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 				err := fmt.Errorf("unable to create macaroons "+
 					"%v", err)
 				d.logger.Error(err)
-				return nil, nil, nil, err
+				return nil, nil, nil, nil, err
 			}
 		}
 
@@ -557,7 +567,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 		err := fmt.Errorf("unable to create partial chain control: %v",
 			err)
 		d.logger.Error(err)
-		return nil, nil, nil, err
+		return nil, nil, nil, nil, err
 	}
 
 	walletConfig := &btcwallet.Config{
@@ -583,12 +593,12 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 		walletConfig.CoinSelectionStrategy = wallet.CoinSelectionRandom
 
 	default:
-		return nil, nil, nil, fmt.Errorf("unknown coin selection "+
+		return nil, nil, nil, nil, fmt.Errorf("unknown coin selection "+
 			"strategy %v", d.cfg.CoinSelectionStrategy)
 	}
 
 	earlyExit = false
-	return partialChainControl, walletConfig, cleanUp, nil
+	return partialChainControl, walletConfig, cleanUp, adminMacBytes, nil
 }
 
 // BuildChainControl is responsible for creating a fully populated chain

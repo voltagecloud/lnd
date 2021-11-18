@@ -73,7 +73,9 @@ const (
 //
 // NOTE: This should only be called after the RPCListener has signaled it is
 // ready.
-func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool) ([]grpc.DialOption, error) {
+func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool,
+	macBytes []byte) ([]grpc.DialOption, error) {
+
 	var (
 		creds credentials.TransportCredentials
 		err error
@@ -98,11 +100,14 @@ func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool) ([]grpc.DialOpt
 
 	// Get the admin macaroon if macaroons are active.
 	if !skipMacaroons && !cfg.NoMacaroons {
-		// Load the adming macaroon file.
-		macBytes, err := ioutil.ReadFile(cfg.AdminMacPath)
-		if err != nil {
-			return nil, fmt.Errorf("unable to read macaroon "+
-				"path (check the network setting!): %v", err)
+		// If we sent the macaroon bytes, don't read it from disk.
+		if macBytes == nil {
+			// Load the adming macaroon file.
+			macBytes, err = ioutil.ReadFile(cfg.AdminMacPath)
+			if err != nil {
+				return nil, fmt.Errorf("unable to read macaroon "+
+					"path (check the network setting!): %v", err)
+			}
 		}
 
 		mac := &macaroon.Macaroon{}
@@ -384,7 +389,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 
 	defer cleanUp()
 
-	partialChainControl, walletConfig, cleanUp, err := implCfg.BuildWalletConfig(
+	partialChainControl, walletConfig, cleanUp, mac, err := implCfg.BuildWalletConfig(
 		ctx, dbs, interceptorChain, grpcListeners,
 	)
 	if err != nil {
@@ -646,7 +651,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 		bestHeight)
 
 	if cfg.SidecarAcceptor {
-		acceptor, err := StartSidecarAcceptor(cfg)
+		acceptor, err := StartSidecarAcceptor(cfg, mac)
 		if err != nil {
 			ltndLog.Error(err)
 			return err
