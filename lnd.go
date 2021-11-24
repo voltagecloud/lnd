@@ -73,9 +73,7 @@ const (
 //
 // NOTE: This should only be called after the RPCListener has signaled it is
 // ready.
-func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool,
-	macBytes []byte) ([]grpc.DialOption, error) {
-
+func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool, macBytes []byte) ([]grpc.DialOption, error) {
 	var (
 		creds credentials.TransportCredentials
 		err   error
@@ -101,14 +99,13 @@ func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool,
 	if !skipMacaroons && !cfg.NoMacaroons {
 		// If we sent the macaroon bytes, don't read it from disk.
 		if macBytes == nil {
-			// Load the adming macaroon file.
+			// Load the admin macaroon file.
 			macBytes, err = ioutil.ReadFile(cfg.AdminMacPath)
 			if err != nil {
 				return nil, fmt.Errorf("unable to read macaroon "+
 					"path (check the network setting!): %v", err)
 			}
 		}
-
 		mac := &macaroon.Macaroon{}
 		if err = mac.UnmarshalBinary(macBytes); err != nil {
 			return nil, fmt.Errorf("unable to decode macaroon: %v",

@@ -428,7 +428,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 
 		// Send an admin macaroon to all our listeners that requested
 		// one by setting a non-nil macaroon channel.
-		adminMacBytes, err := bakeMacaroon(
+		adminMacBytes, err = bakeMacaroon(
 			ctx, macaroonService, adminPermissions(),
 		)
 		if err != nil {

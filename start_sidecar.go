@@ -67,7 +67,6 @@ func StartSidecarAcceptor(cfg *Config, macBytes []byte) (*acceptor.SidecarAccept
 	}
 
 	lnClient := lnrpc.NewLightningClient(conn)
-
 	channelAcceptor := acceptor.NewChannelAcceptor(lndServices.Client)
 	fundingManager := funding.NewManager(&funding.ManagerConfig{
 		DB:                db,
