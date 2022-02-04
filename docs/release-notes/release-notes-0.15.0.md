@@ -44,6 +44,8 @@ Note that the MuSig2 BIP is not final yet and therefore the MuSig2 API must be
 considered to be HIGHLY EXPERIMENTAL and subject to change in upcoming
 releases. Backward compatibility is not guaranteed!
 
+* [Add option to encrypt Tor private key on disk](https://github.com/lightningnetwork/lnd/pull/4458).
+
 ## `lncli`
 
 * Add [auto-generated command-line completions](https://github.com/lightningnetwork/lnd/pull/4177) 
@@ -413,6 +415,7 @@ gRPC performance metrics (latency to process `GetInfo`, etc)](https://github.com
 * Eugene Siegel
 * Evan Kaloudis
 * Hampus Sjöberg
+* Graham Krizek
 * henta
 * hieblmi
 * Joost Jager
