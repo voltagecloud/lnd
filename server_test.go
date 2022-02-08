@@ -85,7 +85,10 @@ func TestTLSAutoRegeneration(t *testing.T) {
 		TLSCertDuration: 42 * time.Hour,
 		RPCListeners:    rpcListeners,
 	}
-	_, _, _, cleanUp, err := getTLSConfig(cfg)
+	tlsManager := TLSManager{
+		cfg: cfg,
+	}
+	_, _, _, cleanUp, err := tlsManager.getConfig()
 	if err != nil {
 		t.Fatalf("couldn't retrieve TLS config")
 	}
