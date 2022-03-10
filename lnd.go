@@ -73,10 +73,24 @@ const (
 //
 // NOTE: This should only be called after the RPCListener has signaled it is
 // ready.
-func AdminAuthOptions(cfg *Config, skipMacaroons bool) ([]grpc.DialOption, error) {
-	creds, err := credentials.NewClientTLSFromFile(cfg.TLSCertPath, "")
-	if err != nil {
-		return nil, fmt.Errorf("unable to read TLS cert: %v", err)
+func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool,
+	macBytes []byte) ([]grpc.DialOption, error) {
+
+	var (
+		creds credentials.TransportCredentials
+		err error
+	)
+
+
+	if insecure {
+		creds = credentials.NewTLS(&tls.Config{
+	                InsecureSkipVerify: true, // nolint:gosec
+	        })
+	} else {
+		creds, err = credentials.NewClientTLSFromFile(cfg.TLSCertPath, "")
+		if err != nil {
+			return nil, fmt.Errorf("unable to read TLS cert: %v", err)
+		}
 	}
 
 	// Create a dial options array.
@@ -86,11 +100,14 @@ func AdminAuthOptions(cfg *Config, skipMacaroons bool) ([]grpc.DialOption, error
 
 	// Get the admin macaroon if macaroons are active.
 	if !skipMacaroons && !cfg.NoMacaroons {
-		// Load the adming macaroon file.
-		macBytes, err := ioutil.ReadFile(cfg.AdminMacPath)
-		if err != nil {
-			return nil, fmt.Errorf("unable to read macaroon "+
-				"path (check the network setting!): %v", err)
+		// If we sent the macaroon bytes, don't read it from disk.
+		if macBytes == nil {
+			// Load the adming macaroon file.
+			macBytes, err = ioutil.ReadFile(cfg.AdminMacPath)
+			if err != nil {
+				return nil, fmt.Errorf("unable to read macaroon "+
+					"path (check the network setting!): %v", err)
+			}
 		}
 
 		mac := &macaroon.Macaroon{}
@@ -374,7 +391,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 
 	defer cleanUp()
 
-	partialChainControl, walletConfig, cleanUp, err := implCfg.BuildWalletConfig(
+	partialChainControl, walletConfig, cleanUp, mac, err := implCfg.BuildWalletConfig(
 		ctx, dbs, interceptorChain, grpcListeners,
 	)
 	if err != nil {
@@ -657,6 +674,15 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 
 	ltndLog.Infof("Chain backend is fully synced (end_height=%v)!",
 		bestHeight)
+
+	if cfg.SidecarAcceptor {
+		acceptor, err := StartSidecarAcceptor(cfg, mac)
+		if err != nil {
+			ltndLog.Error(err)
+			return err
+		}
+		server.sidecarAcceptor = acceptor
+	}
 
 	// With all the relevant chains initialized, we can finally start the
 	// server itself.

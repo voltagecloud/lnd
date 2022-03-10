@@ -410,6 +410,14 @@ type LightningClient interface {
 	//SubscribeCustomMessages subscribes to a stream of incoming custom peer
 	//messages.
 	SubscribeCustomMessages(ctx context.Context, in *SubscribeCustomMessagesRequest, opts ...grpc.CallOption) (Lightning_SubscribeCustomMessagesClient, error)
+	//
+	//RegisterSidecarRequest is step 2/4 of the sidecar negotiation between the
+	//provider (the trader submitting the bid order) and the recipient (the trader
+	//receiving the sidecar channel).
+	//This step must be run by the recipient. The result is a sidecar ticket with
+	//the recipient's node information and channel funding multisig pubkey filled
+	//in. The ticket returned by this call will have the state "registered".
+	RegisterSidecar(ctx context.Context, in *RegisterSidecarRequest, opts ...grpc.CallOption) (*SidecarTicket, error)
 }
 
 type lightningClient struct {
@@ -1302,6 +1310,15 @@ func (x *lightningSubscribeCustomMessagesClient) Recv() (*CustomMessage, error) 
 	return m, nil
 }
 
+func (c *lightningClient) RegisterSidecar(ctx context.Context, in *RegisterSidecarRequest, opts ...grpc.CallOption) (*SidecarTicket, error) {
+	out := new(SidecarTicket)
+	err := c.cc.Invoke(ctx, "/lnrpc.Lightning/RegisterSidecar", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LightningServer is the server API for Lightning service.
 // All implementations must embed UnimplementedLightningServer
 // for forward compatibility
@@ -1698,6 +1715,14 @@ type LightningServer interface {
 	//SubscribeCustomMessages subscribes to a stream of incoming custom peer
 	//messages.
 	SubscribeCustomMessages(*SubscribeCustomMessagesRequest, Lightning_SubscribeCustomMessagesServer) error
+	//
+	//RegisterSidecarRequest is step 2/4 of the sidecar negotiation between the
+	//provider (the trader submitting the bid order) and the recipient (the trader
+	//receiving the sidecar channel).
+	//This step must be run by the recipient. The result is a sidecar ticket with
+	//the recipient's node information and channel funding multisig pubkey filled
+	//in. The ticket returned by this call will have the state "registered".
+	RegisterSidecar(context.Context, *RegisterSidecarRequest) (*SidecarTicket, error)
 	mustEmbedUnimplementedLightningServer()
 }
 
@@ -1899,6 +1924,9 @@ func (UnimplementedLightningServer) SendCustomMessage(context.Context, *SendCust
 }
 func (UnimplementedLightningServer) SubscribeCustomMessages(*SubscribeCustomMessagesRequest, Lightning_SubscribeCustomMessagesServer) error {
 	return status.Errorf(codes.Unimplemented, "method SubscribeCustomMessages not implemented")
+}
+func (UnimplementedLightningServer) RegisterSidecar(context.Context, *RegisterSidecarRequest) (*SidecarTicket, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterSidecar not implemented")
 }
 func (UnimplementedLightningServer) mustEmbedUnimplementedLightningServer() {}
 
@@ -3142,6 +3170,24 @@ func (x *lightningSubscribeCustomMessagesServer) Send(m *CustomMessage) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _Lightning_RegisterSidecar_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterSidecarRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LightningServer).RegisterSidecar(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lnrpc.Lightning/RegisterSidecar",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LightningServer).RegisterSidecar(ctx, req.(*RegisterSidecarRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Lightning_ServiceDesc is the grpc.ServiceDesc for Lightning service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -3356,6 +3402,10 @@ var Lightning_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SendCustomMessage",
 			Handler:    _Lightning_SendCustomMessage_Handler,
+		},
+		{
+			MethodName: "RegisterSidecar",
+			Handler:    _Lightning_RegisterSidecar_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
