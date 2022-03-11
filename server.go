@@ -1817,19 +1817,19 @@ func (s *server) Start() error {
 		cleanup = cleanup.add(s.authGossiper.Stop)
 
 		if s.cfg.SidecarAcceptor {
-                        if err := s.sidecarAcceptor.FundingManager.Start(); err != nil {
-                                startErr = err
-                                return
-                        }
-                        cleanup = cleanup.add(s.sidecarAcceptor.FundingManager.Stop)
+			if err := s.sidecarAcceptor.FundingManager.Start(); err != nil {
+				startErr = err
+				return
+			}
+			cleanup = cleanup.add(s.sidecarAcceptor.FundingManager.Stop)
 
-                        var testErrChan = make(chan error)
-                        if err := s.sidecarAcceptor.Start(testErrChan); err != nil {
-                                startErr = err
-                                return
-                        }
-                        cleanup = cleanup.add(s.sidecarAcceptor.Stop)
-                }
+			var testErrChan = make(chan error)
+			if err := s.sidecarAcceptor.Start(testErrChan); err != nil {
+				startErr = err
+				return
+			}
+			cleanup = cleanup.add(s.sidecarAcceptor.Stop)
+		}
 
 		if err := s.chanRouter.Start(); err != nil {
 			startErr = err

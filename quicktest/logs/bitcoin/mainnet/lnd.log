@@ -1,0 +1,90 @@
+2022-03-03 15:28:06.776 [WRN] LTND: open quicktest/lnd.conf: no such file or directory
+2022-03-03 15:28:06.776 [INF] LTND: Version: 0.14.2-beta.rc1 commit=v0.14.2-beta.rc1-15-gbb9bf29f3, build=development, logging=default, debuglevel=info
+2022-03-03 15:28:06.776 [INF] LTND: Active chain: Bitcoin (network=mainnet)
+2022-03-03 15:28:06.777 [INF] RPCS: Generating TLS certificates...
+2022-03-03 15:28:06.788 [INF] RPCS: Done generating TLS certificates
+2022-03-03 15:28:06.790 [INF] RPCS: RPC server listening on 127.0.0.1:10009
+2022-03-03 15:28:06.796 [INF] RPCS: gRPC proxy started at 127.0.0.1:8080
+2022-03-03 15:28:06.797 [INF] LTND: Opening the main database, this might take a few minutes...
+2022-03-03 15:28:06.798 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2022-03-03 15:28:06.862 [INF] LTND: Creating local graph and channel state DB instances
+2022-03-03 15:28:06.941 [INF] CHDB: Checking for schema update: latest_version=24, db_version=24
+2022-03-03 15:28:06.942 [INF] LTND: Database(s) now open (time_to_open=144.22625ms)!
+2022-03-03 15:28:07.203 [INF] BTCN: Loaded 0 addresses from file 'quicktest/data/chain/bitcoin/mainnet/peers.json'
+2022-03-03 15:28:07.206 [INF] BTCN: Registering block subscription: id=1
+2022-03-03 15:28:07.208 [INF] LTND: We're not running within systemd
+2022-03-03 15:28:07.210 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2022-03-03 15:28:07.211 [INF] BTCN: Broadcaster now active
+2022-03-03 15:28:07.221 [INF] BTCN: DNS discovery failed on seed x49.seed.bitcoin.jonasschnelli.ch: lookup x49.seed.bitcoin.jonasschnelli.ch: no such host
+2022-03-03 15:28:07.221 [INF] BTCN: DNS discovery failed on seed x49.seed.bitcoin.sipa.be: lookup x49.seed.bitcoin.sipa.be: no such host
+2022-03-03 15:28:07.221 [INF] BTCN: DNS discovery failed on seed seed.bitnodes.io: lookup seed.bitnodes.io: no such host
+2022-03-03 15:28:07.221 [INF] BTCN: DNS discovery failed on seed dnsseed.bitcoin.dashjr.org: lookup dnsseed.bitcoin.dashjr.org: no such host
+2022-03-03 15:28:07.222 [INF] BTCN: DNS discovery failed on seed x49.dnsseed.bluematt.me: lookup x49.dnsseed.bluematt.me: no such host
+2022-03-03 15:28:07.222 [INF] BTCN: DNS discovery failed on seed x49.seed.bitcoinstats.com: lookup x49.seed.bitcoinstats.com: no such host
+2022-03-03 15:28:51.273 [INF] LNWL: Opened wallet
+2022-03-03 15:28:51.546 [INF] CHRE: Primary chain is set to: bitcoin
+2022-03-03 15:28:51.596 [ERR] LTND: unable to create partial chain control: --feeurl parameter required when running neutrino on mainnet
+2022-03-03 15:28:51.596 [INF] BTCN: Canceling block subscription: id=1
+2022-03-03 15:28:51.648 [INF] BTCN: Block manager shutting down
+2022-03-03 15:28:51.648 [INF] BTCN: Address manager shutting down
+2022-03-03 15:28:51.652 [ERR] LTND: Shutting down because error in main method: error creating wallet config: unable to create partial chain control: --feeurl parameter required when running neutrino on mainnet
+2022-03-03 15:28:51.659 [INF] LTND: Shutdown complete
+
+2022-03-03 15:29:32.051 [WRN] LTND: open quicktest/lnd.conf: no such file or directory
+2022-03-03 15:29:32.051 [INF] LTND: Version: 0.14.2-beta.rc1 commit=v0.14.2-beta.rc1-15-gbb9bf29f3, build=development, logging=default, debuglevel=info
+2022-03-03 15:29:32.052 [INF] LTND: Active chain: Bitcoin (network=mainnet)
+2022-03-03 15:29:32.052 [INF] RPCS: Gettings the existing cert data
+2022-03-03 15:29:32.066 [INF] RPCS: RPC server listening on 127.0.0.1:10009
+2022-03-03 15:29:32.087 [INF] RPCS: gRPC proxy started at 127.0.0.1:8080
+2022-03-03 15:29:32.088 [INF] LTND: Opening the main database, this might take a few minutes...
+2022-03-03 15:29:32.088 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2022-03-03 15:29:32.090 [INF] LTND: Creating local graph and channel state DB instances
+2022-03-03 15:29:32.153 [INF] CHDB: Checking for schema update: latest_version=24, db_version=24
+2022-03-03 15:29:32.153 [INF] LTND: Database(s) now open (time_to_open=64.990667ms)!
+2022-03-03 15:29:32.255 [INF] BTCN: Loaded 0 addresses from file 'quicktest/data/chain/bitcoin/mainnet/peers.json'
+2022-03-03 15:29:32.255 [INF] BTCN: Registering block subscription: id=1
+2022-03-03 15:29:32.256 [INF] BTCN: Broadcaster now active
+2022-03-03 15:29:32.258 [INF] LTND: We're not running within systemd
+2022-03-03 15:29:32.259 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2022-03-03 15:29:32.262 [INF] BTCN: DNS discovery failed on seed x49.dnsseed.bluematt.me: lookup x49.dnsseed.bluematt.me: no such host
+2022-03-03 15:29:32.262 [INF] BTCN: DNS discovery failed on seed x49.seed.bitcoin.jonasschnelli.ch: lookup x49.seed.bitcoin.jonasschnelli.ch: no such host
+2022-03-03 15:29:32.262 [INF] BTCN: DNS discovery failed on seed x49.seed.bitcoinstats.com: lookup x49.seed.bitcoinstats.com: no such host
+2022-03-03 15:29:32.262 [INF] BTCN: DNS discovery failed on seed x49.seed.bitcoin.sipa.be: lookup x49.seed.bitcoin.sipa.be: no such host
+2022-03-03 15:29:32.262 [INF] BTCN: DNS discovery failed on seed dnsseed.bitcoin.dashjr.org: lookup dnsseed.bitcoin.dashjr.org: no such host
+2022-03-03 15:29:32.263 [INF] BTCN: DNS discovery failed on seed seed.bitnodes.io: lookup seed.bitnodes.io: no such host
+2022-03-03 15:29:42.187 [INF] LNWL: Opened wallet
+2022-03-03 15:29:42.370 [INF] CHRE: Primary chain is set to: bitcoin
+2022-03-03 15:29:42.420 [INF] CHRE: Using external fee estimator https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json: cached=true
+2022-03-03 15:29:42.420 [INF] LNWL: Starting web API fee estimator
+2022-03-03 15:29:42.425 [ERR] LNWL: unable to query web api for fee response: Get "https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json": dial tcp: lookup nodes.lightning.computer: no such host
+2022-03-03 15:29:43.107 [INF] LNWL: The wallet has been unlocked without a time limit
+2022-03-03 15:29:43.216 [INF] CHRE: LightningWallet opened
+2022-03-03 15:29:43.310 [INF] HSWC: Cleaning circuits from disk for closed channels
+2022-03-03 15:29:43.312 [INF] HSWC: Finished cleaning: no closed channels found, no actions taken.
+2022-03-03 15:29:43.312 [INF] HSWC: Restoring in-memory circuit state from disk
+2022-03-03 15:29:43.349 [INF] HSWC: Payment circuits loaded: num_pending=0, num_open=0
+2022-03-03 15:29:43.516 [INF] SWPR: Migrating UTXO nursery finalized TXIDs
+2022-03-03 15:29:43.563 [INF] LTND: Channel backup proxy channel notifier starting
+2022-03-03 15:29:43.565 [INF] ATPL: Instantiating autopilot with active=false, max_channels=5, allocation=0.600000, min_chan_size=20000, max_chan_size=16777215, private=false, min_confs=1, conf_target=3
+2022-03-03 15:29:43.566 [INF] RRPC: Making macaroons for Router RPC Server at: quicktest/data/chain/bitcoin/mainnet/router.macaroon
+2022-03-03 15:29:43.611 [INF] LTND: We're not running within systemd
+2022-03-03 15:29:43.612 [INF] LTND: Waiting for chain backend to finish sync, start_height=0
+2022-03-03 15:43:14.820 [ERR] LNWL: unable to query web api for fee response: Get "https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json": dial tcp: lookup nodes.lightning.computer: no such host
+2022-03-03 15:56:47.198 [ERR] LNWL: unable to query web api for fee response: Get "https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json": dial tcp: lookup nodes.lightning.computer: no such host
+2022-03-03 16:10:19.586 [ERR] LNWL: unable to query web api for fee response: Get "https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json": dial tcp: lookup nodes.lightning.computer: no such host
+2022-03-03 16:23:51.967 [ERR] LNWL: unable to query web api for fee response: Get "https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json": dial tcp: lookup nodes.lightning.computer: no such host
+2022-03-03 16:55:28.868 [ERR] LNWL: unable to query web api for fee response: Get "https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json": dial tcp: lookup nodes.lightning.computer: no such host
+2022-03-05 03:49:30.475 [ERR] LNWL: unable to query web api for fee response: Get "https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json": dial tcp: lookup nodes.lightning.computer: no such host
+2022-03-05 11:18:16.058 [INF] LTND: Received interrupt
+2022-03-05 11:18:16.059 [INF] LTND: Shutting down...
+2022-03-05 11:18:16.060 [INF] LTND: Gracefully shutting down.
+2022-03-05 11:18:16.479 [INF] RPCS: Stopping RPC Server
+2022-03-05 11:18:16.482 [INF] RPCS: Stopping VersionRPC Sub-RPC Server
+2022-03-05 11:18:16.483 [INF] RPCS: Stopping WatchtowerClientRPC Sub-RPC Server
+2022-03-05 11:18:16.484 [INF] RPCS: Stopping RouterRPC Sub-RPC Server
+2022-03-05 11:18:16.501 [INF] BTCN: Canceling block subscription: id=1
+2022-03-05 11:18:16.559 [INF] BTCN: Block manager shutting down
+2022-03-05 11:18:16.560 [INF] BTCN: Address manager shutting down
+2022-03-05 11:18:16.565 [INF] LNWL: Stopping web API fee estimator
+2022-03-05 11:18:16.585 [INF] LTND: Shutdown complete
+

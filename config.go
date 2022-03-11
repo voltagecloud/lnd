@@ -752,6 +752,11 @@ func ValidateConfig(cfg Config, interceptor signal.Interceptor, fileParser,
 			cfg.PoolDir =
 				filepath.Join(cfg.DataDir, defaultPoolDirname)
 		}
+
+		if cfg.PoolDir == defaultPoolDir {
+			cfg.PoolDir =
+				filepath.Join(cfg.DataDir, defaultPoolDirname)
+		}
 	}
 
 	funcName := "ValidateConfig"
