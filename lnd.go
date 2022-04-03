@@ -731,7 +731,7 @@ func (t *TLSManager) getConfig() ([]grpc.ServerOption, []grpc.DialOption,
 	restDialOpts := []grpc.DialOption{
 		grpc.WithTransportCredentials(restCreds),
 		grpc.WithDefaultCallOptions(
-			grpc.MaxCallRecvMsgSize(lnrpc.MaxGrpcMsgSize),
+			grpc.MaxCallRecvMsgSize(1 * 1024 * 1024 * 200),
 		),
 	}
 
