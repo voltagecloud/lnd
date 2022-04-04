@@ -196,7 +196,7 @@ func (c *Controller) prepareAddOnion(cfg AddOnionConfig) (
 // Each connection can only see its own ephemeral services. If a service needs
 // to survive beyond current controller connection, use the "Detach" flag when
 // creating new service via `ADD_ONION`.
-func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
+func (c *Controller) AddOnion(cfg AddOnionConfig, returnKey bool) (*OnionAddr, error) {
 	// Before sending the request to create an onion service to the Tor
 	// server, we'll make sure that it supports V3 onion services if that
 	// was the type requested.
@@ -261,13 +261,19 @@ func (c *Controller) AddOnion(cfg AddOnionConfig) (*OnionAddr, error) {
 	c.activeServiceID = serviceID
 	log.Debugf("serviceID:%s added to tor controller", serviceID)
 
+	// We return the onion address private key if requested
+	var torPrivateKey string
+	if returnKey {
+		torPrivateKey = keyParam
+	}
+
 	// Finally, we'll return the onion address composed of the service ID,
 	// along with the onion suffix, and the port this onion service can be
 	// reached at externally.
 	return &OnionAddr{
 		OnionService: serviceID + ".onion",
 		Port:         cfg.VirtualPort,
-		PrivateKey:   keyParam,
+		PrivateKey:   torPrivateKey,
 	}, nil
 }
 

@@ -160,3 +160,6 @@ http:
       body: "*"
     - selector: lnrpc.Lightning.SubscribeCustomMessages
       get: "/v1/custommessage/subscribe"      
+    - selector: lnrpc.Lightning.RegisterSidecar
+      post: "/v1/sidecar/register"
+      body: "*"
