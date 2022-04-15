@@ -394,7 +394,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 
 	var (
 		macaroonService *macaroons.Service
-		adminMacBytes []byte
+		adminMacBytes   []byte
 	)
 	if !d.cfg.NoMacaroons {
 		// Create the macaroon authentication/authorization service.
@@ -431,6 +431,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 		adminMacBytes, err := bakeMacaroon(
 			ctx, macaroonService, adminPermissions(),
 		)
+		d.logger.Infof("#!#!#!#!#!#!#!#   Found macaroon: %+v", adminMacBytes)
 		if err != nil {
 			return nil, nil, nil, nil, err
 		}
@@ -452,6 +453,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			if err != nil {
 				return nil, nil, nil, nil, err
 			}
+			d.logger.Infof("#!#!#!#!#!#!#!#2   Found macaroon: %+v", adminMacBytes)
 
 			// The channel is buffered by one element so writing
 			// should not block here.

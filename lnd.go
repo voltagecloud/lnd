@@ -78,14 +78,13 @@ func AdminAuthOptions(cfg *Config, skipMacaroons, insecure bool,
 
 	var (
 		creds credentials.TransportCredentials
-		err error
+		err   error
 	)
-
 
 	if insecure {
 		creds = credentials.NewTLS(&tls.Config{
-	                InsecureSkipVerify: true, // nolint:gosec
-	        })
+			InsecureSkipVerify: true, // nolint:gosec
+		})
 	} else {
 		creds, err = credentials.NewClientTLSFromFile(cfg.TLSCertPath, "")
 		if err != nil {
@@ -395,7 +394,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 	if err != nil {
 		return mkErr("error creating wallet config: %v", err)
 	}
-
+	ltndLog.Infof("#!#!#!#!#!#! GOT THE mac back yo %+v", mac)
 	defer cleanUp()
 
 	activeChainControl, cleanUp, err := implCfg.BuildChainControl(
@@ -651,6 +650,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 		bestHeight)
 
 	if cfg.SidecarAcceptor {
+		ltndLog.Infof("#!#!#!#!#!#! PASSED INTO ACCEPTOR %+v", mac)
 		acceptor, err := StartSidecarAcceptor(cfg, mac)
 		if err != nil {
 			ltndLog.Error(err)
