@@ -395,6 +395,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 	var (
 		macaroonService *macaroons.Service
 		adminMacBytes   []byte
+		finalMac        []byte
 	)
 	if !d.cfg.NoMacaroons {
 		// Create the macaroon authentication/authorization service.
@@ -432,6 +433,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 			ctx, macaroonService, adminPermissions(),
 		)
 		d.logger.Infof("#!#!#!#!#!#!#!#   Found macaroon: %+v", adminMacBytes)
+		finalMac = adminMacBytes
 		if err != nil {
 			return nil, nil, nil, nil, err
 		}
@@ -454,7 +456,7 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 				return nil, nil, nil, nil, err
 			}
 			d.logger.Infof("#!#!#!#!#!#!#!#2   Found macaroon: %+v", adminMacBytes)
-
+			finalMac = adminMacBytes
 			// The channel is buffered by one element so writing
 			// should not block here.
 			walletInitParams.MacResponseChan <- adminMacBytes
@@ -600,7 +602,9 @@ func (d *DefaultWalletImpl) BuildWalletConfig(ctx context.Context,
 	}
 
 	earlyExit = false
-	return partialChainControl, walletConfig, cleanUp, adminMacBytes, nil
+	d.logger.Infof("#!#!#!#!#!#!#!#test3   Found macaroon: %+v", adminMacBytes)
+	d.logger.Infof("#!#!#!#!#!#!#!#final   Found macaroon: %+v", finalMac)
+	return partialChainControl, walletConfig, cleanUp, finalMac, nil
 }
 
 // BuildChainControl is responsible for creating a fully populated chain
