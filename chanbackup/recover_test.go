@@ -8,6 +8,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/lightningnetwork/lnd/lnencrypt"
+	"github.com/stretchr/testify/require"
 )
 
 type mockChannelRestorer struct {
@@ -109,9 +110,7 @@ func TestUnpackAndRecoverSingles(t *testing.T) {
 	err = UnpackAndRecoverSingles(
 		packedBackups, keyRing, &chanRestorer, &peerConnector,
 	)
-	if err != nil {
-		t.Fatalf("unable to recover chans: %v", err)
-	}
+	require.NoError(t, err, "unable to recover chans")
 
 	// Both the restorer, and connector should have been called 10 times,
 	// once for each backup.
@@ -206,9 +205,7 @@ func TestUnpackAndRecoverMulti(t *testing.T) {
 	err = UnpackAndRecoverMulti(
 		packedMulti, keyRing, &chanRestorer, &peerConnector,
 	)
-	if err != nil {
-		t.Fatalf("unable to recover chans: %v", err)
-	}
+	require.NoError(t, err, "unable to recover chans")
 
 	// Both the restorer, and connector should have been called 10 times,
 	// once for each backup.

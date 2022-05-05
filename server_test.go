@@ -26,6 +26,7 @@ import (
 	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lntest/channels"
 	"github.com/lightningnetwork/lnd/lntest/mock"
+	"github.com/stretchr/testify/require"
 )
 
 const (
@@ -33,7 +34,6 @@ const (
 )
 
 var (
-
 	privateKeyPrefix = []byte("-----BEGIN EC PRIVATE KEY-----")
 
 	privKeyBytes = channels.AlicesPrivKey
@@ -85,10 +85,9 @@ func TestTLSAutoRegeneration(t *testing.T) {
 		t.Fatalf("couldn't grab new certificate")
 	}
 
-	newCert, err := x509.ParseCertificate(newCertData.Certificate[0])
-	if err != nil {
-		t.Fatalf("couldn't parse new certificate")
-	}
+	certDerBytes, keyBytes := genExpiredCertPair(t, tempDirPath)
+	expiredCert, err := x509.ParseCertificate(certDerBytes)
+	require.NoError(t, err, "failed to parse certificate")
 
 	// Check that the expired certificate was successfully deleted and
 	// replaced with a new one.
@@ -137,11 +136,11 @@ func TestTLSManagerGenCert(t *testing.T) {
 	// created and written to disk.
 	tempDirPath, removeFiles, certPath, keyPath = newTestDirectory(t)
 	defer func() {
-                err := removeFiles(tempDirPath)
-                if err != nil {
-                        t.Fatalf("couldn't remove test files: %+v", err)
-                }
-        }()
+		err := removeFiles(tempDirPath)
+		if err != nil {
+			t.Fatalf("couldn't remove test files: %+v", err)
+		}
+	}()
 
 	cfg = &Config{
 		TLSEncryptKey:   true,
@@ -185,11 +184,11 @@ func TestTLSEncryptSetWhileKeyFileIsPlaintext(t *testing.T) {
 		t, false, false, keyRing,
 	)
 	defer func() {
-                err := removeFiles(certDir)
-                if err != nil {
-                        t.Fatalf("couldn't remove test files: %+v", err)
-                }
-        }()
+		err := removeFiles(certDir)
+		if err != nil {
+			t.Fatalf("couldn't remove test files: %+v", err)
+		}
+	}()
 
 	cfg := &Config{
 		TLSEncryptKey: true,
@@ -237,12 +236,11 @@ func TestTLSEncryptSetWhileKeyFileIsPlaintext(t *testing.T) {
 func TestGenerateEphemeralCert(t *testing.T) {
 	tempDirFile, removeFiles, certPath, keyPath := newTestDirectory(t)
 	defer func() {
-                err := removeFiles(tempDirFile)
-                if err != nil {
-                        t.Fatalf("couldn't remove test files: %+v", err)
-                }
-        }()
-
+		err := removeFiles(tempDirFile)
+		if err != nil {
+			t.Fatalf("couldn't remove test files: %+v", err)
+		}
+	}()
 
 	var emptyKeyRing keychain.KeyRing
 	cfg := &Config{
@@ -315,9 +313,7 @@ func genCertPair(t *testing.T, expired bool) ([]byte, []byte) {
 
 	// Generate a serial number that's below the serialNumberLimit.
 	serialNumber, err := rand.Int(rand.Reader, serialNumberLimit)
-	if err != nil {
-		t.Fatalf("failed to generate serial number: %s", err)
-	}
+	require.NoError(t, err, "failed to generate serial number")
 
 	host := "lightning"
 
@@ -363,14 +359,10 @@ func genCertPair(t *testing.T, expired bool) ([]byte, []byte) {
 	certDerBytes, err := x509.CreateCertificate(
 		rand.Reader, &template, &template, &priv.PublicKey, priv,
 	)
-	if err != nil {
-		t.Fatalf("failed to create certificate: %v", err)
-	}
+	require.NoError(t, err, "failed to create certificate")
 
 	keyBytes, err := x509.MarshalECPrivateKey(priv)
-	if err != nil {
-		t.Fatalf("unable to encode privkey: %v", err)
-	}
+	require.NoError(t, err, "unable to encode privkey")
 
 	return certDerBytes, keyBytes
 }

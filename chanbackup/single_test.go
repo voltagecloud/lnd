@@ -17,6 +17,7 @@ import (
 	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/lightningnetwork/lnd/shachain"
+	"github.com/stretchr/testify/require"
 )
 
 var (
@@ -203,9 +204,7 @@ func TestSinglePackUnpack(t *testing.T) {
 	// contains all the information we need to create a static channel
 	// backup.
 	channel, err := genRandomOpenChannelShell()
-	if err != nil {
-		t.Fatalf("unable to gen open channel: %v", err)
-	}
+	require.NoError(t, err, "unable to gen open channel")
 
 	singleChanBackup := NewSingle(channel, []net.Addr{addr1, addr2})
 
@@ -342,9 +341,7 @@ func TestPackedSinglesUnpack(t *testing.T) {
 	// With all singles packed, we'll create the grouped type and attempt
 	// to Unpack all of them in a single go.
 	freshSingles, err := PackedSingles(packedSingles).Unpack(keyRing)
-	if err != nil {
-		t.Fatalf("unable to unpack singles: %v", err)
-	}
+	require.NoError(t, err, "unable to unpack singles")
 
 	// The set of freshly unpacked singles should exactly match the initial
 	// set of singles that we packed before.
@@ -388,9 +385,7 @@ func TestSinglePackStaticChanBackups(t *testing.T) {
 	// Now that we have all of our singles are created, we'll attempt to
 	// pack them all in a single batch.
 	packedSingleMap, err := PackStaticChanBackups(unpackedSingles, keyRing)
-	if err != nil {
-		t.Fatalf("unable to pack backups: %v", err)
-	}
+	require.NoError(t, err, "unable to pack backups")
 
 	// With our packed singles obtained, we'll ensure that each of them
 	// match their unpacked counterparts after they themselves have been
@@ -436,9 +431,7 @@ func TestSingleUnconfirmedChannel(t *testing.T) {
 	// we need to create a static channel backup but simulate an
 	// unconfirmed channel by setting the block height to 0.
 	channel, err := genRandomOpenChannelShell()
-	if err != nil {
-		t.Fatalf("unable to gen open channel: %v", err)
-	}
+	require.NoError(t, err, "unable to gen open channel")
 	channel.ShortChannelID.BlockHeight = 0
 	channel.FundingBroadcastHeight = fundingBroadcastHeight
 
@@ -454,9 +447,7 @@ func TestSingleUnconfirmedChannel(t *testing.T) {
 	var unpackedSingle Single
 	unpackedSingle.Encrypter = lnencrypt.Encrypter{}
 	err = unpackedSingle.UnpackFromReader(&b, keyRing)
-	if err != nil {
-		t.Fatalf("unable to unpack single: %v", err)
-	}
+	require.NoError(t, err, "unable to unpack single")
 	if unpackedSingle.ShortChannelID.BlockHeight != fundingBroadcastHeight {
 		t.Fatalf("invalid block height. got %d expected %d.",
 			unpackedSingle.ShortChannelID.BlockHeight,
