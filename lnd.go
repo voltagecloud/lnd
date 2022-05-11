@@ -35,6 +35,7 @@ import (
 	"github.com/lightningnetwork/lnd/rpcperms"
 	"github.com/lightningnetwork/lnd/signal"
 	"github.com/lightningnetwork/lnd/tor"
+	"github.com/lightningnetwork/lnd/tor/onionfile"
 	"github.com/lightningnetwork/lnd/walletunlocker"
 	"github.com/lightningnetwork/lnd/watchtower"
 	"golang.org/x/crypto/acme/autocert"
@@ -474,12 +475,14 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 		if torController != nil {
 			wtCfg.TorController = torController
 			wtCfg.WatchtowerKeyPath = cfg.Tor.WatchtowerKeyPath
+			wtCfg.EncryptKey = cfg.Tor.EncryptKey
+			wtCfg.KeyRing = activeChainControl.KeyRing
 
 			switch {
 			case cfg.Tor.V2:
-				wtCfg.Type = tor.V2
+				wtCfg.Type = onionfile.V2
 			case cfg.Tor.V3:
-				wtCfg.Type = tor.V3
+				wtCfg.Type = onionfile.V3
 			}
 		}
 

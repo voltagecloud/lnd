@@ -6,7 +6,9 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/lightningnetwork/lnd/brontide"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/tor"
+	"github.com/lightningnetwork/lnd/tor/onionfile"
 	"github.com/lightningnetwork/lnd/watchtower/lookout"
 	"github.com/lightningnetwork/lnd/watchtower/wtserver"
 )
@@ -163,14 +165,22 @@ func (w *Standalone) createNewHiddenService() error {
 		listenPorts = append(listenPorts, port)
 	}
 
+	encryptKey, err := lnencrypt.GenEncryptionKey(w.cfg.KeyRing)
+	if err != nil {
+		return err
+	}
+
 	// Once we've created the port mapping, we can automatically create the
 	// hidden service. The service's private key will be saved on disk in order
 	// to persistently have access to this hidden service across restarts.
 	onionCfg := tor.AddOnionConfig{
 		VirtualPort: DefaultPeerPort,
 		TargetPorts: listenPorts,
-		Store:       tor.NewOnionFile(w.cfg.WatchtowerKeyPath, 0600),
-		Type:        w.cfg.Type,
+		Store: onionfile.NewOnionFile(
+			w.cfg.WatchtowerKeyPath, 0600, w.cfg.EncryptKey,
+			lnencrypt.Encrypter{}, encryptKey,
+		),
+		Type: w.cfg.Type,
 	}
 
 	addr, err := w.cfg.TorController.AddOnion(onionCfg)
