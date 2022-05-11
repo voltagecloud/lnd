@@ -554,6 +554,14 @@ github.com/onsi/gomega v1.7.1/go.mod h1:XdKZgCCFLUoM/7CFJVPcG8C1xQ1AJ0vpAezJrB7J
 github.com/onsi/gomega v1.10.1 h1:o0+MgICZLuZ7xjH7Vx6zS/zcu93/BEp1VwkIW1mEXCE=
 github.com/onsi/gomega v1.10.1/go.mod h1:iN09h71vgCQne3DLsj+A5owkum+a2tYe+TOCB1ybHNo=
 github.com/opentracing/opentracing-go v1.1.0/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220511004102-c797b9a46a4f h1:XDyQvMmG1V7rDtxFny8opQfrF86WmfaYx3MzqQkHHUE=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220511004102-c797b9a46a4f/go.mod h1:RDtaAdwfAm+ONuPYwUhNIH1RAvKPv+75lHPOegUcz64=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220511192351-0748f781bd76 h1:W6aMcEvEhxF87OBxbwuCCs0mpwFJ3dw5WiHQ8sADSVs=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220511192351-0748f781bd76/go.mod h1:RDtaAdwfAm+ONuPYwUhNIH1RAvKPv+75lHPOegUcz64=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220511223555-6769c5b6d0c9 h1:H7rd/nBTVSQoG8XbBSxLaq1Ob+6ebDmJZwb9BibJKuc=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220511223555-6769c5b6d0c9/go.mod h1:RDtaAdwfAm+ONuPYwUhNIH1RAvKPv+75lHPOegUcz64=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220519033448-976bf0034f47 h1:orQvu0gLJzrg2HWTRPxdCl46XajEinphYrq+F+Q4SSQ=
+github.com/orbitalturtle/lnd/tor v0.0.0-20220519033448-976bf0034f47/go.mod h1:RDtaAdwfAm+ONuPYwUhNIH1RAvKPv+75lHPOegUcz64=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
 github.com/pierrec/lz4/v4 v4.0.3/go.mod h1:gZWDp/Ze/IJXGXf23ltt2EXimqmTUXEy0GFuRQyBid4=

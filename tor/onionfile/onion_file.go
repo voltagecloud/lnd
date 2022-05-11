@@ -60,7 +60,7 @@ type File struct {
 // to store an onion service's private key.
 func NewOnionFile(privateKeyPath string, privateKeyPerm os.FileMode,
 	encryptKey bool, encrypter EncrypterDecrypter, keyRing []byte,
-) *File {
+	) *File {
 
 	return &File{
 		privateKeyPath: privateKeyPath,

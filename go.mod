@@ -157,6 +157,8 @@ require (
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
+replace github.com/lightningnetwork/lnd/tor => github.com/orbitalturtle/lnd/tor v0.0.0-20220519033448-976bf0034f47
+
 // This replace is for https://github.com/advisories/GHSA-w73w-5m7g-f7qc
 replace github.com/dgrijalva/jwt-go => github.com/golang-jwt/jwt v3.2.1+incompatible
 
