@@ -51,6 +51,7 @@ import (
 	"github.com/lightningnetwork/lnd/kvdb"
 	"github.com/lightningnetwork/lnd/labels"
 	"github.com/lightningnetwork/lnd/lncfg"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnrpc"
 	"github.com/lightningnetwork/lnd/lnrpc/invoicesrpc"
 	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
@@ -6862,6 +6863,7 @@ func (r *rpcServer) createBackupSnapshot(backups []chanbackup.Single) (
 	var b bytes.Buffer
 	unpackedMultiBackup := chanbackup.Multi{
 		StaticBackups: backups,
+		Encrypter:     lnencrypt.Encrypter{},
 	}
 	err = unpackedMultiBackup.PackToWriter(&b, r.server.cc.KeyRing)
 	if err != nil {

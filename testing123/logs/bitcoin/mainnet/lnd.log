@@ -1,0 +1,21 @@
+2022-05-20 12:54:45.048 [WRN] LTND: open testing123/lnd.conf: no such file or directory
+2022-05-20 12:54:45.048 [INF] LTND: Version: 0.15.0-beta.rc2 commit=cert/v1.0.3-3121-g164a9c6f6, build=development, logging=default, debuglevel=info
+2022-05-20 12:54:45.048 [INF] LTND: Active chain: Bitcoin (network=mainnet)
+2022-05-20 12:54:45.048 [INF] RPCS: Generating TLS certificates...
+2022-05-20 12:54:45.050 [INF] RPCS: Done generating TLS certificates
+2022-05-20 12:54:45.053 [INF] RPCS: RPC server listening on 127.0.0.1:10009
+2022-05-20 12:54:45.058 [INF] RPCS: gRPC proxy started at 127.0.0.1:8080
+2022-05-20 12:54:45.059 [INF] LTND: Opening the main database, this might take a few minutes...
+2022-05-20 12:54:45.059 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2022-05-20 12:54:45.119 [INF] LTND: Creating local graph and channel state DB instances
+2022-05-20 12:54:45.193 [INF] CHDB: Checking for schema update: latest_version=27, db_version=27
+2022-05-20 12:54:45.193 [INF] LTND: Database(s) now open (time_to_open=133.830833ms)!
+2022-05-20 12:54:45.194 [INF] LTND: We're not running within systemd or the service type is not 'notify'
+2022-05-20 12:54:45.194 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2022-05-20 12:54:54.394 [INF] LTND: Received interrupt
+2022-05-20 12:54:54.394 [INF] LTND: Shutting down...
+2022-05-20 12:54:54.394 [INF] LTND: Gracefully shutting down.
+2022-05-20 12:54:54.394 [ERR] LTND: unable to set up wallet password listeners: shutting down
+2022-05-20 12:54:54.394 [ERR] LTND: Shutting down because error in main method: error creating wallet config: unable to set up wallet password listeners: shutting down
+2022-05-20 12:54:54.395 [INF] LTND: Shutdown complete
+

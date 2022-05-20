@@ -8,6 +8,8 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+
+	"github.com/lightningnetwork/lnd/lnencrypt"
 )
 
 func makeFakePackedMulti() (PackedMulti, error) {
@@ -188,7 +190,7 @@ func assertMultiEqual(t *testing.T, a, b *Multi) {
 func TestExtractMulti(t *testing.T) {
 	t.Parallel()
 
-	keyRing := &mockKeyRing{}
+	keyRing := &lnencrypt.MockKeyRing{}
 
 	// First, as prep, we'll create a single chan backup, then pack that
 	// fully into a multi backup.
@@ -202,6 +204,7 @@ func TestExtractMulti(t *testing.T) {
 	var b bytes.Buffer
 	unpackedMulti := Multi{
 		StaticBackups: []Single{singleBackup},
+		Encrypter:     lnencrypt.Encrypter{},
 	}
 	err = unpackedMulti.PackToWriter(&b, keyRing)
 	if err != nil {

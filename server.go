@@ -45,6 +45,7 @@ import (
 	"github.com/lightningnetwork/lnd/keychain"
 	"github.com/lightningnetwork/lnd/kvdb"
 	"github.com/lightningnetwork/lnd/lncfg"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnpeer"
 	"github.com/lightningnetwork/lnd/lnrpc"
 	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
@@ -65,6 +66,7 @@ import (
 	"github.com/lightningnetwork/lnd/sweep"
 	"github.com/lightningnetwork/lnd/ticker"
 	"github.com/lightningnetwork/lnd/tor"
+	"github.com/lightningnetwork/lnd/tor/onionfile"
 	"github.com/lightningnetwork/lnd/walletunlocker"
 	"github.com/lightningnetwork/lnd/watchtower/blob"
 	"github.com/lightningnetwork/lnd/watchtower/wtclient"
@@ -2687,20 +2689,28 @@ func (s *server) createNewHiddenService() error {
 		listenPorts = append(listenPorts, port)
 	}
 
+	encryptKey, err := lnencrypt.GenEncryptionKey(s.cc.KeyRing)
+	if err != nil {
+		return err
+	}
+
 	// Once the port mapping has been set, we can go ahead and automatically
 	// create our onion service. The service's private key will be saved to
 	// disk in order to regain access to this service when restarting `lnd`.
 	onionCfg := tor.AddOnionConfig{
 		VirtualPort: defaultPeerPort,
 		TargetPorts: listenPorts,
-		Store:       tor.NewOnionFile(s.cfg.Tor.PrivateKeyPath, 0600),
+		Store: onionfile.NewOnionFile(
+			s.cfg.Tor.PrivateKeyPath, 0600, s.cfg.Tor.EncryptKey,
+			lnencrypt.Encrypter{}, encryptKey,
+		),
 	}
 
 	switch {
 	case s.cfg.Tor.V2:
-		onionCfg.Type = tor.V2
+		onionCfg.Type = onionfile.V2
 	case s.cfg.Tor.V3:
-		onionCfg.Type = tor.V3
+		onionCfg.Type = onionfile.V3
 	}
 
 	addr, err := s.torController.AddOnion(onionCfg)

@@ -22,6 +22,21 @@ type OnionStore interface {
 	DeletePrivateKey(onionfile.OnionType) error
 }
 
+// OnionStore is a store containing information about a particular onion
+// service.
+type OnionStore interface {
+	// StorePrivateKey stores the private key according to the
+	// implementation of the OnionStore interface.
+	StorePrivateKey(OnionType, []byte) error
+
+	// PrivateKey retrieves a stored private key. If it is not found, then
+	// ErrNoPrivateKey should be returned.
+	PrivateKey(OnionType) ([]byte, error)
+
+	// DeletePrivateKey securely removes the private key from the store.
+	DeletePrivateKey(OnionType) error
+}
+
 // A compile-time constraint to ensure OnionFile satisfies the OnionStore
 // interface.
 var _ OnionStore = (*onionfile.File)(nil)

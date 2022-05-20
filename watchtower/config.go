@@ -10,6 +10,7 @@ import (
 	"github.com/btcsuite/btcd/wire"
 	"github.com/lightningnetwork/lnd/keychain"
 	"github.com/lightningnetwork/lnd/tor"
+	"github.com/lightningnetwork/lnd/tor/onionfile"
 	"github.com/lightningnetwork/lnd/watchtower/lookout"
 )
 
@@ -98,7 +99,13 @@ type Config struct {
 	// for a watchtower hidden service should be stored.
 	WatchtowerKeyPath string
 
+	// EncryptKey will encrypt the Tor private key on disk
+	EncryptKey bool
+
+	// KeyRing is the KeyRing to use when encrypting the Tor private key
+	KeyRing keychain.KeyRing
+
 	// Type specifies the hidden service type (V2 or V3) that the watchtower
 	// will create.
-	Type tor.OnionType
+	Type onionfile.OnionType
 }

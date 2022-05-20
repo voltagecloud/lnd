@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"net"
 	"testing"
+
+	"github.com/lightningnetwork/lnd/lnencrypt"
 )
 
 // TestMultiPackUnpack...
@@ -11,6 +13,7 @@ func TestMultiPackUnpack(t *testing.T) {
 	t.Parallel()
 
 	var multi Multi
+	multi.Encrypter = lnencrypt.Encrypter{}
 	numSingles := 10
 	originalSingles := make([]Single, 0, numSingles)
 	for i := 0; i < numSingles; i++ {
@@ -25,7 +28,7 @@ func TestMultiPackUnpack(t *testing.T) {
 		multi.StaticBackups = append(multi.StaticBackups, single)
 	}
 
-	keyRing := &mockKeyRing{}
+	keyRing := &lnencrypt.MockKeyRing{}
 
 	versionTestCases := []struct {
 		// version is the pack/unpack version that we should use to
@@ -70,6 +73,7 @@ func TestMultiPackUnpack(t *testing.T) {
 		// version, then we trigger an error.
 		if versionCase.valid {
 			var unpackedMulti Multi
+			unpackedMulti.Encrypter = lnencrypt.Encrypter{}
 			err = unpackedMulti.UnpackFromReader(&b, keyRing)
 			if err != nil {
 				t.Fatalf("#%v unable to unpack multi: %v",
@@ -91,14 +95,20 @@ func TestMultiPackUnpack(t *testing.T) {
 				)
 			}
 
+			encrypter := lnencrypt.Encrypter{}
+			encryptKey, err := lnencrypt.GenEncryptionKey(keyRing)
+			if err != nil {
+				t.Fatalf("unable to generate encrypt key %v", err)
+			}
+
 			// Next, we'll make a fake packed multi, it'll have an
 			// unknown version relative to what's implemented atm.
 			var fakePackedMulti bytes.Buffer
 			fakeRawMulti := bytes.NewBuffer(
 				bytes.Repeat([]byte{99}, 20),
 			)
-			err := encryptPayloadToWriter(
-				*fakeRawMulti, &fakePackedMulti, keyRing,
+			err = encrypter.EncryptPayloadToWriter(
+				*fakeRawMulti, &fakePackedMulti, encryptKey,
 			)
 			if err != nil {
 				t.Fatalf("unable to pack fake multi; %v", err)
@@ -122,7 +132,7 @@ func TestMultiPackUnpack(t *testing.T) {
 func TestPackedMultiUnpack(t *testing.T) {
 	t.Parallel()
 
-	keyRing := &mockKeyRing{}
+	keyRing := &lnencrypt.MockKeyRing{}
 
 	// First, we'll make a new unpacked multi with a random channel.
 	testChannel, err := genRandomOpenChannelShell()
@@ -130,6 +140,7 @@ func TestPackedMultiUnpack(t *testing.T) {
 		t.Fatalf("unable to gen random channel: %v", err)
 	}
 	var multi Multi
+	multi.Encrypter = lnencrypt.Encrypter{}
 	multi.StaticBackups = append(
 		multi.StaticBackups, NewSingle(testChannel, nil),
 	)

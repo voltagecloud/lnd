@@ -12,6 +12,7 @@ import (
 	"github.com/btcsuite/btcd/wire"
 	"github.com/lightningnetwork/lnd/channeldb"
 	"github.com/lightningnetwork/lnd/keychain"
+	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/lightningnetwork/lnd/lnwire"
 )
 
@@ -133,6 +134,9 @@ type Single struct {
 	//
 	// - ScriptEnforcedLeaseVersion
 	LeaseExpiry uint32
+
+	// Encrypter encrypts/decrypts backup data.
+	Encrypter lnencrypt.EncrypterDecrypter
 }
 
 // NewSingle creates a new static channel backup based on an existing open
@@ -191,6 +195,7 @@ func NewSingle(channel *channeldb.OpenChannel,
 		LocalChanCfg:     channel.LocalChanCfg,
 		RemoteChanCfg:    channel.RemoteChanCfg,
 		ShaChainRootDesc: shaChainRootDesc,
+		Encrypter:        lnencrypt.Encrypter{},
 	}
 
 	switch {
@@ -315,10 +320,10 @@ func (s *Single) Serialize(w io.Writer) error {
 // global counter to use as a sequence number for nonces, and want to ensure
 // that we're able to decrypt these blobs without any additional context. We
 // derive the key that we use for encryption via a SHA2 operation of the with
-// the golden keychain.KeyFamilyStaticBackup base encryption key.  We then take
-// the serialized resulting shared secret point, and hash it using sha256 to
-// obtain the key that we'll use for encryption. When using the AEAD, we pass
-// the nonce as associated data such that we'll be able to package the two
+// the golden keychain.KeyFamilyBaseEncryption base encryption key.  We then
+// take the serialized resulting shared secret point, and hash it using sha256
+// to obtain the key that we'll use for encryption. When using the AEAD, we
+// pass the nonce as associated data such that we'll be able to package the two
 // together for storage. Before writing out the encrypted payload, we prepend
 // the nonce to the final blob.
 func (s *Single) PackToWriter(w io.Writer, keyRing keychain.KeyRing) error {
@@ -333,7 +338,12 @@ func (s *Single) PackToWriter(w io.Writer, keyRing keychain.KeyRing) error {
 	// Finally, we'll encrypt the raw serialized SCB (using the nonce as
 	// associated data), and write out the ciphertext prepend with the
 	// nonce that we used to the passed io.Reader.
-	return encryptPayloadToWriter(rawBytes, w, keyRing)
+	encryptKey, err := lnencrypt.GenEncryptionKey(keyRing)
+	if err != nil {
+		return fmt.Errorf("unable to generate encrypt key %v", err)
+	}
+
+	return s.Encrypter.EncryptPayloadToWriter(rawBytes, w, encryptKey)
 }
 
 // readLocalKeyDesc reads a KeyDescriptor encoded within an unpacked Single.
@@ -510,7 +520,12 @@ func (s *Single) Deserialize(r io.Reader) error {
 // payload for whatever reason (wrong key, wrong nonce, etc), then this method
 // will return an error.
 func (s *Single) UnpackFromReader(r io.Reader, keyRing keychain.KeyRing) error {
-	plaintext, err := decryptPayloadFromReader(r, keyRing)
+	encryptKey, err := lnencrypt.GenEncryptionKey(keyRing)
+	if err != nil {
+		return fmt.Errorf("unable to generate encrypt key %v", err)
+	}
+
+	plaintext, err := s.Encrypter.DecryptPayloadFromReader(r, encryptKey)
 	if err != nil {
 		return err
 	}
@@ -559,6 +574,7 @@ func (p PackedSingles) Unpack(keyRing keychain.KeyRing) ([]Single, error) {
 	backups := make([]Single, len(p))
 	for i, encryptedBackup := range p {
 		var backup Single
+		backup.Encrypter = lnencrypt.Encrypter{}
 
 		backupReader := bytes.NewReader(encryptedBackup)
 		err := backup.UnpackFromReader(backupReader, keyRing)
