@@ -46,6 +46,8 @@ releases. Backward compatibility is not guaranteed!
 
 * [Add option to encrypt Tor private key on disk](https://github.com/lightningnetwork/lnd/pull/4458).
 
+* [Add option to encrypt TLS private key on disk](https://github.com/lightningnetwork/lnd/pull/4476).
+
 ## `lncli`
 
 * Add [auto-generated command-line completions](https://github.com/lightningnetwork/lnd/pull/4177) 
