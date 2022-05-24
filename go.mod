@@ -158,6 +158,7 @@ require (
 )
 
 replace github.com/lightningnetwork/lnd/tor => github.com/orbitalturtle/lnd/tor v0.0.0-20220519033448-976bf0034f47
+replace github.com/lightningnetwork/lnd/cert => github.com/voltagecloud/lnd/cert v1.0.4-0.20220525032859-7cac305212ff
 
 // This replace is for https://github.com/advisories/GHSA-w73w-5m7g-f7qc
 replace github.com/dgrijalva/jwt-go => github.com/golang-jwt/jwt v3.2.1+incompatible

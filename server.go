@@ -6,6 +6,7 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"fmt"
+	"io/ioutil"
 	"math/big"
 	prand "math/rand"
 	"net"
@@ -1553,8 +1554,35 @@ func (s *server) createLivenessMonitor(cfg *Config, cc *chainreg.ChainControl) {
 	tlsHealthCheck := healthcheck.NewObservation(
 		"tls",
 		func() error {
+
+			var emptyKeyRing keychain.KeyRing
+			certBytes, err := ioutil.ReadFile(cfg.TLSCertPath)
+			if err != nil {
+				return err
+			}
+			keyBytes, err := ioutil.ReadFile(cfg.TLSKeyPath)
+			if err != nil {
+				return err
+			}
+
+			// If key encryption is set, then decrypt the file.
+			// We don't need to do a file type check here because GenCertPair
+			// has been ran with the same value for cfg.TLSEncryptKey.
+			if cfg.TLSEncryptKey {
+				reader := bytes.NewReader(keyBytes)
+				encrypterKeyBytes, err := lnencrypt.GenEncryptionKey(emptyKeyRing)
+				if err != nil {
+					return err
+				}
+
+				keyBytes, err = lnencrypt.Encrypter{}.DecryptPayloadFromReader(reader, encrypterKeyBytes)
+				if err != nil {
+					return err
+				}
+			}
+
 			_, parsedCert, err := cert.LoadCert(
-				cfg.TLSCertPath, cfg.TLSKeyPath,
+				certBytes, keyBytes,
 			)
 			if err != nil {
 				return err
