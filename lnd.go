@@ -678,15 +678,16 @@ func (t *TLSManager) getConfig() ([]grpc.ServerOption, []grpc.DialOption,
 	if err != nil {
 		return nil, nil, nil, nil, err
 	}
-
-	tlsr, err := cert.NewTLSReloader(t.certBytes, t.keyBytes)
-	if err != nil {
-		return nil, nil, nil, nil, err
+	if t.tlsReloader == nil {
+		tlsr, err := cert.NewTLSReloader(t.certBytes, t.keyBytes)
+		if err != nil {
+			return nil, nil, nil, nil, err
+		}
+		t.tlsReloader = tlsr
+		tlsCfg := cert.TLSConfFromCert(*t.certData)
+		t.tlsCfg = tlsCfg
+		t.tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
 	}
-	t.tlsReloader = tlsr
-	tlsCfg := cert.TLSConfFromCert(*t.certData)
-	t.tlsCfg = tlsCfg
-	t.tlsCfg.GetCertificate = tlsr.GetCertificateFunc()
 
 	// Now that we know that we have a ceritificate, let's generate the
 	// required config options.
@@ -695,7 +696,7 @@ func (t *TLSManager) getConfig() ([]grpc.ServerOption, []grpc.DialOption,
 		return nil, nil, nil, nil, err
 	}
 
-	cleanUp := t.setUpLetsEncrypt(tlsCfg)
+	cleanUp := t.setUpLetsEncrypt(t.tlsCfg)
 	if err != nil {
 		return nil, nil, nil, nil, err
 	}
@@ -832,6 +833,11 @@ func (t *TLSManager) createTLSPair() error {
 				}
 			}
 
+			err = t.getTLSKey()
+			if err != nil {
+				return err
+			}
+
 		} else {
 			rpcsLog.Info("Getting the existing cert data")
 			certBytes, keyBytes, err := cert.GetCertBytesFromPath(t.cfg.TLSCertPath, t.cfg.TLSKeyPath)
@@ -840,6 +846,11 @@ func (t *TLSManager) createTLSPair() error {
 			}
 			t.certBytes = certBytes
 			t.keyBytes = keyBytes
+
+			err = t.getTLSKey()
+			if err != nil {
+				return err
+			}
 
 			certData, parsedCert, err := cert.LoadCert(
 				t.certBytes, t.keyBytes,
@@ -854,10 +865,6 @@ func (t *TLSManager) createTLSPair() error {
 
 		rpcsLog.Infof("Done generating TLS certificates")
 
-		err := t.getTLSKey()
-		if err != nil {
-			return err
-		}
 	}
 
 	return nil
