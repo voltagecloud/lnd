@@ -162,7 +162,7 @@ require (
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
-replace github.com/lightninglabs/pool => github.com/orbitalturtle/pool v0.4.4-alpha.0.20220602013027-c7c79f61e138
+replace github.com/lightninglabs/pool => github.com/orbitalturtle/pool v0.4.4-alpha.0.20220606174835-cba480feed92
 
 replace github.com/lightninglabs/pool/auctioneerrpc => github.com/orbitalturtle/pool/auctioneerrpc v1.0.2-0.20220422072640-736121591453
 
