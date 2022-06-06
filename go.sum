@@ -581,6 +581,8 @@ github.com/orbitalturtle/pool v0.4.4-alpha.0.20220602004424-d3fe500407c9 h1:7kwZ
 github.com/orbitalturtle/pool v0.4.4-alpha.0.20220602004424-d3fe500407c9/go.mod h1:lpbm5/5YY70NoYXryNv/eT0cG0HE+iRCIh7G1CcjsDc=
 github.com/orbitalturtle/pool v0.4.4-alpha.0.20220602013027-c7c79f61e138 h1:JEC91CPH6W/UOZ3bi9tPy0kqajp1q7iyKjLN+7pum94=
 github.com/orbitalturtle/pool v0.4.4-alpha.0.20220602013027-c7c79f61e138/go.mod h1:KAl6XFB0eWwGRAQmy4Vc7BvduC9NJ3Hyu7aBI6FVTyI=
+github.com/orbitalturtle/pool v0.4.4-alpha.0.20220606174835-cba480feed92 h1:hU5FllxlfiwiiJ7g69p76Rhwb4PBGIgksRBCX8CXKwQ=
+github.com/orbitalturtle/pool v0.4.4-alpha.0.20220606174835-cba480feed92/go.mod h1:KAl6XFB0eWwGRAQmy4Vc7BvduC9NJ3Hyu7aBI6FVTyI=
 github.com/orbitalturtle/pool/auctioneerrpc v1.0.2-0.20220422072640-736121591453 h1:/LMsV0riFF9eOI0yvF4k+Ft8a2CcKqwxqHdkY+Sd9ac=
 github.com/orbitalturtle/pool/auctioneerrpc v1.0.2-0.20220422072640-736121591453/go.mod h1:F9uND5Kpj2eYeYe0RLi8IWQHsRjQ88FUp8itkYmX1Mo=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
