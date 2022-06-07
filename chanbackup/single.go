@@ -520,22 +520,15 @@ func (s *Single) Deserialize(r io.Reader) error {
 // payload for whatever reason (wrong key, wrong nonce, etc), then this method
 // will return an error.
 func (s *Single) UnpackFromReader(r io.Reader, keyRing keychain.KeyRing) error {
-	log.Infof("In the UnpackFromReader function")
-	log.Infof("Found the following reader: %+v", r)
-	log.Infof("Found the following keyRing: %+v", keyRing)
 	encryptKey, err := lnencrypt.GenEncryptionKey(keyRing)
 	if err != nil {
-		log.Infof("Found the following err: %+v", err)
 		return fmt.Errorf("unable to generate encrypt key %v", err)
 	}
-	log.Infof("Found the following encryptKey: %+v", encryptKey)
 
 	plaintext, err := s.Encrypter.DecryptPayloadFromReader(r, encryptKey)
 	if err != nil {
-		log.Infof("Found the following err2: %+v", err)
 		return err
 	}
-	log.Infof("Found the following plaintext: %+v", plaintext)
 
 	// Finally, we'll pack the bytes into a reader to we can deserialize
 	// the plaintext bytes of the SCB.
