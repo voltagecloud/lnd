@@ -1544,6 +1544,9 @@ func (r *rpcServer) NewAddress(ctx context.Context,
 		if err != nil {
 			return nil, err
 		}
+
+	default:
+		return nil, fmt.Errorf("unknown address type: %v", in.Type)
 	}
 
 	rpcsLog.Debugf("[newaddress] account=%v type=%v addr=%v", account,
