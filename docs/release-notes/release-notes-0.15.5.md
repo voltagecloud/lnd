@@ -12,6 +12,10 @@
   checks](https://github.com/lightningnetwork/lnd/pull/7095). This reduces idle
   CPU usage for pending/dangling funding attempts.
 
+* [The wallet birthday is now used properly when creating a watch-only wallet
+  to avoid scanning the whole
+  chain](https://github.com/lightningnetwork/lnd/pull/7056).
+
 # Contributors (Alphabetical Order)
 
 * Olaoluwa Osuntokun
