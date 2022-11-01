@@ -1,0 +1,44 @@
+2022-11-01 08:55:41.048 [WRN] LTND: open testingnew/lnd.conf: no such file or directory
+2022-11-01 08:55:41.048 [INF] LTND: Version: 0.15.4-beta commit=v0.15.4-beta.f2, build=development, logging=default, debuglevel=info
+2022-11-01 08:55:41.048 [INF] LTND: Active chain: Bitcoin (network=mainnet)
+2022-11-01 08:55:41.048 [INF] RPCS: Generating TLS certificates...
+2022-11-01 08:55:41.049 [INF] RPCS: Done generating TLS certificates
+2022-11-01 08:55:41.051 [INF] RPCS: RPC server listening on 127.0.0.1:10009
+2022-11-01 08:55:41.053 [INF] RPCS: gRPC proxy started at 127.0.0.1:8080
+2022-11-01 08:55:41.054 [INF] LTND: Opening the main database, this might take a few minutes...
+2022-11-01 08:55:41.054 [INF] LTND: Opening bbolt database, sync_freelist=false, auto_compact=false
+2022-11-01 08:55:41.111 [INF] LTND: Creating local graph and channel state DB instances
+2022-11-01 08:55:41.188 [INF] CHDB: Checking for schema update: latest_version=29, db_version=29
+2022-11-01 08:55:41.188 [INF] CHDB: Checking for optional update: prune_revocation_log=false, db_version=empty
+2022-11-01 08:55:41.188 [INF] LTND: Database(s) now open (time_to_open=134.344958ms)!
+2022-11-01 08:55:41.188 [INF] LTND: We're not running within systemd or the service type is not 'notify'
+2022-11-01 08:55:41.188 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2022-11-01 08:56:13.998 [INF] LNWL: Opened wallet
+2022-11-01 08:56:14.327 [INF] CHRE: Primary chain is set to: bitcoin
+2022-11-01 08:56:14.976 [INF] CHRE: Initializing btcd backed fee estimator
+2022-11-01 08:56:16.661 [INF] LNWL: The wallet has been unlocked without a time limit
+2022-11-01 08:56:17.150 [INF] CHRE: LightningWallet opened
+2022-11-01 08:56:17.351 [INF] HSWC: Cleaning circuits from disk for closed channels
+2022-11-01 08:56:17.351 [INF] HSWC: Finished cleaning: no closed channels found, no actions taken.
+2022-11-01 08:56:17.352 [INF] HSWC: Restoring in-memory circuit state from disk
+2022-11-01 08:56:17.390 [INF] HSWC: Payment circuits loaded: num_pending=0, num_open=0
+2022-11-01 08:56:17.542 [INF] SWPR: Migrating UTXO nursery finalized TXIDs
+2022-11-01 08:56:17.581 [INF] LTND: Channel backup proxy channel notifier starting
+2022-11-01 08:56:17.581 [INF] ATPL: Instantiating autopilot with active=false, max_channels=5, allocation=0.600000, min_chan_size=20000, max_chan_size=16777215, private=false, min_confs=1, conf_target=3
+2022-11-01 08:56:17.582 [INF] RRPC: Making macaroons for Router RPC Server at: testingnew/data/chain/bitcoin/mainnet/router.macaroon
+2022-11-01 08:56:17.618 [INF] LTND: We're not running within systemd or the service type is not 'notify'
+2022-11-01 08:56:17.708 [INF] LTND: Waiting for chain backend to finish sync, start_height=761272
+2022-11-01 08:56:21.281 [INF] LNWL: Started rescan from block 00000000000000000007a2b1a3c84ebfc3bb3483d573aba345c87a792fe0edaf (height 760853) for 0 addresses
+2022-11-01 08:56:21.395 [INF] LNWL: Catching up block hashes to height 761272, this might take a while
+2022-11-01 08:56:37.568 [INF] LTND: Received interrupt
+2022-11-01 08:56:37.569 [INF] LTND: Shutting down...
+2022-11-01 08:56:37.571 [INF] LTND: Gracefully shutting down.
+2022-11-01 08:56:38.654 [INF] RPCS: Stopping RPC Server
+2022-11-01 08:56:38.654 [INF] RPCS: Stopping RouterRPC Sub-RPC Server
+2022-11-01 08:56:38.654 [INF] RPCS: Stopping DevRPC Sub-RPC Server
+2022-11-01 08:56:38.654 [INF] RPCS: Stopping VersionRPC Sub-RPC Server
+2022-11-01 08:56:38.654 [INF] RPCS: Stopping WatchtowerClientRPC Sub-RPC Server
+2022-11-01 08:56:38.656 [ERR] LNWL: Failed to update address manager sync state for height 761272: the client has been shutdown
+2022-11-01 08:56:38.656 [INF] LNWL: Done catching up block hashes
+2022-11-01 08:56:38.658 [INF] LTND: Shutdown complete
+
