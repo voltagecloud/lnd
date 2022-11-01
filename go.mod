@@ -182,5 +182,3 @@ replace github.com/gogo/protobuf => github.com/gogo/protobuf v1.3.2
 go 1.17
 
 retract v0.0.2
-
-replace github.com/btcsuite/btcd => github.com/roasbeef/btcd v0.0.0-20221010002244-7fdaf6958781
