@@ -20,7 +20,7 @@ env:
 
 jobs:
   amd:
-    name: Release build
+    name: Amd release build
     runs-on: ubuntu-latest
     steps:
 
@@ -61,10 +61,10 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 cp lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+          aws s3 cp lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
 
   arm:
-    name: Release build
+    name: Arm release build
     runs-on: ubuntu-latest
     steps:
 
@@ -105,4 +105,48 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 cp lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+          aws s3 cp lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+
+  darwin:
+    name: Darwin release build
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+            
+      - name: git checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: setup go ${{ env.GO_VERSION }}
+        uses: actions/setup-go@v2
+        with:
+          go-version: '${{ env.GO_VERSION }}'
+
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Create Build of Darwin
+        run: SKIP_VERSION_CHECK=1 GOOS=darwin GOARCH=arm64 make install tag=${{ env.RELEASE_VERSION }} tags="experimental monitoring autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc watchtowerrpc wtclientrpc neutrinorpc peersrpc"
+
+      - name: Archive Build
+        run: mkdir lnd-darwin-arm64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-darwin-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-darwin-arm64-${{ env.RELEASE_VERSION }}/lncli && tar -zcvf lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-darwin-arm64-${{ env.RELEASE_VERSION }} 
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_S3_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_S3_SECRET_KEY }}
+          aws-region: us-west-2
+
+      - name: Upload build to S3
+        run: |
+          aws s3 cp lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
