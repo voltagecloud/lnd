@@ -94,7 +94,7 @@ jobs:
         run: SKIP_VERSION_CHECK=1 GOOS=linux GOARCH=arm64 make install tag=${{ env.RELEASE_VERSION }} tags="experimental monitoring autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc watchtowerrpc wtclientrpc neutrinorpc peersrpc"
 
       - name: Archive Build
-        run: mkdir lnd-linux-arm64-${{ env.RELEASE_VERSION }} && tree ~/go | true && ls -alh ~/go/bin/ && cp ~/go/bin/lnd lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lncli && tar -zcvf lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-arm64-${{ env.RELEASE_VERSION }} 
+        run: mkdir lnd-linux-arm64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/linux_arm64/lnd lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/linux_arm64/lncli lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lncli && tar -zcvf lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-arm64-${{ env.RELEASE_VERSION }} 
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -138,7 +138,7 @@ jobs:
         run: SKIP_VERSION_CHECK=1 GOOS=darwin GOARCH=arm64 make install tag=${{ env.RELEASE_VERSION }} tags="experimental monitoring autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc watchtowerrpc wtclientrpc neutrinorpc peersrpc"
 
       - name: Archive Build
-        run: mkdir lnd-darwin-arm64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-darwin-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-darwin-arm64-${{ env.RELEASE_VERSION }}/lncli && tar -zcvf lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-darwin-arm64-${{ env.RELEASE_VERSION }} 
+        run: mkdir lnd-darwin-arm64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/darwin_arm64/lnd lnd-darwin-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/darwin_arm64/lncli lnd-darwin-arm64-${{ env.RELEASE_VERSION }}/lncli && tar -zcvf lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-darwin-arm64-${{ env.RELEASE_VERSION }} 
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
