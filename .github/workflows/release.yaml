@@ -66,6 +66,7 @@ jobs:
   arm:
     name: Arm release build
     runs-on: ubuntu-latest
+    needs: amd
     steps:
 
       - uses: actions/cache@v3
@@ -110,6 +111,7 @@ jobs:
   darwin:
     name: Darwin release build
     runs-on: ubuntu-latest
+    needs: [arm,amd]
     steps:
 
       - uses: actions/cache@v3
