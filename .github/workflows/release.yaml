@@ -50,7 +50,7 @@ jobs:
         run: SKIP_VERSION_CHECK=1 GOOS=linux GOARCH=amd64 make install tag=${{ env.RELEASE_VERSION }} tags="experimental monitoring autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc watchtowerrpc wtclientrpc neutrinorpc peersrpc"
 
       - name: Archive Build
-        run: mkdir lnd-linux-amd64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-linux-amd64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-linux-amd64-${{ env.RELEASE_VERSION }}/lnd && tar -zcvf lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-amd64-${{ env.RELEASE_VERSION }} 
+        run: mkdir lnd-linux-amd64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-linux-amd64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-linux-amd64-${{ env.RELEASE_VERSION }}/lncli && tar -zcvf lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-amd64-${{ env.RELEASE_VERSION }} 
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -94,7 +94,7 @@ jobs:
         run: SKIP_VERSION_CHECK=1 GOOS=linux GOARCH=arm64 make install tag=${{ env.RELEASE_VERSION }} tags="experimental monitoring autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc watchtowerrpc wtclientrpc neutrinorpc peersrpc"
 
       - name: Archive Build
-        run: mkdir lnd-linux-arm64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lnd && tar -zcvf lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-arm64-${{ env.RELEASE_VERSION }} 
+        run: mkdir lnd-linux-arm64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lncli && tar -zcvf lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-arm64-${{ env.RELEASE_VERSION }} 
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
