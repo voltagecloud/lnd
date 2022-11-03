@@ -49,6 +49,9 @@ jobs:
       - name: Create Build of AMD
         run: SKIP_VERSION_CHECK=1 GOOS=linux GOARCH=amd64 make install tag=${{ env.RELEASE_VERSION }} tags="experimental monitoring autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc watchtowerrpc wtclientrpc neutrinorpc peersrpc"
 
+      - name: Archive Build
+        run: mkdir lnd-linux-amd64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-linux-amd64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-linux-amd64-${{ env.RELEASE_VERSION }}/lnd && tar -zcvf lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-amd64-${{ env.RELEASE_VERSION }} 
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -58,7 +61,7 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 cp $GO_PATH/pkg/lnd s3://voltage-prod-public-assets/builds/lnd/lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+          aws s3 cp lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
 
   arm:
     name: Release build
@@ -90,6 +93,9 @@ jobs:
       - name: Create Build of ARM
         run: SKIP_VERSION_CHECK=1 GOOS=linux GOARCH=arm64 make install tag=${{ env.RELEASE_VERSION }} tags="experimental monitoring autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc watchtowerrpc wtclientrpc neutrinorpc peersrpc"
 
+      - name: Archive Build
+        run: mkdir lnd-linux-arm64-${{ env.RELEASE_VERSION }} && cp ~/go/bin/lnd lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lnd && cp ~/go/bin/lncli lnd-linux-arm64-${{ env.RELEASE_VERSION }}/lnd && tar -zcvf lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz lnd-linux-arm64-${{ env.RELEASE_VERSION }} 
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -99,4 +105,4 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 cp $GO_PATH/pkg/lnd s3://voltage-prod-public-assets/builds/lnd/lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+          aws s3 cp lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
