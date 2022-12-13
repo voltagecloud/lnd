@@ -1002,6 +1002,41 @@ func (t *TLSManager) certMaintenance() error {
 		}
 		t.certBytes = certBytes
 		t.keyBytes = keyBytes
+
+		if t.cfg.TLSEncryptKey {
+			keyBuf := bytes.NewBuffer(t.keyBytes)
+			var b bytes.Buffer
+			keyBytes, err := lnencrypt.GenEncryptionKey(t.keyRing)
+			if err != nil {
+				return err
+			}
+
+			err = lnencrypt.Encrypter{}.EncryptPayloadToWriter(
+				*keyBuf, &b, keyBytes,
+			)
+			if err != nil {
+				return err
+			}
+
+			if err = ioutil.WriteFile(t.cfg.TLSKeyPath, b.Bytes(),
+				0600); err != nil {
+				return err
+			}
+			t.keyBytes = b.Bytes()
+
+		} else {
+			keyBuf := bytes.NewBuffer(t.keyBytes)
+			if err := ioutil.WriteFile(t.cfg.TLSKeyPath, keyBuf.Bytes(),
+				0600); err != nil {
+				return err
+			}
+		}
+
+		err = t.getTLSKey()
+		if err != nil {
+			return err
+		}
+
 		rpcsLog.Infof("Done renewing TLS certificates")
 
 		// Reload the certificate data.
