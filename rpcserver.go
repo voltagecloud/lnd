@@ -530,10 +530,10 @@ func MainRPCServerPermissions() map[string][]bakery.Op {
 		}},
 		"/lnrpc.Lightning/ChannelAcceptor": {{
 			Entity: "onchain",
-			Action: "write",
+			Action: "read",
 		}, {
 			Entity: "offchain",
-			Action: "write",
+			Action: "read",
 		}},
 		"/lnrpc.Lightning/BakeMacaroon": {{
 			Entity: "macaroon",
@@ -7789,8 +7789,8 @@ func (r *rpcServer) RegisterSidecar(ctx context.Context,
 	req *lnrpc.RegisterSidecarRequest) (*lnrpc.SidecarTicket, error) {
 
 	if r.server.sidecarAcceptor == nil {
-		return nil, errors.New("Cannot register sidecar until sidecar"+
-			" acceptor is set up. Make sure sidecar-acceptor flag"+
+		return nil, errors.New("Cannot register sidecar until sidecar" +
+			" acceptor is set up. Make sure sidecar-acceptor flag" +
 			" is set, or wait until node is fully synced.")
 	}
 
