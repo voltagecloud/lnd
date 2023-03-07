@@ -61,7 +61,7 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 cp lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+          aws s3 cp lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz s3://lnd-prod-artifacts/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-linux-amd64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
 
   arm:
     name: Arm release build
@@ -105,7 +105,7 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 cp lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+          aws s3 cp lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://lnd-prod-artifacts/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-linux-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
 
   darwin:
     name: Darwin release build
@@ -149,4 +149,4 @@ jobs:
 
       - name: Upload build to S3
         run: |
-          aws s3 cp lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://voltage-prod-public-assets/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
+          aws s3 cp lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz s3://lnd-prod-artifacts/builds/lnd/${{ env.RELEASE_VERSION }}/lnd-darwin-arm64-${{ env.RELEASE_VERSION }}.tar.gz --acl=public-read
