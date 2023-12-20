@@ -505,7 +505,7 @@ func (t *TLSManager) SetCertificateBeforeUnlock() ([]grpc.ServerOption,
 func (t *TLSManager) loadEphemeralCertificate() ([]byte, error) {
 	rpcsLog.Infof("Generating ephemeral TLS certificates...")
 
-	tmpValidity := validityHours * time.Hour
+	tmpValidity := validityHours * time.Hour * 120
 	// Append .tmp to the end of the cert for differentiation.
 	tmpCertPath := t.cfg.TLSCertPath + ".tmp"
 
