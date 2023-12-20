@@ -39,9 +39,9 @@ result, it cannot be used in isolation.
 ### 24-word Cipher Seeds
 
 When a new `lnd` node is created, it is given a 24-word seed phrase, called an
-[`aezeed cipher seed`](https://github.com/lightningnetwork/lnd/tree/master/aezeed).
+[`aezeed cipher seed`](https://github.com/voltagecloud/lnd/tree/master/aezeed).
 The [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) and
-[`aezeed cipher seed`](https://github.com/lightningnetwork/lnd/tree/master/aezeed)
+[`aezeed cipher seed`](https://github.com/voltagecloud/lnd/tree/master/aezeed)
 formats look similar, but the only commonality they share is that they use the
 same default [English](https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt)
 wordlist.
@@ -350,7 +350,7 @@ Once the process has been initiated, `lnd` will proceed to:
      and nothing more. As a result, they're marked as "recovered" channels in
      the database, and we'll disallow trying to use them for any other process.
   2. Once the channel shell is recovered, the
-     [chanbackup](https://github.com/lightningnetwork/lnd/tree/master/chanbackup)
+     [chanbackup](https://github.com/voltagecloud/lnd/tree/master/chanbackup)
      package will attempt to insert a LinkNode that contains all prior
      addresses that we were able to reach the peer at. During the process,
      we'll also insert the edge for that channel (only in the outgoing

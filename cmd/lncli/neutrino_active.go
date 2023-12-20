@@ -4,8 +4,8 @@
 package main
 
 import (
-	"github.com/lightningnetwork/lnd/lnrpc/neutrinorpc"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lnd/lnrpc/neutrinorpc"
 )
 
 func getNeutrinoKitClient(ctx *cli.Context) (neutrinorpc.NeutrinoKitClient, func()) {

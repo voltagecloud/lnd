@@ -4,8 +4,8 @@
 package main
 
 import (
-	"github.com/lightningnetwork/lnd/lnrpc/watchtowerrpc"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lnd/lnrpc/watchtowerrpc"
 )
 
 func watchtowerCommands() []cli.Command {

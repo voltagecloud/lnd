@@ -7,9 +7,9 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/kvdb"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 type mockChannelSource struct {

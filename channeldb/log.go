@@ -2,16 +2,16 @@ package channeldb
 
 import (
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/build"
-	mig "github.com/lightningnetwork/lnd/channeldb/migration"
-	"github.com/lightningnetwork/lnd/channeldb/migration12"
-	"github.com/lightningnetwork/lnd/channeldb/migration13"
-	"github.com/lightningnetwork/lnd/channeldb/migration16"
-	"github.com/lightningnetwork/lnd/channeldb/migration24"
-	"github.com/lightningnetwork/lnd/channeldb/migration30"
-	"github.com/lightningnetwork/lnd/channeldb/migration31"
-	"github.com/lightningnetwork/lnd/channeldb/migration_01_to_11"
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/build"
+	mig "github.com/voltagecloud/lnd/channeldb/migration"
+	"github.com/voltagecloud/lnd/channeldb/migration12"
+	"github.com/voltagecloud/lnd/channeldb/migration13"
+	"github.com/voltagecloud/lnd/channeldb/migration16"
+	"github.com/voltagecloud/lnd/channeldb/migration24"
+	"github.com/voltagecloud/lnd/channeldb/migration30"
+	"github.com/voltagecloud/lnd/channeldb/migration31"
+	"github.com/voltagecloud/lnd/channeldb/migration_01_to_11"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 // log is a logger that is initialized with no output filters.  This

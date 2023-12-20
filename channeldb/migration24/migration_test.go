@@ -13,10 +13,10 @@ import (
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	lnwire "github.com/lightningnetwork/lnd/channeldb/migration/lnwire21"
-	mig "github.com/lightningnetwork/lnd/channeldb/migration_01_to_11"
-	"github.com/lightningnetwork/lnd/channeldb/migtest"
-	"github.com/lightningnetwork/lnd/kvdb"
+	lnwire "github.com/voltagecloud/lnd/channeldb/migration/lnwire21"
+	mig "github.com/voltagecloud/lnd/channeldb/migration_01_to_11"
+	"github.com/voltagecloud/lnd/channeldb/migtest"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

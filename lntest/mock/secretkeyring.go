@@ -6,7 +6,7 @@ import (
 	"github.com/btcsuite/btcd/btcec/v2/schnorr"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/txscript"
-	"github.com/lightningnetwork/lnd/keychain"
+	"github.com/voltagecloud/lnd/keychain"
 )
 
 // SecretKeyRing is a mock implementation of the SecretKeyRing interface.

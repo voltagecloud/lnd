@@ -1,6 +1,6 @@
 package migration_01_to_11
 
-import "github.com/lightningnetwork/lnd/kvdb"
+import "github.com/voltagecloud/lnd/kvdb"
 
 // fetchPaymentStatus fetches the payment status of the payment. If the payment
 // isn't found, it will default to "StatusUnknown".

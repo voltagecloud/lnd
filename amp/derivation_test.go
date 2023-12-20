@@ -3,8 +3,8 @@ package amp_test
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/amp"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/amp"
 )
 
 type sharerTest struct {

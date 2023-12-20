@@ -16,13 +16,13 @@ import (
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/wire"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/invoices"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/netann"
-	"github.com/lightningnetwork/lnd/routing"
-	"github.com/lightningnetwork/lnd/zpay32"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/invoices"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/netann"
+	"github.com/voltagecloud/lnd/routing"
+	"github.com/voltagecloud/lnd/zpay32"
 )
 
 const (

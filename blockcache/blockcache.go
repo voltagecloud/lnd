@@ -7,8 +7,8 @@ import (
 	"github.com/lightninglabs/neutrino"
 	"github.com/lightninglabs/neutrino/cache"
 	"github.com/lightninglabs/neutrino/cache/lru"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/multimutex"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/multimutex"
 )
 
 // BlockCache is an lru cache for blocks.

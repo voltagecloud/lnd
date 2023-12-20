@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/btcsuite/btcwallet/chain"
-	"github.com/lightningnetwork/lnd/blockcache"
-	"github.com/lightningnetwork/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/blockcache"
+	"github.com/voltagecloud/lnd/lnwallet"
 )
 
 const (

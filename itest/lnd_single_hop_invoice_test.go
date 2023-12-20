@@ -5,13 +5,13 @@ import (
 	"encoding/hex"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/record"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lnrpc/routerrpc"
+	"github.com/voltagecloud/lnd/lntest"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/record"
 )
 
 func testSingleHopInvoice(ht *lntest.HarnessTest) {

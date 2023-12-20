@@ -2,7 +2,7 @@ package lnd
 
 import (
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/lnwallet"
 )
 
 // sweeperWallet is a wrapper around the LightningWallet that implements the

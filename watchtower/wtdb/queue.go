@@ -7,7 +7,7 @@ import (
 	"io"
 
 	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

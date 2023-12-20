@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/ticker"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/ticker"
 )
 
 // TestHostAnnouncerUpdates tests that the HostAnnouncer will properly announce

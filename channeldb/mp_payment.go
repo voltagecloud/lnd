@@ -9,9 +9,9 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/routing/route"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/routing/route"
 )
 
 // HTLCAttemptInfo contains static information about a specific HTLC attempt

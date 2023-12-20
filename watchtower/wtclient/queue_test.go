@@ -6,11 +6,11 @@ import (
 	"time"
 
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lntest/wait"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb"
-	"github.com/lightningnetwork/lnd/watchtower/wtmock"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lntest/wait"
+	"github.com/voltagecloud/lnd/watchtower/wtdb"
+	"github.com/voltagecloud/lnd/watchtower/wtmock"
 )
 
 const (

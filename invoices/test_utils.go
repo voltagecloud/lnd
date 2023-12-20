@@ -13,12 +13,12 @@ import (
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/clock"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/zpay32"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/chainntnfs"
+	"github.com/voltagecloud/clock"
+	"github.com/voltagecloud/lnd/zpay32"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwire"
 )
 
 type mockChainNotifier struct {

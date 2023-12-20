@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 var (

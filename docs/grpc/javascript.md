@@ -17,7 +17,7 @@ You also need to copy the `lnd` `lightning.proto` file in your project directory
 (or at least somewhere reachable by your Javascript code).
 
 The `lightning.proto` file is [located in the `lnrpc` directory of the `lnd`
-sources](https://github.com/lightningnetwork/lnd/blob/master/lnrpc/lightning.proto).
+sources](https://github.com/voltagecloud/lnd/blob/master/lnrpc/lightning.proto).
 
 ### Imports and Client
 

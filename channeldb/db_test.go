@@ -12,11 +12,11 @@ import (
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/shachain"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/keychain"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/shachain"
 )
 
 func TestOpenWithCreate(t *testing.T) {

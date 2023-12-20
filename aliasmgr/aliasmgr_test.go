@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // TestAliasStorePeerAlias tests that putting and retrieving a peer's alias

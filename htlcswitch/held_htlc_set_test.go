@@ -3,9 +3,9 @@ package htlcswitch
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/channeldb/models"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/channeldb/models"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 func TestHeldHtlcSetEmpty(t *testing.T) {

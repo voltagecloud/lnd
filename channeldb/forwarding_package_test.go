@@ -7,10 +7,10 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // TestPkgFilterBruteForce tests the behavior of a pkg filter up to size 1000,

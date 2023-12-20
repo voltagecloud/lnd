@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package wtclientrpc;
 
-option go_package = "github.com/lightningnetwork/lnd/lnrpc/wtclientrpc";
+option go_package = "github.com/voltagecloud/lnd/lnrpc/wtclientrpc";
 
 // WatchtowerClient is a service that grants access to the watchtower client
 // functionality of the daemon.

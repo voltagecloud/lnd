@@ -3,7 +3,7 @@ package lnwire
 import (
 	"io"
 
-	"github.com/lightningnetwork/lnd/tlv"
+	"github.com/voltagecloud/lnd/tlv"
 )
 
 const (

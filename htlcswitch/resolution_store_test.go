@@ -4,10 +4,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/contractcourt"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/contractcourt"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // TestInsertAndDelete tests that an inserted resolution message can be

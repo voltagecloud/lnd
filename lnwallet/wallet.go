@@ -21,14 +21,14 @@ import (
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
-	"github.com/lightningnetwork/lnd/lnwallet/chanfunding"
-	"github.com/lightningnetwork/lnd/lnwallet/chanvalidate"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/shachain"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/input"
+	"github.com/voltagecloud/lnd/keychain"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
+	"github.com/voltagecloud/lnd/lnwallet/chanfunding"
+	"github.com/voltagecloud/lnd/lnwallet/chanvalidate"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/shachain"
 )
 
 const (

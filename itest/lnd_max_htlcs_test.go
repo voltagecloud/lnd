@@ -1,13 +1,13 @@
 package itest
 
 import (
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/invoicesrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntypes"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/invoicesrpc"
+	"github.com/voltagecloud/lnrpc/routerrpc"
+	"github.com/voltagecloud/lntest"
+	"github.com/voltagecloud/lntest/node"
 )
 
 // testMaxHtlcPathfind tests the case where we try to send a payment over a

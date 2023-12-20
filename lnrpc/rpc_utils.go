@@ -7,9 +7,9 @@ import (
 	"sort"
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
-	"github.com/lightningnetwork/lnd/sweep"
+	"github.com/voltagecloud/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
+	"github.com/voltagecloud/lnd/sweep"
 	"google.golang.org/protobuf/encoding/protojson"
 )
 

@@ -6,7 +6,7 @@ import (
 	"context"
 
 	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/lightningnetwork/lnd/kvdb/sqlbase"
+	"github.com/voltagecloud/lnd/kvdb/sqlbase"
 )
 
 // sqliteCmdReplacements defines a mapping from some SQLite keywords and phrases

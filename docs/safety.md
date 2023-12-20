@@ -210,7 +210,7 @@ lnd wallet**. When creating the wallet, after printing the seed to the command
 line, it is hashed and only the hash (or to be more exact, the BIP32 extended
 root key) is stored in the `wallet.db` file.   
 There is
-[a tool being worked on](https://github.com/lightningnetwork/lnd/pull/2373)
+[a tool being worked on](https://github.com/voltagecloud/lnd/pull/2373)
 that can extract the BIP32 extended root key but currently you cannot restore
 lnd with only this root key.
 

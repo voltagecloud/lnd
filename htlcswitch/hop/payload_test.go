@@ -5,10 +5,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/htlcswitch/hop"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/record"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/htlcswitch/hop"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/record"
 )
 
 const testUnknownRequiredType = 0x80

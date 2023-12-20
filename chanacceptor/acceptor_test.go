@@ -8,11 +8,11 @@ import (
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnwallet/chancloser"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnwallet/chancloser"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/require"
 )
 
 const testTimeout = time.Second

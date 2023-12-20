@@ -2,10 +2,10 @@ package routing
 
 import (
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/routing/route"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/routing/route"
 )
 
 // nodeEdgeUnifier holds all edge unifiers for connections towards a node.

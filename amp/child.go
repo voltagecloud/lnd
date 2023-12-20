@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/lntypes"
+	"github.com/voltagecloud/lnd/lntypes"
 )
 
 // Share represents an n-of-n sharing of a secret 32-byte value. The secret can

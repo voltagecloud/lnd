@@ -5,8 +5,8 @@ package lnmock
 import (
 	"time"
 
-	"github.com/lightningnetwork/lnd/clock"
 	"github.com/stretchr/testify/mock"
+	"github.com/voltagecloud/lnd/clock"
 )
 
 // MockClock implements the `clock.Clock` interface.

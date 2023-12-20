@@ -5,9 +5,9 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/go-errors/errors"
-	"github.com/lightningnetwork/lnd/htlcswitch"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/htlcswitch"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // TestBandwidthManager tests getting of bandwidth hints from a bandwidth

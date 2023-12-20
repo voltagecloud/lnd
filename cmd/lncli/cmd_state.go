@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lnd/lnrpc"
 )
 
 var getStateCommand = cli.Command{

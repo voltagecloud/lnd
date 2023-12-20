@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/watchtower/wtdb"
 )
 
 func init() {

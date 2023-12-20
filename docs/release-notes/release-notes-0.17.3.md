@@ -19,14 +19,14 @@
 
 # Bug Fixes
 
-* [Replaced](https://github.com/lightningnetwork/lnd/pull/8224)
+* [Replaced](https://github.com/voltagecloud/lnd/pull/8224)
   `musig2Sessions` with a `SyncMap` used in `input` package to avoid concurrent
   write to this map.
 
-* [Fixed](https://github.com/lightningnetwork/lnd/pull/8220) a loop variable
+* [Fixed](https://github.com/voltagecloud/lnd/pull/8220) a loop variable
   issue which may affect programs built using go `v1.20` and below. 
 
-* [An issue where LND would hang on shutdown has been fixed.](https://github.com/lightningnetwork/lnd/pull/8151)
+* [An issue where LND would hang on shutdown has been fixed.](https://github.com/voltagecloud/lnd/pull/8151)
 
 # New Features
 ## Functional Enhancements
@@ -41,7 +41,7 @@
 ## Breaking Changes
 ## Performance Improvements
 
-* [Optimized](https://github.com/lightningnetwork/lnd/pull/8232) the memoray
+* [Optimized](https://github.com/voltagecloud/lnd/pull/8232) the memoray
   usage of `btcwallet`'s mempool. Users would need to use `bitcoind v25.0.0`
   and above to take the advantage of this optimization. 
 

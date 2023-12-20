@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

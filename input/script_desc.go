@@ -5,7 +5,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/txscript"
-	"github.com/lightningnetwork/lnd/lnutils"
+	"github.com/voltagecloud/lnd/lnutils"
 )
 
 // ErrUnknownScriptType is returned when an unknown script type is encountered.

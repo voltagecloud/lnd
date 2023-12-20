@@ -7,13 +7,13 @@ import (
 	"time"
 
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/kvdb/etcd"
-	"github.com/lightningnetwork/lnd/kvdb/postgres"
-	"github.com/lightningnetwork/lnd/kvdb/sqlbase"
-	"github.com/lightningnetwork/lnd/kvdb/sqlite"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnwallet/btcwallet"
+	"github.com/voltagecloud/kvdb/etcd"
+	"github.com/voltagecloud/kvdb/postgres"
+	"github.com/voltagecloud/kvdb/sqlbase"
+	"github.com/voltagecloud/kvdb/sqlite"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnwallet/btcwallet"
 )
 
 const (

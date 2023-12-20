@@ -8,8 +8,8 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/channeldb"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/channeldb"
 )
 
 type genGraphFunc func(t *testing.T) (testGraph, error)

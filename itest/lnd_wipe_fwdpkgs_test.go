@@ -3,10 +3,10 @@ package itest
 import (
 	"time"
 
-	"github.com/lightningnetwork/lnd/chainreg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lntest"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/chainreg"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lntest"
 )
 
 // testWipeForwardingPackagesLocal tests that when a channel is closed, either

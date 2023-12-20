@@ -7,9 +7,9 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntest/wait"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnd/lntest/wait"
 )
 
 // nodeManager is responsible for hanlding the start and stop of a given node.

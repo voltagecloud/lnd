@@ -9,9 +9,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
 )
 
 // WebFeeService defines an interface that's used to provide fee estimation

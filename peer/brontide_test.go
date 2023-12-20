@@ -10,17 +10,17 @@ import (
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/channelnotifier"
-	"github.com/lightningnetwork/lnd/contractcourt"
-	"github.com/lightningnetwork/lnd/htlcswitch"
-	"github.com/lightningnetwork/lnd/lntest/mock"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwallet/chancloser"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/pool"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/channelnotifier"
+	"github.com/voltagecloud/lnd/contractcourt"
+	"github.com/voltagecloud/lnd/htlcswitch"
+	"github.com/voltagecloud/lnd/lntest/mock"
+	"github.com/voltagecloud/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/lnwallet/chancloser"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/pool"
 )
 
 var (
@@ -1343,7 +1343,7 @@ func TestHandleRemovePendingChannel(t *testing.T) {
 
 // TestStartupWriteMessageRace checks that no data race occurs when starting up
 // a peer with an existing channel, while an outgoing message is queuing. Such
-// a race occurred in https://github.com/lightningnetwork/lnd/issues/8184, where
+// a race occurred in https://github.com/voltagecloud/lnd/issues/8184, where
 // a channel reestablish message raced with another outgoing message.
 //
 // Note that races will only be detected with the Go race detector enabled.

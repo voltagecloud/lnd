@@ -4,8 +4,8 @@
 package lncfg
 
 import (
-	"github.com/lightningnetwork/lnd/feature"
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/lnd/feature"
+	"github.com/voltagecloud/lnwire"
 )
 
 // ExperimentalProtocol is a sub-config that houses any experimental protocol

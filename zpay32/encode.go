@@ -9,7 +9,7 @@ import (
 	"github.com/btcsuite/btcd/btcutil/bech32"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // Encode takes the given MessageSigner and returns a string encoding this
@@ -56,7 +56,7 @@ func (invoice *Invoice) Encode(signer MessageSigner) (string, error) {
 	// except for signet where we add an additional "s" to differentiate it
 	// from the older testnet3 (Core devs decided to use the same hrp for
 	// signet as for testnet3 which is not optimal for LN). See
-	// https://github.com/lightningnetwork/lightning-rfc/pull/844 for more
+	// https://github.com/voltagecloud/lightning-rfc/pull/844 for more
 	// information.
 	hrp := "ln" + invoice.Net.Bech32HRPSegwit
 	if invoice.Net.Name == chaincfg.SigNetParams.Name {

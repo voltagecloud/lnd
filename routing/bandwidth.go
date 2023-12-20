@@ -1,10 +1,10 @@
 package routing
 
 import (
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/htlcswitch"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/routing/route"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/htlcswitch"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/routing/route"
 )
 
 // bandwidthHints provides hints about the currently available balance in our

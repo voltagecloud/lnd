@@ -2,7 +2,7 @@ package chancloser
 
 import (
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/build"
+	"github.com/voltagecloud/lnd/build"
 )
 
 // chancloserLog is a logger that is initialized with the btclog.Disabled

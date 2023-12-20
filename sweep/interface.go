@@ -3,7 +3,7 @@ package sweep
 import (
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/lnwallet"
 )
 
 // Wallet contains all wallet related functionality required by sweeper.

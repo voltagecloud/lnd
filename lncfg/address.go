@@ -10,8 +10,8 @@ import (
 	"strings"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/tor"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/tor"
 )
 
 // TCPResolver is a function signature that resolves an address on a given

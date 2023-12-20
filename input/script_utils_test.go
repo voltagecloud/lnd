@@ -13,8 +13,8 @@ import (
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/keychain"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/keychain"
 )
 
 // assertEngineExecution executes the VM returned by the newEngine closure,

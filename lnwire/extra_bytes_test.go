@@ -7,8 +7,8 @@ import (
 	"testing"
 	"testing/quick"
 
-	"github.com/lightningnetwork/lnd/tlv"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/tlv"
 )
 
 // TestExtraOpaqueDataEncodeDecode tests that we're able to encode/decode

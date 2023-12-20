@@ -2,7 +2,7 @@ package watchtowerrpc
 
 import (
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/build"
+	"github.com/voltagecloud/lnd/build"
 )
 
 // Subsystem defines the logging code for this subsystem.

@@ -6,7 +6,7 @@ import (
 	prand "math/rand"
 	"time"
 
-	"github.com/lightningnetwork/lnd/sqldb/sqlc"
+	"github.com/voltagecloud/lnd/sqldb/sqlc"
 )
 
 var (

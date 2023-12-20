@@ -6,7 +6,7 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/lightningnetwork/lnd/tlv"
+	"github.com/voltagecloud/lnd/tlv"
 )
 
 // ExtraOpaqueData is the set of data that was appended to this message, some

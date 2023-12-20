@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/kvdb"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 // MakeDB creates a new instance of the ChannelDB for testing purposes.

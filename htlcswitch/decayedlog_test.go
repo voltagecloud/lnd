@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	sphinx "github.com/lightningnetwork/lightning-onion"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lntest/mock"
 	"github.com/stretchr/testify/require"
+	sphinx "github.com/voltagecloud/lightning-onion"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lntest/mock"
 )
 
 const (

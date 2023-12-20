@@ -15,15 +15,15 @@ import (
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/clock"
-	invpkg "github.com/lightningnetwork/lnd/invoices"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/record"
-	"github.com/lightningnetwork/lnd/zpay32"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/chainntnfs"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltag/voltagecloud/
+	invpkg "git/voltagecloud/ud/lnd/invoices"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/record"
+	"github.com/voltagecloud/lnd/zpay32"
 )
 
 type mockPayload struct {

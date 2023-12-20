@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnrpc"
 )
 
 // TestReplaceProtoMsg makes sure the proto message replacement works as

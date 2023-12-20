@@ -14,15 +14,15 @@ ENV GODEBUG netdns=cgo
 # image to be built from a specified Git state.  The default image
 # will use the Git tip of master by default.
 ARG checkout="master"
-ARG git_url="https://github.com/lightningnetwork/lnd"
+ARG git_url="https://github.com/voltagecloud/lnd"
 
 # Install dependencies and build the binaries.
 RUN apk add --no-cache --update alpine-sdk \
     git \
     make \
     gcc \
-&&  git clone $git_url /go/src/github.com/lightningnetwork/lnd \
-&&  cd /go/src/github.com/lightningnetwork/lnd \
+&&  git clone $git_url /go/src/github.com/voltagecloud/lnd \
+&&  cd /go/src/github.com/voltagecloud/lnd \
 &&  git checkout $checkout \
 &&  make release-install
 
@@ -44,8 +44,8 @@ RUN apk --no-cache add \
 # Copy the binaries from the builder image.
 COPY --from=builder /go/bin/lncli /bin/
 COPY --from=builder /go/bin/lnd /bin/
-COPY --from=builder /go/src/github.com/lightningnetwork/lnd/scripts/verify-install.sh /
-COPY --from=builder /go/src/github.com/lightningnetwork/lnd/scripts/keys/* /keys/
+COPY --from=builder /go/src/github.com/voltagecloud/lnd/scripts/verify-install.sh /
+COPY --from=builder /go/src/github.com/voltagecloud/lnd/scripts/keys/* /keys/
 
 # Store the SHA256 hash of the binaries that were just produced for later
 # verification.

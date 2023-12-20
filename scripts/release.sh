@@ -10,7 +10,7 @@
 set -e
 
 LND_VERSION_REGEX="lnd version (.+) commit"
-PKG="github.com/lightningnetwork/lnd"
+PKG="github.com/voltagecloud/lnd"
 PACKAGE=lnd
 
 # Needed for setting file timestamps to get reproducible archives.

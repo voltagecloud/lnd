@@ -37,4 +37,4 @@ Several parameters can be appended to the end of the make commands to tune the b
 Fuzzing generally works best with a corpus that is of minimal size while achieving the maximum coverage.
 
 ## Disclosure ##
-If you find any crashers that affect LND security, please disclose with the information found [here](https://github.com/lightningnetwork/lnd/#security).
+If you find any crashers that affect LND security, please disclose with the information found [here](https://github.com/voltagecloud/lnd/#security).

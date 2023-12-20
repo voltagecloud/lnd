@@ -7,7 +7,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/lightningnetwork/lnd/keychain"
+	"github.com/voltagecloud/lnd/keychain"
 )
 
 // defaultHandshakes is the maximum number of handshakes that can be done in

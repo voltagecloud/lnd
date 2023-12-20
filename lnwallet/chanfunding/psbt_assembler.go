@@ -11,8 +11,8 @@ import (
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/keychain"
+	"github.com/voltagecloud/lnd/input"
+	"github.com/voltagecloud/lnd/keychain"
 )
 
 // PsbtState is a type for the state of the PSBT intent state machine.

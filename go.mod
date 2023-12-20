@@ -1,4 +1,4 @@
-module github.com/lightningnetwork/lnd
+module github.com/voltagecloud/lnd
 
 require (
 	github.com/NebulousLabs/go-upnp v0.0.0-20180202185039-29b680b06c82
@@ -35,15 +35,15 @@ require (
 	github.com/lib/pq v1.10.3
 	github.com/lightninglabs/neutrino v0.16.0
 	github.com/lightninglabs/neutrino/cache v1.1.1
-	github.com/lightningnetwork/lightning-onion v1.2.1-0.20230823005744-06182b1d7d2f
-	github.com/lightningnetwork/lnd/cert v1.2.2
-	github.com/lightningnetwork/lnd/clock v1.1.1
-	github.com/lightningnetwork/lnd/healthcheck v1.2.3
-	github.com/lightningnetwork/lnd/kvdb v1.4.4
-	github.com/lightningnetwork/lnd/queue v1.1.1
-	github.com/lightningnetwork/lnd/ticker v1.1.1
-	github.com/lightningnetwork/lnd/tlv v1.1.1
-	github.com/lightningnetwork/lnd/tor v1.1.2
+	github.com/voltagecloud/lightning-onion v1.2.1-0.20230823005744-06182b1d7d2f
+	github.com/voltagecloud/lnd/cert v1.2.2
+	github.com/voltagecloud/lnd/clock v1.1.1
+	github.com/voltagecloud/lnd/healthcheck v1.2.3
+	github.com/voltagecloud/lnd/kvdb v1.4.4
+	github.com/voltagecloud/lnd/queue v1.1.1
+	github.com/voltagecloud/lnd/ticker v1.1.1
+	github.com/voltagecloud/lnd/tlv v1.1.1
+	github.com/voltagecloud/lnd/tor v1.1.2
 	github.com/ltcsuite/ltcd v0.0.0-20190101042124-f37f8bf35796
 	github.com/miekg/dns v1.1.43
 	github.com/ory/dockertest/v3 v3.10.0

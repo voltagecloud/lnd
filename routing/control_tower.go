@@ -3,10 +3,10 @@ package routing
 import (
 	"sync"
 
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/multimutex"
-	"github.com/lightningnetwork/lnd/queue"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/multimutex"
+	"github.com/voltagecloud/lnd/queue"
 )
 
 // ControlTower tracks all outgoing payments made, whose primary purpose is to

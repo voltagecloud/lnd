@@ -10,15 +10,15 @@ import (
 	"github.com/btcsuite/btcd/btcutil/txsort"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/watchtower/blob"
-	"github.com/lightningnetwork/lnd/watchtower/lookout"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb"
-	"github.com/lightningnetwork/lnd/watchtower/wtmock"
-	"github.com/lightningnetwork/lnd/watchtower/wtpolicy"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/input"
+	"github.com/voltagecloud/lnd/keychain"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/watchtower/blob"
+	"github.com/voltagecloud/lnd/watchtower/lookout"
+	"github.com/voltagecloud/lnd/watchtower/wtdb"
+	"github.com/voltagecloud/lnd/watchtower/wtmock"
+	"github.com/voltagecloud/lnd/watchtower/wtpolicy"
 )
 
 const csvDelay uint32 = 144

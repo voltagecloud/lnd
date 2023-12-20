@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/clock"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/clock"
 )
 
 // TestPeerLog tests the functionality of the peer log struct.

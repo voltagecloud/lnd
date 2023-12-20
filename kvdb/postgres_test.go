@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/lightningnetwork/lnd/kvdb/postgres"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/kvdb/postgres"
 )
 
 type m = map[string]interface{}

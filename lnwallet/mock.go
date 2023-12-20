@@ -16,8 +16,8 @@ import (
 	base "github.com/btcsuite/btcwallet/wallet"
 	"github.com/btcsuite/btcwallet/wallet/txauthor"
 	"github.com/btcsuite/btcwallet/wtxmgr"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
 )
 
 var (

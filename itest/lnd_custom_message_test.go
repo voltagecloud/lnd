@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lntest"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // testCustomMessage tests sending and receiving of overridden custom message

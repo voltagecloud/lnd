@@ -1,4 +1,4 @@
-module github.com/lightningnetwork/lnd/kvdb
+module github.com/voltagecloud/lnd/kvdb
 
 require (
 	github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f
@@ -9,7 +9,7 @@ require (
 	github.com/jackc/pgconn v1.14.0
 	github.com/jackc/pgerrcode v0.0.0-20220416144525-469b46aa5efa
 	github.com/jackc/pgx/v4 v4.18.1
-	github.com/lightningnetwork/lnd/healthcheck v1.0.0
+	github.com/voltagecloud/lnd/healthcheck v1.0.0
 	github.com/stretchr/testify v1.8.2
 	go.etcd.io/bbolt v1.3.7
 	go.etcd.io/etcd/api/v3 v3.5.7
@@ -51,7 +51,7 @@ require (
 	github.com/klauspost/pgzip v1.2.5 // indirect
 	github.com/kr/pretty v0.3.0 // indirect
 	github.com/lib/pq v1.10.3 // indirect
-	github.com/lightningnetwork/lnd/ticker v1.0.0 // indirect
+	github.com/voltagecloud/lnd/ticker v1.0.0 // indirect
 	github.com/mattn/go-isatty v0.0.16 // indirect
 	github.com/mattn/go-sqlite3 v1.14.16 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect

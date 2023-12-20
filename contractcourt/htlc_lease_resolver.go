@@ -4,9 +4,9 @@ import (
 	"math"
 
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/input"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/input"
+	"github.com/voltagecloud/lnd/chainntnfs"
 )
 
 // htlcLeaseResolver is a struct that houses the lease specific HTLC resolution

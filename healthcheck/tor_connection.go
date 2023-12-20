@@ -6,7 +6,7 @@ import (
 	"io"
 	"syscall"
 
-	"github.com/lightningnetwork/lnd/tor"
+	"github.com/voltagecloud/lnd/tor"
 )
 
 // CheckTorServiceStatus checks whether the onion service is reachable by

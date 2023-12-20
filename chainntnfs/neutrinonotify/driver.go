@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/lightninglabs/neutrino"
-	"github.com/lightningnetwork/lnd/blockcache"
-	"github.com/lightningnetwork/lnd/chainntnfs"
+	"github.com/voltagecloud/lnd/blockcache"
+	"github.com/voltagecloud/lnd/chainntnfs"
 )
 
 // createNewNotifier creates a new instance of the ChainNotifier interface

@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 // TimeScheduler is a batching engine that executes requests within a fixed

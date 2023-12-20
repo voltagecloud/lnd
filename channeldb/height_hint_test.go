@@ -6,8 +6,8 @@ import (
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/chainntnfs"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/chainntnfs"
 )
 
 func initHintCache(t *testing.T) *HeightHintCache {

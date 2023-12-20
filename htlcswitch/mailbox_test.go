@@ -8,13 +8,13 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/clock"
-	"github.com/lightningnetwork/lnd/lnmock"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/clock"
+	"github.com/voltagecloud/lnd/lnmock"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 const testExpiry = time.Minute

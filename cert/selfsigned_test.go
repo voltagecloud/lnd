@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/cert"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/cert"
 )
 
 const (

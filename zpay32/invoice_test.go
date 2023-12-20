@@ -18,8 +18,8 @@ import (
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/lnwire"
 	litecoinCfg "github.com/ltcsuite/ltcd/chaincfg"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 var (

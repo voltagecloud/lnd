@@ -4,14 +4,14 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/chainreg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/routing/route"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/chainreg"
+	"github.com/voltagecloud/lnd/routing/route"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/routerrpc"
+	"github.com/voltagecloud/lntest"
+	"github.com/voltagecloud/lntest/node"
+	"github.com/voltagecloud/lntypes"
 )
 
 // testSendToRouteMultiPath tests that we are able to successfully route a

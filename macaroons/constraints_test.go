@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/macaroons"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/macaroons"
 	macaroon "gopkg.in/macaroon.v2"
 )
 

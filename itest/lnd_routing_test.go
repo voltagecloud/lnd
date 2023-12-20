@@ -7,15 +7,15 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/chainreg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntest/wait"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/routing"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/chainreg"
+	"github.com/voltagecloud/lnd/routing"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/routerrpc"
+	"github.com/voltagecloud/lntest"
+	"github.com/voltagecloud/lntest/node"
+	"github.com/voltagecloud/lntest/wait"
+	"github.com/voltagecloud/lnwire"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -5,7 +5,7 @@ package devrpc
 
 import (
 	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/lightningnetwork/lnd/channeldb"
+	"github.com/voltagecloud/lnd/channeldb"
 )
 
 // Config is the primary configuration struct for the DEV RPC server. It

@@ -1,4 +1,4 @@
-module github.com/lightningnetwork/lnd/tools
+module github.com/voltagecloud/lnd/tools
 
 go 1.19
 

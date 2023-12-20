@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/tlv"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/tlv"
 )
 
 var (

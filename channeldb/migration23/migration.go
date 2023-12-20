@@ -3,7 +3,7 @@ package migration23
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

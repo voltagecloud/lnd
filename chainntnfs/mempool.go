@@ -6,7 +6,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/lnutils"
+	"github.com/voltagecloud/lnd/lnutils"
 )
 
 // inputsWithTx is a map of outpoints to the tx that spends them.

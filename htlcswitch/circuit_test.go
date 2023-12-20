@@ -9,13 +9,13 @@ import (
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcutil"
 	bitcoinCfg "github.com/btcsuite/btcd/chaincfg"
-	sphinx "github.com/lightningnetwork/lightning-onion"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/htlcswitch"
-	"github.com/lightningnetwork/lnd/htlcswitch/hop"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	sphinx "github.com/voltagecloud/lightning-onion"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/htlcswitch"
+	"github.com/voltagecloud/lnd/htlcswitch/hop"
+	"github.com/voltagecloud/lnd/keychain"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 var (

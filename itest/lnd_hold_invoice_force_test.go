@@ -3,14 +3,14 @@ package itest
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/lncfg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/invoicesrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/wait"
-	"github.com/lightningnetwork/lnd/lntypes"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lncfg"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/invoicesrpc"
+	"github.com/voltagecloud/lnrpc/routerrpc"
+	"github.com/voltagecloud/lntest"
+	"github.com/voltagecloud/lntest/wait"
 )
 
 // testHoldInvoiceForceClose tests cancellation of accepted hold invoices which

@@ -3,9 +3,9 @@ package invoices
 import (
 	"time"
 
-	"github.com/lightningnetwork/lnd/channeldb/models"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/record"
+	"github.com/voltagecloud/lnd/channeldb/models"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/record"
 )
 
 // InvScanFunc is a helper type used to specify the type used in the

@@ -3,7 +3,7 @@ package migration2
 import (
 	"errors"
 
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

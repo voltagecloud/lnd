@@ -5,12 +5,12 @@ import (
 	"net"
 	"time"
 
-	"github.com/lightningnetwork/lnd/lncfg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntest/wait"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lncfg"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lntest"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnd/lntest/wait"
 )
 
 // testNetworkConnectionTimeout checks that the connectiontimeout is taking

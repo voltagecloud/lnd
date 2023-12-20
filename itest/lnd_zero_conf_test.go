@@ -7,16 +7,16 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/go-errors/errors"
-	"github.com/lightningnetwork/lnd/aliasmgr"
-	"github.com/lightningnetwork/lnd/chainreg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntest/rpc"
-	"github.com/lightningnetwork/lnd/lntest/wait"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/aliasmgr"
+	"github.com/voltagecloud/lnd/chainreg"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lnrpc/routerrpc"
+	"github.com/voltagecloud/lnd/lntest"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnd/lntest/rpc"
+	"github.com/voltagecloud/lnd/lntest/wait"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // testZeroConfChannelOpen tests that opening a zero-conf channel works and

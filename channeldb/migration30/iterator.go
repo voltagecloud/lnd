@@ -6,8 +6,8 @@ import (
 	"errors"
 	"fmt"
 
-	mig25 "github.com/lightningnetwork/lnd/channeldb/migration25"
-	"github.com/lightningnetwork/lnd/kvdb"
+	mig25 "github.com/voltagecloud/lnd/channeldb/migration25"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

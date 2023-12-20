@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	lnwire "github.com/lightningnetwork/lnd/channeldb/migration/lnwire21"
+	lnwire "github.com/voltagecloud/lnd/channeldb/migration/lnwire21"
 )
 
 var (

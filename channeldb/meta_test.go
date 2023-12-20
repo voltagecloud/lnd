@@ -6,8 +6,8 @@ import (
 
 	"github.com/btcsuite/btcwallet/walletdb"
 	"github.com/go-errors/errors"
-	"github.com/lightningnetwork/lnd/kvdb"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 // applyMigration is a helper test function that encapsulates the general steps

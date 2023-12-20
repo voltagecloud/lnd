@@ -6,7 +6,7 @@ package autopilotrpc
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lnrpc"
 )
 
 // createNewSubServer is a helper method that will create the new sub server

@@ -9,7 +9,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
-	lnwire "github.com/lightningnetwork/lnd/channeldb/migration/lnwire21"
+	lnwire "github.com/voltagecloud/lnd/channeldb/migration/lnwire21"
 )
 
 var (

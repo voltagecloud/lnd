@@ -8,7 +8,7 @@ import (
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lnrpc"
 )
 
 // AccountsToWatchOnly converts the accounts returned by the walletkit's

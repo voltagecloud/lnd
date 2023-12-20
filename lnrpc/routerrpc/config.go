@@ -1,8 +1,8 @@
 package routerrpc
 
 import (
-	"github.com/lightningnetwork/lnd/macaroons"
-	"github.com/lightningnetwork/lnd/routing"
+	"github.com/voltagecloud/lnd/macaroons"
+	"github.com/voltagecloud/lnd/routing"
 )
 
 // Config is the main configuration file for the router RPC server. It contains

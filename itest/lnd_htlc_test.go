@@ -2,9 +2,9 @@ package itest
 
 import (
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lntest"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lntest"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

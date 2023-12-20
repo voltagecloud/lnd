@@ -1,10 +1,10 @@
 package contractcourt
 
 import (
-	"github.com/lightningnetwork/lnd/channeldb/models"
-	"github.com/lightningnetwork/lnd/invoices"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/invoices"
+	"github.com/voltagecloud/lnd/channeldb/models"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwire"
 )
 
 type notifyExitHopData struct {

@@ -5,9 +5,9 @@ import (
 
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/feature"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/watchtower/wtwire"
+	"github.com/voltagecloud/lnd/feature"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/watchtower/wtwire"
 )
 
 var (

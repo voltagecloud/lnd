@@ -4,10 +4,10 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
-	"github.com/lightningnetwork/lnd/watchtower/blob"
-	"github.com/lightningnetwork/lnd/watchtower/wtpolicy"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
+	"github.com/voltagecloud/lnd/watchtower/blob"
+	"github.com/voltagecloud/lnd/watchtower/wtpolicy"
 )
 
 // SessionIDSize is 33-bytes; it is a serialized, compressed public key.

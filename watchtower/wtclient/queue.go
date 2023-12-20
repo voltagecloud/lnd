@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb"
+	"github.com/voltagecloud/lnd/watchtower/wtdb"
 )
 
 const (

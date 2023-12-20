@@ -7,8 +7,8 @@ import (
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/kvdb"
+	"github.com/voltagecloud/lnd/channeldb"
 )
 
 //	              Overview of Nursery Store Storage Hierarchy

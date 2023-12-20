@@ -3,10 +3,10 @@ package itest
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/peersrpc"
-	"github.com/lightningnetwork/lnd/lntest"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lnrpc/peersrpc"
+	"github.com/voltagecloud/lnd/lntest"
 )
 
 // testCustomFeatures tests advertisement of custom features in various bolt 9

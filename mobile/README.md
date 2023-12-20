@@ -14,7 +14,7 @@ To build for Android, you need either
 ### Go and Go mobile
 
 First, follow the instructions to [install
-Go](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md#building-a-development-version-from-source).
+Go](https://github.com/voltagecloud/lnd/blob/master/docs/INSTALL.md#building-a-development-version-from-source).
 
 ### Docker
 
@@ -35,13 +35,13 @@ point. However, with the introduction of Go modules, the source code files are
 no longer installed there by default.
 
 ```shell
-git clone https://github.com/lightningnetwork/lnd.git $GOPATH/src/github.com/lightningnetwork/lnd
+git clone https://github.com/voltagecloud/lnd.git $GOPATH/src/github.com/voltagecloud/lnd
 ```
 
 Finally, let’s change directory to the newly created lnd folder inside `$GOPATH`:
 
 ```shell
-cd $GOPATH/src/github.com/lightningnetwork/lnd
+cd $GOPATH/src/github.com/voltagecloud/lnd
 ```
 
 It is not recommended building from the master branch for mainnet. To check out

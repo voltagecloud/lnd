@@ -11,9 +11,9 @@ import (
 	"sync/atomic"
 
 	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/lightningnetwork/lnd/chanbackup"
-	"github.com/lightningnetwork/lnd/kvdb/etcd"
-	"github.com/lightningnetwork/lnd/lntest/wait"
+	"github.com/voltagecloud/lnd/chanbackup"
+	"github.com/voltagecloud/lnd/kvdb/etcd"
+	"github.com/voltagecloud/lnd/lntest/wait"
 )
 
 const (

@@ -6,8 +6,8 @@ package peersrpc
 import (
 	"net"
 
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/netann"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/netann"
 )
 
 // Config is the primary configuration struct for the peers RPC subserver.

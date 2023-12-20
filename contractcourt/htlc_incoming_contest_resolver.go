@@ -9,14 +9,14 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/txscript"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/channeldb/models"
-	"github.com/lightningnetwork/lnd/htlcswitch/hop"
-	"github.com/lightningnetwork/lnd/invoices"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/queue"
+	"github.com/voltagecloud/channeldb/models"
+	"github.com/voltagecloud/htlcswitch/hop"
+	"github.com/voltagecloud/invoices"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwallet"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/queue"
 )
 
 // htlcIncomingContestResolver is a ContractResolver that's able to resolve an

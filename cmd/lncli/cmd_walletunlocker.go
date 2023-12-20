@@ -10,11 +10,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/lightningnetwork/lnd/lncfg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/walletrpc"
-	"github.com/lightningnetwork/lnd/walletunlocker"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lncfg"
+	"github.com/voltagecloud/lnd/walletunlocker"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/walletrpc"
 )
 
 var (

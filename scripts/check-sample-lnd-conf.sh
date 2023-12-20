@@ -18,13 +18,13 @@ FILE_TMP=$(mktemp)
 if [ -t 0 ]; then
     size=($(stty size))
     stty cols 240
-    go run -tags="$TAGS" github.com/lightningnetwork/lnd/cmd/lnd --help > \
+    go run -tags="$TAGS" github.com/voltagecloud/lnd/cmd/lnd --help > \
         $FILE_TMP
     stty cols ${size[1]}
 else
     tmux new-session -d -s simulated-terminal -x 240 -y 9999
     tmux send-keys -t simulated-terminal.0 "go run -tags=\"$TAGS\" \
-        github.com/lightningnetwork/lnd/cmd/lnd --help >"$FILE_TMP"; \
+        github.com/voltagecloud/lnd/cmd/lnd --help >"$FILE_TMP"; \
         tmux wait -S run" ENTER
     tmux wait-for run
     tmux kill-session -t simulated-terminal

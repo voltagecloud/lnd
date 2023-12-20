@@ -1,7 +1,7 @@
 package migration_01_to_11
 
 import (
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

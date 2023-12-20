@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package chainrpc;
 
-option go_package = "github.com/lightningnetwork/lnd/lnrpc/chainrpc";
+option go_package = "github.com/voltagecloud/lnd/lnrpc/chainrpc";
 
 // ChainKit is a service that can be used to get information from the
 // chain backend.

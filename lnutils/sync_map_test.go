@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnutils"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnutils"
 )
 
 // TestSyncMapStore tests the Store method of the SyncMap type.

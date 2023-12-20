@@ -6,11 +6,11 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/clock"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/queue"
-	"github.com/lightningnetwork/lnd/zpay32"
+	"github.com/voltagecloud/clock"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/queue"
+	"github.com/voltagecloud/zpay32"
 )
 
 // invoiceExpiry is a vanity interface for different invoice expiry types

@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/wire"
-	lnwire "github.com/lightningnetwork/lnd/channeldb/migration/lnwire21"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/tlv"
+	lnwire "github.com/voltagecloud/lnd/channeldb/migration/lnwire21"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/tlv"
 )
 
 const (

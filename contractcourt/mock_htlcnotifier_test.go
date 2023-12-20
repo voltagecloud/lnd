@@ -1,8 +1,8 @@
 package contractcourt
 
 import (
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/channeldb/models"
+	"github.com/voltagecloud/channeldb/models"
+	"github.com/voltagecloud/lnd/channeldb"
 )
 
 type mockHTLCNotifier struct {

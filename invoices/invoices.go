@@ -6,10 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lightningnetwork/lnd/feature"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/record"
+	"github.com/voltagecloud/lnd/feature"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/record"
 )
 
 const (

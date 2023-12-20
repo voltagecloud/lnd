@@ -6,7 +6,7 @@ package neutrino_test
 import (
 	"testing"
 
-	chainntnfstest "github.com/lightningnetwork/lnd/chainntnfs/test"
+	chainntnfstest "github.com/voltagecloud/lnd/chainntnfs/test"
 )
 
 // TestInterfaces executes the generic notifier test suite against a neutrino

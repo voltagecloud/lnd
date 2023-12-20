@@ -6,7 +6,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/tlv"
+	"github.com/voltagecloud/lnd/tlv"
 )
 
 // AcceptChannel is the message Bob sends to Alice after she initiates the

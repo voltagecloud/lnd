@@ -3,12 +3,12 @@ package itest
 import (
 	"math"
 
-	"github.com/lightningnetwork/lnd/funding"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/funding"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/routerrpc"
+	"github.com/voltagecloud/lntest"
 )
 
 func testHtlcErrorPropagation(ht *lntest.HarnessTest) {

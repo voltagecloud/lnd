@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/channeldb/models"
+	"github.com/voltagecloud/lnd/channeldb/models"
 )
 
 // heldHtlcSet keeps track of outstanding intercepted forwards. It exposes

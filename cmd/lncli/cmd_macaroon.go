@@ -10,10 +10,10 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/lightningnetwork/lnd/lncfg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/macaroons"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lncfg"
+	"github.com/voltagecloud/lnd/macaroons"
+	"github.com/voltagecloud/lnrpc"
 	"google.golang.org/protobuf/proto"
 	"gopkg.in/macaroon-bakery.v2/bakery"
 	"gopkg.in/macaroon.v2"

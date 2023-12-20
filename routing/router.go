@@ -16,28 +16,28 @@ import (
 	"github.com/btcsuite/btcd/wire"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/go-errors/errors"
-	sphinx "github.com/lightningnetwork/lightning-onion"
-	"github.com/lightningnetwork/lnd/amp"
-	"github.com/lightningnetwork/lnd/batch"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/clock"
-	"github.com/lightningnetwork/lnd/htlcswitch"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnutils"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwallet/btcwallet"
-	"github.com/lightningnetwork/lnd/lnwallet/chanvalidate"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/multimutex"
-	"github.com/lightningnetwork/lnd/record"
-	"github.com/lightningnetwork/lnd/routing/chainview"
-	"github.com/lightningnetwork/lnd/routing/route"
-	"github.com/lightningnetwork/lnd/routing/shards"
-	"github.com/lightningnetwork/lnd/ticker"
-	"github.com/lightningnetwork/lnd/zpay32"
+	sphinx "github.com/voltagecloud/lightning-onion"
+	"github.com/voltagecloud/lnd/amp"
+	"github.com/voltagecloud/lnd/batch"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/clock"
+	"github.com/voltagecloud/lnd/htlcswitch"
+	"github.com/voltagecloud/lnd/input"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/lnutils"
+	"github.com/voltagecloud/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/lnwallet/btcwallet"
+	"github.com/voltagecloud/lnd/lnwallet/chanvalidate"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/multimutex"
+	"github.com/voltagecloud/lnd/record"
+	"github.com/voltagecloud/lnd/routing/chainview"
+	"github.com/voltagecloud/lnd/routing/route"
+	"github.com/voltagecloud/lnd/routing/shards"
+	"github.com/voltagecloud/lnd/ticker"
+	"github.com/voltagecloud/lnd/zpay32"
 )
 
 const (
@@ -1098,7 +1098,7 @@ func (r *ChannelRouter) networkHandler() {
 	// subsystems or basic rpc calls that rely on calls such as GetBestBlock
 	// will hang due to excessive load.
 	//
-	// See https://github.com/lightningnetwork/lnd/issues/4892.
+	// See https://github.com/voltagecloud/lnd/issues/4892.
 	var validationBarrier *ValidationBarrier
 	if r.cfg.AssumeChannelValid {
 		validationBarrier = NewValidationBarrier(1000, r.quit)

@@ -4,14 +4,14 @@ import (
 	"fmt"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/funding"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/wtclientrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntest/wait"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/funding"
+	"github.com/voltagecloud/lnd/lntest/wait"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/routerrpc"
+	"github.com/voltagecloud/lnrpc/wtclientrpc"
+	"github.com/voltagecloud/lntest"
+	"github.com/voltagecloud/lntest/node"
 )
 
 // testWatchtowerSessionManagement tests that session deletion is done

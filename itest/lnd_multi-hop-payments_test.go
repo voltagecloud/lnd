@@ -2,12 +2,12 @@ package itest
 
 import (
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/chainreg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/chainreg"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/routerrpc"
+	"github.com/voltagecloud/lntest"
 )
 
 func testMultiHopPayments(ht *lntest.HarnessTest) {

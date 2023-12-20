@@ -1,6 +1,6 @@
 package lncfg
 
-import "github.com/lightningnetwork/lnd/watchtower"
+import "github.com/voltagecloud/lnd/watchtower"
 
 // Watchtower holds the daemon specific configuration parameters for running a
 // watchtower that shares resources with the daemon.

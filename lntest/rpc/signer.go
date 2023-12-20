@@ -3,8 +3,8 @@ package rpc
 import (
 	"context"
 
-	"github.com/lightningnetwork/lnd/lnrpc/signrpc"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnrpc/signrpc"
 )
 
 // =====================

@@ -2,7 +2,7 @@ package netann
 
 import (
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/channeldb"
+	"github.com/voltagecloud/lnd/channeldb"
 )
 
 // DB abstracts the required database functionality needed by the

@@ -1,9 +1,9 @@
 ## Lightning Network Daemon
 
-[![Build Status](https://img.shields.io/travis/lightningnetwork/lnd.svg)](https://travis-ci.org/lightningnetwork/lnd)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lightningnetwork/lnd/blob/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/voltagecloud/lnd.svg)](https://travis-ci.org/voltagecloud/lnd)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/voltagecloud/lnd/blob/master/LICENSE)
 [![Irc](https://img.shields.io/badge/chat-on%20libera-brightgreen.svg)](https://web.libera.chat/#lnd)
-[![Godoc](https://godoc.org/github.com/lightningnetwork/lnd?status.svg)](https://godoc.org/github.com/lightningnetwork/lnd)
+[![Godoc](https://godoc.org/github.com/voltagecloud/lnd?status.svg)](https://godoc.org/github.com/voltagecloud/lnd)
 
 <img src="logo.png">
 
@@ -20,14 +20,14 @@ within it.  In the current state `lnd` is capable of:
 * Completely managing all channel states (including the exceptional ones!).
 * Maintaining a fully authenticated+validated channel graph.
 * Performing path finding within the network, passively forwarding incoming payments.
-* Sending outgoing [onion-encrypted payments](https://github.com/lightningnetwork/lightning-onion)
+* Sending outgoing [onion-encrypted payments](https://github.com/voltagecloud/lightning-onion)
 through the network.
 * Updating advertised fee schedules.
-* Automatic channel management ([`autopilot`](https://github.com/lightningnetwork/lnd/tree/master/autopilot)).
+* Automatic channel management ([`autopilot`](https://github.com/voltagecloud/lnd/tree/master/autopilot)).
 
 ## Lightning Network Specification Compliance
 `lnd` _fully_ conforms to the [Lightning Network specification
-(BOLTs)](https://github.com/lightningnetwork/lightning-rfc). BOLT stands for:
+(BOLTs)](https://github.com/voltagecloud/lightning-rfc). BOLT stands for:
 Basis of Lightning Technology. The specifications are currently being drafted
 by several groups of implementers based around the world including the
 developers of `lnd`. The set of specification documents as well as our
@@ -93,5 +93,5 @@ preferably encrypted using our designated PGP key
 [here](https://gist.githubusercontent.com/Roasbeef/6fb5b52886183239e4aa558f83d085d3/raw/5fa96010af201628bcfa61e9309d9b13d23d220f/security@lightning.engineering).
 
 ## Further reading
-* [Step-by-step send payment guide with docker](https://github.com/lightningnetwork/lnd/tree/master/docker)
-* [Contribution guide](https://github.com/lightningnetwork/lnd/blob/master/docs/code_contribution_guidelines.md)
+* [Step-by-step send payment guide with docker](https://github.com/voltagecloud/lnd/tree/master/docker)
+* [Contribution guide](https://github.com/voltagecloud/lnd/blob/master/docs/code_contribution_guidelines.md)

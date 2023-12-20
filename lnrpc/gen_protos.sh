@@ -53,12 +53,12 @@ function generate() {
     # Special import for the wallet kit.
     manual_import=""
     if [[ "$package" == "walletrpc" ]]; then
-      manual_import="github.com/lightningnetwork/lnd/lnrpc/signrpc"
+      manual_import="github.com/voltagecloud/lnd/lnrpc/signrpc"
     fi
 
     # Special import for devrpc.
     if [[ "$package" == "devrpc" ]]; then
-        manual_import="github.com/lightningnetwork/lnd/lnrpc"
+        manual_import="github.com/voltagecloud/lnd/lnrpc"
     fi
 
     opts="package_name=$package,manual_import=$manual_import,js_stubs=1"

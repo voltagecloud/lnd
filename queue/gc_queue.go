@@ -4,7 +4,7 @@ import (
 	"container/list"
 	"time"
 
-	"github.com/lightningnetwork/lnd/ticker"
+	"github.com/voltagecloud/lnd/ticker"
 )
 
 // GCQueue is garbage collecting queue, which dynamically grows and contracts

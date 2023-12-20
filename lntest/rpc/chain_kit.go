@@ -3,7 +3,7 @@ package rpc
 import (
 	"context"
 
-	"github.com/lightningnetwork/lnd/lnrpc/chainrpc"
+	"github.com/voltagecloud/lnd/lnrpc/chainrpc"
 )
 
 // =====================

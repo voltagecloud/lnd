@@ -12,7 +12,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/lightningnetwork/lnd/ticker"
+	"github.com/voltagecloud/lnd/ticker"
 )
 
 // Config contains configuration settings for our monitor.

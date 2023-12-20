@@ -3,7 +3,7 @@
 
 package itest
 
-import "github.com/lightningnetwork/lnd/lntest"
+import "github.com/voltagecloud/lnd/lntest"
 
 // testEtcdFailover is an empty itest when LND is not compiled with etcd
 // support.

@@ -7,14 +7,14 @@ import (
 	"testing/quick"
 	"time"
 
-	"github.com/lightningnetwork/lnd/amp"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/clock"
-	invpkg "github.com/lightningnetwork/lnd/invoices"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/record"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/amp"
+	"github.com/voltagecloud/chainntnfs"
+	"github.com/voltag/voltagecloud/
+	invpkg "git/voltagecloud/ud/lnd/invoices"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/lnd/record"
 )
 
 // TestSettleInvoice tests settling of an invoice and related notifications.

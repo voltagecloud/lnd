@@ -3,15 +3,15 @@ package wtdb
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb/migration1"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb/migration2"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb/migration3"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb/migration4"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb/migration5"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb/migration6"
-	"github.com/lightningnetwork/lnd/watchtower/wtdb/migration7"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/watchtower/wtdb/migration1"
+	"github.com/voltagecloud/lnd/watchtower/wtdb/migration2"
+	"github.com/voltagecloud/lnd/watchtower/wtdb/migration3"
+	"github.com/voltagecloud/lnd/watchtower/wtdb/migration4"
+	"github.com/voltagecloud/lnd/watchtower/wtdb/migration5"
+	"github.com/voltagecloud/lnd/watchtower/wtdb/migration6"
+	"github.com/voltagecloud/lnd/watchtower/wtdb/migration7"
 )
 
 // txMigration is a function which takes a prior outdated version of the

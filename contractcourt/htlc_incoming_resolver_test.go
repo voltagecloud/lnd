@@ -6,19 +6,20 @@ import (
 	"io/ioutil"
 	"testing"
 
-	sphinx "github.com/lightningnetwork/lightning-onion"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/channeldb/models"
-	"github.com/lightningnetwork/lnd/htlcswitch/hop"
-	"github.com/lightningnetwork/lnd/invoices"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnmock"
-	"github.com/lightningnetwork/lnd/lntest/mock"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwire"
+	sphinx "git/voltagecloud/ud/lightning-onion"
+
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/chainntnfs"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/channeldb/models"
+	"github.com/voltagecloud/htlcswitch/hop"
+	"github.com/voltagecloud/invoices"
+	"github.com/voltagecloud/kvdb"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnmock"
+	"github.com/voltagecloud/lntest/mock"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwallet"
 )
 
 const (

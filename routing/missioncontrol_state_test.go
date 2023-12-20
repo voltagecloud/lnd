@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/routing/route"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/routing/route"
 )
 
 // TestMissionControlStateSetLastPairResult tests setting mission control state

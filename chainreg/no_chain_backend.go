@@ -9,10 +9,10 @@ import (
 	"github.com/btcsuite/btcd/wire"
 	"github.com/btcsuite/btcwallet/chain"
 	"github.com/btcsuite/btcwallet/waddrmgr"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
-	"github.com/lightningnetwork/lnd/routing/chainview"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lnwallet/chainfee"
+	"github.com/voltagecloud/routing/chainview"
 )
 
 var (

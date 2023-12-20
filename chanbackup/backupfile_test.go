@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnencrypt"
 )
 
 func makeFakePackedMulti() (PackedMulti, error) {

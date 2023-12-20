@@ -16,12 +16,12 @@ import (
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/lntest/mock"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/sweep"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/input"
+	"github.com/voltagecloud/lnd/sweep"
+	"github.com/voltagecloud/lntest/mock"
+	"github.com/voltagecloud/lnwallet"
 )
 
 var (

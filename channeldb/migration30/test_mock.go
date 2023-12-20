@@ -5,8 +5,8 @@ import (
 	"io"
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/shachain"
 	"github.com/stretchr/testify/mock"
+	"github.com/voltagecloud/lnd/shachain"
 )
 
 // mockStore mocks the shachain.Store.

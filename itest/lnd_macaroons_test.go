@@ -9,12 +9,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/macaroons"
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnd/macaroons"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lntest"
+	"github.com/voltagecloud/require"
 	"google.golang.org/protobuf/proto"
 	"gopkg.in/macaroon.v2"
 )

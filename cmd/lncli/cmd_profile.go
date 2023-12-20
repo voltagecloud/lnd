@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/lncfg"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lnd/lncfg"
 	"gopkg.in/macaroon.v2"
 )
 

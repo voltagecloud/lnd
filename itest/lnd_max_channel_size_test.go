@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/funding"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/funding"
+	"github.com/voltagecloud/lnd/lntest"
+	"github.com/voltagecloud/lnd/lnwallet"
 )
 
 // testMaxChannelSize tests that lnd handles --maxchansize parameter correctly.

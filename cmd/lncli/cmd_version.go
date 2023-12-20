@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/build"
-	"github.com/lightningnetwork/lnd/lnrpc/lnclipb"
-	"github.com/lightningnetwork/lnd/lnrpc/verrpc"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/build"
+	"github.com/voltagecloud/lnd/lnrpc/verrpc"
+	"github.com/voltagecloud/lnrpc/lnclipb"
 )
 
 var versionCommand = cli.Command{

@@ -13,15 +13,15 @@ import (
 	"github.com/btcsuite/btcd/btcutil/psbt"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/funding"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/signrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/walletrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/funding"
+	"github.com/voltagecloud/input"
+	"github.com/voltagecloud/keychain"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnrpc/signrpc"
+	"github.com/voltagecloud/lnrpc/walletrpc"
+	"github.com/voltagecloud/lntest"
 )
 
 // testPsbtChanFunding makes sure a channel can be opened between carol and dave

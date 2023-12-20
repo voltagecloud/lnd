@@ -5,8 +5,8 @@ import (
 
 	"github.com/btcsuite/btcd/wire"
 	"github.com/btcsuite/btcwallet/wallet"
-	"github.com/lightningnetwork/lnd/lnwallet"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnwallet"
 )
 
 type previousOutpointsTest struct {

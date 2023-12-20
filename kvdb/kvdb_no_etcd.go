@@ -6,7 +6,7 @@ package kvdb
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/kvdb/etcd"
+	"github.com/voltagecloud/lnd/kvdb/etcd"
 )
 
 // EtcdBackend is conditionally set to false when the kvdb_etcd build tag is not

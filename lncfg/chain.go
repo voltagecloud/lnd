@@ -3,7 +3,7 @@ package lncfg
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // Chain holds the configuration options for the daemon's chain settings.

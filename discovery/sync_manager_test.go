@@ -10,11 +10,11 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/lntest/wait"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/routing/route"
-	"github.com/lightningnetwork/lnd/ticker"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/ticker"
+	"github.com/voltagecloud/lntest/wait"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/routing/route"
 )
 
 // randPeer creates a random peer.

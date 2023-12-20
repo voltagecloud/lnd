@@ -25,7 +25,7 @@ with lnd in Java. We'll be using Maven as our build tool.
 ```
 Note the ***proto*** folder, where all the proto files are kept.
 
- - [lightning.proto](https://github.com/lightningnetwork/lnd/blob/master/lnrpc/lightning.proto)
+ - [lightning.proto](https://github.com/voltagecloud/lnd/blob/master/lnrpc/lightning.proto)
 
 #### pom.xml
 ```xml

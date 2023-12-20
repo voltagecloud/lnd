@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/buffer"
-	"github.com/lightningnetwork/lnd/pool"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/buffer"
+	"github.com/voltagecloud/lnd/pool"
 )
 
 type workerPoolTest struct {

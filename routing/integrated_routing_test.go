@@ -7,9 +7,9 @@ import (
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/zpay32"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/zpay32"
 )
 
 // TestProbabilityExtrapolation tests that probabilities for tried channels are

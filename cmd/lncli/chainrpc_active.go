@@ -10,8 +10,8 @@ import (
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/lnrpc/chainrpc"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lnd/lnrpc/chainrpc"
 )
 
 // chainCommands will return the set of commands to enable for chainrpc builds.

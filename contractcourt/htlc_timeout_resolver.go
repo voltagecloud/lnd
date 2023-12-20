@@ -10,14 +10,14 @@ import (
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnutils"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/sweep"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/input"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnutils"
+	"github.com/voltagecloud/lnwallet"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/sweep"
 )
 
 // htlcTimeoutResolver is a ContractResolver that's capable of resolving an

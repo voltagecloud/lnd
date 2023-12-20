@@ -1,3 +1,3 @@
-module github.com/lightningnetwork/lnd/ticker
+module github.com/voltagecloud/lnd/ticker
 
 go 1.19

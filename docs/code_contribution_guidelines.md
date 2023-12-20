@@ -93,7 +93,7 @@ Note that the core design of the Lightning Network has shifted over time as
 concrete implementation and design has expanded our knowledge beyond the
 original white paper. Therefore, specific information outlined in the resources
 above may be a bit out of date. Many implementers are currently working on an
-initial [Lightning Network Specifications](https://github.com/lightningnetwork/lightning-rfc).
+initial [Lightning Network Specifications](https://github.com/voltagecloud/lightning-rfc).
 Once the specification is finalized, it will be the most up-to-date
 comprehensive document explaining the Lightning Network. As a result, it will
 be recommended for newcomers to read first in order to get up to speed. 
@@ -149,19 +149,19 @@ A quick summary of test practices follows:
 - When you fix a bug, it should be accompanied by tests which exercise the bug
   to both prove it has been resolved and to prevent future regressions
 - Changes to publicly exported packages such as
-  [brontide](https://github.com/lightningnetwork/lnd/tree/master/brontide) should
+  [brontide](https://github.com/voltagecloud/lnd/tree/master/brontide) should
   be accompanied by unit tests exercising the new or changed behavior.
 - Changes to behavior within the daemon's interaction with the P2P protocol,
   or RPC's will need to be accompanied by integration tests which use the
-  [`networkHarness`framework](https://github.com/lightningnetwork/lnd/blob/master/lntest/harness.go)
+  [`networkHarness`framework](https://github.com/voltagecloud/lnd/blob/master/lntest/harness.go)
   contained within `lnd`. For example integration tests, see
-  [`lnd_test.go`](https://github.com/lightningnetwork/lnd/blob/master/itest/lnd_test.go).
+  [`lnd_test.go`](https://github.com/voltagecloud/lnd/blob/master/itest/lnd_test.go).
 - The itest log files are automatically scanned for `[ERR]` lines. There
   shouldn't be any of those in the logs, see [Use of Log Levels](#use-of-log-levels).
 
 Throughout the process of contributing to `lnd`, you'll likely also be
 extensively using the commands within our `Makefile`. As a result, we recommend
-[perusing the make file documentation](https://github.com/lightningnetwork/lnd/blob/master/docs/MAKEFILE.md).
+[perusing the make file documentation](https://github.com/voltagecloud/lnd/blob/master/docs/MAKEFILE.md).
 
 ## Code Documentation and Commenting
 
@@ -426,7 +426,7 @@ $  go mod edit -replace=IMPORT-PATH-IN-LND@LND-VERSION=DEV-FORK-IMPORT-PATH@DEV-
 
 Here's an example replacing the `lightning-onion` version checked into `lnd` with a version in roasbeef's fork:
 ```shell
-$  go mod edit -replace=github.com/lightningnetwork/lightning-onion@v0.0.0-20180605012408-ac4d9da8f1d6=github.com/roasbeef/lightning-onion@2e5ae87696046298365ab43bcd1cf3a7a1d69695
+$  go mod edit -replace=github.com/voltagecloud/lightning-onion@v0.0.0-20180605012408-ac4d9da8f1d6=github.com/roasbeef/lightning-onion@2e5ae87696046298365ab43bcd1cf3a7a1d69695
 ```
 
 ## Use of Log Levels
@@ -517,7 +517,7 @@ This process will continue until the code is finally accepted.
 
 Before your code is accepted, the [release notes we keep in-tree for the next
 upcoming milestone should be extended to describe the changes contained in your
-PR](https://github.com/lightningnetwork/lnd/tree/master/docs/release-notes).
+PR](https://github.com/voltagecloud/lnd/tree/master/docs/release-notes).
 Unless otherwise mentioned by the reviewers of your PR, the description of your
 changes should live in the document set for the _next_ major release. 
 
@@ -530,7 +530,7 @@ although this isn't a strong requirement (but we prefer it!). In order to keep
 these signatures intact, we prefer using merge commits. PR proposers can use
 `git rebase --signoff` to sign and rebase at the same time as a final step.
 
-Rejoice as you will now be listed as a [contributor](https://github.com/lightningnetwork/lnd/graphs/contributors)!
+Rejoice as you will now be listed as a [contributor](https://github.com/voltagecloud/lnd/graphs/contributors)!
 
 ## Review Bot
 
@@ -571,12 +571,12 @@ default of 3 days to the given duration.
 
 ## Contribution Checklist
 
-See [template](https://github.com/lightningnetwork/lnd/blob/master/.github/pull_request_template.md).
+See [template](https://github.com/voltagecloud/lnd/blob/master/.github/pull_request_template.md).
 
 ## Licensing of Contributions
 ****
 All contributions must be licensed with the
-[MIT license](https://github.com/lightningnetwork/lnd/blob/master/LICENSE).  This is
+[MIT license](https://github.com/voltagecloud/lnd/blob/master/LICENSE).  This is
 the same license as all of the code found within lnd.
 
 

@@ -13,15 +13,15 @@ import (
 	"github.com/btcsuite/btcwallet/snacl"
 	"github.com/btcsuite/btcwallet/waddrmgr"
 	"github.com/btcsuite/btcwallet/wallet"
-	"github.com/lightningnetwork/lnd/aezeed"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwallet/btcwallet"
-	"github.com/lightningnetwork/lnd/macaroons"
-	"github.com/lightningnetwork/lnd/walletunlocker"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/aezeed"
+	"github.com/voltagecloud/keychain"
+	"github.com/voltagecloud/kvdb"
+	"github.com/voltagecloud/lnd/walletunlocker"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnwallet"
+	"github.com/voltagecloud/lnwallet/btcwallet"
+	"github.com/voltagecloud/macaroons"
 )
 
 var (

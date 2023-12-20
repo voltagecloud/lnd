@@ -7,11 +7,11 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/netann"
-	"github.com/lightningnetwork/lnd/routing"
+	"github.com/voltagecloud/lnd/keychain"
+	"github.com/voltagecloud/lnwallet"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/netann"
+	"github.com/voltagecloud/routing"
 )
 
 type mockSigner struct {

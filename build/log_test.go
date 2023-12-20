@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/build"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/build"
 )
 
 type mockSubLogger struct {

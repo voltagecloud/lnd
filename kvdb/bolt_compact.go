@@ -14,7 +14,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/lightningnetwork/lnd/healthcheck"
+	"github.com/voltagecloud/lnd/healthcheck"
 	"go.etcd.io/bbolt"
 )
 

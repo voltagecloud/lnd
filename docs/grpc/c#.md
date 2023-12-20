@@ -23,7 +23,7 @@ Create a folder `Grpc` in the root of your project and fetch the lnd proto files
 
 ```shell
 mkdir Grpc
-curl -o Grpc/lightning.proto -s https://raw.githubusercontent.com/lightningnetwork/lnd/master/lnrpc/lightning.proto
+curl -o Grpc/lightning.proto -s https://raw.githubusercontent.com/voltagecloud/lnd/master/lnrpc/lightning.proto
 ```
 
 Install `Grpc.Tools`, `Google.Protobuf`, `Grpc.Net.Client` using NuGet or manually with `dotnet add`:

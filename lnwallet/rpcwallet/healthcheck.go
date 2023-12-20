@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/lightningnetwork/lnd/lncfg"
+	"github.com/voltagecloud/lnd/lncfg"
 )
 
 // HealthCheck returns a health check function for the given remote signing

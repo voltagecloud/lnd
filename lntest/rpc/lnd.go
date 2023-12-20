@@ -4,8 +4,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/lightningnetwork/lnd/lnrpc"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnrpc"
 )
 
 // =====================

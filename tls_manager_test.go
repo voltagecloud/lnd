@@ -16,11 +16,11 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	"github.com/lightningnetwork/lnd/cert"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnencrypt"
-	"github.com/lightningnetwork/lnd/lntest/channels"
-	"github.com/lightningnetwork/lnd/lntest/mock"
+	"github.com/voltagecloud/lnd/cert"
+	"github.com/voltagecloud/lnd/keychain"
+	"github.com/voltagecloud/lnd/lnencrypt"
+	"github.com/voltagecloud/lnd/lntest/channels"
+	"github.com/voltagecloud/lnd/lntest/mock"
 	"github.com/stretchr/testify/require"
 )
 

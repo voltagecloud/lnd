@@ -58,7 +58,7 @@ jobs:
             In order to verify the release, you'll need to have `gpg` or `gpg2` installed on your system. Once you've obtained a copy (and hopefully verified that as well), you'll first need to import the keys that have signed this release if you haven't done so already: 
 
             ```
-            curl https://raw.githubusercontent.com/lightningnetwork/lnd/master/scripts/keys/roasbeef.asc | gpg --import
+            curl https://raw.githubusercontent.com/voltagecloud/lnd/master/scripts/keys/roasbeef.asc | gpg --import
             ```
 
             Once you have the required PGP keys, you can verify the release (assuming `manifest-roasbeef-${{ env.RELEASE_VERSION }}.sig` and `manifest-${{ env.RELEASE_VERSION }}.txt` are in the current directory) with:
@@ -92,7 +92,7 @@ jobs:
 
             ## Verifying the Release Binaries
 
-            Our release binaries are fully reproducible. Third parties are able to verify that the release binaries were produced properly without having to trust the release manager(s). See our [reproducible builds guide](https://github.com/lightningnetwork/lnd/tree/master/build/release) for how this can be achieved.
+            Our release binaries are fully reproducible. Third parties are able to verify that the release binaries were produced properly without having to trust the release manager(s). See our [reproducible builds guide](https://github.com/voltagecloud/lnd/tree/master/build/release) for how this can be achieved.
             The release binaries are compiled with `go${{ env.GO_VERSION }}`, which is required by verifiers to arrive at the same ones.
             They include the following build tags: `autopilotrpc`, `signrpc`, `walletrpc`, `chainrpc`, `invoicesrpc`, `neutrinorpc`, `routerrpc`, `watchtowerrpc`, `monitoring`, `peersrpc`, `kvdb_postrgres`, `kvdb_etcd` and `kvdb_sqlite`. Note that these are already included in the release script, so they do not need to be provided.
 
@@ -126,13 +126,13 @@ jobs:
             ```
             tar -xvzf vendor.tar.gz
             tar -xvzf lnd-source-${{ env.RELEASE_VERSION }}.tar.gz
-            GO111MODULE=on go install -v -mod=vendor -ldflags "-X github.com/lightningnetwork/lnd/build.Commit=${{ env.RELEASE_VERSION }}" ./cmd/lnd
-            GO111MODULE=on go install -v -mod=vendor -ldflags "-X github.com/lightningnetwork/lnd/build.Commit=${{ env.RELEASE_VERSION }}" ./cmd/lncli
+            GO111MODULE=on go install -v -mod=vendor -ldflags "-X github.com/voltagecloud/lnd/build.Commit=${{ env.RELEASE_VERSION }}" ./cmd/lnd
+            GO111MODULE=on go install -v -mod=vendor -ldflags "-X github.com/voltagecloud/lnd/build.Commit=${{ env.RELEASE_VERSION }}" ./cmd/lncli
             ```
 
             The `-mod=vendor` flag tells the `go build` command that it doesn't need to fetch the dependencies, and instead, they're all enclosed in the local vendor directory. 
 
-            Additionally, it's now possible to use the [enclosed `release.sh` script to bundle a release for a _specific_ system like so](https://github.com/lightningnetwork/lnd/pull/2191): 
+            Additionally, it's now possible to use the [enclosed `release.sh` script to bundle a release for a _specific_ system like so](https://github.com/voltagecloud/lnd/pull/2191): 
 
             ```
             make release sys="linux-arm64 darwin-amd64"

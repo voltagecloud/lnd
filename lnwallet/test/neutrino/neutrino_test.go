@@ -3,7 +3,7 @@ package neutrino_test
 import (
 	"testing"
 
-	lnwallettest "github.com/lightningnetwork/lnd/lnwallet/test"
+	lnwallettest "github.com/voltagecloud/lnd/lnwallet/test"
 )
 
 // TestLightningWallet tests LightningWallet powered by neutrino against our

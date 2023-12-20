@@ -3,7 +3,7 @@ package lnd
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lncfg"
+	"github.com/voltagecloud/lnd/lncfg"
 )
 
 // TestShouldPeerBootstrap tests that we properly skip network bootstrap for

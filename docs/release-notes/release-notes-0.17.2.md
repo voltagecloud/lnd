@@ -21,7 +21,7 @@
 
 * A bug that would cause the peer goroutine to panic if SCB related messages
   needed to be retransmitted [has been
-  fixed](https://github.com/lightningnetwork/lnd/pull/8186).
+  fixed](https://github.com/voltagecloud/lnd/pull/8186).
 
 # New Features
 ## Functional Enhancements

@@ -10,10 +10,10 @@ import (
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	lnwire "github.com/lightningnetwork/lnd/channeldb/migration/lnwire21"
-	"github.com/lightningnetwork/lnd/channeldb/migration21/common"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/shachain"
+	lnwire "github.com/voltagecloud/lnd/channeldb/migration/lnwire21"
+	"github.com/voltagecloud/lnd/channeldb/migration21/common"
+	"github.com/voltagecloud/lnd/keychain"
+	"github.com/voltagecloud/lnd/shachain"
 )
 
 var (

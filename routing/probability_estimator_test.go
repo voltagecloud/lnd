@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/routing/route"
+	"github.com/voltagecloud/lnd/routing/route"
 )
 
 // Create a set of test results.

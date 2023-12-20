@@ -3,8 +3,8 @@ package hodl_test
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/build"
-	"github.com/lightningnetwork/lnd/htlcswitch/hodl"
+	"github.com/voltagecloud/lnd/build"
+	"github.com/voltagecloud/lnd/htlcswitch/hodl"
 )
 
 var hodlMaskTests = []struct {

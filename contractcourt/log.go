@@ -2,7 +2,7 @@ package contractcourt
 
 import (
 	"github.com/btcsuite/btclog"
-	"github.com/lightningnetwork/lnd/build"
+	"github.com/voltagecloud/lnd/build"
 )
 
 var (

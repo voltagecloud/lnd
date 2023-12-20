@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btcd/integration/rpctest"
-	"github.com/lightningnetwork/lnd/lntest/node"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lntest/node"
 )
 
 // SetupHarness creates a new HarnessTest with a series of setups such that the

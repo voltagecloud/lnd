@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 
 	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/lightningnetwork/lnd/kvdb/sqlbase"
+	"github.com/voltagecloud/lnd/kvdb/sqlbase"
 	_ "modernc.org/sqlite" // Register relevant drivers.
 )
 

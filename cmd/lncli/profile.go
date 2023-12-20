@@ -10,10 +10,10 @@ import (
 	"path"
 	"strings"
 
-	"github.com/lightningnetwork/lnd/lncfg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/walletunlocker"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lncfg"
+	"github.com/voltagecloud/lnd/walletunlocker"
+	"github.com/voltagecloud/lnrpc"
 	"gopkg.in/macaroon.v2"
 )
 

@@ -4,7 +4,7 @@ package routerrpc
 
 import (
 	context "context"
-	lnrpc "github.com/lightningnetwork/lnd/lnrpc"
+	lnrpc "github.com/voltagecloud/lnd/lnrpc"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

@@ -3,7 +3,7 @@ package bitcoind_test
 import (
 	"testing"
 
-	lnwallettest "github.com/lightningnetwork/lnd/lnwallet/test"
+	lnwallettest "github.com/voltagecloud/lnd/lnwallet/test"
 )
 
 // TestLightningWalletBitcoindZMQ tests LightningWallet powered by bitcoind,

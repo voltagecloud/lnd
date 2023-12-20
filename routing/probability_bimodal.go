@@ -7,8 +7,8 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/go-errors/errors"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/routing/route"
+	"github.com/voltagecloud/lnd/lnwire"
+	"github.com/voltagecloud/lnd/routing/route"
 )
 
 const (
@@ -422,7 +422,7 @@ func cannotSend(failAmount, capacity lnwire.MilliSatoshi, now,
 // the liquidity leaks into the channel. A very low scale assumes completely
 // unbalanced channels, a very high scale assumes a random distribution. More
 // details can be found in
-// https://github.com/lightningnetwork/lnd/issues/5988#issuecomment-1131234858.
+// https://github.com/voltagecloud/lnd/issues/5988#issuecomment-1131234858.
 func (p *BimodalEstimator) primitive(c, x float64) float64 {
 	s := float64(p.BimodalScaleMsat)
 

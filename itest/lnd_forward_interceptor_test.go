@@ -6,15 +6,15 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/chainreg"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lntest"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntest/wait"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/routing/route"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/chainreg"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lnrpc/routerrpc"
+	"github.com/voltagecloud/lnd/lntest"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnd/lntest/wait"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/routing/route"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -291,7 +291,7 @@ func testForwardInterceptorBasic(ht *lntest.HarnessTest) {
 
 	// Verify that we don't get notified about already completed HTLCs
 	// We do that by restarting alice, the sender the HTLCs. Under
-	// https://github.com/lightningnetwork/lnd/issues/5115
+	// https://github.com/voltagecloud/lnd/issues/5115
 	// this should cause all HTLCs settled or failed by the interceptor to
 	// renotify.
 	restartAlice := ht.SuspendNode(alice)

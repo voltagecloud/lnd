@@ -3,9 +3,9 @@ package funding
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnwallet"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // TestCommitmentTypeNegotiation tests all of the possible paths of a channel

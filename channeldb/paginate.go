@@ -1,6 +1,6 @@
 package channeldb
 
-import "github.com/lightningnetwork/lnd/kvdb"
+import "github.com/voltagecloud/lnd/kvdb"
 
 type paginator struct {
 	// cursor is the cursor which we are using to iterate through a bucket.

@@ -3,8 +3,8 @@ package chanacceptor
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // dummyAcceptor is a ChannelAcceptor that will never return a failure.

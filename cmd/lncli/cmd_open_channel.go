@@ -17,9 +17,9 @@ import (
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnwallet/chanfunding"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lnd/lnwallet/chanfunding"
+	"github.com/voltagecloud/lnrpc"
 )
 
 const (

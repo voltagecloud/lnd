@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnencrypt"
 )
 
 type mockChannelRestorer struct {

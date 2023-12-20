@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/channeldb"
+	"github.com/voltagecloud/lnd/channeldb"
 )
 
 // timeout implements a test level timeout.

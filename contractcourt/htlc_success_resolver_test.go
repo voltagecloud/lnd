@@ -10,14 +10,14 @@ import (
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnmock"
-	"github.com/lightningnetwork/lnd/lntest/mock"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/input"
+	"github.com/voltagecloud/kvdb"
+	"github.com/voltagecloud/lnd/chainntnfs"
+	"github.com/voltagecloud/lnmock"
+	"github.com/voltagecloud/lntest/mock"
+	"github.com/voltagecloud/lnwallet"
+	"github.com/voltagecloud/lnwire"
 )
 
 var testHtlcAmt = lnwire.MilliSatoshi(200000)

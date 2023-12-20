@@ -7,9 +7,9 @@ import (
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/input"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
 )
 
 // TestWeightEstimator tests weight estimation for inputs with and without

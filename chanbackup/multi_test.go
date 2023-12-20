@@ -5,8 +5,8 @@ import (
 	"net"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lnencrypt"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnencrypt"
 )
 
 // TestMultiPackUnpack...

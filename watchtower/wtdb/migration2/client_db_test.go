@@ -4,9 +4,9 @@ import (
 	"encoding/binary"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/channeldb/migtest"
-	"github.com/lightningnetwork/lnd/kvdb"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/channeldb/migtest"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

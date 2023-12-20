@@ -4,7 +4,7 @@ import (
 	"bytes"
 
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 var (

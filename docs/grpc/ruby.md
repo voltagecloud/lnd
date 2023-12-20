@@ -28,7 +28,7 @@ $  git clone https://github.com/googleapis/googleapis.git
 Fetch the `lightning.proto` file (or copy it from your local source directory):
 
 ```shell
-$  curl -o lightning.proto -s https://raw.githubusercontent.com/lightningnetwork/lnd/master/lnrpc/lightning.proto
+$  curl -o lightning.proto -s https://raw.githubusercontent.com/voltagecloud/lnd/master/lnrpc/lightning.proto
 ```
 
 Compile the proto file:

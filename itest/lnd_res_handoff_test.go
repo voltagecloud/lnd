@@ -4,9 +4,9 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcutil"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lntest"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lntest"
+	"github.com/voltagecloud/lnrpc"
 )
 
 // testResHandoff tests that the contractcourt is able to properly hand-off

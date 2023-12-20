@@ -29,7 +29,7 @@ fi
 pkg="lndmobile"
 
 # The package where the protobuf definitions originally are found.
-target_pkg="github.com/lightningnetwork/lnd/lnrpc"
+target_pkg="github.com/voltagecloud/lnd/lnrpc"
 
 # A mapping from grpc service to name of the custom listeners. The grpc server
 # must be configured to listen on these.

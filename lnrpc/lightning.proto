@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package lnrpc;
 
-option go_package = "github.com/lightningnetwork/lnd/lnrpc";
+option go_package = "github.com/voltagecloud/lnd/lnrpc";
 
 /*
  * Comments in this file will be directly parsed into the API

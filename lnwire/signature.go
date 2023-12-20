@@ -6,7 +6,7 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
 	"github.com/btcsuite/btcd/btcec/v2/schnorr"
-	"github.com/lightningnetwork/lnd/input"
+	"github.com/voltagecloud/lnd/input"
 )
 
 var (

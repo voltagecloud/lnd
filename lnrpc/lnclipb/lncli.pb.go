@@ -7,7 +7,7 @@
 package lnclipb
 
 import (
-	verrpc "github.com/lightningnetwork/lnd/lnrpc/verrpc"
+	verrpc "github.com/voltagecloud/lnd/lnrpc/verrpc"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

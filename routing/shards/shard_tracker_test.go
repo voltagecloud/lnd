@@ -4,9 +4,9 @@ import (
 	"crypto/rand"
 	"testing"
 
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/routing/shards"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/routing/shards"
 )
 
 // TestSimpleShardTracker tests that the simple tracker that keeps a map from

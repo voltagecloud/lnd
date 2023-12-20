@@ -7,14 +7,14 @@ import (
 	"math"
 
 	"github.com/btcsuite/btcd/btcutil"
-	lnwire "github.com/lightningnetwork/lnd/channeldb/migration/lnwire21"
-	mig24 "github.com/lightningnetwork/lnd/channeldb/migration24"
-	mig25 "github.com/lightningnetwork/lnd/channeldb/migration25"
-	mig26 "github.com/lightningnetwork/lnd/channeldb/migration26"
-	mig "github.com/lightningnetwork/lnd/channeldb/migration_01_to_11"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/tlv"
+	lnwire "github.com/voltagecloud/lnd/channeldb/migration/lnwire21"
+	mig24 "github.com/voltagecloud/lnd/channeldb/migration24"
+	mig25 "github.com/voltagecloud/lnd/channeldb/migration25"
+	mig26 "github.com/voltagecloud/lnd/channeldb/migration26"
+	mig "github.com/voltagecloud/lnd/channeldb/migration_01_to_11"
+	"github.com/voltagecloud/lnd/kvdb"
+	"github.com/voltagecloud/lnd/lntypes"
+	"github.com/voltagecloud/lnd/tlv"
 )
 
 const (

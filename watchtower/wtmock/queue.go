@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/lightningnetwork/lnd/watchtower/wtdb"
+	"github.com/voltagecloud/lnd/watchtower/wtdb"
 )
 
 // DiskQueueDB is an in-memory implementation of the wtclient.Queue interface.

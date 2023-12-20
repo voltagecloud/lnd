@@ -7,7 +7,7 @@
 package peersrpc
 
 import (
-	lnrpc "github.com/lightningnetwork/lnd/lnrpc"
+	lnrpc "github.com/voltagecloud/lnd/lnrpc"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

@@ -3,8 +3,8 @@ package lncfg
 import (
 	"time"
 
-	"github.com/lightningnetwork/lnd/discovery"
-	"github.com/lightningnetwork/lnd/routing/route"
+	"github.com/voltagecloud/lnd/discovery"
+	"github.com/voltagecloud/routing/route"
 )
 
 //nolint:lll

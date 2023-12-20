@@ -10,11 +10,11 @@ import (
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnwallet"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/input"
+	"github.com/voltagecloud/keychain"
+	"github.com/voltagecloud/lnd/lnwallet"
 )
 
 const (

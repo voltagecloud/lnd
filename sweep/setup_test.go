@@ -3,7 +3,7 @@ package sweep
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 func TestMain(m *testing.M) {

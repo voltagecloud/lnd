@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lightningnetwork/lnd/ticker"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/ticker"
 )
 
 var (

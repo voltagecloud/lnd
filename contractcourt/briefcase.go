@@ -9,10 +9,10 @@ import (
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/lnwallet"
+	"github.com/voltagecloud/input"
+	"github.com/voltagecloud/kvdb"
+	"github.com/voltagecloud/lnd/channeldb"
+	"github.com/voltagecloud/lnwallet"
 )
 
 // ContractResolutions is a wrapper struct around the two forms of resolutions

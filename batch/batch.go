@@ -4,7 +4,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 // errSolo is a sentinel error indicating that the requester should re-run the

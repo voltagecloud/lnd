@@ -7,9 +7,9 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btcwallet/snacl"
-	"github.com/lightningnetwork/lnd/kvdb"
-	"github.com/lightningnetwork/lnd/macaroons"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/kvdb"
+	"github.com/voltagecloud/lnd/macaroons"
 )
 
 var (

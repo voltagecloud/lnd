@@ -7,11 +7,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/lightningnetwork/lnd/clock"
-	"github.com/lightningnetwork/lnd/lntypes"
-	"github.com/lightningnetwork/lnd/lnwire"
-	"github.com/lightningnetwork/lnd/queue"
-	"github.com/lightningnetwork/lnd/record"
+	"github.com/voltagecloud/lnd/clock"
+	"github.com/voltagecloud/lntypes"
+	"github.com/voltagecloud/lnwire"
+	"github.com/voltagecloud/queue"
+	"github.com/voltagecloud/record"
 )
 
 var (

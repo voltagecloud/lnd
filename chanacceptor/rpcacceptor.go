@@ -9,10 +9,10 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnwallet/chancloser"
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/lnd/input"
+	"github.com/voltagecloud/lnrpc"
+	"github.com/voltagecloud/lnwallet/chancloser"
+	"github.com/voltagecloud/lnwire"
 )
 
 var (

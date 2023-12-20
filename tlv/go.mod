@@ -1,4 +1,4 @@
-module github.com/lightningnetwork/lnd/tlv
+module github.com/voltagecloud/lnd/tlv
 
 require (
 	github.com/btcsuite/btcd v0.23.3

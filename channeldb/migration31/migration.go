@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/lightningnetwork/lnd/kvdb"
+	"github.com/voltagecloud/lnd/kvdb"
 )
 
 // DeleteLastPublishedTxTLB deletes the top level bucket with the key

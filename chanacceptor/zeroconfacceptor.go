@@ -1,6 +1,6 @@
 package chanacceptor
 
-import "github.com/lightningnetwork/lnd/lnwire"
+import "github.com/voltagecloud/lnd/lnwire"
 
 // ZeroConfAcceptor wraps a regular ChainedAcceptor. If no acceptors are in the
 // ChainedAcceptor, then Accept will reject all channel open requests. This

@@ -14,7 +14,7 @@ import (
 	"github.com/btcsuite/btcd/btcutil/bech32"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // Decode parses the provided encoded invoice and returns a decoded Invoice if
@@ -50,7 +50,7 @@ func Decode(invoice string, net *chaincfg.Params) (*Invoice, error) {
 	// an additional "s" to differentiate it from the older testnet3 (Core
 	// devs decided to use the same hrp for signet as for testnet3 which is
 	// not optimal for LN). See
-	// https://github.com/lightningnetwork/lightning-rfc/pull/844 for more
+	// https://github.com/voltagecloud/lightning-rfc/pull/844 for more
 	// information.
 	expectedPrefix := net.Bech32HRPSegwit
 	if net.Name == chaincfg.SigNetParams.Name {

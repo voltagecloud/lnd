@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/lightningnetwork/lnd/lnrpc/wtclientrpc"
 	"github.com/urfave/cli"
+	"github.com/voltagecloud/lnd/lnrpc/wtclientrpc"
 )
 
 // wtclientCommands will return nil for non-wtclientrpc builds.

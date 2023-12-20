@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 // TestForwardingLogBasicStorageAndQuery tests that we're able to store and

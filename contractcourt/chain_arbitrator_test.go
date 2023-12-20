@@ -6,12 +6,12 @@ import (
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcd/wire"
-	"github.com/lightningnetwork/lnd/chainntnfs"
-	"github.com/lightningnetwork/lnd/channeldb"
-	"github.com/lightningnetwork/lnd/clock"
-	"github.com/lightningnetwork/lnd/lntest/mock"
-	"github.com/lightningnetwork/lnd/lnwallet"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/chainntnfs"
+	"github.com/voltagecloud/channeldb"
+	"github.com/voltagecloud/clock"
+	"github.com/voltagecloud/lnd/lnwallet"
+	"github.com/voltagecloud/lntest/mock"
 )
 
 // TestChainArbitratorRepulishCloses tests that the chain arbitrator will

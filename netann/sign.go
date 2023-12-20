@@ -3,10 +3,10 @@ package netann
 import (
 	"fmt"
 
-	"github.com/lightningnetwork/lnd/input"
-	"github.com/lightningnetwork/lnd/keychain"
-	"github.com/lightningnetwork/lnd/lnwallet"
-	"github.com/lightningnetwork/lnd/lnwire"
+	"github.com/voltagecloud/keychain"
+	"github.com/voltagecloud/lnd/input"
+	"github.com/voltagecloud/lnwallet"
+	"github.com/voltagecloud/lnwire"
 )
 
 // SignAnnouncement signs any type of gossip message that is announced on the

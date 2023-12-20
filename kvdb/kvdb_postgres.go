@@ -3,7 +3,7 @@
 
 package kvdb
 
-import "github.com/lightningnetwork/lnd/kvdb/postgres"
+import "github.com/voltagecloud/lnd/kvdb/postgres"
 
 const PostgresBackend = true
 

@@ -3,9 +3,9 @@ package wtpolicy_test
 import (
 	"testing"
 
-	"github.com/lightningnetwork/lnd/watchtower/blob"
-	"github.com/lightningnetwork/lnd/watchtower/wtpolicy"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/watchtower/blob"
+	"github.com/voltagecloud/lnd/watchtower/wtpolicy"
 )
 
 var validationTests = []struct {

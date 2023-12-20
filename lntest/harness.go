@@ -13,16 +13,16 @@ import (
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcd/wire"
 	"github.com/go-errors/errors"
-	"github.com/lightningnetwork/lnd/kvdb/etcd"
-	"github.com/lightningnetwork/lnd/lnrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/routerrpc"
-	"github.com/lightningnetwork/lnd/lnrpc/walletrpc"
-	"github.com/lightningnetwork/lnd/lntest/node"
-	"github.com/lightningnetwork/lnd/lntest/rpc"
-	"github.com/lightningnetwork/lnd/lntest/wait"
-	"github.com/lightningnetwork/lnd/lnwallet/chainfee"
-	"github.com/lightningnetwork/lnd/lnwire"
 	"github.com/stretchr/testify/require"
+	"github.com/voltagecloud/lnd/kvdb/etcd"
+	"github.com/voltagecloud/lnd/lnrpc"
+	"github.com/voltagecloud/lnd/lnrpc/routerrpc"
+	"github.com/voltagecloud/lnd/lnrpc/walletrpc"
+	"github.com/voltagecloud/lnd/lntest/node"
+	"github.com/voltagecloud/lnd/lntest/rpc"
+	"github.com/voltagecloud/lnd/lntest/wait"
+	"github.com/voltagecloud/lnd/lnwallet/chainfee"
+	"github.com/voltagecloud/lnd/lnwire"
 )
 
 const (
@@ -1153,7 +1153,7 @@ func (h *HarnessTest) CloseChannelAssertPending(hn *node.HarnessNode,
 	// within the network.
 	//
 	// TODO(yy): remove the wait once the following bug is fixed.
-	// - https://github.com/lightningnetwork/lnd/issues/6039
+	// - https://github.com/voltagecloud/lnd/issues/6039
 	// We may receive the error `cannot co-op close channel with active
 	// htlcs` or `link failed to shutdown` if we close the channel. We need
 	// to investigate the order of settling the payments and updating

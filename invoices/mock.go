@@ -1,8 +1,8 @@
 package invoices
 
 import (
-	"github.com/lightningnetwork/lnd/lntypes"
 	"github.com/stretchr/testify/mock"
+	"github.com/voltagecloud/lnd/lntypes"
 )
 
 type MockInvoiceDB struct {
